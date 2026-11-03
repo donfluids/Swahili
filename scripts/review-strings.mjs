@@ -1,19 +1,17 @@
-// Rewrites the strings table in docs/tamil-review.md or docs/hindi-review.md from
-// src/i18n.ts, so the review always covers every string the app has in that language.
+// Rewrites the strings table in docs/swahili-review.md from src/i18n.ts (English) and
+// src/i18nSw.ts (Swahili), so the review always covers every string the app has.
 // Notes a reviewer has written in the Check column are kept for keys whose text is unchanged.
 //
-//   node scripts/review-strings.mjs ta
-//   node scripts/review-strings.mjs hi
+//   node scripts/review-strings.mjs sw
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const src = readFileSync(join(ROOT, 'src/i18n.ts'), 'utf8');
-
-/** One table of src/i18n.ts as key -> text. */
+/** One strings table as key -> text: en in src/i18n.ts, sw in src/i18nSw.ts. */
 function table(name) {
-  const start = src.search(new RegExp(`^const ${name}\\b[^=]*= \\{`, 'm'));
+  const src = readFileSync(join(ROOT, name === 'sw' ? 'src/i18nSw.ts' : 'src/i18n.ts'), 'utf8');
+  const start = src.search(new RegExp(`^(export )?const ${name}\\b[^=]*= \\{`, 'm'));
   const body = src.slice(start, src.indexOf('\n};', start));
   const out = new Map();
   for (const m of body.matchAll(/^ {2}(\w+): ('(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*`),?$/gm)) {
@@ -21,9 +19,9 @@ function table(name) {
   }
   return out;
 }
-const LANGUAGES = { ta: { doc: 'docs/tamil-review.md', name: 'Tamil' }, hi: { doc: 'docs/hindi-review.md', name: 'Hindi' } };
+const LANGUAGES = { sw: { doc: 'docs/swahili-review.md', name: 'Swahili' } };
 const lang = LANGUAGES[process.argv[2]];
-if (!lang) throw new Error('give the language: ta or hi');
+if (!lang) throw new Error('give the language: sw');
 const en = table('en');
 const ta = table(process.argv[2]);
 
@@ -35,7 +33,7 @@ if (at < 0) throw new Error(`strings table not found in ${lang.doc}`);
 let end = at + head.length;
 while (end < doc.length && doc.startsWith('|', end)) end = doc.indexOf('\n', end) + 1 || doc.length;
 
-// Earlier checks, kept where the Tamil they were written against is unchanged.
+// Earlier checks, kept where the Swahili they were written against is unchanged.
 const checks = new Map();
 for (const line of doc.slice(at + head.length, end).split('\n')) {
   const cells = line.split(' | ');

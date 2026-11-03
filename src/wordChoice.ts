@@ -1,6 +1,6 @@
 // Choices the word sheet makes from the data, kept apart from the sheet so they can be
 // tested without a phone (scripts/test-logic.mts): which Hebrew or Greek word of the
-// verse a tapped word stands for, which renderings get a chip, and the Malayalam or Tamil
+// verse a tapped word stands for, which renderings get a chip, and the Swahili
 // headline. Types only are imported.
 import type { OriginalWord, Rendering } from './types';
 
@@ -44,7 +44,7 @@ export function topRenderings(list: Rendering[], max: number, total?: number): R
 }
 
 /**
- * The Malayalam headline: the commonest rendering, and a second one when it is a real
+ * The Swahili headline: the commonest rendering, and a second one when it is a real
  * alternative: at least 4% of uses, and not another form of the first (ജനം beside
  * ജനത്തെ, ദൈവസ്നേഹം beside സ്നേഹം, മരിക്കും beside മരിച്ചു, by the same first two
  * letters). ദൈവം · ദേവന്മാർ, സമാധാനം · സുഖം, സ്നേഹം.

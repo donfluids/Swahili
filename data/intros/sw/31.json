@@ -1,0 +1,54 @@
+{
+  "book": 31,
+  "name": "Obadia",
+  "facts": {
+    "author": "Obadia, ambaye jina lake linamaanisha \"mtumishi wa Yahwe\" (1:1). Hakuna kingine kinachojulikana kwa hakika juu yake.",
+    "date": "Huenda karibu mwaka 845 K.K.",
+    "audience": "Watu wa Yuda, kama ujumbe kuhusu taifa la Edomu"
+  },
+  "about": [
+    "Obadia ndicho kitabu kifupi kuliko vyote katika Agano la Kale, chenye mistari ishirini na mmoja tu. Ni maono kuhusu Edomu, taifa lililotokana na Esau, ndugu pacha wa Yakobo. Edomu waliishi katika milima mirefu yenye miamba kusini-mashariki mwa Bahari ya Chumvi, nao walijiona salama huko (1:3).",
+    "Maadui walipoushambulia Yerusalemu, Waedomu hawakumsaidia ndugu yao Yakobo. Walisimama kando wakitazama, wakafurahia taabu ya Yuda, wakachukua mali zao, na hata wakawatia mikononi mwa adui wale waliojaribu kutoroka (1:10-14). Kwa hiyo Mungu anatangaza kwamba Edomu mwenye kiburi atashushwa, na yale aliyoyatenda yatamrudia juu ya kichwa chake mwenyewe (1:15).",
+    "Kitabu kinamalizika kwa tumaini kwa watu wa Mungu. Juu ya mlima Sayuni kutakuwa na wokovu na utakatifu, nyumba ya Yakobo itaimiliki tena nchi yake, na ufalme utakuwa wa Yahwe (1:21)."
+  ],
+  "themes": [
+    {
+      "title": "Kiburi hutangulia anguko",
+      "text": "Edomu ilitumainia miamba yake mirefu na wenye hekima wake, lakini Mungu angeishusha."
+    },
+    {
+      "title": "Kumjali ndugu",
+      "text": "Edomu inahukumiwa kwa ukatili wake na kwa kufurahi wakati taifa la ndugu yake lilipoteseka."
+    },
+    {
+      "title": "Haki ya Mungu",
+      "text": "Katika siku ya Yahwe, kila taifa litapokea kama lilivyowatendea wengine."
+    },
+    {
+      "title": "Ufalme ni wa Yahwe",
+      "text": "Mungu atawaokoa watu wake juu ya mlima Sayuni na kutawala juu ya wote."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:9",
+      "title": "Edomu mwenye kiburi atashushwa"
+    },
+    {
+      "from": "1:10",
+      "to": "1:14",
+      "title": "Ukatili wa Edomu dhidi ya ndugu yake Yakobo"
+    },
+    {
+      "from": "1:15",
+      "to": "1:21",
+      "title": "Siku ya Yahwe: wokovu juu ya mlima Sayuni"
+    }
+  ],
+  "keyVerses": [
+    "1:3-4",
+    "1:15",
+    "1:21"
+  ]
+}

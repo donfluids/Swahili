@@ -1,18 +1,19 @@
-// Extends app.json with per-edition and per-build values.
+// Extends app.json with per-build values.
 //
-// BIBLE_EDITION: "en" (default) is the English app with the KJV and WEB; "ml" is the
-// Malayalam app (വേദപുസ്തകം) with the Sathyavedapusthakam and the KJV. The edition
-// picks the name, identifiers, icon, splash and, through metro.config.js, the database.
+// BIBLE_EDITION: "sw", the one edition: the Swahili app (Biblia) with three Swahili Bibles,
+// the KJV and the BSB. The edition picks the name, identifiers, icon, splash and, through
+// metro.config.js, the database. It is kept as a setting so the code shared with the Bible
+// apps (donfluids/Bible) stays the same shape.
 // BIBLE_VERSION_CODE: the Android version code; the release workflow passes its run
 // number so every build can be installed over the previous one. iOS build numbers are
 // kept by EAS (eas.json, appVersionSource "remote").
 const EDITIONS = {
-  en: {
-    name: 'Bible',
-    slug: 'bible',
-    package: 'org.riversresearch.bible',
-    icons: './assets/icons/en',
-    languages: ['en'],
+  sw: {
+    name: 'Biblia',
+    slug: 'bible-swahili',
+    package: 'org.riversresearch.bible.swahili',
+    icons: './assets/icons/sw',
+    languages: ['sw', 'en'],
     // From `eas init` for this edition (docs/ios/README.md); empty until then.
     easProjectId: '',
     // Splash colours are the app's own backgrounds, so opening does not flash.
@@ -20,82 +21,14 @@ const EDITIONS = {
     splashBackgroundDark: '#15130F',
     adaptiveBackground: '#6C4520',
   },
-  ml: {
-    name: 'വേദപുസ്തകം',
-    slug: 'bible-malayalam',
-    package: 'org.riversresearch.bible.malayalam',
-    icons: './assets/icons/ml',
-    languages: ['ml', 'en'],
-    easProjectId: '',
-    splashBackground: '#FBF8F1',
-    splashBackgroundDark: '#15130F',
-    adaptiveBackground: '#6C4520',
-  },
-  // The four-language app: English, Malayalam, Tamil and Hindi. Its name is a placeholder.
-  all: {
-    name: 'Bibles',
-    slug: 'bible-india',
-    package: 'org.riversresearch.bible.india',
-    icons: './assets/icons/all',
-    languages: ['en', 'ml', 'ta', 'hi'],
-    easProjectId: '',
-    splashBackground: '#FBF8F1',
-    splashBackgroundDark: '#15130F',
-    adaptiveBackground: '#6C4520',
-  },
-  ta: {
-    name: 'வேதாகமம்',
-    slug: 'bible-tamil',
-    package: 'org.riversresearch.bible.tamil',
-    icons: './assets/icons/ta',
-    languages: ['ta', 'en'],
-    easProjectId: '',
-    splashBackground: '#F4F7FB',
-    splashBackgroundDark: '#0F1319',
-    adaptiveBackground: '#6C4520',
-  },
 };
 
 // Typefaces built into the app (src/fonts.ts uses them by file name): the icons
-// (scripts/make-icon-font.py) and Hebrew in every edition, Malayalam only in the
-// Malayalam one, Tamil only in the Tamil one, and all three Indian scripts in the
-// four-language app.
+// (scripts/make-icon-font.py) and Hebrew. Swahili and English use the phone's own faces.
 const FONT = (pkg, file) => `./node_modules/@expo-google-fonts/${pkg}/${file.split('_')[1].replace('.ttf', '')}/${file}`;
 const ICONS = './assets/fonts/BibleIcons.ttf';
 const FONTS = {
-  en: [ICONS, FONT('noto-serif-hebrew', 'NotoSerifHebrew_500Medium.ttf')],
-  ml: [
-    ICONS,
-    FONT('noto-serif-hebrew', 'NotoSerifHebrew_500Medium.ttf'),
-    FONT('noto-sans-malayalam', 'NotoSansMalayalam_400Regular.ttf'),
-    FONT('noto-sans-malayalam', 'NotoSansMalayalam_700Bold.ttf'),
-    FONT('noto-serif-malayalam', 'NotoSerifMalayalam_400Regular.ttf'),
-    FONT('noto-serif-malayalam', 'NotoSerifMalayalam_700Bold.ttf'),
-  ],
-  ta: [
-    ICONS,
-    FONT('noto-serif-hebrew', 'NotoSerifHebrew_500Medium.ttf'),
-    FONT('noto-sans-tamil', 'NotoSansTamil_400Regular.ttf'),
-    FONT('noto-sans-tamil', 'NotoSansTamil_700Bold.ttf'),
-    FONT('noto-serif-tamil', 'NotoSerifTamil_400Regular.ttf'),
-    FONT('noto-serif-tamil', 'NotoSerifTamil_700Bold.ttf'),
-  ],
-  all: [
-    ICONS,
-    FONT('noto-serif-hebrew', 'NotoSerifHebrew_500Medium.ttf'),
-    FONT('noto-sans-malayalam', 'NotoSansMalayalam_400Regular.ttf'),
-    FONT('noto-sans-malayalam', 'NotoSansMalayalam_700Bold.ttf'),
-    FONT('noto-serif-malayalam', 'NotoSerifMalayalam_400Regular.ttf'),
-    FONT('noto-serif-malayalam', 'NotoSerifMalayalam_700Bold.ttf'),
-    FONT('noto-sans-tamil', 'NotoSansTamil_400Regular.ttf'),
-    FONT('noto-sans-tamil', 'NotoSansTamil_700Bold.ttf'),
-    FONT('noto-serif-tamil', 'NotoSerifTamil_400Regular.ttf'),
-    FONT('noto-serif-tamil', 'NotoSerifTamil_700Bold.ttf'),
-    FONT('noto-sans-devanagari', 'NotoSansDevanagari_400Regular.ttf'),
-    FONT('noto-sans-devanagari', 'NotoSansDevanagari_700Bold.ttf'),
-    FONT('noto-serif-devanagari', 'NotoSerifDevanagari_400Regular.ttf'),
-    FONT('noto-serif-devanagari', 'NotoSerifDevanagari_700Bold.ttf'),
-  ],
+  sw: [ICONS, FONT('noto-serif-hebrew', 'NotoSerifHebrew_500Medium.ttf')],
 };
 
 // Gradle evaluates this file again during a native build, without the shell
@@ -111,7 +44,7 @@ function editionFromGradleProperties() {
 }
 
 module.exports = ({ config }) => {
-  const edition = process.env.BIBLE_EDITION || editionFromGradleProperties() || 'en';
+  const edition = process.env.BIBLE_EDITION || editionFromGradleProperties() || 'sw';
   const e = EDITIONS[edition];
   if (!e) throw new Error(`Unknown BIBLE_EDITION "${edition}"; expected ${Object.keys(EDITIONS).join(' or ')}`);
   const plugins = (config.plugins || []).map((plugin) => {

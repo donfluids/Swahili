@@ -1,8 +1,8 @@
 # Book introductions: how they are written
 
 One file per book and language: `data/intros/<lang>/<book>.json`, book 1 (Genesis) to 66
-(Revelation), lang `en`, `ml` (Malayalam), `ta` (Tamil) or `hi` (Hindi). `scripts/lib/intros.mjs` checks
-them and puts them in the databases; the app shows one from the reader's menu (About this
+(Revelation), lang `en` or `sw` (Swahili; the Bible apps also have `ml`, `ta` and `hi`). `scripts/lib/intros.mjs` checks
+them and puts them in the database; the app shows one from the reader's menu (About this
 book), in the interface language.
 
 ## The file
@@ -85,3 +85,14 @@ they are; translate only the text values. The LORD (the divine name) is യഹ�
 both Bibles print it; "Lord" (Jesus, and the New Testament) is കർത്താവ് / கர்த்தர். God is
 ദൈവം / தேவன். Pronouns for God and Jesus are the respectful അവിടുന്ന് / அவர். Tamil gives every named person அவர் (Haman, Pharaoh and Diotrephes too, as modern Tamil prose does); only Satan is அவன். Dates: "ഏകദേശം എ.ഡി. 55–65" / "ஏறக்குறைய கி.பி.
 55–65" style, "ബി.സി." / "கி.மு." for BC.
+
+## Swahili
+
+Translated from the English file, faithfully and naturally, in plain modern standard
+Swahili. Names of people, places and books as the Swahili Unlocked Literal Bible spells
+them (`assets/db/bible-sw.db`, translation SWU); where it spells a name two ways, its
+commoner spelling. Abraham is Ibrahimu throughout. The LORD (the divine name) is Yahwe, as
+the ULB prints it; "Lord" (Adonai, Jesus, the New Testament) is Bwana; God is Mungu; the
+Holy Spirit Roho Mtakatifu. Swahili does not capitalise pronouns for God. Dates: "Karibu
+mwaka 55–65 B.K.", "Karibu mwaka 1446–1406 K.K.". Points for the reviewers are in
+`docs/swahili-review.md`.

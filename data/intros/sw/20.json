@@ -1,0 +1,83 @@
+{
+  "book": 20,
+  "name": "Mithali",
+  "facts": {
+    "author": "Hasa Sulemani, mwana wa Daudi na mfalme wa Israeli (1:1). Baadhi ya misemo inatoka kwa wenye hekima wengine, na kitabu kinamalizika kwa maneno ya Aguri (30:1) na ya Mfalme Lemueli (31:1).",
+    "date": "Karibu mwaka 970–700 K.K.",
+    "audience": "Vijana wa Israeli, na wote wanaotaka kuishi kwa hekima mbele za Mungu"
+  },
+  "about": [
+    "Mithali ni kitabu cha hekima kwa ajili ya maisha ya kila siku. Mungu alimpa Sulemani hekima kubwa, naye alinena maelfu ya mithali, nyingi kati yake zimekusanywa hapa. Kusudi la kitabu ni kuwapa wajinga na vijana hekima, ufahamu na busara (1:2-4).",
+    "Sura tisa za kwanza ni mafundisho ya baba kwa mwanawe. Hekima inaelezwa kama mwanamke anayeita barabarani na kuwakaribisha wote waje waishi, wakati mwanamke mpumbavu anawaongoza wageni wake kushuka kwenye mauti. Kisha zinafuata mamia ya misemo mifupi kuhusu kazi na uvivu, ulimi, fedha, urafiki, ndoa, hasira, kiburi na haki. Mkusanyiko wa baadaye ulinakiliwa na watu wa Mfalme Hezekia (25:1).",
+    "Kitabu kinafungwa kwa picha ya mwanamke mwema anayemcha Yahwe (31:10-31). Msingi wake unawekwa mwanzoni: kumcha Yahwe ni mwanzo wa maarifa (1:7)."
+  ],
+  "themes": [
+    {
+      "title": "Kumcha Yahwe",
+      "text": "Hekima ya kweli inaanza kwa kumheshimu Mungu na kumtumaini yeye badala ya kutegemea akili zetu wenyewe (3:5-6)."
+    },
+    {
+      "title": "Njia mbili",
+      "text": "Njia ya hekima inaongoza kwenye uzima, na njia ya upumbavu inaongoza kwenye maangamizi."
+    },
+    {
+      "title": "Hekima kwa maisha ya kila siku",
+      "text": "Mungu anajali jinsi tunavyofanya kazi, tunavyozungumza, tunavyotumia fedha, tunavyowatendea maskini na tunavyoishi majumbani mwetu."
+    },
+    {
+      "title": "Nguvu ya maneno",
+      "text": "Ulimi unaweza kuleta uponyaji au madhara, kwa hiyo mtu mwenye hekima hufikiri kabla ya kusema."
+    },
+    {
+      "title": "Hekima pamoja na Mungu tangu mwanzo",
+      "text": "Hekima inasema kwamba ilikuwa pamoja na Yahwe kabla ulimwengu haujaumbwa (8:22-31), na Wakristo wameona katika jambo hili picha ya Kristo."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:7",
+      "title": "Kusudi la kitabu: kumcha Yahwe"
+    },
+    {
+      "from": "1:8",
+      "to": "9:18",
+      "title": "Mafundisho ya baba: hekima na upumbavu vinaita"
+    },
+    {
+      "from": "10:1",
+      "to": "22:16",
+      "title": "Mithali za Sulemani"
+    },
+    {
+      "from": "22:17",
+      "to": "24:34",
+      "title": "Maneno ya wenye hekima"
+    },
+    {
+      "from": "25:1",
+      "to": "29:27",
+      "title": "Mithali za Sulemani zilizonakiliwa na watu wa Hezekia"
+    },
+    {
+      "from": "30:1",
+      "to": "30:33",
+      "title": "Maneno ya Aguri"
+    },
+    {
+      "from": "31:1",
+      "to": "31:9",
+      "title": "Maneno ya Mfalme Lemueli"
+    },
+    {
+      "from": "31:10",
+      "to": "31:31",
+      "title": "Mwanamke mwema"
+    }
+  ],
+  "keyVerses": [
+    "1:7",
+    "3:5-6",
+    "9:10"
+  ]
+}

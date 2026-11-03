@@ -134,7 +134,7 @@ export function SavedScreen({ books, onOpenRef, onWord }: Props) {
   const markText = (m: TextMark, color: string | undefined) => {
     const text = markedWords(m, markVerses);
     if (!text) return null;
-    const script = translationInfo(m.translation).script;
+    const script = null;
     // One block of the mark's colour: a colour behind the text itself leaves bands between the lines.
     return (
       <View style={[styles.markBlock, color ? { backgroundColor: color } : null]}>

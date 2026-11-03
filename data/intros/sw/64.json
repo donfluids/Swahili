@@ -1,0 +1,59 @@
+{
+  "book": 64,
+  "name": "3 Yohana",
+  "facts": {
+    "author": "Mtume Yohana, anayejiita mzee (1:1), kama kanisa la kwanza lilivyoamini.",
+    "date": "Karibu mwaka 85–95 B.K.",
+    "audience": "Gayo, rafiki Mkristo mpendwa sana wa Yohana na mshiriki wa kanisa la mahali fulani"
+  },
+  "about": [
+    "Hii ni barua ya binafsi kutoka kwa Yohana kwenda kwa rafiki yake Gayo. Yohana anaomba kwamba Gayo awe na afya njema ya mwili kama vile roho yake ilivyo njema (1:2), na anasema kwamba hakuna kinachompa furaha kubwa kuliko kusikia kwamba watoto wake wanaenenda katika kweli (1:4).",
+    "Wahubiri waliokuwa wakisafiri walikuwa wametoka kwa ajili ya jina la Kristo, bila kupokea chochote kutoka kwa watu wa Mataifa. Gayo alikuwa amewakaribisha na kuwasaidia katika safari yao, na Yohana anamsifu kwa hilo, kwa sababu kwa kuwasaidia watu kama hao, waumini hufanya kazi pamoja kwa ajili ya kweli (1:5-8).",
+    "Lakini katika kanisa hilohilo mtu mmoja aitwaye Diotrofe alipenda kuwa wa kwanza. Alikataa kuyakubali mamlaka ya Yohana, alimsema vibaya, hakuwakaribisha ndugu waliokuwa wakisafiri, na hata aliwafukuza kanisani wale waliowakaribisha (1:9-10). Yohana anamwambia Gayo aige yaliyo mema, si yaliyo mabaya, na anamsifu Demetrio, ambaye kila mtu anamshuhudia mema. Barua hii inatuonyesha watu watatu: mmoja wa kuigwa, mmoja wa kuepukwa, na mmoja wa kuaminiwa."
+  ],
+  "themes": [
+    {
+      "title": "Kuenenda katika kweli",
+      "text": "Furaha kuu ya Yohana ni kusikia kwamba wale aliowafundisha wanaishi kulingana na kweli."
+    },
+    {
+      "title": "Ukarimu",
+      "text": "Kuwakaribisha na kuwasaidia wale wanaomtumikia Bwana huwafanya waumini kuwa washirika katika kazi ya injili."
+    },
+    {
+      "title": "Kiburi kanisani",
+      "text": "Diotrofe anaonyesha jinsi kupenda madaraka kunavyoweza kulidhuru kanisa; waumini wanapaswa kuiga yaliyo mema, kwa maana yeyote atendaye mema ni wa Mungu (1:11)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:4",
+      "title": "Salamu, na furaha kwa sababu Gayo anaenenda katika kweli"
+    },
+    {
+      "from": "1:5",
+      "to": "1:8",
+      "title": "Sifa kwa Gayo kwa kuwakaribisha wahubiri wasafiri"
+    },
+    {
+      "from": "1:9",
+      "to": "1:10",
+      "title": "Tabia ya kiburi ya Diotrofe"
+    },
+    {
+      "from": "1:11",
+      "to": "1:12",
+      "title": "Igeni yaliyo mema; neno jema kuhusu Demetrio"
+    },
+    {
+      "from": "1:13",
+      "to": "1:14",
+      "title": "Tumaini la kuwatembelea, na salamu"
+    }
+  ],
+  "keyVerses": [
+    "1:4",
+    "1:11"
+  ]
+}

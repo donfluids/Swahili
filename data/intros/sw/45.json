@@ -1,0 +1,79 @@
+{
+  "book": 45,
+  "name": "Warumi",
+  "facts": {
+    "author": "Mtume Paulo (1:1). Tertio aliuandika waraka huu Paulo alipokuwa akiutamka (16:22).",
+    "date": "Karibu mwaka 57 B.K.",
+    "audience": "Waumini wa Rumi, Wayahudi na watu wa Mataifa, kanisa ambalo Paulo alikuwa bado hajalitembelea"
+  },
+  "about": [
+    "Paulo aliwaandikia Wakristo wa Rumi akiwa Korintho, karibu na mwisho wa safari yake ya tatu, alipokuwa karibu kupeleka msaada kwa waumini maskini wa Yerusalemu (15:25). Alitarajia kuwatembelea Warumi akiwa njiani kwenda Hispania, na katika waraka huu aliieleza injili aliyoihubiri kwa ukamilifu kuliko katika waraka mwingine wowote.",
+    "Kiini cha waraka huu ni injili, iliyo uweza wa Mungu wa kumwokoa kila mtu anayeamini (1:16-17). Paulo anaonyesha kwamba watu wote, Wayahudi na watu wa Mataifa, wametenda dhambi na kupungukiwa na utukufu wa Mungu (3:23). Hata hivyo Mungu huwahesabia wenye dhambi haki bure kwa neema yake kupitia imani katika Kristo, aliyekufa kwa ajili yetu tulipokuwa bado wenye dhambi (5:8). Ibrahimu mwenyewe alihesabiwa haki kwa imani.",
+    "Kisha Paulo anaeleza maisha mapya ya wale walioungana na Kristo na wanaoongozwa na Roho, na anauliza Mungu ana mpango gani kwa Israeli. Anamalizia kwa mafundisho ya vitendo kuhusu kuishi kama dhabihu kwa Mungu, kupendana na kuwachukulia walio dhaifu."
+  ],
+  "themes": [
+    {
+      "title": "Wote wametenda dhambi",
+      "text": "Wayahudi na watu wa Mataifa wote wana hatia mbele za Mungu, na hakuna mtu anayeweza kuhesabiwa haki kwa kuishika sheria."
+    },
+    {
+      "title": "Kuhesabiwa haki kwa imani",
+      "text": "Mungu huwahesabia wenye dhambi haki kama zawadi ya bure kupitia imani katika Yesu Kristo."
+    },
+    {
+      "title": "Maisha katika Roho",
+      "text": "Walio ndani ya Kristo wamewekwa huru mbali na dhambi na mauti, na hakuna kitu kinachoweza kuwatenga na upendo wa Mungu (8:38-39)."
+    },
+    {
+      "title": "Mpango wa Mungu ulio mwaminifu",
+      "text": "Mungu hajaisahau Israeli, na rehema yake inawafikia Wayahudi na watu wa Mataifa pia."
+    },
+    {
+      "title": "Dhabihu iliyo hai",
+      "text": "Kwa sababu ya rehema za Mungu, waumini humtolea maisha yao yote na kupendana (12:1)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:17",
+      "title": "Salamu na kiini cha waraka: injili ni uweza wa Mungu wa kuokoa"
+    },
+    {
+      "from": "1:18",
+      "to": "3:20",
+      "title": "Ulimwengu wote una hatia mbele za Mungu"
+    },
+    {
+      "from": "3:21",
+      "to": "5:21",
+      "title": "Kuhesabiwa haki mbele za Mungu kwa imani katika Kristo"
+    },
+    {
+      "from": "6:1",
+      "to": "8:39",
+      "title": "Uhuru mbali na dhambi na maisha mapya katika Roho"
+    },
+    {
+      "from": "9:1",
+      "to": "11:36",
+      "title": "Mpango wa Mungu kwa Israeli na kwa mataifa"
+    },
+    {
+      "from": "12:1",
+      "to": "15:13",
+      "title": "Kuishi kama dhabihu kwa Mungu na kupendana"
+    },
+    {
+      "from": "15:14",
+      "to": "16:27",
+      "title": "Mipango ya Paulo na salamu kwa marafiki"
+    }
+  ],
+  "keyVerses": [
+    "1:16",
+    "3:23-24",
+    "5:8",
+    "12:1"
+  ]
+}

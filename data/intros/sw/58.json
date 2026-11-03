@@ -1,0 +1,84 @@
+{
+  "book": 58,
+  "name": "Wahebrania",
+  "facts": {
+    "author": "Hajulikani; waraka hautaji jina la mwandishi. Wengi katika kanisa la kwanza waliamini kwamba Paulo ndiye aliyeuandika, na wengine walipendekeza Barnaba, Apolo au Luka. Mwandishi alimfahamu Timotheo vizuri (13:23).",
+    "date": "Kabla ya mwaka 70 B.K., huenda karibu mwaka 64–69 B.K., wakati hekalu la Yerusalemu lilipokuwa bado limesimama",
+    "audience": "Wakristo Wayahudi waliokuwa wakiteseka na waliojaribiwa kumwacha Kristo na kurudi kwenye njia za zamani za sheria"
+  },
+  "about": [
+    "Kitabu hiki kinafanana zaidi na mahubiri kuliko barua; mwandishi anakiita neno la kutia moyo (13:22). Kiliandikiwa waumini Wayahudi waliokuwa wamesimama imara katika nyakati ngumu, lakini sasa walikuwa wakichoka na walijaribiwa kumwacha Kristo na kurudi kwenye hekalu, makuhani na dhabihu za agano la kale.",
+    "Mwandishi anaonyesha kwamba Yesu ni bora kuliko kila kitu kilichokuja kabla yake. Zamani Mungu alisema kupitia manabii, lakini sasa amesema kupitia Mwana wake (1:1-2). Yesu ni mkuu kuliko malaika na mkuu kuliko Musa. Yeye ndiye Kuhani Mkuu kwa mfumo wa Melkizedeki, aliyejitoa mwenyewe mara moja tu kwa ajili ya wote, na analeta agano lililo bora zaidi. Dhabihu za zamani zilikuwa vivuli tu; damu yake huiondoa dhambi kweli.",
+    "Kwa hiyo wasomaji hawapaswi kuchukuliwa mbali na kweli. Kwa maonyo mazito na kwa maneno ya kutia moyo yenye upendo, mwandishi anawaita wamkaribie Mungu, washike imara, na wapige mbio kwa saburi wakimtazama Yesu, kama wanaume na wanawake wa imani wa zamani (11:1-40)."
+  ],
+  "themes": [
+    {
+      "title": "Kristo ni bora",
+      "text": "Yesu, Mwana wa Mungu, yuko juu ya malaika, juu ya Musa na juu ya makuhani wa ukoo wa Haruni, na agano lake ni bora kuliko lile la kale."
+    },
+    {
+      "title": "Kuhani wetu Mkuu",
+      "text": "Yesu anauelewa udhaifu wetu, kwa maana alijaribiwa kwa kila namna, lakini bila kutenda dhambi (4:15), naye anaishi milele ili kuwaombea watu wake (7:25)."
+    },
+    {
+      "title": "Dhabihu moja kamilifu",
+      "text": "Kristo alijitoa mwenyewe mara moja kwa ajili ya wote, kwa hiyo hakuna sadaka nyingine ya dhambi inayohitajika (10:12-18)."
+    },
+    {
+      "title": "Imani inayovumilia",
+      "text": "Imani humtegemea Mungu kwa yale yanayotarajiwa ambayo bado hayajaonekana, kama walivyofanya Habili, Nuhu, Ibrahimu, Musa na wengine wengi (11:1)."
+    },
+    {
+      "title": "Msirudi nyuma",
+      "text": "Mwandishi anaonya dhidi ya kuchukuliwa mbali, na anawaita waumini walishike kwa uthabiti tumaini lao hadi mwisho."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:18",
+      "title": "Neno la mwisho la Mungu kupitia Mwana wake, aliye mkuu kuliko malaika"
+    },
+    {
+      "from": "3:1",
+      "to": "4:13",
+      "title": "Yesu ni mkuu kuliko Musa; kuingia katika raha ya Mungu"
+    },
+    {
+      "from": "4:14",
+      "to": "7:28",
+      "title": "Yesu, Kuhani wetu Mkuu kwa mfumo wa Melkizedeki"
+    },
+    {
+      "from": "8:1",
+      "to": "10:18",
+      "title": "Agano lililo bora, patakatifu palipo bora na dhabihu iliyo bora"
+    },
+    {
+      "from": "10:19",
+      "to": "10:39",
+      "title": "Tumkaribie Mungu na tushike imara; onyo na tumaini"
+    },
+    {
+      "from": "11:1",
+      "to": "11:40",
+      "title": "Wanaume na wanawake wa imani"
+    },
+    {
+      "from": "12:1",
+      "to": "12:29",
+      "title": "Tupige mbio tukimtazama Yesu; Mungu huwarudi watoto wake kwa upendo"
+    },
+    {
+      "from": "13:1",
+      "to": "13:25",
+      "title": "Kuishi kwa kumpendeza Mungu; baraka na salamu"
+    }
+  ],
+  "keyVerses": [
+    "1:1-2",
+    "4:15-16",
+    "11:1",
+    "12:2"
+  ]
+}

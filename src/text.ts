@@ -20,7 +20,7 @@ export function parseSegments(verse: Pick<VerseRow, 'book' | 'text' | 'tags'>): 
   const out: Segment[] = [];
   let pos = 0;
   for (const triple of tags.split(' ')) {
-    // gap,length,number — or number+number… for a Malayalam compound, the chief word first.
+    // gap,length,number — or number+number… for a compound, the chief word first.
     const [gapText, lenText, nums = ''] = triple.split(',');
     const gap = Number(gapText);
     const len = Number(lenText);
@@ -41,7 +41,7 @@ export function bookName(books: Book[], id: number, translation?: TranslationId)
   if (!book) return `Book ${id}`;
   // English Bibles use the books table's names (the same test as isEnglish in types.ts;
   // this file has no runtime imports, so scripts can load it directly).
-  if (translation && translation !== 'KJV' && translation !== 'WEB' && translation !== 'BSB') return book.names[translation] ?? book.name;
+  if (translation && translation !== 'KJV' && translation !== 'BSB') return book.names[translation] ?? book.name;
   return book.name;
 }
 
@@ -50,17 +50,17 @@ export function formatRef(books: Book[], ref: Ref, translation?: TranslationId):
   // One psalm is "Psalm 23:1", though the book is Psalms.
   const name = full === 'Psalms' ? 'Psalm' : full;
   // A Psalm's title is verse 0; it is named in the language of the book name.
-  const title = translation === 'MAL' ? '(ശീർഷകം)' : translation === 'TAM' ? '(தலைப்பு)' : translation === 'HIN' ? '(शीर्षक)' : '(title)';
+  const title = translation && translation !== 'KJV' && translation !== 'BSB' ? '(kichwa)' : '(title)';
   return ref.verse === 0 ? `${name} ${ref.chapter} ${title}` : `${name} ${ref.chapter}:${ref.verse}`;
 }
 
 /**
  * A verse as copied or shared: the text, then the reference and the Bible on a line of
- * their own. English Bibles go by their usual short names; the Malayalam by its name, the Tamil and
- * Hindi by their initials.
+ * their own. English Bibles go by their usual short names, the Swahili by theirs (ULB, Neno,
+ * Neno 2024).
  */
 export function shareText(books: Book[], verse: VerseRow, translation: TranslationId, text: string): string {
-  const bible = translation === 'MAL' ? 'സത്യവേദപുസ്തകം' : translation === 'TAM' || translation === 'HIN' ? 'IRV' : translation;
+  const bible = translation === 'SWU' ? 'ULB' : translation === 'SWN' ? 'Neno' : translation === 'SWM' ? 'Neno 2024' : translation;
   return `${text}\n— ${formatRef(books, verse, translation)} (${bible})`;
 }
 

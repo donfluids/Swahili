@@ -20,12 +20,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { AppSwitch } from '../components/AppSwitch';
 import { Icon, IconButton } from '../components/Icon';
 import type { IconName } from '../components/Icon';
-import { isMultilingual, pairedBible, useEdition } from '../edition';
+import { hasSeveralBibles, pairedBible, useEdition } from '../edition';
 import { languageScript, scriptOf, scriptureFont } from '../fonts';
 import type { Script } from '../fonts';
 import { shortBookName } from '../shortNames';
 import { PassagePicker } from '../components/PassagePicker';
-import { LANGUAGE_WORD, NATIVE_BIBLE_NAME, bibleName, englishName, translationName, useT } from '../i18n';
+import { NATIVE_BIBLE_NAME, bibleName, englishName, shortName, translationName, useT } from '../i18n';
 import { InterlinearVerse } from '../components/InterlinearVerse';
 import { MarkableVerse } from '../components/MarkableVerse';
 import type { WordSlot } from '../components/MarkableVerse';
@@ -45,7 +45,7 @@ import { useTheme } from '../theme';
 import { useWriteToUs } from '../writeToUs';
 import { FEEDBACK_NEVER, feedbackCardDue, feedbackLater } from '../feedback';
 import type { Theme } from '../theme';
-import { HIGHLIGHT_COLORS, isEnglish, isIndian, translationInfo } from '../types';
+import { HIGHLIGHT_COLORS, isEnglish, translationInfo } from '../types';
 import type { Book, HighlightColor, Note, OriginalWord, Ref, TextPoint, TranslationId, VerseRow, WordPick } from '../types';
 
 // Width at each screen edge where a horizontal swipe belongs to the system back gesture.
@@ -225,7 +225,7 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
     hideCantillation,
     tipSeen,
     feedbackDue,
-    hindiNoteSeen,
+    nenoNoteSeen,
     bookmarks,
     highlights,
     notes: userNotes,
@@ -248,13 +248,12 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
   const [markTool, setMarkTool] = useState<HighlightColor | 'erase' | null>(null);
   const marking = markTool !== null;
   // On a wide screen the edition's own Bible stands on the left and the KJV beside it,
-  // verse by verse (Settings: side by side). Marker mode keeps one column. In the
-  // four-language app the Indian Bible is the one open or read last (src/edition.ts).
-  const multilingual = isMultilingual(edition);
-  const nativeBible = pairedBible(edition, translation, settings.lastIndian, settings.language);
-  // Side by side pairs an Indian Bible with an English one; in the four-language app, before
-  // any Indian Bible has been read, the first of them.
-  const sideBible = nativeBible ?? edition.translations.find((id) => isIndian(id)) ?? null;
+  // verse by verse (Settings: side by side). Marker mode keeps one column. The
+  // Swahili Bible is the one open, or the one read last (src/edition.ts).
+  const multilingual = hasSeveralBibles(edition);
+  const nativeBible = pairedBible(edition, translation, settings.lastSwahili);
+  // Side by side pairs a Swahili Bible with the KJV.
+  const sideBible: TranslationId | null = nativeBible;
   const sideBySide = !!sideBible && settings.sideBySide && windowWidth >= SIDE_BY_SIDE_MIN_WIDTH && !marking;
   // A plain reader without the study tools: no tappable words, no Hebrew or Greek, and the
   // verse menu without cross references, parallels, Compare and Words in this verse.
@@ -598,7 +597,7 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
     if (index < 0) return;
     listRef.current?.scrollToIndex({ index, viewPosition: 0.2, animated: true });
   }, [readingVerse, following, items]);
-  const NO_VOICE = { english: 'noEnglishVoice', malayalam: 'noMalayalamVoice', tamil: 'noTamilVoice', hindi: 'noHindiVoice' } as const;
+  const NO_VOICE = { english: 'noEnglishVoice', swahili: 'noSwahiliVoice' } as const;
   const startReading = async (from?: number) => {
     setActions(null);
     if (marking) setMarkTool(null);
@@ -902,15 +901,13 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
   // Cycle through the translations bundled in this edition, staying on the verse at the
   // top of the screen (which can have another number, or chapter, in the other translation).
   const native = nativeBible;
-  // The four-language app has six Bibles: its pill opens a list instead of stepping through them.
+  // Five Bibles: the pill opens a list instead of stepping through them.
   const [choosingBible, setChoosingBible] = useState(false);
-  // A Bible's short name on the pill: the English ones by their initials, the Indian ones by
-  // their language in the interface language (MAL, or മലയാളം with the Malayalam interface).
-  const bibleLabel = (id: TranslationId) =>
-    id === 'MAL' ? t('bibleMalayalam') : id === 'TAM' ? t('bibleTamil') : id === 'HIN' ? t('bibleHindi') : id;
-  // In the four-language app the pill names an Indian Bible's language in its own script (മലയാളം).
-  const pillLabel = (id: TranslationId) => LANGUAGE_WORD[id] ?? id;
-  const pillFont = (id: TranslationId) => scriptureFont(translationInfo(id).script ?? null, false, true);
+  // A Bible's short name on the pill: ULB, Neno, Neno 2024, KJV, BSB.
+  const bibleLabel = (id: TranslationId) => shortName(id);
+  // The pill names the Bible open by its short name (ULB, Neno, KJV).
+  const pillLabel = (id: TranslationId) => shortName(id);
+  const pillFont = (id: TranslationId) => scriptureFont(null, false, true);
   const switchTranslation = async (next: TranslationId) => {
     if (next === translation) return;
     const seen = firstVisible.current;
@@ -1053,7 +1050,7 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
     return () => sub.remove();
   }, []);
 
-  const scriptFont = scriptureFont(translationInfo(translation).script, settings.serif) ?? theme.font;
+  const scriptFont = scriptureFont(null, settings.serif) ?? theme.font;
 
   const toggleExpanded = useCallback((verse: number) => {
     setExpanded((prev) => {
@@ -1083,7 +1080,7 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
         return (
           <Text
             accessibilityRole="header"
-            style={[styles.heading, { color: theme.muted, fontSize: fontSize - 3, fontFamily: scriptFont }, !!translationInfo(translation).script && styles.headingMalayalam]}
+            style={[styles.heading, { color: theme.muted, fontSize: fontSize - 3, fontFamily: scriptFont }]}
           >
             {item.text}
           </Text>
@@ -1218,8 +1215,7 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
   const onContentSizeChange = useCallback((_w: number, h: number) => {
     contentHeight.current = h;
   }, []);
-  // The cards above the text follow the reader's size, a little smaller, with room for
-  // Malayalam, Tamil and Hindi vowel signs.
+  // The cards above the text follow the reader's size, a little smaller.
   const cardSize = Math.max(15, Math.min(fontSize - 3, 26));
   const cardText = { fontSize: cardSize, lineHeight: Math.round(cardSize * (languageScript(settings.language) ? 1.6 : 1.4)) };
   const listHeader = useMemo(
@@ -1252,12 +1248,12 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
             </View>
           </View>
         )}
-        {/* Once, when the Hindi opens: its words are not linked yet. */}
-        {tipSeen && !marking && translation === 'HIN' && !hindiNoteSeen ? (
+        {/* Once, when a Neno Bible opens: its words are not linked. */}
+        {tipSeen && !marking && !translationInfo(translation).tagged && !nenoNoteSeen ? (
           <View style={[styles.tip, { backgroundColor: theme.accentSoft, borderColor: theme.border }]}>
-            <Text style={[styles.tipText, cardText, { color: theme.text }]}>{t('hindiNote')}</Text>
+            <Text style={[styles.tipText, cardText, { color: theme.text }]}>{t('nenoNote')}</Text>
             <View style={styles.tipButtons}>
-              <Pressable onPress={() => update({ hindiNoteSeen: true })} accessibilityRole="button" style={styles.tipButton}>
+              <Pressable onPress={() => update({ nenoNoteSeen: true })} accessibilityRole="button" style={styles.tipButton}>
                 <Text style={[styles.tipDismiss, { color: theme.accent }]}>{t('gotIt')}</Text>
               </Pressable>
             </View>
@@ -1308,7 +1304,7 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
       </>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [tipSeen, feedbackDue, hindiNoteSeen, writeToUs, theme, translation, t, update, marking, cardSize, cardText.lineHeight, sideBySide, besideTranslation, settings.language, interlinear, interlinearMode, book?.testament, position.chapter, position.book, books, settings.serif, onOpenIntro, study, onOpenHowTo],
+    [tipSeen, feedbackDue, nenoNoteSeen, writeToUs, theme, translation, t, update, marking, cardSize, cardText.lineHeight, sideBySide, besideTranslation, settings.language, interlinear, interlinearMode, book?.testament, position.chapter, position.book, books, settings.serif, onOpenIntro, study, onOpenHowTo],
   );
   const onScrollToIndexFailed = useCallback((info: { index: number; averageItemLength: number }) => {
     // The row is not measured yet: get near it, then retry with the same placement.
@@ -1344,7 +1340,7 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
             name={titleBookName}
             short={shortBookName(position.book, translation)}
             chapter={position.chapter}
-            script={translationInfo(translation).script ?? null}
+            script={null}
             onPress={() => setPicking(true)}
             accessibilityLabel={t('choosePassage', { title })}
             trailing={
@@ -1519,11 +1515,11 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
       </SimpleSheet>
 
       <SimpleSheet visible={choosingBible} title={t('chooseBible')} onClose={() => setChoosingBible(false)}>
-        {/* The English Bibles, then the Indian ones, each under its own name with the English under it. */}
+        {/* The English Bibles, then the Swahili ones, each under its own name with the English under it. */}
         {(
           [
             [t('englishBibles'), edition.translations.filter(isEnglish)],
-            [t('indianBibles'), edition.translations.filter((id) => !isEnglish(id))],
+            [t('swahiliBibles'), edition.translations.filter((id) => !isEnglish(id))],
           ] as [string, TranslationId[]][]
         )
           .filter(([, ids]) => ids.length)
@@ -1540,8 +1536,8 @@ export function ReaderScreen({ books, jumpTo, onBack, backLabel, onOpenSearch, o
                   icon={id === translation ? 'check' : 'menu_book'}
                   selected={id === translation}
                   label={NATIVE_BIBLE_NAME[id] ?? translationName(settings.language, id)}
-                  labelFont={pillFont(id) ? scriptureFont(translationInfo(id).script ?? null, false) : undefined}
-                  detail={isEnglish(id) ? `${settings.language === 'en' ? 'English' : t('bibleEnglish')} · ${id}` : `${LANGUAGE_WORD[id]} · ${englishName(id)}`}
+                  labelFont={pillFont(id) ? scriptureFont(null, false) : undefined}
+                  detail={isEnglish(id) ? `${settings.language === 'en' ? 'English' : t('bibleEnglish')} · ${id}` : englishName(id)}
                   onPress={() => {
                     setChoosingBible(false);
                     switchTranslation(id);
@@ -1836,8 +1832,8 @@ function ReaderTitle({ name, short, chapter, script, trailing, onPress, accessib
   const avail = showArrow ? room - ARROW_WIDTH : room;
   // A couple of pixels' margin, so rounding never leaves the name a hair too wide.
   const scale = measured && needed > avail && needed > 0 ? Math.max(MIN_TITLE_SCALE, Math.floor(((avail - 2) / needed) * 100) / 100) : 1;
-  const baseSize = script ? 20 : 22;
-  const fontStyle = [styles.title, { color: theme.text }, !!script && { fontFamily: scriptureFont(script, false, true), fontWeight: 'normal' as const, fontSize: 20 }];
+  const baseSize = 22;
+  const fontStyle = [styles.title, { color: theme.text }];
   // Both pieces get the same line height, so a shrunk name stays level with its number.
   const shownStyle = [fontStyle, scale < 1 && { fontSize: baseSize * scale, lineHeight: Math.round(baseSize * 1.5) }];
   return (
@@ -2146,8 +2142,6 @@ const styles = StyleSheet.create({
   aboutText: { fontSize: 14, fontWeight: '500' },
   sheetGroup: { fontSize: 13, fontWeight: '600', marginTop: 10, marginBottom: 2 },
   heading: { fontWeight: '700', letterSpacing: 1, marginTop: 14, marginBottom: 2 },
-  // Letter spacing breaks up Malayalam conjuncts on some phones.
-  headingMalayalam: { letterSpacing: 0 },
   nav: { fontSize: 16, fontWeight: '600' },
   arrow: { position: 'absolute', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   titleRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
@@ -2193,7 +2187,7 @@ const styles = StyleSheet.create({
   swatchRow: { flexDirection: 'row', alignItems: 'center', gap: 14, marginBottom: 14 },
   swatch: { width: 36, height: 36, borderRadius: 18, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
   actionButtons: { flexDirection: 'row', justifyContent: 'space-between', columnGap: 4, marginBottom: 16 },
-  // Four share the row; a long Malayalam or Tamil label takes two lines instead of being cut.
+  // Four share the row; a long label takes two lines instead of being cut.
   actionButton: { flex: 1, maxWidth: 96, alignItems: 'center', gap: 6, paddingVertical: 4, borderRadius: 12, overflow: 'hidden' },
   actionIcon: { width: 56, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   actionLabel: { fontSize: 12, fontWeight: '500', textAlign: 'center' },

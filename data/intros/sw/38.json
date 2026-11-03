@@ -1,0 +1,75 @@
+{
+  "book": 38,
+  "name": "Zekaria",
+  "facts": {
+    "author": "Zekaria mwana wa Berekia, mwana wa Ido (1:1), nabii na kuhani aliyerudi kutoka Babeli. Alifanya kazi pamoja na Hagai, naye aliandika kitabu chote.",
+    "date": "Karibu mwaka 520–480 K.K.",
+    "audience": "Wayahudi waliokuwa wamerudi Yerusalemu ili kulijenga upya hekalu"
+  },
+  "about": [
+    "Zekaria alianza kuhubiri miezi miwili baada ya Hagai, katika mwaka wa pili wa mfalme Dario (1:1). Kama Hagai, aliwatia moyo watu wamalize kulijenga upya hekalu, na akawaita wamrudie Yahwe ili naye awarudie (1:3).",
+    "Katika usiku mmoja Zekaria aliona maono manane: wapanda farasi kati ya miti ya mihadasi, pembe na mafundi, mtu mwenye kamba ya kupimia, Yoshua kuhani mkuu akivikwa mavazi safi, kinara cha taa cha dhahabu na mizeituni miwili, kitabu kinachoruka, mwanamke ndani ya kikapu, na magari manne ya vita. Ujumbe wa maono hayo ulikuwa kwamba Mungu angeshughulika na adui za watu wake, angeiondoa dhambi yao na kuimaliza nyumba yake, si kwa nguvu za kibinadamu bali kwa Roho wake (4:6).",
+    "Sura za mwisho zinatazama mbali sana mbele. Mfalme wa Sayuni atakuja kwake, mnyenyekevu na amepanda punda (9:9). Mchungaji atauzwa kwa vipande thelathini vya fedha (11:12) na kupigwa (13:7), na watu watamtazama yeye waliyemchoma (12:10). Mwishowe Yahwe atakuwa Mfalme juu ya dunia yote (14:9)."
+  ],
+  "themes": [
+    {
+      "title": "Mrudieni Yahwe",
+      "text": "Mungu anawaita watu wake wasirudie dhambi za baba zao bali wamgeukie kwa mioyo ya kweli."
+    },
+    {
+      "title": "Kwa Roho wa Mungu",
+      "text": "Hekalu litamalizika, si kwa nguvu za kibinadamu bali kwa Roho wa Yahwe."
+    },
+    {
+      "title": "Mfalme na Mchungaji anayekuja",
+      "text": "Zekaria anasema juu ya Masihi kuliko manabii wengi: Tawi, Mfalme mnyenyekevu, Mchungaji aliyechomwa."
+    },
+    {
+      "title": "Yahwe atatawala",
+      "text": "Mataifa yatakuja kuabudu Yerusalemu, na Yahwe atakuwa Mfalme juu ya dunia yote."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:6",
+      "title": "Wito wa kumrudia Yahwe"
+    },
+    {
+      "from": "1:7",
+      "to": "6:8",
+      "title": "Maono manane ya usiku"
+    },
+    {
+      "from": "6:9",
+      "to": "6:15",
+      "title": "Yoshua kuhani mkuu anavikwa taji: Tawi"
+    },
+    {
+      "from": "7:1",
+      "to": "8:23",
+      "title": "Swali kuhusu kufunga; ahadi za baraka kwa Sayuni"
+    },
+    {
+      "from": "9:1",
+      "to": "11:17",
+      "title": "Mfalme anayekuja, na wachungaji wema na wapumbavu"
+    },
+    {
+      "from": "12:1",
+      "to": "13:9",
+      "title": "Yerusalemu unaokolewa na kutakaswa; yule aliyechomwa anaombolezwa"
+    },
+    {
+      "from": "14:1",
+      "to": "14:21",
+      "title": "Siku ya Yahwe: Yahwe ni Mfalme juu ya dunia yote"
+    }
+  ],
+  "keyVerses": [
+    "4:6",
+    "9:9",
+    "12:10",
+    "14:9"
+  ]
+}

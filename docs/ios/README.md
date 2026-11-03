@@ -1,3 +1,5 @@
+> **Swahili app:** this page comes from the Bible apps (donfluids/Bible) and still describes them. The steps are the same for Biblia (`org.riversresearch.bible.swahili`, `BIBLE_EDITION=sw`, EAS profile `ios-sw`); its own listing text, screenshots and privacy page are still to be written.
+
 # iPhone apps: from here to the App Store
 
 The apps build for iPhone from this same code: **Bible** (`org.riversresearch.bible`),

@@ -1,21 +1,13 @@
-// Where a search matched in a verse. No runtime imports beyond the search patterns, so
-// scripts/test-logic.mts can check it.
-import { hindiPattern } from './hindiSearch';
-import { malayalamPattern } from './malayalamSearch';
+// Where a search matched in a verse. No runtime imports, so scripts/test-logic.mts can check it.
 
 /**
  * Character ranges of `query` inside `text`, for marking search results: ignoring case and
- * apostrophe style, and Malayalam and Hindi spelling variants as their searches do.
+ * apostrophe style (ng'ombe, ngʼombe, ng’ombe), as the search does.
  */
 export function matchRanges(text: string, query: string): [number, number][] {
-  const pattern = malayalamPattern(query) ?? hindiPattern(query);
-  if (pattern) {
-    const re = new RegExp(pattern.source, 'g');
-    return [...text.matchAll(re)].filter((m) => m[0]).map((m) => [m.index, m.index + m[0].length]);
-  }
-  const q = query.trim().replace(/\s+/g, ' ').toLowerCase().replace(/[’‘]/g, "'");
+  const q = query.trim().replace(/\s+/g, ' ').toLowerCase().replace(/[’‘ʼ]/g, "'");
   if (!q) return [];
-  const t = text.toLowerCase().replace(/[’‘]/g, "'");
+  const t = text.toLowerCase().replace(/[’‘ʼ]/g, "'");
   if (t.length !== text.length) return []; // case folding changed lengths; skip rather than mis-highlight
   const out: [number, number][] = [];
   let i = t.indexOf(q);

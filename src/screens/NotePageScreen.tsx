@@ -247,7 +247,7 @@ export function NotePageScreen({ id, isNew, books, onOpenRef, onBack }: Props) {
   const fontSize = Math.min(settings.fontSize, 22);
   const lineHeight = Math.round(fontSize * 1.55);
   const verseSize = Math.max(14, fontSize - 2);
-  const scriptFont = scriptureFont(translationInfo(translation).script, settings.serif);
+  const scriptFont = scriptureFont(null, settings.serif);
   const textFont = (text: string) => scriptureFont(scriptOf(text) ?? (text.trim() ? null : uiScript), settings.serif);
 
   const deletePage = () => {

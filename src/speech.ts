@@ -7,12 +7,12 @@ import { voicesFor } from './voiceLabels';
 import type { VoiceOption } from './voiceLabels';
 
 export type OriginalLanguage = 'hebrew' | 'greek';
-export type SpokenLanguage = 'english' | 'malayalam' | 'tamil' | 'hindi';
+export type SpokenLanguage = 'english' | 'swahili';
 export type VoiceLanguage = OriginalLanguage | SpokenLanguage;
 
-export const LANGUAGE: Record<VoiceLanguage, string> = { hebrew: 'he-IL', greek: 'el-GR', english: 'en', malayalam: 'ml-IN', tamil: 'ta-IN', hindi: 'hi-IN' };
+export const LANGUAGE: Record<VoiceLanguage, string> = { hebrew: 'he-IL', greek: 'el-GR', english: 'en', swahili: 'sw-KE' };
 // Older Android engines name Hebrew "iw".
-const CODES: Record<VoiceLanguage, string[]> = { hebrew: ['he', 'iw'], greek: ['el'], english: ['en'], malayalam: ['ml'], tamil: ['ta'], hindi: ['hi'] };
+const CODES: Record<VoiceLanguage, string[]> = { hebrew: ['he', 'iw'], greek: ['el'], english: ['en'], swahili: ['sw'] };
 
 let voices: Promise<Speech.Voice[]> | null = null;
 

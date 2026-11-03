@@ -1,0 +1,69 @@
+{
+  "book": 50,
+  "name": "Wafilipi",
+  "facts": {
+    "author": "Mtume Paulo, akiandika pamoja na Timotheo (1:1).",
+    "date": "Karibu mwaka 61–62 B.K.",
+    "audience": "Kanisa la Filipi, kanisa la kwanza ambalo Paulo alilianzisha Ulaya, pamoja na waangalizi na mashemasi wake (1:1)"
+  },
+  "about": [
+    "Paulo aliuandika waraka huu wenye upendo mwingi akiwa gerezani, huenda huko Rumi, ambako hata walinzi wa ikulu walisikia habari za Kristo kupitia kwake (1:13). Waumini wa Filipi walikuwa wamemtuma Epafradito na zawadi ya kumsaidia (4:18), naye Paulo aliandika ili kuwashukuru na kuwaeleza hali yake.",
+    "Ingawa Paulo alikuwa amefungwa minyororo na hakujua kama angeishi au angekufa, furaha inaonekana katika waraka mzima. Kwake, kuishi ni Kristo na kufa ni faida (1:21). Analihimiza kanisa liwe na nia moja na unyenyekevu, likifuata mfano wa Kristo, aliyeuacha utukufu wake, akawa mtumishi, akatii hata kufa msalabani, na ambaye sasa Mungu amemwinua mahali pa juu kabisa (2:5-11).",
+    "Paulo anaonya dhidi ya wale wanaoitegemea sheria, na anahesabu kila kitu kuwa hasara akilinganisha na kumjua Kristo. Anakaza mwendo kuelekea lengo, na anawaambia waumini wafurahi katika Bwana siku zote (4:4), waombe kuhusu kila jambo, na waamini kwamba Bwana atawapa nguvu kwa kila hali (4:13)."
+  ],
+  "themes": [
+    {
+      "title": "Furaha katika Bwana",
+      "text": "Paulo anafurahi akiwa gerezani, na anawaita waumini wafurahi katika Bwana nyakati zote."
+    },
+    {
+      "title": "Nia ya unyenyekevu ya Kristo",
+      "text": "Kristo alijinyenyekeza mpaka msalabani, na waumini wanapaswa kuwatanguliza wengine kabla ya nafsi zao."
+    },
+    {
+      "title": "Kumjua Kristo",
+      "text": "Kila faida nyingine ni hasara ikilinganishwa na kumjua Kristo na kuonekana ndani yake."
+    },
+    {
+      "title": "Washirika katika injili",
+      "text": "Wafilipi walishiriki katika kazi ya Paulo kwa maombi yao na kwa zawadi zao."
+    },
+    {
+      "title": "Amani na kuridhika",
+      "text": "Amani ya Mungu huilinda mioyo ya wale wanaoomba, na Kristo hutoa nguvu wakati wa kuwa na vingi na wakati wa kupungukiwa."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:11",
+      "title": "Salamu, shukrani na maombi"
+    },
+    {
+      "from": "1:12",
+      "to": "1:30",
+      "title": "Minyororo ya Paulo inaisaidia injili; kuishi ni Kristo"
+    },
+    {
+      "from": "2:1",
+      "to": "2:30",
+      "title": "Nia ya unyenyekevu ya Kristo; Timotheo na Epafradito"
+    },
+    {
+      "from": "3:1",
+      "to": "3:21",
+      "title": "Kumjua Kristo na kukaza mwendo kuelekea lengo"
+    },
+    {
+      "from": "4:1",
+      "to": "4:23",
+      "title": "Furahini katika Bwana; shukrani kwa zawadi"
+    }
+  ],
+  "keyVerses": [
+    "1:21",
+    "2:5-8",
+    "4:4",
+    "4:13"
+  ]
+}

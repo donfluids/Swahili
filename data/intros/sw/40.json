@@ -1,0 +1,84 @@
+{
+  "book": 40,
+  "name": "Mathayo",
+  "facts": {
+    "author": "Mathayo, aitwaye pia Lawi, mtoza ushuru ambaye Yesu alimwita kuwa mmoja wa mitume kumi na wawili (9:9). Kanisa la kwanza lilishikilia kwa uthabiti kwamba yeye ndiye aliyeandika Injili hii.",
+    "date": "Karibu mwaka 50–65 B.K.",
+    "audience": "Kwanza kabisa waumini Wayahudi, ili kuwaonyesha kwamba Yesu ndiye Masihi aliyeahidiwa, na kupitia kwao kanisa lote"
+  },
+  "about": [
+    "Kitabu cha Mathayo kimewekwa cha kwanza katika Agano Jipya, nacho ni daraja kutoka Agano la Kale. Kinaanza na ukoo wa Yesu, mwana wa Daudi, mwana wa Ibrahimu (1:1), na tena na tena kinaonyesha jinsi maisha yake yalivyotimiza yale ambayo manabii waliandika.",
+    "Mathayo anayakusanya mafundisho ya Yesu katika hotuba tano kuu: Mahubiri ya Mlimani (sura ya 5–7), kutumwa kwa wale kumi na wawili, mifano ya ufalme, mafundisho juu ya maisha ya pamoja kanisani, na maonyo kuhusu mwisho wa nyakati. Katikati ya hotuba hizo kuna miujiza yake, upinzani unaoongezeka wa viongozi wa dini, na ungamo la Petro kwamba Yesu ndiye Kristo, Mwana wa Mungu aliye hai (16:16).",
+    "Kitabu kinamalizika kwa msalaba, kaburi tupu, na Bwana aliyefufuka juu ya mlima huko Galilaya. Anawatuma wanafunzi wake kuwafanya mataifa yote kuwa wanafunzi, na anaahidi kuwa pamoja nao siku zote (28:19-20)."
+  ],
+  "themes": [
+    {
+      "title": "Yesu, Mfalme aliyeahidiwa",
+      "text": "Yesu ni Mwana wa Daudi na Masihi, na kuzaliwa kwake, maisha yake na kifo chake vinatimiza maneno ya manabii."
+    },
+    {
+      "title": "Ufalme wa mbinguni",
+      "text": "Yesu anahubiri kwamba ufalme wa mbinguni umekaribia, na mifano yake inaonyesha jinsi unavyokua kutoka mwanzo mdogo."
+    },
+    {
+      "title": "Haki ya kweli",
+      "text": "Yesu hakuja kuitangua sheria bali kuitimiza (5:17), naye anataka utii unaotoka moyoni."
+    },
+    {
+      "title": "Mungu pamoja nasi",
+      "text": "Alipozaliwa Yesu aliitwa Imanueli, yaani Mungu pamoja nasi (1:23), na mwishoni anaahidi kuwa pamoja na watu wake hadi mwisho wa dunia."
+    },
+    {
+      "title": "Habari njema kwa mataifa yote",
+      "text": "Wenye hekima kutoka mashariki wanamwabudu mtoto, na Bwana aliyefufuka anawatuma wanafunzi wake kwa kila taifa."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "4:11",
+      "title": "Kuzaliwa kwa Yesu; Yohana Mbatizaji; Yesu anabatizwa na kujaribiwa"
+    },
+    {
+      "from": "4:12",
+      "to": "7:29",
+      "title": "Yesu anaanza kuhubiri; Mahubiri ya Mlimani"
+    },
+    {
+      "from": "8:1",
+      "to": "11:1",
+      "title": "Miujiza ya uponyaji, na kutumwa kwa wale kumi na wawili"
+    },
+    {
+      "from": "11:2",
+      "to": "13:58",
+      "title": "Upinzani unaoongezeka na mifano ya ufalme"
+    },
+    {
+      "from": "14:1",
+      "to": "18:35",
+      "title": "Kuwalisha makutano, ungamo la Petro, kugeuka sura na maisha kanisani"
+    },
+    {
+      "from": "19:1",
+      "to": "25:46",
+      "title": "Njia ya kwenda Yerusalemu, mabishano hekaluni na mafundisho kuhusu mwisho"
+    },
+    {
+      "from": "26:1",
+      "to": "27:66",
+      "title": "Karamu ya Mwisho, kukamatwa, kushtakiwa na msalaba"
+    },
+    {
+      "from": "28:1",
+      "to": "28:20",
+      "title": "Bwana aliyefufuka anawatuma wanafunzi wake kwa mataifa yote"
+    }
+  ],
+  "keyVerses": [
+    "1:21",
+    "16:16",
+    "20:28",
+    "28:19-20"
+  ]
+}

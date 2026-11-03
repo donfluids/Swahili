@@ -1,0 +1,54 @@
+{
+  "book": 63,
+  "name": "2 Yohana",
+  "facts": {
+    "author": "Mtume Yohana, anayejiita tu mzee (1:1), kama kanisa la kwanza lilivyoamini.",
+    "date": "Karibu mwaka 85–95 B.K.",
+    "audience": "Mama mteule na watoto wake: ama mwanamke Mkristo na familia yake, au kanisa la mahali fulani na washiriki wake"
+  },
+  "about": [
+    "Barua hii fupi, iliyo miongoni mwa vitabu vifupi kuliko vyote katika Biblia, iliandikwa na Yohana kwa rafiki mpendwa katika imani, ambaye anamwita mama mteule. Wengi wanaamini kwamba hii ni njia ya kulitaja kanisa na washiriki wake; wengine wanafikiri kwamba alikuwa mwanamke Mkristo halisi pamoja na familia yake.",
+    "Yohana anafurahi kwamba baadhi ya watoto wake wanaenenda katika kweli (1:4). Anawakumbusha amri waliyokuwa nayo tangu mwanzo: kupendana. Anaeleza kwamba upendo maana yake ni kuishi kwa kuzifuata amri za Mungu (1:5-6).",
+    "Kisha anatoa onyo. Wadanganyifu wengi wametoka kwenda ulimwenguni, wasiokiri kwamba Yesu Kristo alikuja katika mwili (1:7). Walimu waliokuwa wakisafiri waliutegemea ukarimu wa waumini, kwa hiyo Yohana anawaambia wasiwakaribishe walimu wa uongo kama hao nyumbani mwao wala kuwatakia heri, kwa maana kufanya hivyo ni kushiriki katika kazi zao mbaya. Anatumaini kuwatembelea hivi karibuni na kuzungumza nao ana kwa ana."
+  ],
+  "themes": [
+    {
+      "title": "Kweli",
+      "text": "Kweli inakaa ndani ya waumini na itakuwa pamoja nao milele, nao wanapaswa kuenenda ndani yake."
+    },
+    {
+      "title": "Upendo",
+      "text": "Ile amri ya zamani bado inasimama: pendaneni, na mkionyeshe upendo huo kwa kumtii Mungu."
+    },
+    {
+      "title": "Kujilinda na upotovu",
+      "text": "Wale wasiodumu katika mafundisho ya Kristo hawana Mungu, na waumini hawapaswi kuiunga mkono kazi yao."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:3",
+      "title": "Salamu kwa mama mteule na watoto wake"
+    },
+    {
+      "from": "1:4",
+      "to": "1:6",
+      "title": "Kuenenda katika kweli na upendo"
+    },
+    {
+      "from": "1:7",
+      "to": "1:11",
+      "title": "Onyo dhidi ya wadanganyifu"
+    },
+    {
+      "from": "1:12",
+      "to": "1:13",
+      "title": "Tumaini la kuwatembelea, na salamu"
+    }
+  ],
+  "keyVerses": [
+    "1:6",
+    "1:9"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "book": 51,
+  "name": "Wakolosai",
+  "facts": {
+    "author": "Mtume Paulo, akiandika pamoja na Timotheo (1:1), alipokuwa gerezani.",
+    "date": "Karibu mwaka 60–62 B.K.",
+    "audience": "Waumini wa Kolosai, mji mdogo katika jimbo la Asia, ambao kanisa lao lilianzishwa na Epafra (1:7)"
+  },
+  "about": [
+    "Paulo mwenyewe alikuwa hajafika Kolosai. Kanisa la huko lilikuwa limeisikia injili kutoka kwa Epafra (1:7), ambaye baadaye alimjia Paulo gerezani na habari zao. Paulo aliutuma waraka huu kupitia Tikiko, pamoja na Onesimo (4:7-9), karibu wakati uleule alipowaandikia Waefeso na Filemoni.",
+    "Walimu wa uongo walikuwa wakilisumbua kanisa. Walichanganya mawazo ya kibinadamu na masharti kuhusu vyakula na sikukuu, ibada ya malaika, na kuutesa mwili, kana kwamba Kristo peke yake hatoshi. Paulo anawajibu kwa kuonyesha ukuu wa Kristo. Yeye ndiye mfano wa Mungu asiyeonekana, ambaye kwa yeye vitu vyote viliumbwa, naye ndiye kichwa cha kanisa (1:15-18). Ndani yake utimilifu wote wa Mungu unakaa kwa namna ya kimwili (2:9). Waumini wamekamilika ndani yake.",
+    "Kwa kuwa wamefufuliwa pamoja na Kristo, waumini wanapaswa kuielekeza mioyo yao kwenye mambo ya juu (3:1). Paulo anaonyesha jinsi maisha haya mapya yanavyoonekana katika wema, msamaha na upendo, katika maisha ya nyumbani, na katika kila wanalolifanya kwa neno au kwa tendo (3:17)."
+  ],
+  "themes": [
+    {
+      "title": "Kristo juu ya yote",
+      "text": "Kristo ndiye Muumbaji na kichwa cha kanisa, wa kwanza katika mambo yote."
+    },
+    {
+      "title": "Wakamilifu katika Kristo",
+      "text": "Waumini hawahitaji kitu zaidi ya Kristo, kwa maana utimilifu wote wa Mungu umo ndani yake."
+    },
+    {
+      "title": "Jihadharini na mafundisho matupu",
+      "text": "Mawazo ya kibinadamu na masharti yaliyotungwa na watu hayawezi kumfanya mtu yeyote kuwa mtakatifu."
+    },
+    {
+      "title": "Maisha mapya",
+      "text": "Wakiwa wamefufuliwa pamoja na Kristo, waumini huziacha njia za zamani na kujivika upendo, unaofunga yote pamoja."
+    },
+    {
+      "title": "Mioyo yenye shukrani",
+      "text": "Shukrani zinaonekana katika waraka mzima, na maisha yote yanapaswa kuishiwa kwa kumshukuru Mungu."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:14",
+      "title": "Salamu, shukrani na maombi"
+    },
+    {
+      "from": "1:15",
+      "to": "2:7",
+      "title": "Ukuu wa Kristo na kazi ya Paulo"
+    },
+    {
+      "from": "2:8",
+      "to": "2:23",
+      "title": "Maonyo dhidi ya mafundisho ya uongo"
+    },
+    {
+      "from": "3:1",
+      "to": "4:6",
+      "title": "Maisha mapya katika Kristo, nyumbani na ulimwenguni"
+    },
+    {
+      "from": "4:7",
+      "to": "4:18",
+      "title": "Habari na salamu"
+    }
+  ],
+  "keyVerses": [
+    "1:15-18",
+    "2:9",
+    "3:1-2",
+    "3:17"
+  ]
+}

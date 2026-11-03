@@ -1,0 +1,79 @@
+{
+  "book": 60,
+  "name": "1 Petro",
+  "facts": {
+    "author": "Mtume Petro (1:1), akisaidiwa na Silwano (Sila), aliyeuchukua waraka huu au kuuandika (5:12).",
+    "date": "Karibu mwaka 62–64 B.K.",
+    "audience": "Wakristo, Wayahudi na watu wa Mataifa, waliotawanyika katika Ponto, Galatia, Kapadokia, Asia na Bithinia, katika nchi inayoitwa sasa Uturuki"
+  },
+  "about": [
+    "Petro aliuandika waraka huu akiwa Rumi, ambao anauita Babeli (5:13), kwa waumini waliokuwa wakitukanwa na kuteswa kwa sababu walimfuata Kristo. Anawaita wageni na wasafiri katika ulimwengu huu, ambao makao yao halisi ni kwa Mungu.",
+    "Petro anaanza kwa sifa. Kwa njia ya ufufuo wa Yesu, Mungu amewazaa watu wake upya ili wawe na tumaini lililo hai na urithi usioweza kufifia kamwe (1:3-4). Majaribu yatakuja, lakini yanaipima imani kama moto unavyoipima dhahabu. Kwa hiyo waumini wanapaswa kuwa watakatifu katika mwenendo wao wote, kupendana kwa moyo wote, na kukua kama watoto wachanga wanaotamani maziwa. Zamani hawakuwa taifa, lakini sasa ni watu wa Mungu mwenyewe, ukuhani wa kifalme (2:9-10).",
+    "Sehemu kubwa ya waraka inafundisha jinsi ya kuishi kati ya watu wasioamini: kuwaheshimu wenye mamlaka, watumwa kuwaheshimu mabwana wao, wake na waume kuheshimiana, na wote kulipa mabaya kwa baraka. Kristo aliteswa kwa ajili yetu na akatuachia kielelezo (2:21), na wanaoteseka kama Wakristo wasione haya, bali wamtegemee Muumba wao aliye mwaminifu."
+  ],
+  "themes": [
+    {
+      "title": "Tumaini lililo hai",
+      "text": "Kwa sababu Yesu alifufuka kutoka kwa wafu, waumini wana tumaini la hakika linalowashikilia imara katika kila jaribu."
+    },
+    {
+      "title": "Mateso na utukufu",
+      "text": "Kristo aliteseka kwanza kisha akaingia katika utukufu wake, na wanaoshiriki mateso yake watashiriki pia utukufu wake."
+    },
+    {
+      "title": "Maisha matakatifu",
+      "text": "Mungu ni mtakatifu, kwa hiyo watu wake wanapaswa kuwa watakatifu, wakiishi maisha mema ambayo hata wasioamini wanaweza kuyaona."
+    },
+    {
+      "title": "Watu wateule wa Mungu",
+      "text": "Waumini ni mawe yaliyo hai yanayojengwa kuwa nyumba ya kiroho, watu walio mali ya Mungu ili kutangaza sifa zake."
+    },
+    {
+      "title": "Kumtegemea kwa unyenyekevu",
+      "text": "Waumini wanapaswa kujinyenyekeza chini ya mkono wenye nguvu wa Mungu na kumtwika yeye fadhaa zao zote, kwa maana yeye huwajali (5:6-7)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:12",
+      "title": "Salamu; sifa kwa ajili ya tumaini lililo hai na wokovu mkuu"
+    },
+    {
+      "from": "1:13",
+      "to": "2:10",
+      "title": "Kuweni watakatifu; mawe yaliyo hai na watu wa Mungu mwenyewe"
+    },
+    {
+      "from": "2:11",
+      "to": "3:12",
+      "title": "Mwenendo mwema kati ya wasioamini: watawala, watumwa, wake na waume"
+    },
+    {
+      "from": "3:13",
+      "to": "4:11",
+      "title": "Kuteseka kwa kutenda mema, kufuata kielelezo cha Kristo"
+    },
+    {
+      "from": "4:12",
+      "to": "4:19",
+      "title": "Jaribu kali kama moto: furahini kushiriki mateso ya Kristo"
+    },
+    {
+      "from": "5:1",
+      "to": "5:11",
+      "title": "Wachungaji wa kundi la Mungu; unyenyekevu na kusimama imara"
+    },
+    {
+      "from": "5:12",
+      "to": "5:14",
+      "title": "Salamu za mwisho"
+    }
+  ],
+  "keyVerses": [
+    "1:3",
+    "2:9",
+    "2:24",
+    "5:7"
+  ]
+}

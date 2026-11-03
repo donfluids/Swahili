@@ -1,0 +1,84 @@
+{
+  "book": 59,
+  "name": "Yakobo",
+  "facts": {
+    "author": "Yakobo, ndugu wa Bwana Yesu na kiongozi wa kanisa la Yerusalemu. Anajiita mtumwa wa Mungu na wa Bwana Yesu Kristo (1:1).",
+    "date": "Karibu mwaka 45–50 B.K.",
+    "audience": "Wakristo Wayahudi waliotawanyika nje ya nchi ya Israeli, ambao Yakobo anawaita makabila kumi na mawili (1:1)"
+  },
+  "about": [
+    "Yakobo ni waraka wa vitendo sana, uliojaa amri fupi zenye nguvu na mifano ya maisha ya kila siku: mawimbi ya bahari, ua linalonyauka, kioo, lijamu kinywani mwa farasi, usukani wa meli, cheche inayowasha moto msitu mzima. Huenda ni miongoni mwa vitabu vya kwanza vya Agano Jipya kuandikwa.",
+    "Yakobo anataka waumini waionyeshe imani yao kwa jinsi wanavyoishi. Wanapaswa kuyapokea majaribu kwa furaha, kwa sababu majaribu huzaa subira (1:2-4). Hawapaswi kulisikia tu neno la Mungu, bali walitende. Hawapaswi kuwaheshimu matajiri na kuwadharau maskini. Imani isiyotenda kitu imekufa; imani ya kweli hujionyesha kwa matendo mema, kama ilivyokuwa kwa Ibrahimu na Rahabu (2:17-26). Yakobo pia anaonya kuhusu ulimi, ambao ni mdogo lakini unaweza kuleta madhara makubwa, na kuhusu kiburi, magomvi na kupenda mali.",
+    "Anamalizia kwa kuwaita wawe na subira mpaka Bwana atakapokuja, na waombe, kwa maana maombi ya mwenye haki yana nguvu nyingi, kama yalivyokuwa maombi ya Eliya (5:16-17)."
+  ],
+  "themes": [
+    {
+      "title": "Imani inayotenda",
+      "text": "Imani ya kweli huonekana katika yale ambayo mtu hutenda; imani bila matendo imekufa."
+    },
+    {
+      "title": "Majaribu na hekima",
+      "text": "Majaribu huipima imani na kuiimarisha, na Mungu huwapa hekima kwa ukarimu wote wanaoomba kwa imani (1:5)."
+    },
+    {
+      "title": "Nguvu ya maneno",
+      "text": "Ulimi ni mgumu kuufuga; waumini wanapaswa kuwa wepesi wa kusikia, wazito wa kusema na wazito wa kukasirika."
+    },
+    {
+      "title": "Matajiri na maskini",
+      "text": "Mungu amewachagua maskini wawe matajiri wa imani, na anawaonya matajiri wanaoishi kwa anasa na kuwadhulumu wafanyakazi wao."
+    },
+    {
+      "title": "Unyenyekevu na maombi",
+      "text": "Mungu huwapinga wenye kiburi na huwafadhili wanyenyekevu; watu wanapomkaribia, yeye huwakaribia."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:18",
+      "title": "Salamu; furaha katika majaribu, hekima, na chanzo cha vishawishi"
+    },
+    {
+      "from": "1:19",
+      "to": "1:27",
+      "title": "Kuweni watendaji wa neno, si wasikiaji tu"
+    },
+    {
+      "from": "2:1",
+      "to": "2:13",
+      "title": "Msiwapendelee matajiri kuliko maskini"
+    },
+    {
+      "from": "2:14",
+      "to": "2:26",
+      "title": "Imani bila matendo imekufa"
+    },
+    {
+      "from": "3:1",
+      "to": "3:18",
+      "title": "Kuufuga ulimi; hekima itokayo juu"
+    },
+    {
+      "from": "4:1",
+      "to": "4:17",
+      "title": "Magomvi, kiburi na majivuno; jinyenyekezeni mbele za Mungu"
+    },
+    {
+      "from": "5:1",
+      "to": "5:6",
+      "title": "Onyo kwa matajiri wenye ubinafsi"
+    },
+    {
+      "from": "5:7",
+      "to": "5:20",
+      "title": "Subira mpaka Bwana atakapokuja, na maombi ya imani"
+    }
+  ],
+  "keyVerses": [
+    "1:5",
+    "1:22",
+    "2:17",
+    "4:8"
+  ]
+}

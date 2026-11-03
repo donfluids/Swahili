@@ -1,0 +1,64 @@
+{
+  "book": 56,
+  "name": "Tito",
+  "facts": {
+    "author": "Mtume Paulo, kama waraka wenyewe unavyosema (1:1).",
+    "date": "Karibu mwaka 63–65 B.K.",
+    "audience": "Tito, mwamini Myunani na msaidizi wa Paulo aliyeaminika, ambaye Paulo alikuwa amemwacha katika kisiwa cha Krete"
+  },
+  "about": [
+    "Paulo na Tito walikuwa wamehubiri huko Krete, na makanisa mapya yalikuwa yameanza katika miji yake. Paulo alimwacha Tito huko ili ayaweke sawa mambo yaliyopungua na kuwaweka wazee katika kila mji (1:5). Waraka huu mfupi unamweleza jinsi ya kufanya hivyo.",
+    "Watu wa Krete walikuwa na sifa mbaya hata miongoni mwao wenyewe, na walimu wa uongo walikuwa wakizivuruga familia nzima kwa ajili ya fedha. Kwa hiyo viongozi wa kanisa lazima wawe watu wasio na lawama, wanaolishika kwa uthabiti neno la kweli na wanaoweza kuwaonya wale wanaolipinga. Kisha Paulo anamweleza Tito mambo ya kuwafundisha wazee wa kiume, wazee wa kike, wanawake vijana, wanaume vijana na watumwa, ili maisha yao yayafanye mafundisho ya Mungu yavutie.",
+    "Kiini cha waraka ni neema ya Mungu. Neema hiyo imefunuliwa, ikiwaletea watu wote wokovu, nayo inatufundisha kuyakataa maisha yasiyomcha Mungu tunapongoja kufunuliwa kwa Mungu wetu mkuu na Mwokozi Yesu Kristo (2:11-13). Mungu alituokoa si kwa sababu ya matendo yetu mema, bali kwa rehema yake, kwa kuoshwa kwa kuzaliwa upya na kufanywa upya na Roho Mtakatifu (3:5)."
+  ],
+  "themes": [
+    {
+      "title": "Viongozi wanaomcha Mungu",
+      "text": "Wazee lazima wasiwe na lawama katika nyumba zao na katika maisha yao, na walishike kwa uthabiti fundisho sahihi."
+    },
+    {
+      "title": "Neema inayofundisha",
+      "text": "Neema ya Mungu si tu inaokoa, bali pia inawalea waumini waishi maisha ya kiasi, ya haki na ya kumcha Mungu."
+    },
+    {
+      "title": "Kuokolewa kwa rehema",
+      "text": "Wokovu haupatikani kwa matendo; ni wema na upendo wa Mungu Mwokozi wetu, uliomiminwa kupitia Yesu Kristo."
+    },
+    {
+      "title": "Matendo mema",
+      "text": "Wanaomwamini Mungu wanapaswa kuwa makini kutenda matendo mema, yaliyo mazuri na yenye faida kwa kila mtu (3:8)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:4",
+      "title": "Salamu kwa Tito"
+    },
+    {
+      "from": "1:5",
+      "to": "1:16",
+      "title": "Kuwaweka wazee na kuwanyamazisha walimu wa uongo huko Krete"
+    },
+    {
+      "from": "2:1",
+      "to": "2:15",
+      "title": "Fundisho sahihi kwa kila kundi, na neema ya Mungu"
+    },
+    {
+      "from": "3:1",
+      "to": "3:11",
+      "title": "Kutenda mema, kuokolewa kwa rehema ya Mungu; epukeni mabishano ya kipumbavu"
+    },
+    {
+      "from": "3:12",
+      "to": "3:15",
+      "title": "Mipango ya safari na salamu"
+    }
+  ],
+  "keyVerses": [
+    "2:11-13",
+    "3:5",
+    "3:8"
+  ]
+}

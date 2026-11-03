@@ -1,0 +1,84 @@
+{
+  "book": 66,
+  "name": "Ufunuo",
+  "facts": {
+    "author": "Mtume Yohana, anayelitaja jina lake mwanzoni mwa kitabu (1:1) na tena mwishoni (22:8). Alipokea maono haya akiwa uhamishoni katika kisiwa cha Patimo.",
+    "date": "Karibu mwaka 95–96 B.K.",
+    "audience": "Makanisa saba katika jimbo la Kirumi la Asia (1:11), na kupitia kwao kanisa lote"
+  },
+  "about": [
+    "Ufunuo ni kitabu cha mwisho cha Biblia. Ndani yake Yesu Kristo anamwonyesha mtumishi wake Yohana mambo ambayo lazima yatokee hivi karibuni (1:1). Yohana alikuwa Patimo kwa sababu ya neno la Mungu, na siku ya Bwana alimwona Kristo aliyefufuka katika utukufu katikati ya vinara saba vya taa vya dhahabu. Yesu alimpa ujumbe kwa makanisa saba, akisifu yaliyokuwa mema, akikemea yaliyokuwa mabaya, na akitoa ahadi kwa wale washindao.",
+    "Kisha Yohana alichukuliwa juu ili akione kiti cha enzi cha Mungu mbinguni. Ni Mwanakondoo aliyechinjwa peke yake, yaani Yesu, aliyestahili kukifungua kile kitabu kilichotiwa mihuri (5:9). Kisha yanafuata maono ya mihuri, tarumbeta na mabakuli ya hukumu, ya joka na wanyama wanaofanya vita dhidi ya watu wa Mungu, na ya kuanguka kwa Babeli, ule mji mkuu.",
+    "Kitabu hiki kimejaa picha na hesabu, na Wakristo wameyaelewa mambo yake kwa undani kwa njia mbalimbali, lakini ujumbe wake uko wazi: Kristo atashinda. Anarudi kama Mfalme wa wafalme, Shetani anashindwa, na wafu wanahukumiwa. Mungu anafanya mbingu mpya na nchi mpya, na katika Yerusalemu Mpya anakaa pamoja na watu wake na kufuta kila chozi (21:1-4)."
+  ],
+  "themes": [
+    {
+      "title": "Yesu Kristo, Bwana wa wote",
+      "text": "Yesu ndiye wa Kwanza na wa Mwisho, aliyekufa na yu hai milele na milele, naye anazo funguo za mauti na za kuzimu (1:17-18)."
+    },
+    {
+      "title": "Mungu anatawala",
+      "text": "Lolote litokealo duniani, Mungu ameketi katika kiti chake cha enzi, na falme za ulimwengu huu zitakuwa ufalme wa Bwana wetu na wa Kristo wake (11:15)."
+    },
+    {
+      "title": "Waaminifu katika mateso",
+      "text": "Watu wa Mungu wanaweza kuteseka na hata kufa kwa ajili ya imani yao, lakini wale washindao watashiriki ushindi wa Kristo."
+    },
+    {
+      "title": "Hukumu na wokovu",
+      "text": "Mungu atauhukumu uovu na wote wanaomkataa, naye atawaokoa wote ambao majina yao yameandikwa katika kitabu cha uzima cha Mwanakondoo."
+    },
+    {
+      "title": "Vitu vyote vinafanywa upya",
+      "text": "Habari iliyoanzia katika bustani inamalizikia katika mji wenye mto wa uzima na mti wa uzima, ambapo Mungu anakaa pamoja na watu wake milele."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:20",
+      "title": "Utangulizi; maono ya Yohana ya Kristo aliyefufuka"
+    },
+    {
+      "from": "2:1",
+      "to": "3:22",
+      "title": "Barua kwa makanisa saba ya Asia"
+    },
+    {
+      "from": "4:1",
+      "to": "8:1",
+      "title": "Kiti cha enzi mbinguni, Mwanakondoo na mihuri saba"
+    },
+    {
+      "from": "8:2",
+      "to": "11:19",
+      "title": "Tarumbeta saba na mashahidi wawili"
+    },
+    {
+      "from": "12:1",
+      "to": "14:20",
+      "title": "Mwanamke, joka, wanyama wawili na Mwanakondoo"
+    },
+    {
+      "from": "15:1",
+      "to": "16:21",
+      "title": "Mabakuli saba ya ghadhabu ya Mungu"
+    },
+    {
+      "from": "17:1",
+      "to": "20:15",
+      "title": "Kuanguka kwa Babeli; Kristo anarudi; miaka elfu na hukumu ya mwisho"
+    },
+    {
+      "from": "21:1",
+      "to": "22:21",
+      "title": "Mbingu mpya na nchi mpya; Yesu anakuja upesi"
+    }
+  ],
+  "keyVerses": [
+    "1:8",
+    "5:12",
+    "11:15",
+    "21:4"
+  ]
+}

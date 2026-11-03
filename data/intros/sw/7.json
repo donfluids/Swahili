@@ -1,0 +1,43 @@
+{
+  "book": 7,
+  "name": "Waamuzi",
+  "facts": {
+    "author": "Mwandishi hatajwi. Mapokeo ya Kiyahudi yanasema kwamba nabii Samweli ndiye aliyekiandika.",
+    "date": "Karibu mwaka 1050–1000 K.K.",
+    "audience": "Watu wa Israeli katika siku za mwanzo za wafalme, ili kuwaonyesha kwa nini walihitaji mfalme anayemfuata Mungu"
+  },
+  "about": [
+    "Waamuzi kinahusu miaka kati ya kifo cha Yoshua na kuinuka kwa Samweli, kipindi cha zaidi ya miaka mia tatu. Makabila hayakuwafukuza watu wote wa Kanaani, na punde wakaanza kuiabudu miungu yao.",
+    "Kitabu kinasimulia habari ile ile tena na tena. Israeli wanatenda maovu na kuwatumikia Mabaali; Mungu anawatia mikononi mwa adui zao; wanamlilia; naye anawainulia mwamuzi wa kuwaokoa (2:11-16). Mwamuzi anapokufa, watu wanarudi tena kwenye dhambi zao. Miongoni mwa waamuzi kumi na wawili wamo Othnieli, Ehudi, Debora pamoja na Baraka, Gideoni pamoja na watu wake mia tatu, Yeftha, na Samsoni aliyepigana na Wafilisti.",
+    "Kila mzunguko unashuka chini kuliko ule uliotangulia. Sura za mwisho zinaonyesha jinsi hali ilivyokuwa mbaya: Mlawi akitumikia sanamu iliyotengenezwa na mwanadamu, uhalifu wa kutisha huko Gibea, na vita vilivyokaribia kuliangamiza kabila la Benyamini. Kitabu kinamalizika kwa kusema kwamba hapakuwa na mfalme katika Israeli, na kila mtu alifanya yaliyokuwa sawa machoni pake mwenyewe (21:25)."
+  ],
+  "themes": [
+    {
+      "title": "Mzunguko wa dhambi",
+      "text": "Israeli wanapomsahau Yahwe, wanaangukia ibada ya sanamu na taabu, na kila mara wanazama chini zaidi."
+    },
+    {
+      "title": "Rehema ya Mungu yenye uvumilivu",
+      "text": "Mara kwa mara Yahwe anasikia kilio cha watu wake na kuwatumia mkombozi, ingawa hawastahili (2:16)."
+    },
+    {
+      "title": "Watu dhaifu, Mungu mwenye nguvu",
+      "text": "Mungu anawatumia watu wasiotarajiwa na wasio wakamilifu, kama Gideoni ambaye ukoo wake ulikuwa maskini kuliko wote katika Manase, ili kuwaokoa Israeli."
+    },
+    {
+      "title": "Hitaji la mfalme wa kweli",
+      "text": "Bila kiongozi anayemcha Mungu, kila mtu anafanya anachoona kuwa sawa kwake mwenyewe, na taifa linasambaratika."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "2:5", "title": "Makabila yanashindwa kuwafukuza Wakanaani" },
+    { "from": "2:6", "to": "3:6", "title": "Mtindo wa dhambi, mateso na kuokolewa" },
+    { "from": "3:7", "to": "5:31", "title": "Othnieli, Ehudi, Shamgari, Debora na Baraka" },
+    { "from": "6:1", "to": "10:5", "title": "Gideoni, Abimeleki, Tola na Yairi" },
+    { "from": "10:6", "to": "12:15", "title": "Yeftha, Ibzani, Eloni na Abdoni" },
+    { "from": "13:1", "to": "16:31", "title": "Samsoni na Wafilisti" },
+    { "from": "17:1", "to": "18:31", "title": "Sanamu ya Mika na kabila la Dani" },
+    { "from": "19:1", "to": "21:25", "title": "Uhalifu huko Gibea na vita dhidi ya Benyamini" }
+  ],
+  "keyVerses": ["2:11-12", "2:16", "21:25"]
+}

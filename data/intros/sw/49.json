@@ -1,0 +1,73 @@
+{
+  "book": 49,
+  "name": "Waefeso",
+  "facts": {
+    "author": "Mtume Paulo (1:1), aliyeandika akiwa mfungwa (3:1).",
+    "date": "Karibu mwaka 60–62 B.K.",
+    "audience": "Waumini wa Efeso, na huenda pia makanisa mengine ya jimbo la Asia"
+  },
+  "about": [
+    "Paulo aliuandika waraka kwa Waefeso akiwa gerezani, huenda huko Rumi, akautuma kupitia Tikiko (6:21). Paulo alikuwa amefanya kazi Efeso kwa karibu miaka mitatu, lakini waraka huu haushughulikii matatizo. Unayainua macho ya msomaji ili autazame mpango mkuu wa Mungu katika Kristo.",
+    "Nusu ya kwanza inaeleza kile ambacho Mungu amefanya. Kabla ulimwengu haujaumbwa, Baba aliwachagua watu wake katika Kristo, Mwana aliwakomboa kwa damu yake, na Roho Mtakatifu akawatia muhuri (1:3-14). Walikuwa wamekufa katika dhambi, lakini Mungu aliwafanya hai; wameokolewa kwa neema kupitia imani, ni zawadi ya Mungu, si kwa matendo (2:8-9). Sasa Wayahudi na watu wa Mataifa ni mwili mmoja katika Kristo, watu wapya walio wamoja, hekalu ambalo Mungu anakaa ndani yake.",
+    "Nusu ya pili inaonyesha jinsi ya kuenenda kama inavyostahili wito huu (4:1): kuulinda umoja, kutumia karama ambazo Kristo hutoa, kuyavua maisha ya zamani na kuyavaa mapya, na kuishi kwa upendo kama waume na wake, watoto na wazazi, watumwa na mabwana. Mwisho kabisa, waumini wanapaswa kuvaa silaha zote za Mungu (6:11)."
+  ],
+  "themes": [
+    {
+      "title": "Kila baraka katika Kristo",
+      "text": "Mungu amewabariki watu wake kwa kila baraka ya rohoni katika Kristo, kwa uchaguzi wake mwenyewe na kwa neema yake."
+    },
+    {
+      "title": "Kuokolewa kwa neema",
+      "text": "Wokovu ni zawadi ya bure ya Mungu, unaopokelewa kwa imani, nao huzaa matendo mema."
+    },
+    {
+      "title": "Mwili mmoja, yaani kanisa",
+      "text": "Kristo ameubomoa ukuta uliowatenga Wayahudi na watu wa Mataifa, na amewafanya kuwa wamoja katika kanisa lake."
+    },
+    {
+      "title": "Mwenendo mpya wa maisha",
+      "text": "Waumini humvua mtu wa kale na kuenenda katika upendo, katika nuru na katika hekima."
+    },
+    {
+      "title": "Hodari katika Bwana",
+      "text": "Katika vita vya kiroho, waumini husimama imara katika nguvu na silaha ambazo Mungu huwapa."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:14",
+      "title": "Salamu na sifa kwa kila baraka katika Kristo"
+    },
+    {
+      "from": "1:15",
+      "to": "2:22",
+      "title": "Hai katika Kristo na kufanywa watu wamoja"
+    },
+    {
+      "from": "3:1",
+      "to": "3:21",
+      "title": "Siri ya injili na maombi ya Paulo"
+    },
+    {
+      "from": "4:1",
+      "to": "5:21",
+      "title": "Kuenenda kama inavyostahili wito wa Mungu"
+    },
+    {
+      "from": "5:22",
+      "to": "6:9",
+      "title": "Kristo katika maisha ya nyumbani"
+    },
+    {
+      "from": "6:10",
+      "to": "6:24",
+      "title": "Silaha za Mungu na salamu za mwisho"
+    }
+  ],
+  "keyVerses": [
+    "2:8-10",
+    "4:1",
+    "6:11"
+  ]
+}

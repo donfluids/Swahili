@@ -1,0 +1,68 @@
+{
+  "book": 15,
+  "name": "Ezra",
+  "facts": {
+    "author": "Ezra, kuhani na mwandishi stadi wa sheria ya Musa, anayesimulia sehemu ya habari kwa maneno yake mwenyewe. Mapokeo ya Kiyahudi yanasema kwamba yeye ndiye aliyekiandika kitabu hiki.",
+    "date": "Karibu mwaka 450–440 K.K.",
+    "audience": "Wayahudi waliokuwa wamerudi kutoka Babeli kwenda Yerusalemu na Yuda"
+  },
+  "about": [
+    "Ezra kinaendelea pale 2 Nyakati kinapoishia. Katika mwaka wake wa kwanza Koreshi mfalme wa Uajemi anawaruhusu Wayahudi warudi nyumbani na kulijenga upya hekalu la Yahwe huko Yerusalemu (1:1-4). Karibu watu elfu hamsini wanarudi, wakiongozwa na Zerubabeli na kuhani Yeshua.",
+    "Wanajenga madhabahu na kuweka msingi wa hekalu. Watu wanapiga kelele za furaha, huku wazee waliokuwa wameliona hekalu la kwanza wakilia kwa sauti kubwa (3:11-13). Adui wanaisimamisha kazi kwa miaka mingi, lakini manabii Hagai na Zakaria wanawatia watu moyo, na hekalu linakamilika katika mwaka wa sita wa Mfalme Dario (6:15).",
+    "Karibu miaka sitini baadaye Ezra mwenyewe anakuja kutoka Babeli pamoja na kundi la pili, akiwa ametumwa na Mfalme Artashasta. Alikuwa ameukaza moyo wake kujifunza sheria ya Yahwe, kuitii na kuifundisha (7:10). Anapogundua kwamba wengi wameoa wanawake kutoka mataifa ya jirani wanaoabudu sanamu, anaomboleza na kuomba, na watu wanaungama dhambi yao na kuirekebisha."
+  ],
+  "themes": [
+    {
+      "title": "Mungu anatimiza neno lake",
+      "text": "Kurudi kunatokea kama Yahwe alivyoahidi kupitia Yeremia, na Mungu anaigusa mioyo ya wafalme wa Uajemi ili wawasaidie watu wake (1:1)."
+    },
+    {
+      "title": "Ibada kwanza",
+      "text": "Kazi ya kwanza ya wale waliorudi kutoka uhamishoni ni kujenga madhabahu na hekalu, ili wamwabudu Mungu kama sheria ya Musa inavyoagiza."
+    },
+    {
+      "title": "Imani katikati ya upinzani",
+      "text": "Adui wanawashtaki na kuwazuia wajenzi, lakini jicho la Mungu wao liko juu yao na kazi inakamilika (5:5)."
+    },
+    {
+      "title": "Neno la Mungu",
+      "text": "Ezra anajifunza, anaitii na kuifundisha sheria, na kuwaita watu waishi kwa kuifuata."
+    },
+    {
+      "title": "Watu watakatifu",
+      "text": "Wale waliorudi kutoka uhamishoni wanapaswa kujitenga na ibada ya sanamu iliyokuwa imesababisha uhamisho."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:70",
+      "title": "Tangazo la Koreshi na kurudi kwa kwanza chini ya Zerubabeli"
+    },
+    {
+      "from": "3:1",
+      "to": "3:13",
+      "title": "Madhabahu inajengwa na msingi wa hekalu unawekwa"
+    },
+    {
+      "from": "4:1",
+      "to": "6:22",
+      "title": "Upinzani; hekalu linakamilika na kuwekwa wakfu"
+    },
+    {
+      "from": "7:1",
+      "to": "8:36",
+      "title": "Ezra anakuja Yerusalemu pamoja na kundi la pili"
+    },
+    {
+      "from": "9:1",
+      "to": "10:44",
+      "title": "Maombi ya Ezra; watu wanaacha ndoa zisizo halali"
+    }
+  ],
+  "keyVerses": [
+    "3:11",
+    "7:10",
+    "8:22"
+  ]
+}

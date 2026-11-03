@@ -1,0 +1,40 @@
+{
+  "book": 6,
+  "name": "Yoshua",
+  "facts": {
+    "author": "Yoshua mwana wa Nuni, aliyewaongoza Israeli baada ya Musa. Kitabu kinasema kwamba Yoshua aliandika maneno katika kitabu cha sheria ya Mungu (24:26). Habari za kifo chake mwishoni ziliongezwa na wengine, kwa mujibu wa mapokeo na makuhani Eliazari na Finehasi.",
+    "date": "Karibu mwaka 1405–1385 K.K.",
+    "audience": "Watu wa Israeli waliokuwa wakikaa katika nchi ya Kanaani"
+  },
+  "about": [
+    "Yoshua kinaendeleza habari mara tu baada ya kifo cha Musa. Mungu anamwambia Yoshua awe hodari na moyo wa ushujaa, aishike sheria yake mchana na usiku, na anaahidi kuwa pamoja naye kila aendako (1:8-9). Wapelelezi wanafichwa na Rahabu huko Yeriko, mto Yordani unaacha kutiririka ili watu wavuke mahali pakavu, na kuta za Yeriko zinaanguka.",
+    "Baada ya dhambi ya Akani kuleta kushindwa huko Ai, Israeli wanaishughulikia dhambi hiyo na kushinda. Kisha Yoshua anawashinda wafalme wa kusini na wa kaskazini, na kitabu kinaorodhesha wafalme thelathini na mmoja aliowashinda (12:24). Nusu ya pili inaigawa nchi kati ya makabila kumi na mawili, inatenga miji ya makimbilio, na kuwapa Walawi miji.",
+    "Kitabu kinaonyesha kwamba Mungu alitimiza kila ahadi njema aliyokuwa amewaahidi Israeli (21:45). Katika uzee wake Yoshua anawakusanya watu huko Shekemu na kuwaita wamtumikie Yahwe peke yake, akisema kwamba yeye na nyumba yake watamtumikia Yahwe (24:15)."
+  ],
+  "themes": [
+    {
+      "title": "Mungu anatimiza ahadi zake",
+      "text": "Nchi aliyoahidiwa Ibrahimu inatolewa kwa wazao wake, sawasawa na Mungu alivyosema."
+    },
+    {
+      "title": "Ujasiri kwa sababu Mungu yupo",
+      "text": "Yoshua anaweza kuwa hodari kwa sababu Yahwe yu pamoja naye, kama alivyokuwa pamoja na Musa."
+    },
+    {
+      "title": "Utii unaleta ushindi",
+      "text": "Israeli wanashinda wanapomtumaini na kumtii Mungu, kama huko Yeriko, na wanashindwa wanapotenda dhambi, kama huko Ai."
+    },
+    {
+      "title": "Kuchagua kumtumikia Yahwe",
+      "text": "Kila kizazi kinapaswa kuamua chenyewe kuiacha miungu mingine na kumtumikia Yahwe kwa uaminifu."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "5:15", "title": "Kuingia katika nchi: Rahabu, kuvuka Yordani, Gilgali" },
+    { "from": "6:1", "to": "8:35", "title": "Yeriko na Ai; sheria inasomwa kwenye Mlima Ebali" },
+    { "from": "9:1", "to": "12:24", "title": "Wagibeoni; ushindi kusini na kaskazini" },
+    { "from": "13:1", "to": "21:45", "title": "Nchi inagawanywa kati ya makabila" },
+    { "from": "22:1", "to": "24:33", "title": "Maneno ya kuagana ya Yoshua na agano huko Shekemu" }
+  ],
+  "keyVerses": ["1:8-9", "21:45", "24:15"]
+}

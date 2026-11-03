@@ -1,8 +1,5 @@
 import type { SQLiteDatabase } from 'expo-sqlite';
 import { inflateSync, strFromU8 } from 'fflate';
-import { hindiPattern } from './hindiSearch';
-import { malayalamPattern } from './malayalamSearch';
-import type { MalayalamPattern } from './malayalamSearch';
 import { plainText } from './text';
 import type { Book, Heading, LexiconHit, Note, OriginalWord, Ref, RelatedWord, Rendering, StrongsEntry, TranslationId, VerseRow } from './types';
 
@@ -169,10 +166,10 @@ export async function getOriginalCount(db: SQLiteDatabase, strongs: string): Pro
 }
 
 /**
- * KJV-numbered verses in a translation's own numbering (the Malayalam numbers some
+ * KJV-numbered verses in a translation's own numbering (the Swahili numbers a few
  * verses differently), without repeats. A KJV verse gives the translation's verse of
  * the same number unless that one is mapped elsewhere, plus any verses mapped to it
- * (KJV 3 John 14 is Malayalam 14 and 15).
+ * (KJV 3 John 14 is the Swahili 14 and 15).
  */
 export async function inTranslation(db: SQLiteDatabase, translation: TranslationId, refs: Ref[]): Promise<Ref[]> {
   const rows = await db.getAllAsync<{ book: number; chapter: number; verse: number; obook: number; ochapter: number; overse: number }>(
@@ -257,8 +254,9 @@ export function getVerseCounts(db: SQLiteDatabase, translation: TranslationId): 
 /**
  * Plain text search: every matching verse, as references in book order (the verses
  * themselves are read a page at a time with getVerses). Case-insensitive for ASCII
- * letters. A straight apostrophe in the query matches either a straight or a curly
- * apostrophe in the text.
+ * letters. An apostrophe in the query, straight or curly, matches any apostrophe in the text:
+ * the Swahili Bibles write ng’ombe three ways (ng'ombe in the ULB, ngʼombe in Neno 2015,
+ * ng’ombe in Neno 2024).
  */
 export async function searchText(
   db: SQLiteDatabase,
@@ -267,14 +265,9 @@ export async function searchText(
   /** True once the result is no longer wanted (more has been typed); a long search then stops early. */
   stale?: () => boolean,
 ): Promise<Ref[]> {
-  // Joiners a keyboard may add are dropped: the Tamil text has none.
-  const cleaned = query.trim().replace(/\s+/g, ' ').replace(/[\u200c\u200d]/g, (c) => (/[\u0b80-\u0bff]/.test(query) ? '' : c));
+  const cleaned = query.trim().replace(/\s+/g, ' ');
   if (!cleaned) return [];
-  const malayalam = malayalamPattern(cleaned);
-  if (malayalam) return searchMalayalam(db, translation, malayalam, stale);
-  const hindi = hindiPattern(cleaned);
-  if (hindi) return searchMalayalam(db, translation, hindi, stale);
-  const pattern = '%' + cleaned.replace(/[\\%_]/g, (c) => '\\' + c).replace(/'/g, '_') + '%';
+  const pattern = '%' + cleaned.replace(/[\\%_]/g, (c) => '\\' + c).replace(/['’‘ʼ]/g, '_') + '%';
   return db.getAllAsync<Ref>(
     "SELECT book, chapter, verse FROM verses WHERE translation = ? AND omitted = 0 AND text LIKE ? ESCAPE '\\' ORDER BY book, chapter, verse",
     translation,
@@ -283,44 +276,9 @@ export async function searchText(
 }
 
 /**
- * Malayalam and Hindi search: LIKE finds the verses that could match, a page at a time in
- * book order, and the exact pattern keeps the ones that do (src/malayalamSearch.ts,
- * src/hindiSearch.ts).
- */
-async function searchMalayalam(
-  db: SQLiteDatabase,
-  translation: TranslationId,
-  pattern: MalayalamPattern,
-  stale?: () => boolean,
-): Promise<Ref[]> {
-  const exact = new RegExp(pattern.source);
-  const out: Ref[] = [];
-  const PAGE = 500;
-  let after = [0, 0, 0];
-  // The spelled-out alternatives keep most non-matching verses in the database (ശൗൽ reads
-  // a few hundred rows instead of 15,000); the exact match below decides as before.
-  const tighter = pattern.alternatives.length > 0 ? ` AND (${pattern.alternatives.map(() => "text LIKE ? ESCAPE '\\'").join(' OR ')})` : '';
-  for (;;) {
-    if (stale?.()) return out;
-    const rows = await db.getAllAsync<VerseRow>(
-      `SELECT book, chapter, verse, text FROM verses WHERE translation = ? AND omitted = 0 AND text LIKE ? ESCAPE '\\'${tighter} AND (book, chapter, verse) > (?, ?, ?) ORDER BY book, chapter, verse LIMIT ?`,
-      translation,
-      pattern.like,
-      ...pattern.alternatives,
-      ...after,
-      PAGE,
-    );
-    for (const row of rows) if (exact.test(row.text)) out.push({ book: row.book, chapter: row.chapter, verse: row.verse });
-    if (rows.length < PAGE) return out;
-    const last = rows[rows.length - 1];
-    after = [last.book, last.chapter, last.verse];
-  }
-}
-
-/**
  * Hebrew or Greek words for every verse of a chapter, keyed by verse number in the
  * numbering of `translation`. The words follow the KJV numbering; a translation that
- * numbers some verses differently (the Malayalam in 15 chapters) has them remapped
+ * numbers some verses differently (the Swahili in a few chapters) has them remapped
  * through the verse_map table, which may draw on a neighbouring chapter.
  */
 export async function getInterlinear(
@@ -351,7 +309,7 @@ export async function getInterlinear(
 /**
  * For side-by-side reading: the verses of `to` beside each verse of a chapter of `from`,
  * keyed by that verse's number. Usually the verse of the same number. Where a Bible
- * numbers verses differently from the KJV (the Malayalam in 15 chapters), the verse_map
+ * numbers verses differently from the KJV (the Swahili in a few chapters), the verse_map
  * table takes the verse to its KJV verses and from those to the other Bible's, which may
  * lie in a neighbouring chapter. One of the two is the KJV.
  */
@@ -389,7 +347,7 @@ export async function getBeside(db: SQLiteDatabase, from: TranslationId, to: Tra
     for (const [v, refs] of kjv) {
       const out: Ref[] = [];
       // The verse of the same number, unless `to` gives it elsewhere, and any verse `to`
-      // takes it into (one KJV verse may be two, as 1 Timothy 6:21 in the Malayalam).
+      // takes it into (one KJV verse may be two, as 3 John 14 in the Swahili).
       for (const r of refs) for (const h of [...(renumbered.has(key(r)) ? [] : [r]), ...(holders.get(key(r)) ?? [])]) if (!out.some((o) => key(o) === key(h))) out.push(h);
       out.sort((a, b) => a.chapter - b.chapter || a.verse - b.verse);
       wanted.set(v, out);
@@ -537,8 +495,8 @@ export async function toKjvRefs(db: SQLiteDatabase, translation: TranslationId, 
 }
 
 /**
- * The verse of `to` that holds a KJV-numbered verse, or null when `to` has none (Acts
- * 15:34 in the Malayalam). A verse with the same number is the match unless `to` numbers
+ * The verse of `to` that holds a KJV-numbered verse, or null when `to` has none (Luke
+ * 17:36 in the ULB). A verse with the same number is the match unless `to` numbers
  * it differently, or has only an empty place for it (the WEB's Romans 16:25, whose words
  * it gives at 14:24).
  */
@@ -561,7 +519,7 @@ async function fromKjv(db: SQLiteDatabase, to: TranslationId, kjv: Ref): Promise
 
 /**
  * Every verse of `to` that holds the words of `ref` in `from`: usually one, two where
- * `from` joins two verses into one (Malayalam Exodus 8:1 is KJV 7:25 and 8:1).
+ * `from` joins two verses into one (the ULB's 1 Chronicles 6:78 is KJV 6:78 and 6:79).
  */
 export async function mapRefs(db: SQLiteDatabase, from: TranslationId, to: TranslationId, ref: Ref): Promise<Ref[]> {
   if (from === to) return [ref];
@@ -640,8 +598,6 @@ export function unpackWords(packed: string): OriginalWord[] {
 export async function searchLexicon(db: SQLiteDatabase, query: string, limit: number): Promise<LexiconHit[]> {
   const q = plainText(query.replace(/\s+/g, ' '));
   if (q.length < 2) return [];
-  // The dictionary has no Malayalam or Tamil in it, so such a query cannot match; it is not run.
-  if (/[\u0d00-\u0d7f\u0b80-\u0bff]/.test(q)) return [];
   const escaped = q.replace(/[\\%_]/g, (c) => '\\' + c);
   const prefix = escaped + '%';
   const word = '%' + escaped + '%';

@@ -1,0 +1,64 @@
+{
+  "book": 37,
+  "name": "Hagai",
+  "facts": {
+    "author": "Nabii Hagai (1:1). Alikuwa mmoja wa Wayahudi waliorudi kutoka uhamishoni Babeli, naye alifanya kazi pamoja na nabii Zekaria.",
+    "date": "Mwaka 520 K.K.",
+    "audience": "Zerubabeli gavana wa Yuda, Yoshua kuhani mkuu, na watu waliokuwa wamerudi Yerusalemu"
+  },
+  "about": [
+    "Karibu miaka kumi na minane kabla Hagai hajahubiri, mfalme Koreshi wa Uajemi aliwaruhusu Wayahudi warudi nyumbani kutoka Babeli ili kulijenga upya hekalu. Waliweka msingi, lakini maadui waliwapinga na kazi ikasimama. Watu walijijengea nyumba nzuri wakati nyumba ya Mungu ilibaki magofu (1:4).",
+    "Katika mwaka wa pili wa mfalme Dario, Mungu alimpa Hagai jumbe nne ndani ya muda usiozidi miezi minne, kila mmoja ukiwa na tarehe yake. Kwanza aliwaambia watu kwamba mavuno yao duni yalitokana na kuzitanguliza nyumba zao wenyewe, akawaita walete miti na kujenga (1:8). Zerubabeli, Yoshua na watu wote walitii, na kazi ikaanza tena (1:12-15).",
+    "Baadaye Hagai aliwatia moyo wale walioona kwamba hekalu jipya si kitu likilinganishwa na lile la Sulemani. Mungu aliahidi kuijaza nyumba hii utukufu, utukufu mkuu kuliko ule wa kwanza (2:9). Aliahidi kuwabariki kuanzia siku ile, naye akamchagua Zerubabeli, wa ukoo wa Daudi, kuwa pete yake ya muhuri (2:23)."
+  ],
+  "themes": [
+    {
+      "title": "Mtangulize Mungu",
+      "text": "Watu wa Mungu wanapoipuuza kazi yake kwa ajili ya starehe zao wenyewe, hawapati baraka ya kudumu."
+    },
+    {
+      "title": "Utii huleta uwepo wa Mungu",
+      "text": "Watu walipotii, Mungu aliahidi kuwa pamoja nao na akaziamsha roho zao wafanye kazi (1:13-14)."
+    },
+    {
+      "title": "Utukufu mkuu zaidi unakuja",
+      "text": "Mungu aliahidi kwamba utukufu wa hekalu hili duni ungekuwa mkuu kuliko utukufu wa lile la Sulemani."
+    },
+    {
+      "title": "Mungu anaulinda ukoo wa Daudi",
+      "text": "Zerubabeli, mzao wa Daudi, ni muhuri aliouchagua Mungu, ishara kwamba ahadi ya Mfalme bado ingalipo."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:11",
+      "title": "Ujumbe wa kwanza: fikirini njia zenu na mjenge nyumba"
+    },
+    {
+      "from": "1:12",
+      "to": "1:15",
+      "title": "Watu wanatii na kazi inaanza"
+    },
+    {
+      "from": "2:1",
+      "to": "2:9",
+      "title": "Ujumbe wa pili: utukufu wa nyumba ya mwisho"
+    },
+    {
+      "from": "2:10",
+      "to": "2:19",
+      "title": "Ujumbe wa tatu: tangu siku hii nitawabariki"
+    },
+    {
+      "from": "2:20",
+      "to": "2:23",
+      "title": "Ujumbe wa nne: Zerubabeli, muhuri wa Yahwe"
+    }
+  ],
+  "keyVerses": [
+    "1:4",
+    "1:8",
+    "2:9"
+  ]
+}

@@ -4,7 +4,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Header } from '../components/Header';
 import { Icon } from '../components/Icon';
 import { Pressable } from '../components/Pressable';
-import { isMultilingual, useEdition } from '../edition';
 import { languageScript, scriptureFont } from '../fonts';
 import { useT } from '../i18n';
 import type { StringKey } from '../i18n';
@@ -14,8 +13,6 @@ import { useTheme } from '../theme';
 
 /** How many topics src/i18n.ts holds (howTopic1 … howTopicN, howText1 … howTextN). */
 const TOPICS = 13;
-/** Topics the four-language app tells differently: its Bible chooser and the search Bible buttons. */
-const MULTILINGUAL_TEXT = new Set([2, 7]);
 
 /**
  * How to use the app: short topics, each a few plain sentences, opened one at a time. In
@@ -27,7 +24,6 @@ export function HowToScreen({ onBack }: { onBack: () => void }) {
   const t = useT();
   const insets = useSafeAreaInsets();
   const { settings } = useSettings();
-  const multilingual = isMultilingual(useEdition());
   const font = scriptureFont(languageScript(settings.language), settings.serif) ?? theme.font;
   const boldFont = scriptureFont(languageScript(settings.language), settings.serif, true);
   const size = Math.max(15, Math.min(settings.fontSize, 24));
@@ -57,7 +53,7 @@ export function HowToScreen({ onBack }: { onBack: () => void }) {
               </Pressable>
               {shown ? (
                 <Text selectable style={[styles.body, { color: theme.text, fontFamily: font, fontSize: size, lineHeight: Math.round(size * 1.55) }]}>
-                  {t((multilingual && MULTILINGUAL_TEXT.has(i) ? `howText${i}All` : `howText${i}`) as StringKey)}
+                  {t(`howText${i}` as StringKey)}
                 </Text>
               ) : null}
             </View>

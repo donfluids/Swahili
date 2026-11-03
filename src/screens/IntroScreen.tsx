@@ -69,7 +69,7 @@ export function IntroScreen({ book, books, onBack, onOpenRef }: Props) {
   const [intro, setIntro] = useState<BookIntro | null | undefined>(undefined);
   const [keyVerses, setKeyVerses] = useState<{ label: string; ref: Ref; verses: VerseRow[] }[]>([]);
   // The KJV verses the introduction names ("29:1"), as the Bible being read numbers them
-  // ("28:69" in the Malayalam), for the labels; a tap maps them again on the way.
+  // ("13:6:78" in the ULB), for the labels; a tap maps them again on the way.
   const [numbers, setNumbers] = useState<Map<string, string>>(new Map());
   const font = scriptureFont(languageScript(language), settings.serif) ?? theme.font;
   const boldFont = scriptureFont(languageScript(language), settings.serif, true);

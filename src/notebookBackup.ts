@@ -17,7 +17,7 @@ const MAX_BODY = 500_000;
 const ID = /^[a-z0-9]{1,24}$/;
 
 export interface Backup {
-  /** The edition the backup was made in ('en', 'ml', 'ta'), or null if the file does not say. */
+  /** The app the backup was made in ('sw', or a Bible app's 'en', 'ml', 'ta', 'all'), or null if the file does not say. */
   edition: string | null;
   pages: NotePage[];
   /** The strokes of the handwritten pages, by page id. */
@@ -80,8 +80,9 @@ export function readBackup(text: string): Backup {
     pages.push(page);
   }
   const edition = (raw as { edition?: unknown }).edition;
-  // The app it was made in (src/edition.ts: en, ml, ta or the four-language all).
-  return { edition: typeof edition === 'string' && /^(en|ml|ta|all)$/.test(edition) ? edition : null, pages, ink };
+  // The app it was made in: this one (sw), or one of the Bible apps whose backups it reads
+  // too (en, ml, ta, all; donfluids/Bible).
+  return { edition: typeof edition === 'string' && /^(sw|en|ml|ta|all)$/.test(edition) ? edition : null, pages, ink };
 }
 
 export interface MergeResult {

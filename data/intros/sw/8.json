@@ -1,0 +1,39 @@
+{
+  "book": 8,
+  "name": "Ruth",
+  "facts": {
+    "author": "Mwandishi hatajwi. Mapokeo ya Kiyahudi yanasema kwamba nabii Samweli ndiye aliyekiandika.",
+    "date": "Karibu mwaka 1030–1000 K.K.",
+    "audience": "Watu wa Israeli, kikionyesha jinsi Mungu alivyoutunza ukoo wa Mfalme Daudi"
+  },
+  "about": [
+    "Ruth ni hadithi fupi iliyotokea katika siku ambazo waamuzi walitawala (1:1). Kwa sababu ya njaa, Elimeleki na mke wake Naomi wanaondoka Bethlehemu pamoja na wana wao wawili na kwenda Moabu. Wana hao wanaoa wanawake wa Moabu, Oripa na Ruth, lakini kisha Elimeleki na wanawe wote wawili wanakufa. Naomi anaamua kurudi nyumbani, na Ruth anakataa kumwacha. Anaahidi kwenda kule aendako Naomi, na kwamba watu wa Naomi watakuwa watu wake na Mungu wa Naomi atakuwa Mungu wake (1:16).",
+    "Huko Bethlehemu Ruth anaokota nafaka katika shamba la Boazi, jamaa tajiri wa Elimeleki. Boazi anamtendea wema kwa sababu ya uaminifu wake kwa Naomi na kwa sababu anamtumaini Mungu wa Israeli (2:12). Akiwa jamaa wa karibu, anaikomboa ardhi ya familia na kumwoa Ruth. Mwana wao Obedi anakuwa babu wa Mfalme Daudi (4:17).",
+    "Katika wakati wa giza na usio na uaminifu, kitabu hiki kinaonyesha upendo wa uaminifu, na kinaonyesha Mungu akimleta mwanamke mgeni katika watu wake na katika ukoo wa Masihi."
+  ],
+  "themes": [
+    {
+      "title": "Upendo wa uaminifu",
+      "text": "Uaminifu wa Ruth kwa Naomi na wema wa Boazi kwa Ruth vinaonyesha upendo thabiti ambao Mungu mwenyewe anauonyesha."
+    },
+    {
+      "title": "Jamaa wa karibu anayekomboa",
+      "text": "Boazi analipa gharama ya kuinunua tena ardhi ya familia na kumpa marehemu jina, mfano wa Kristo anayewakomboa watu wake."
+    },
+    {
+      "title": "Utunzaji wa Mungu usioonekana",
+      "text": "Ni mara chache Mungu anaonekana akitenda waziwazi, lakini anaongoza kila hatua, akigeuza utupu wa Naomi kuwa furaha."
+    },
+    {
+      "title": "Karibu kwa mataifa",
+      "text": "Ruth, mwanamke wa Moabu, anapata kimbilio chini ya mabawa ya Mungu wa Israeli na kuwa mmoja wa mababu wa Daudi."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "1:22", "title": "Msiba wa Naomi na uaminifu wa Ruth" },
+    { "from": "2:1", "to": "2:23", "title": "Ruth anaokota masazo katika shamba la Boazi" },
+    { "from": "3:1", "to": "3:18", "title": "Ruth anamwomba Boazi aikomboe familia" },
+    { "from": "4:1", "to": "4:22", "title": "Boazi anamwoa Ruth; ukoo wa Daudi" }
+  ],
+  "keyVerses": ["1:16", "2:12", "4:14", "4:17"]
+}

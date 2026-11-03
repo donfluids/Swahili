@@ -1,0 +1,45 @@
+{
+  "book": 1,
+  "name": "Mwanzo",
+  "facts": {
+    "author": "Musa. Wayahudi na kanisa la kwanza waliamini kwamba Musa aliandika kitabu cha Mwanzo pamoja na vitabu vinne vinavyofuata, akitumia historia ya watu wake iliyopokelewa kutoka kwa mababu.",
+    "date": "Karibu mwaka 1446–1406 K.K.",
+    "audience": "Watu wa Israeli jangwani, wakiwa njiani kwenda katika nchi ambayo Mungu aliwaahidi baba zao"
+  },
+  "about": [
+    "Mwanzo maana yake ni \"chanzo\". Kitabu hiki kinaeleza jinsi Mungu alivyoziumba mbingu na nchi na vyote vilivyomo, na jinsi alivyomuumba mwanamume na mwanamke kwa mfano wake mwenyewe. Kisha kinaeleza jinsi dhambi ilivyoingia ulimwenguni Adamu na Hawa walipomwasi Mungu, na jinsi ilivyoenea mpaka Mungu akaleta gharika, akamwokoa Nuhu na familia yake ndani ya safina.",
+    "Kuanzia sura ya 12 kitabu kinaifuata familia moja. Mungu anamwita Abram aache nyumbani kwake, na kumwahidi kwamba atamfanya kuwa taifa kubwa, atawapa wazao wake nchi ya Kanaani, na kwamba kupitia yeye jamaa zote za dunia zitabarikiwa (12:2-3). Ahadi hiyo inapita kwa Isaka, kisha kwa Yakobo, ambaye wanawe kumi na wawili wanakuwa makabila kumi na mawili ya Israeli. Kitabu kinamalizika na habari za Yusufu, aliyeuzwa na ndugu zake kama mtumwa, lakini akainuliwa kuwa mtawala huko Misri na kuiokoa familia yake na njaa.",
+    "Mwanzo ni msingi wa Biblia nzima: Mungu Muumbaji, tatizo la dhambi, na mpango wa Mungu wa kuuletea ulimwengu baraka kupitia familia ya Ibrahimu."
+  ],
+  "themes": [
+    {
+      "title": "Mungu Muumbaji",
+      "text": "Mungu aliumba vitu vyote kwa neno lake, na kila alichokiumba kilikuwa chema. Mwanamume na mwanamke wameumbwa kwa mfano wake."
+    },
+    {
+      "title": "Dhambi na kuenea kwake",
+      "text": "Uasi wa Adamu na Hawa unaleta kifo na taabu ulimwenguni, lakini Mungu anaahidi kwamba uzao wa mwanamke utaponda kichwa cha nyoka (3:15)."
+    },
+    {
+      "title": "Ahadi ya agano la Mungu",
+      "text": "Mungu anamchagua Ibrahimu na kumwahidi nchi, wazao wengi na baraka kwa mataifa yote, naye anaitimiza ahadi hiyo kupitia Isaka na Yakobo."
+    },
+    {
+      "title": "Imani inahesabiwa kuwa haki",
+      "text": "Ibrahimu alimwamini Mungu, naye Mungu akamhesabia imani yake kuwa haki (15:6)."
+    },
+    {
+      "title": "Mungu anatawala juu ya yote",
+      "text": "Hata watu wanapotenda mabaya, Mungu anayageuza kuwa mema, kama Yusufu anavyowaambia ndugu zake (50:20)."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "2:25", "title": "Mungu anaumba ulimwengu na mwanamume na mwanamke wa kwanza" },
+    { "from": "3:1", "to": "5:32", "title": "Anguko la dhambi; Kaini na Habili; kutoka Adamu hadi Nuhu" },
+    { "from": "6:1", "to": "11:9", "title": "Gharika, agano la Mungu na Nuhu, na mnara wa Babeli" },
+    { "from": "11:10", "to": "25:18", "title": "Ibrahimu: wito wa Mungu, agano lake na kuzaliwa kwa Isaka" },
+    { "from": "25:19", "to": "36:43", "title": "Isaka, Yakobo na Esau; wana kumi na wawili wa Yakobo" },
+    { "from": "37:1", "to": "50:26", "title": "Yusufu huko Misri, na familia ya Yakobo inaokolewa na njaa" }
+  ],
+  "keyVerses": ["1:1", "12:2-3", "15:6", "50:20"]
+}

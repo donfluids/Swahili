@@ -1,0 +1,41 @@
+{
+  "book": 10,
+  "name": "2 Samweli",
+  "facts": {
+    "author": "Mwandishi hatajwi. Mapokeo ya Kiyahudi yanasema kwamba manabii Nathani na Gadi walikamilisha habari iliyoanzishwa na Samweli, kwa kuwa 1 na 2 Samweli hapo awali vilikuwa kitabu kimoja.",
+    "date": "Karibu mwaka 970–930 K.K.",
+    "audience": "Watu wa Israeli, ili kuwaonyesha agano la Mungu na Daudi na gharama ya dhambi"
+  },
+  "about": [
+    "2 Samweli kinasimulia habari za miaka arobaini ya Daudi akiwa mfalme. Baada ya kuwaombolezea Sauli na Yonathani, Daudi anatawala juu ya Yuda huko Hebroni kwa miaka saba na nusu, kisha juu ya Israeli yote (5:4-5). Anauteka Yerusalemu na kuufanya kuwa mji wake mkuu, analileta huko sanduku la Mungu kwa furaha kubwa, na kuwashinda adui za Israeli.",
+    "Daudi anapotaka kumjengea Mungu nyumba, Yahwe anaahidi badala yake kumjengea Daudi nyumba: mwanawe atajenga hekalu, na kiti cha enzi cha Daudi na ufalme wake vitadumu milele (7:12-16). Ahadi hii inaelekeza kwa Yesu Kristo, Mwana wa Daudi.",
+    "Kisha Daudi anaanguka katika dhambi na Bathisheba na kusababisha mume wake Uria auawe. Nabii Nathani anapomkabili, Daudi anaungama, na Mungu anamsamehe (12:13), lakini taabu zinaifuata familia yake. Mwanawe Amnoni anamkosea Tamari, Absalomu anamuua Amnoni na baadaye anamwasi baba yake, na Daudi analia kwa ajili ya Absalomu anapokufa. Kitabu kinafungwa kwa nyimbo za sifa za Daudi na madhabahu iliyojengwa kwenye uwanja wa kupuria wa Arauna."
+  ],
+  "themes": [
+    {
+      "title": "Agano la Mungu na Daudi",
+      "text": "Mungu anamwahidi Daudi nyumba, ufalme na kiti cha enzi milele, ahadi iliyotimizwa katika Kristo."
+    },
+    {
+      "title": "Dhambi, kuungama na msamaha",
+      "text": "Dhambi kubwa ya Daudi inasamehewa anapoiungama, lakini matokeo yake yenye uchungu yanabaki katika familia yake."
+    },
+    {
+      "title": "Mfalme anayeupendeza moyo wa Mungu",
+      "text": "Pamoja na makosa yake yote, Daudi anampenda Yahwe, anamtafuta, anamwabudu na anarudi kwake."
+    },
+    {
+      "title": "Njia kamilifu ya Mungu",
+      "text": "Daudi anamsifu Mungu kuwa mwamba wake na ngao yake, ambaye njia yake ni kamilifu na neno lake ni la kweli (22:31)."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "4:12", "title": "Daudi mfalme juu ya Yuda; vita na nyumba ya Sauli" },
+    { "from": "5:1", "to": "10:19", "title": "Daudi mfalme juu ya Israeli yote: Yerusalemu, sanduku, agano la Mungu" },
+    { "from": "11:1", "to": "12:31", "title": "Dhambi ya Daudi na Bathisheba na karipio la Nathani" },
+    { "from": "13:1", "to": "18:33", "title": "Amnoni, Absalomu na uasi wa Absalomu" },
+    { "from": "19:1", "to": "20:26", "title": "Daudi anarudi Yerusalemu; uasi wa Sheba" },
+    { "from": "21:1", "to": "24:25", "title": "Nyimbo za Daudi, mashujaa wake na kuhesabiwa kwa watu" }
+  ],
+  "keyVerses": ["7:12-13", "7:16", "12:13", "22:31"]
+}

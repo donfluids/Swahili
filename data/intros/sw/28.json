@@ -1,0 +1,65 @@
+{
+  "book": 28,
+  "name": "Hosea",
+  "facts": {
+    "author": "Hosea mwana wa Beeri, nabii katika ufalme wa kaskazini wa Israeli (1:1).",
+    "date": "Karibu mwaka 755–715 K.K.",
+    "audience": "Watu wa ufalme wa kaskazini wa Israeli, ambao mara nyingi wanaitwa Efraimu, katika miaka kabla Ashuru haijauangamiza"
+  },
+  "about": [
+    "Hosea alihubiri katika Israeli katika siku za mfalme Yeroboamu mwana wa Yoashi na za wafalme waliomfuata, wakati wa utajiri ambao punde uligeuka kuwa machafuko. Watu walimwabudu Baali na ndama za dhahabu, wakaitumainia Misri na Ashuru, wakamsahau Yahwe aliyewatoa katika nchi ya Misri.",
+    "Mungu alimwambia Hosea amwoe mwanamke aitwaye Gomeri, ambaye hakuwa mwaminifu kwake. Ndoa ya Hosea iliyovunjika ikawa picha hai ya jinsi Israeli ilivyokosa uaminifu kwa Mungu. Lakini Gomeri alipokwenda kwa wapenzi wengine, Mungu alimwambia Hosea ampende tena na kumrudisha (3:1), kama vile Yahwe alivyokuwa bado anaipenda Israeli.",
+    "Sehemu iliyobaki ya kitabu inaonya kwamba hukumu inakuja kwa sababu hakuna kweli, wala rehema, wala kumjua Mungu katika nchi. Lakini tena na tena upendo wa Mungu unajitokeza: hawezi kuwaacha watu wake (11:8). Kitabu kinamalizika kwa wito wa kurudi na ahadi kwamba Mungu atawaponya na kuwapenda kwa hiari yake (14:4)."
+  ],
+  "themes": [
+    {
+      "title": "Upendo mwaminifu wa Mungu",
+      "text": "Kama mume anayemrudisha mke asiye mwaminifu, na kama baba aliyemfundisha mwanawe kutembea (11:1-4), Mungu anaendelea kuwapenda watu wake."
+    },
+    {
+      "title": "Kukosa uaminifu kwa Mungu",
+      "text": "Kuabudu sanamu na kuyatumainia mataifa mengine ni uzinzi wa kiroho, ni kulisaliti agano."
+    },
+    {
+      "title": "Kumjua Mungu",
+      "text": "Watu wa Mungu wanaangamia kwa kukosa maarifa (4:6); yeye anataka rehema na kumjua Mungu kuliko sadaka (6:6)."
+    },
+    {
+      "title": "Rudini mkaponywe",
+      "text": "Hukumu ni ya kweli, lakini Mungu anaiita Israeli irudi, naye anaahidi kuwaponya na kuwarejesha."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "3:5",
+      "title": "Ndoa ya Hosea na Gomeri: picha ya Mungu na Israeli"
+    },
+    {
+      "from": "4:1",
+      "to": "7:16",
+      "title": "Mashtaka ya Yahwe dhidi ya dhambi ya Israeli"
+    },
+    {
+      "from": "8:1",
+      "to": "10:15",
+      "title": "Israeli itavuna kile ilichopanda"
+    },
+    {
+      "from": "11:1",
+      "to": "13:16",
+      "title": "Upendo wa Mungu kwa mwanawe aliyepotoka, na hukumu inayokuja"
+    },
+    {
+      "from": "14:1",
+      "to": "14:9",
+      "title": "Wito wa kurudi, na ahadi ya kuponywa"
+    }
+  ],
+  "keyVerses": [
+    "3:1",
+    "6:6",
+    "11:8",
+    "14:4"
+  ]
+}

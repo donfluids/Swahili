@@ -1,0 +1,64 @@
+{
+  "book": 25,
+  "name": "Maombolezo",
+  "facts": {
+    "author": "Kitabu hakimtaji mwandishi wake. Mapokeo ya Wayahudi na ya Wakristo yanashikilia kwamba nabii Yeremia ndiye aliyekiandika.",
+    "date": "Karibu mwaka 586 K.K., muda mfupi baada ya Yerusalemu kuanguka",
+    "audience": "Watu wa Yuda walioshuhudia kuangamizwa kwa Yerusalemu"
+  },
+  "about": [
+    "Maombolezo ni kitabu cha mashairi matano ya huzuni juu ya kuanguka kwa Yerusalemu mikononi mwa Wababeli. Mji uliokuwa umejaa watu sasa umekaa peke yake kama mjane (1:1). Hekalu limechomwa moto, mfalme na makuhani hawapo tena, watu wamechukuliwa uhamishoni, na wale waliobaki wanakufa njaa.",
+    "Mashairi haya yametungwa kwa uangalifu mkubwa. Katika mashairi manne ya kwanza, mistari inaanza kwa herufi za alfabeti ya Kiebrania kwa mpangilio wake, na katika shairi la tatu kila herufi inaanza mistari mitatu. Mwandishi hafichi ukweli kwamba mji ulianguka kwa sababu ya dhambi yake, na kwamba ni Yahwe aliyeleta hukumu hii.",
+    "Lakini katikati kabisa ya kitabu tumaini linang'aa. Ni kwa sababu ya rehema za Yahwe kwamba watu wake hawakuangamizwa; huruma zake hazikomi, ni mpya kila asubuhi, na uaminifu wake ni mkuu (3:22-23). Kitabu kinamalizika kwa ombi kwamba Mungu awarudishe watu wake kwake na kuzifanya upya siku zao kama zamani (5:21)."
+  ],
+  "themes": [
+    {
+      "title": "Huzuni juu ya dhambi",
+      "text": "Kitabu kinatufundisha kuhuzunika kwa moyo mnyoofu juu ya dhambi na matokeo yake mabaya sana."
+    },
+    {
+      "title": "Hukumu ya haki ya Mungu",
+      "text": "Kuanguka kwa Yerusalemu hakukuwa bahati mbaya: Yahwe alifanya kile alichokuwa ameonya kwamba atakifanya."
+    },
+    {
+      "title": "Tumaini katika rehema za Mungu",
+      "text": "Hata katika wakati wenye giza kuu upendo wa Mungu unabaki, naye hatawatupa milele (3:31-32)."
+    },
+    {
+      "title": "Kungoja na kurudi",
+      "text": "Ni vema kumngoja Yahwe kwa utulivu (3:26), kuzichunguza njia zetu na kumrudia (3:40)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:22",
+      "title": "Yerusalemu umekaa peke yake na kulia"
+    },
+    {
+      "from": "2:1",
+      "to": "2:22",
+      "title": "Hasira ya Yahwe dhidi ya Sayuni"
+    },
+    {
+      "from": "3:1",
+      "to": "3:66",
+      "title": "Mateso na tumaini: rehema zake ni mpya kila asubuhi"
+    },
+    {
+      "from": "4:1",
+      "to": "4:22",
+      "title": "Mambo ya kutisha ya kuzingirwa kwa mji"
+    },
+    {
+      "from": "5:1",
+      "to": "5:22",
+      "title": "Ombi la rehema na la kufanywa upya"
+    }
+  ],
+  "keyVerses": [
+    "3:22-23",
+    "3:40",
+    "5:21"
+  ]
+}

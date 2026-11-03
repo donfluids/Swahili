@@ -1,0 +1,83 @@
+{
+  "book": 18,
+  "name": "Ayubu",
+  "facts": {
+    "author": "Hajulikani. Mapokeo ya Kiyahudi yanasema kwamba Musa ndiye aliyekiandika; wengine wamependekeza Ayubu mwenyewe, Elihu au Sulemani.",
+    "date": "Haijulikani; Ayubu aliishi wakati wa mababu, karibu mwaka 2000 K.K.",
+    "audience": "Watu wa Mungu wa kila kizazi wanaoteseka na kuuliza kwa nini"
+  },
+  "about": [
+    "Ayubu ni mtu tajiri katika nchi ya Usi, aliye mkamilifu na mnyoofu, anayemcha Mungu na kujiepusha na uovu (1:1). Shetani anadai kwamba Ayubu anamtumikia Mungu kwa sababu tu Mungu amembariki. Mungu anamruhusu Shetani amjaribu. Kwa siku moja Ayubu anapoteza makundi yake ya kondoo na ng'ombe, watumishi wake na watoto wake wote kumi, kisha anapigwa kwa majipu yenye maumivu. Hata hivyo Ayubu anamwabudu Mungu na hatendi dhambi kwa kumlaumu (1:20-22).",
+    "Rafiki zake watatu, Elifazi, Bildadi na Sofari, wanakuja kumfariji. Baada ya kuketi naye kimya kwa siku saba, wanadai kwamba lazima Ayubu anateseka kwa sababu ya dhambi fulani iliyofichika. Ayubu anasisitiza kwamba hana hatia na anatamani kuileta hoja yake mbele za Mungu, lakini anashikilia tumaini kwamba Mkombozi wake yu hai (19:25). Kisha kijana mmoja, Elihu, anazungumza kuhusu ukuu wa Mungu na jinsi Mungu anavyowafundisha watu kupitia mateso.",
+    "Mwishowe Yahwe anamjibu Ayubu kutoka katika kisulisuli (38:1). Haelezi sababu ya mateso ya Ayubu, lakini anaonyesha hekima na uweza wake katika uumbaji. Ayubu anatubu kwa unyenyekevu, Mungu anawakemea wale rafiki watatu, na anampa Ayubu mara mbili ya vile alivyokuwa navyo hapo awali (42:10)."
+  ],
+  "themes": [
+    {
+      "title": "Mateso na wenye haki",
+      "text": "Mateso si mara zote adhabu kwa ajili ya dhambi ya mtu. Rafiki za Ayubu walikosea kusema hivyo."
+    },
+    {
+      "title": "Hekima na uweza wa Mungu",
+      "text": "Njia za Mungu ziko juu sana kuliko zetu. Hekima ya kweli ni kumcha Bwana na kujiepusha na uovu (28:28)."
+    },
+    {
+      "title": "Imani gizani",
+      "text": "Ayubu analalamika kwa uchungu lakini hamwachi Mungu kamwe, na mwishowe Mungu anasema kwamba Ayubu alinena yaliyo sawa kumhusu yeye (42:7)."
+    },
+    {
+      "title": "Mungu anatawala juu ya Shetani",
+      "text": "Shetani hawezi kufanya chochote bila ruhusa ya Mungu, wala hawezi kuiharibu imani ya mtu ambaye Mungu amemshika."
+    },
+    {
+      "title": "Mkombozi aliye hai",
+      "text": "Ayubu anatamani mtu wa kusimama kati yake na Mungu, na anaamini kwamba atamwona Mungu kwa macho yake mwenyewe (19:25-27)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:13",
+      "title": "Ayubu anajaribiwa mbinguni na duniani"
+    },
+    {
+      "from": "3:1",
+      "to": "3:26",
+      "title": "Ayubu anailaani siku ya kuzaliwa kwake"
+    },
+    {
+      "from": "4:1",
+      "to": "14:22",
+      "title": "Mzunguko wa kwanza wa hotuba pamoja na rafiki zake"
+    },
+    {
+      "from": "15:1",
+      "to": "21:34",
+      "title": "Mzunguko wa pili wa hotuba"
+    },
+    {
+      "from": "22:1",
+      "to": "31:40",
+      "title": "Mzunguko wa tatu; shairi kuhusu hekima; utetezi wa mwisho wa Ayubu"
+    },
+    {
+      "from": "32:1",
+      "to": "37:24",
+      "title": "Elihu anazungumza"
+    },
+    {
+      "from": "38:1",
+      "to": "42:6",
+      "title": "Yahwe anazungumza kutoka katika kisulisuli; Ayubu anatubu"
+    },
+    {
+      "from": "42:7",
+      "to": "42:17",
+      "title": "Ayubu anawaombea rafiki zake na kurudishiwa mali zake"
+    }
+  ],
+  "keyVerses": [
+    "1:21",
+    "19:25",
+    "42:5"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "book": 54,
+  "name": "1 Timotheo",
+  "facts": {
+    "author": "Mtume Paulo, kama waraka wenyewe unavyosema (1:1).",
+    "date": "Karibu mwaka 62–64 B.K.",
+    "audience": "Timotheo, msaidizi kijana wa Paulo, aliyempenda kama mwana, na ambaye alikuwa amemwacha aliongoze kanisa la Efeso"
+  },
+  "about": [
+    "Baada ya kufungwa kwake mara ya kwanza huko Rumi, Paulo alisafiri tena. Alimwacha Timotheo huko Efeso ili awazuie walimu wa uongo waliokuwa wakilisumbua kanisa kwa hadithi za kubuni na mabishano yasiyo na mwisho, na aliandika waraka huu ili kumwongoza (1:3-4). Ni miongoni mwa Nyaraka tatu za Kichungaji, zilizoandikiwa watu waliokuwa wakiyachunga makanisa.",
+    "Paulo anamweleza Timotheo jinsi watu wanavyopaswa kuenenda katika nyumba ya Mungu, yaani kanisa (3:15). Anaomba watu wote waombewe, wakiwemo wafalme, kwa sababu Mungu anataka watu wote waokolewe. Anaeleza waangalizi (maaskofu) na mashemasi wanapaswa kuwa watu wa namna gani, na anatoa ushauri wa hekima kuhusu wajane, wazee, watumwa na matajiri.",
+    "Katika waraka mzima inajitokeza habari ya maisha ya Paulo mwenyewe: zamani alikuwa mtukanaji wa Mungu na mtesaji, lakini Kristo alimrehemu, kwa maana Kristo Yesu alikuja ulimwenguni kuwaokoa wenye dhambi (1:15). Timotheo anapaswa kuilinda imani, kuwa kielelezo ingawa ni kijana, na kupigana vita vizuri."
+  ],
+  "themes": [
+    {
+      "title": "Mafundisho sahihi",
+      "text": "Mafundisho ya uongo huleta magomvi na maneno matupu, lakini injili ya kweli huzaa upendo utokao katika moyo safi, dhamiri njema na imani isiyo na unafiki."
+    },
+    {
+      "title": "Utaratibu katika nyumba ya Mungu",
+      "text": "Kanisa ni nyumba ya Mungu aliye hai, na viongozi wake lazima wawe watu wenye tabia njema na maisha ya uaminifu."
+    },
+    {
+      "title": "Mungu mmoja na mpatanishi mmoja",
+      "text": "Kuna Mungu mmoja, na mpatanishi mmoja kati ya Mungu na wanadamu, Kristo Yesu, aliyejitoa mwenyewe kuwa fidia kwa ajili ya wote (2:5-6)."
+    },
+    {
+      "title": "Utauwa na kuridhika",
+      "text": "Utauwa pamoja na kuridhika ni faida kubwa, lakini kupenda fedha huwapeleka wengi kwenye maangamizi (6:6-10)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:20",
+      "title": "Salamu; onyo dhidi ya walimu wa uongo; shukrani za Paulo kwa rehema"
+    },
+    {
+      "from": "2:1",
+      "to": "2:15",
+      "title": "Maombi kwa ajili ya watu wote, na mwenendo katika ibada"
+    },
+    {
+      "from": "3:1",
+      "to": "3:16",
+      "title": "Waangalizi na mashemasi; siri ya utauwa"
+    },
+    {
+      "from": "4:1",
+      "to": "4:16",
+      "title": "Mafundisho ya uongo katika nyakati za mwisho; mtumishi mwema wa Kristo"
+    },
+    {
+      "from": "5:1",
+      "to": "6:2",
+      "title": "Kuwatunza wajane, wazee na watumwa"
+    },
+    {
+      "from": "6:3",
+      "to": "6:21",
+      "title": "Walimu wa uongo na utajiri; piga vita vizuri vya imani"
+    }
+  ],
+  "keyVerses": [
+    "1:15",
+    "2:5",
+    "3:16",
+    "4:12"
+  ]
+}

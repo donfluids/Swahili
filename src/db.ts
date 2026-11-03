@@ -56,8 +56,7 @@ export function databaseCopyComplete(): boolean {
 
 /**
  * Free space the first copy needs: the database twice (the bundled file is first unpacked
- * to the cache, then copied into place) and a margin. About 130 MB for a one-language app,
- * 230 MB for the four-language one.
+ * to the cache, then copied into place) and a margin: about 140 MB.
  */
 export function firstCopySpace(): number {
   const sizes = DATABASE_SIZES as Record<string, number>;

@@ -1,0 +1,43 @@
+{
+  "book": 2,
+  "name": "Kutoka",
+  "facts": {
+    "author": "Musa. Kitabu kinasema kwamba Musa aliyaandika maneno ya Yahwe (24:4), na Wayahudi na kanisa la kwanza waliamini kwamba aliandika kitabu chote.",
+    "date": "Karibu mwaka 1446–1406 K.K.",
+    "audience": "Watu wa Israeli, waliokuwa wamewekwa huru kutoka Misri muda mfupi uliopita, wakiwa njiani kwenda katika nchi ya ahadi"
+  },
+  "about": [
+    "Kutoka maana yake ni \"kwenda nje\". Kitabu kinaanza muda mrefu baada ya kifo cha Yusufu. Familia ya Yakobo imekua kuwa taifa kubwa, lakini Farao mpya anawafanya kuwa watumwa. Mungu anasikia kilio chao, anamwita Musa kutoka katika kichaka kinachowaka moto, anamjulisha jina lake, MIMI NIPO (3:14), na kumtuma kuwaongoza Israeli watoke.",
+    "Farao anapokataa kuwaacha watu waende, Mungu analeta mapigo kumi juu ya Misri. Usiku wa Pasaka damu ya mwanakondoo kwenye miimo ya milango inawaokoa wazaliwa wa kwanza wa Israeli (12:13), na kisha Mungu anaigawa Bahari ya Shamu ili watu wake wavuke. Kwenye Mlima Sinai anafanya agano nao na kuwapa Amri Kumi na sheria zake.",
+    "Muda mfupi baadaye watu wanalivunja agano kwa kuabudu ndama wa dhahabu, lakini Mungu anawasamehe kwa sababu ya maombi ya Musa. Kitabu kinamalizika kwa hema la kukutania likiwa limejengwa sawasawa na Mungu alivyoagiza, na utukufu wa Yahwe ukilijaza (40:34)."
+  ],
+  "themes": [
+    {
+      "title": "Mungu Mkombozi",
+      "text": "Mungu anawaweka watu wake huru kutoka utumwani kwa uweza wake mkuu, na mwanakondoo wa Pasaka anaonyesha jinsi anavyowaokoa na hukumu."
+    },
+    {
+      "title": "Agano na sheria",
+      "text": "Huko Sinai Mungu anawafanya Israeli kuwa watu wake mwenyewe na kuwapa amri zake, akianza na agizo la kutokuwa na miungu mingine (20:2-3)."
+    },
+    {
+      "title": "Mungu kati ya watu wake",
+      "text": "Hema la kukutania ni mahali ambapo Mungu mtakatifu anakaa kati ya Israeli, na ambapo wanakutana naye."
+    },
+    {
+      "title": "Dhambi na rehema",
+      "text": "Israeli wananung'unika na kugeukia sanamu, lakini Mungu anajionyesha kuwa mwenye rehema na neema, na anafanya upya agano lake (34:6-7)."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "4:31", "title": "Israeli utumwani; kuzaliwa na kuitwa kwa Musa" },
+    { "from": "5:1", "to": "11:10", "title": "Musa mbele ya Farao, na mapigo juu ya Misri" },
+    { "from": "12:1", "to": "15:21", "title": "Pasaka, kutoka Misri na kuvuka Bahari ya Shamu" },
+    { "from": "15:22", "to": "18:27", "title": "Jangwani: maji machungu, mana, maji kutoka mwambani" },
+    { "from": "19:1", "to": "24:18", "title": "Kwenye Mlima Sinai: Amri Kumi na agano" },
+    { "from": "25:1", "to": "31:18", "title": "Maagizo ya Mungu kuhusu hema la kukutania na makuhani" },
+    { "from": "32:1", "to": "34:35", "title": "Ndama wa dhahabu, na agano linafanywa upya" },
+    { "from": "35:1", "to": "40:38", "title": "Hema la kukutania linajengwa na kujazwa utukufu wa Mungu" }
+  ],
+  "keyVerses": ["3:14", "12:13", "20:2-3", "40:34"]
+}

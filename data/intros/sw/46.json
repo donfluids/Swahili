@@ -1,0 +1,83 @@
+{
+  "book": 46,
+  "name": "1 Wakorintho",
+  "facts": {
+    "author": "Mtume Paulo, akiandika pamoja na Sosthene (1:1).",
+    "date": "Karibu mwaka 55 B.K.",
+    "audience": "Kanisa la Korintho, mji wa Kigiriki wenye shughuli nyingi, ambalo Paulo mwenyewe alilianzisha"
+  },
+  "about": [
+    "Paulo aliuandika waraka huu akiwa Efeso (16:8), kwa kanisa changa lililokuwa na matatizo mengi. Watu wa nyumbani mwa Kloe walikuwa wamemweleza habari za magomvi (1:11), na kanisa lenyewe lilikuwa limemtumia barua yenye maswali (7:1).",
+    "Korintho ulikuwa mji tajiri wa biashara, uliojaa sanamu na uasherati, na baadhi ya desturi zake zilikuwa zimeingia kanisani. Waumini walikuwa wamegawanyika katika makundi, kila kundi likimfuata mwalimu wake aliyempenda, walishtakiana mahakamani, na walivumilia dhambi ya aibu. Paulo anajibu maswali yao kuhusu ndoa, vyakula vilivyotolewa sadaka kwa sanamu, ibada, Chakula cha Bwana na karama za Roho. Anawakumbusha kwamba ujumbe wa msalaba unaonekana upuuzi kwa ulimwengu, lakini ndio uweza wa Mungu (1:18).",
+    "Katika sura ya 13 Paulo anaonyesha kwamba upendo ni mkuu kuliko karama zote. Katika sura ya 15 anatoa kiini cha injili: Kristo alikufa kwa ajili ya dhambi zetu, akazikwa, akafufuka siku ya tatu (15:3-4), na kwa kuwa yeye alifufuka, waumini nao watafufuliwa."
+  ],
+  "themes": [
+    {
+      "title": "Umoja katika Kristo",
+      "text": "Waumini ni mali ya Kristo, si ya viongozi wa kibinadamu, nao ni mwili mmoja wenye viungo vingi."
+    },
+    {
+      "title": "Maisha matakatifu",
+      "text": "Mwili ni hekalu la Roho Mtakatifu, na waumini wamenunuliwa kwa thamani ili wamtukuze Mungu."
+    },
+    {
+      "title": "Upendo kuliko yote",
+      "text": "Karama bila upendo hazifai kitu; imani, tumaini na upendo hudumu, na upendo ndio mkuu kuliko yote (13:13)."
+    },
+    {
+      "title": "Utaratibu katika ibada",
+      "text": "Ibada inapaswa kulijenga kanisa na kufanyika kwa heshima na kwa utaratibu."
+    },
+    {
+      "title": "Ufufuo",
+      "text": "Kristo amefufuka kweli, na ufufuo wake ni ahadi kwamba watu wake nao watafufuka."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:9",
+      "title": "Salamu na shukrani"
+    },
+    {
+      "from": "1:10",
+      "to": "4:21",
+      "title": "Migawanyiko kanisani na hekima ya msalaba"
+    },
+    {
+      "from": "5:1",
+      "to": "6:20",
+      "title": "Dhambi kanisani na kushtakiana mahakamani"
+    },
+    {
+      "from": "7:1",
+      "to": "7:40",
+      "title": "Maswali kuhusu ndoa"
+    },
+    {
+      "from": "8:1",
+      "to": "11:1",
+      "title": "Vyakula vilivyotolewa kwa sanamu na uhuru wa Mkristo"
+    },
+    {
+      "from": "11:2",
+      "to": "14:40",
+      "title": "Ibada, Chakula cha Bwana, karama za roho na upendo"
+    },
+    {
+      "from": "15:1",
+      "to": "15:58",
+      "title": "Ufufuo wa Kristo na wa waumini"
+    },
+    {
+      "from": "16:1",
+      "to": "16:24",
+      "title": "Mchango kwa ajili ya Yerusalemu na salamu za mwisho"
+    }
+  ],
+  "keyVerses": [
+    "1:18",
+    "13:13",
+    "15:3-4"
+  ]
+}

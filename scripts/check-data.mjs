@@ -33,7 +33,11 @@ const CHAPTERS = 1189;
 // Markup a source can leave behind: USFM (\f, \v), braces, tags, the KJV's [[ ]].
 const MARKUP = /\\[a-z]|[{}<>|]|\[\[|\]\]/;
 const BAD_CHARS = /[�\u0000-\u0009\u000B-\u001F\u007F]/;
-const SCRIPT = { MAL: /[ഀ-ൿ]/, TAM: /[஀-௿]/, HIN: /[ऀ-ॿ]/ };
+// The Swahili Bibles, checked for a verse that starts with the tail of a verse range ("-79").
+const SWAHILI = new Set(['SWU', 'SWN', 'SWM']);
+// Verses a translation leaves out with no note in its source: the ULB has no Luke 17:36,
+// which the modern critical texts lack.
+const LEFT_OUT = new Set(['SWU 42:17:36']);
 
 const errors = [];
 const warnings = [];
@@ -91,8 +95,7 @@ for (const file of readdirSync(DB_DIR).filter((f) => /^bible-\w+\.db$/.test(f)).
       if (/ {2,}/.test(r.text)) spaces.push(at);
       // What is left of a bridged verse number ("-18 அப்பொழுது"). A leading number cannot be
       // checked so: the Tamil writes numbers as digits ("40 நாட்களுக்குப்").
-      if (SCRIPT[t] && /^-\d/.test(r.text)) number.push(`${at} ${r.text.slice(0, 20)}…`);
-      if (SCRIPT[t] && /[A-Za-z]/.test(r.text)) latin.push(`${at} …${r.text.slice(Math.max(0, r.text.search(/[A-Za-z]/) - 10), r.text.search(/[A-Za-z]/) + 10)}…`);
+      if (SWAHILI.has(t) && /^-\d/.test(r.text)) number.push(`${at} ${r.text.slice(0, 20)}…`);
       if (r.tags) {
         const prefix = r.book <= 39 ? 'H' : 'G';
         let pos = 0;
@@ -109,10 +112,17 @@ for (const file of readdirSync(DB_DIR).filter((f) => /^bible-\w+\.db$/.test(f)).
         }
       }
     }
+    // A verse that holds the next one too (the ULB's 1 Chronicles 6:78-79) stands for both:
+    // verse_map lists the second, which is then not a gap.
+    const joined = new Set(all('SELECT book, chapter, overse FROM verse_map WHERE translation = ? AND obook = book AND ochapter = chapter AND overse > verse', t).map((r) => `${r.book}:${r.chapter}:${r.overse}`));
     for (const [ch, verses] of byChapter) {
       verses.sort((a, b) => a - b);
+      const present = [...verses];
+      for (const k of joined) if (k.startsWith(`${ch}:`)) present.push(Number(k.split(':')[2]));
+      for (const k of LEFT_OUT) if (k.startsWith(`${t} ${ch}:`)) present.push(Number(k.split(':')[2]));
+      present.sort((a, b) => a - b);
       counts[ch] = verses.length;
-      verses.forEach((v, i) => {
+      present.forEach((v, i) => {
         if (v !== i + 1) gaps.push(`${t} ${ch}: verse ${i + 1} expected, ${v} found`);
       });
     }

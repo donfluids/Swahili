@@ -32,7 +32,7 @@ interface Row {
 
 /**
  * One verse in every translation, with its Hebrew or Greek beneath. Translations that
- * number the verse differently (the Malayalam in a few chapters) show their own verse,
+ * number the verse differently (the Swahili in a few chapters) show their own verse,
  * and where one translation joins two verses into one, the other shows both.
  */
 export function CompareSheet({ target, translation, books, onClose, onWord }: Props) {

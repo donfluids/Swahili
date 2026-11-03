@@ -1,0 +1,69 @@
+{
+  "book": 41,
+  "name": "Marko",
+  "facts": {
+    "author": "Yohana Marko, mwenzi wa Petro na wa Paulo. Kanisa la kwanza lilishikilia kwamba Marko aliandika yale ambayo Petro alihubiri kuhusu Yesu.",
+    "date": "Karibu mwaka 55–65 B.K.",
+    "audience": "Wakristo walioishi nje ya Uyahudi, kwa uwezekano mkubwa huko Rumi, wengi wao wakiwa si Wayahudi"
+  },
+  "about": [
+    "Marko ndiyo Injili fupi kuliko zote nne, nayo inasonga kwa haraka. Inasimulia machache ya maneno ya Yesu ikilinganishwa na matendo yake: anawaponya wagonjwa, anawatoa pepo, anaituliza dhoruba na kuwalisha makutano, na neno \"mara moja\" linajitokeza tena na tena.",
+    "Nusu ya kwanza inauliza Yesu ni nani, na jibu linakuja Petro anaposema kwamba yeye ndiye Kristo (8:29). Kuanzia hapo Yesu anaelekea Yerusalemu na kuwafundisha wanafunzi wake kwamba Mwana wa Adamu lazima ateswe, afe na afufuke tena. Zaidi ya theluthi moja ya kitabu inahusu juma la mwisho la maisha yake, kifo chake msalabani na kaburi tupu."
+  ],
+  "themes": [
+    {
+      "title": "Yesu, Mwana wa Mungu",
+      "text": "Kitabu kinaanza kwa kumwita Yesu Mwana wa Mungu, na pale msalabani afisa mmoja wa jeshi la Kirumi anasema vivyo hivyo."
+    },
+    {
+      "title": "Mtumishi anayetoa uhai wake",
+      "text": "Yesu hakuja kutumikiwa bali kutumika, na kutoa uhai wake kuwa fidia kwa wengi."
+    },
+    {
+      "title": "Kumfuata Yesu",
+      "text": "Mara nyingi wanafunzi wanashindwa kuelewa, lakini Yesu anawaita wajitwike msalaba wao na kumfuata."
+    },
+    {
+      "title": "Habari njema kwa mataifa yote",
+      "text": "Marko anaeleza desturi za Kiyahudi kwa wasomaji wasiozijua, na Injili inapaswa kuhubiriwa kwa kila taifa."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:13",
+      "title": "Yohana Mbatizaji anaandaa njia; Yesu anabatizwa na kujaribiwa"
+    },
+    {
+      "from": "1:14",
+      "to": "8:26",
+      "title": "Yesu anahubiri, anaponya na kufundisha huko Galilaya"
+    },
+    {
+      "from": "8:27",
+      "to": "10:52",
+      "title": "Petro anamkiri Yesu kuwa Kristo; njiani kwenda Yerusalemu"
+    },
+    {
+      "from": "11:1",
+      "to": "13:37",
+      "title": "Yesu huko Yerusalemu: hekalu na mafundisho yake"
+    },
+    {
+      "from": "14:1",
+      "to": "15:47",
+      "title": "Karamu ya Mwisho, kukamatwa, kushtakiwa na msalaba"
+    },
+    {
+      "from": "16:1",
+      "to": "16:20",
+      "title": "Kaburi tupu na Bwana aliyefufuka"
+    }
+  ],
+  "keyVerses": [
+    "1:1",
+    "8:29",
+    "10:45",
+    "15:39"
+  ]
+}

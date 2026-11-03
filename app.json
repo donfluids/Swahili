@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Bible",
-    "slug": "bible",
-    "version": "0.4.28",
+    "name": "Biblia",
+    "slug": "bible-swahili",
+    "version": "0.1.0",
     "orientation": "default",
     "userInterfaceStyle": "automatic",
     "assetBundlePatterns": [

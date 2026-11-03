@@ -1,0 +1,64 @@
+{
+  "book": 35,
+  "name": "Habakuki",
+  "facts": {
+    "author": "Nabii Habakuki (1:1). Ni machache mengine yanayojulikana juu yake; maombi ya sura ya 3 (3:1) na maelekezo yake ya muziki yanaonyesha kwamba huenda alihusiana na waimbaji wa hekaluni.",
+    "date": "Karibu mwaka 609–605 K.K.",
+    "audience": "Watu wa Yuda katika miaka michache kabla Wababeli hawajaivamia nchi"
+  },
+  "about": [
+    "Habakuki ni tofauti na manabii wengi. Badala ya kuwaletea watu neno la Mungu, anamletea Mungu maswali yake. Anaona dhuluma na udhalimu katika Yuda, naye anauliza ni hadi lini Mungu ataviacha viendelee (1:2-4).",
+    "Mungu anajibu kwamba anawainua Wakaldayo, yaani Wababeli, ili kuiadhibu Yuda (1:6). Jambo hili linamsumbua Habakuki hata zaidi: Mungu mtakatifu anawezaje kulitumia taifa ovu kuliko Yuda? Anasimama katika mnara wake wa ulinzi akilingoja jibu (2:1). Mungu anamwambia ayaandike maono hayo. Wenye kiburi wataanguka, lakini mwenye haki ataishi kwa imani yake (2:4), na siku moja dunia itajazwa maarifa ya utukufu wa Yahwe (2:14).",
+    "Kitabu kinamalizika kwa maombi na wimbo. Habakuki anakumbuka matendo makuu ya Mungu ya zamani na anaamua kwamba, hata mtini usipochanua na mashamba yasipotoa chakula, bado atafurahi katika Mungu wa wokovu wake (3:17-18)."
+  ],
+  "themes": [
+    {
+      "title": "Maswali ya moyo mnyoofu",
+      "text": "Habakuki anamletea Mungu mashaka na malalamiko yake, naye Mungu anamjibu."
+    },
+    {
+      "title": "Kuishi kwa imani",
+      "text": "Mtu mwenye haki anaishi kwa kumtumaini Mungu, hata wakati njia zake ni ngumu kuzielewa."
+    },
+    {
+      "title": "Mungu anawahukumu wenye kiburi",
+      "text": "Ole tano zinatangaza kwamba Wababeli wenye tamaa na ukatili nao watahukumiwa kwa zamu yao (2:6-20)."
+    },
+    {
+      "title": "Furaha katika nyakati ngumu",
+      "text": "Habakuki anajifunza kufurahi katika Mungu mwenyewe wakati kila kitu kingine kinashindwa."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:4",
+      "title": "Swali la kwanza la Habakuki: kwa nini Mungu anaruhusu udhalimu?"
+    },
+    {
+      "from": "1:5",
+      "to": "1:11",
+      "title": "Jibu la Mungu: Wababeli wanakuja"
+    },
+    {
+      "from": "1:12",
+      "to": "2:1",
+      "title": "Swali la pili la Habakuki: kwa nini kulitumia taifa ovu?"
+    },
+    {
+      "from": "2:2",
+      "to": "2:20",
+      "title": "Jibu la Mungu: mwenye haki ataishi kwa imani; ole kwa wenye kiburi"
+    },
+    {
+      "from": "3:1",
+      "to": "3:19",
+      "title": "Maombi ya Habakuki na wimbo wake wa kumtumaini Mungu"
+    }
+  ],
+  "keyVerses": [
+    "2:4",
+    "2:14",
+    "3:17-18"
+  ]
+}

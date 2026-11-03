@@ -1,22 +1,18 @@
 // Tests of the app's logic that once went wrong without anyone seeing: which Greek or
 // Hebrew word a tapped word stands for, the word sheet's chips and headline, reading
-// settings and saved card designs back, search order and filters, Malayalam search
-// spelling, verse text, the Malayalam meanings of the database build, and patterns that
-// must stay fast on long text.
+// settings and saved card designs back, search order and filters, Swahili apostrophes in
+// search, verse text, and patterns that must stay fast on long text.
 //
 //   npx tsx scripts/test-logic.mts
 import { plainMorph } from '../src/morph';
 import assert from 'node:assert/strict';
 import { describeVoice, groupVoices, voicesFor } from '../src/voiceLabels';
-import { groupForms, isTaBaseForm, taStem } from './lib/forms.mjs';
 import { addPoint, decodeInk, encodeInk, packSteps, pageHeight, parseInk, pathOf, strokePath, touchesStroke, unpackSteps } from '../src/ink';
 import { FEEDBACK_NEVER, deviceLine, feedbackCardDue, feedbackDueFrom, feedbackLater, mailtoUrl } from '../src/feedback';
 import { cleanLook, ownPhotoIn, savedCopyIn } from '../src/lookClean';
 import { makeBackup, mergePages, readBackup } from '../src/notebookBackup';
 import { inkPageHtml, typedPageHtml } from '../src/pagePdf';
-import { hindiPattern } from '../src/hindiSearch';
 import { matchRanges } from '../src/searchMatch';
-import { malayalamPattern } from '../src/malayalamSearch';
 import { countCrossRefs, getBeside, getCrossRefs, getIntro } from '../src/queries';
 import { findReferences, parseReference } from '../src/refs';
 import { newTestamentFirst, refInScope, scopeCounts } from '../src/searchScope';
@@ -101,16 +97,11 @@ test('filters with counts', () => assert.deepEqual(scopeCounts(hits, testament).
 test('a book filter keeps that book', () => assert.equal(hits.filter((h) => refInScope(h, 19, testament)).length, 2));
 test('no filters for one match', () => assert.deepEqual(scopeCounts(hits.slice(0, 1), testament), []));
 
-// --- Malayalam search spelling ---
-const finds = (query: string, text: string) => new RegExp(malayalamPattern(query)!.source).test(text);
-test('ആത്മാവ് finds ആത്മാവു', () => assert.ok(finds('ആത്മാവ്', 'ദൈവത്തിന്റെ ആത്മാവു വെള്ളത്തിൻ')));
-test('കൽപിച്ചു finds കല്പിച്ചു', () => assert.ok(finds('കൽപിച്ചു', 'ദൈവം കല്പിച്ചു')));
-test('അവൻ does not find അവന്നു', () => assert.ok(!finds('അവൻ', 'അവന്നു കൊടുത്തു')));
-test('signs in the query are taken as letters', () => {
-  assert.doesNotThrow(() => malayalamPattern('ദൈവം (.*+?[ ]'));
-  assert.ok(!finds('ദൈവം.*', 'ദൈവം വചനം'));
+// --- Swahili search: the three Bibles write ng’ three ways ---
+test("ng'ombe marks ngʼombe and ng’ombe", () => {
+  assert.deepEqual(matchRanges('ngʼombe na kondoo', "ng'ombe"), [[0, 7]]);
+  assert.deepEqual(matchRanges('Ng’ombe', 'ng’ombe'), [[0, 7]]);
 });
-test('an English query is not a Malayalam pattern', () => assert.equal(malayalamPattern('love'), null));
 
 // --- Verse text ---
 test('the KJV ¶ is left out', () => assert.equal(flattenVerse('¶ There was a man'), 'There was a man'));
@@ -119,15 +110,6 @@ test('tags become word runs, a compound with its choices', () => {
   assert.deepEqual([segs[0].text, segs[0].strongs, segs[0].choices], ['നിത്യജീവൻ', 'G2222', ['G2222', 'G166']]);
 });
 test('broken tags are skipped', () => assert.doesNotThrow(() => parseSegments({ book: 1, text: 'x', tags: 'a,b,c 0,99,1' })));
-
-// --- The Malayalam meanings of the database build (scripts/lib/forms.mjs) ---
-const forms = (list: [string, number][]) => groupForms(list.map(([display, n]) => ({ display, refs: [...Array(n)].flatMap((_, i) => [1, 1 + Math.floor(i / 50), 1 + (i % 50)]) })));
-const label = (list: [string, number][]) => forms(list).sort((a: { refs: number[] }, b: { refs: number[] }) => b.refs.length - a.refs.length)[0].display;
-test('Jerusalem: the plain name, not the locative', () => assert.equal(label([['യെരൂശലേമിൽ', 236], ['യെരൂശലേമിലേക്കു', 83], ['യെരൂശലേമിന്റെ', 62], ['യെരൂശലേം', 53]]), 'യെരൂശലേം'));
-test('Christ: the head in ു', () => assert.equal(label([['ക്രിസ്തുവിൽ', 80], ['ക്രിസ്തുവിന്റെ', 70], ['ക്രിസ്തു', 60]]), 'ക്രിസ്തു'));
-test('people: ജനം and ജനത്തെ are one word', () => assert.equal(forms([['ജനം', 275], ['ജനത്തെ', 606]]).length, 1));
-test('a verb keeps its commonest form', () => assert.equal(label([['വന്നു', 500], ['വന്നപ്പോൾ', 80], ['വരുന്നു', 40]]), 'വന്നു'));
-test('Tamil: two-letter stems are not grouped', () => assert.equal(groupForms([{ display: 'கல்', refs: [1, 1, 1] }, { display: 'கலை', refs: [1, 1, 2] }], taStem, isTaBaseForm).length, 2));
 
 // --- Handwritten pages (src/ink.ts) ---
 const strokeA = { c: 1, w: 3, p: [10, 20, 30, 25, 60, 40] };
@@ -169,9 +151,9 @@ test('the page grows below the writing', () => assert.equal(pageHeight({ strokes
 const { DatabaseSync } = await import('node:sqlite');
 const { existsSync: exists, readdirSync: list } = await import('node:fs');
 const DB_DIR = new URL('../assets/db/', import.meta.url).pathname;
-// Verses the edition's Bible does not have (Acts 15:34 and 28:29, Romans 16:24 in the Malayalam).
-const NOT_IN = new Set(['MAL 44:15:34', 'MAL 44:28:29', 'MAL 45:16:24']);
-for (const [ed, native] of [['ml', 'MAL'], ['ta', 'TAM']] as const) {
+// Verses a Bible does not have (Luke 17:36 in the ULB).
+const NOT_IN = new Set(['SWU 42:17:36']);
+for (const [ed, native] of [['sw', 'SWU'], ['sw', 'SWN'], ['sw', 'SWM']] as const) {
   const file = exists(DB_DIR) ? list(DB_DIR).find((f) => f.startsWith(`bible-${ed}`) && f.endsWith('.db')) : undefined;
   if (!file) continue;
   const raw = new DatabaseSync(DB_DIR + file, { readOnly: true });
@@ -192,38 +174,37 @@ for (const [ed, native] of [['ml', 'MAL'], ['ta', 'TAM']] as const) {
         }
     }
   }
-  test(`${ed} side by side: every verse of the renumbered chapters has its partner, both ways`, () => assert.deepEqual(problems.slice(0, 5), []));
+  test(`${native} side by side: every verse of the renumbered chapters has its partner, both ways`, () => assert.deepEqual(problems.slice(0, 5), []));
   // Cross references: John 3:16 leads first to Romans 5:8, quoted in the edition's own Bible.
   const john316 = await getCrossRefs(db, native, { book: 43, chapter: 3, verse: 16 });
-  test(`${ed} cross references of John 3:16, strongest first, in ${native}`, () => {
+  test(`${native} cross references of John 3:16, strongest first, in ${native}`, () => {
     assert.deepEqual(john316[0].start, { book: 45, chapter: 5, verse: 8 });
     assert.ok(john316.length >= 5 && john316.length <= 12, `${john316.length}`);
-    const script = native === 'MAL' ? /[\u0D00-\u0D7F]/ : /[\u0B80-\u0BFF]/;
-    assert.ok(john316.every((c) => c.verses.length > 0 && c.verses.every((v) => script.test(v.text))), 'every reference quoted in the edition\'s own Bible');
+    const swahili = /\b(na|wa|ya|kwa|Mungu)\b/;
+    assert.ok(john316.every((c) => c.verses.length > 0 && c.verses.every((v) => swahili.test(v.text))), 'every reference quoted in the Swahili Bible');
   });
-  test(`${ed} a range is quoted in part and counted`, () => {
+  test(`${native} a range is quoted in part and counted`, () => {
     const range = john316.find((c) => c.end.verse > c.start.verse);
     assert.ok(range && range.verses.length === Math.min(3, range.end.verse - range.start.verse + 1));
   });
-  test(`${ed} the count in the verse menu matches the list`, async () => assert.equal(await countCrossRefs(db, native, { book: 43, chapter: 3, verse: 16 }), john316.length));
+  test(`${native} the count in the verse menu matches the list`, async () => assert.equal(await countCrossRefs(db, native, { book: 43, chapter: 3, verse: 16 }), john316.length));
   // Parallel passages: Matthew 8:28 (the Gadarenes) is told in Mark 5 and Luke 8; Psalm 18,
   // numbered from its title in the source, meets 2 Samuel 22 at the same verses.
   const gadarenes = await getCrossRefs(db, native, { book: 40, chapter: 8, verse: 28 }, 'parallels');
-  test(`${ed} parallel passages of Matthew 8:28: Mark 5:1-3 and Luke 8:26-27`, () =>
+  test(`${native} parallel passages of Matthew 8:28: Mark 5:1-3 and Luke 8:26-27`, () =>
     assert.deepEqual(gadarenes.map((c) => [c.start, c.end]), [
       [{ book: 41, chapter: 5, verse: 1 }, { book: 41, chapter: 5, verse: 3 }],
       [{ book: 42, chapter: 8, verse: 26 }, { book: 42, chapter: 8, verse: 27 }],
     ]));
-  test(`${ed} parallel passages of Psalm 18:2 in KJV numbering: 2 Samuel 22:2-3`, async () => {
+  test(`${native} parallel passages of Psalm 18:2 in KJV numbering: 2 Samuel 22:2-3`, async () => {
     const psalm = await getCrossRefs(db, 'KJV', { book: 19, chapter: 18, verse: 2 }, 'parallels');
     assert.deepEqual(psalm.map((c) => [c.start.book, c.start.chapter, c.start.verse, c.end.verse]), [[10, 22, 2, 3]]);
   });
   // Book introductions: in the interface language, English when asked for another.
-  test(`${ed} the introduction to Mark in ${ed === 'ml' ? 'Malayalam' : 'Tamil'} and in English`, async () => {
+  test(`${native} the introduction to Mark in Swahili and in English`, async () => {
     const own = await getIntro(db, 41, ed);
     const english = await getIntro(db, 41, 'en');
-    const script = ed === 'ml' ? /[\u0D00-\u0D7F]/ : /[\u0B80-\u0BFF]/;
-    assert.ok(own && script.test(own.about[0]) && english && /^[\x00-\u2100]*$/.test(english.about.join(' ')));
+    assert.ok(own && /\bMarko\b/.test(own.about.join(' ')) && english && /\bMark\b/.test(english.about.join(' ')));
     assert.deepEqual(own.outline.map((s) => s.from), english.outline.map((s) => s.from));
     assert.equal((await getIntro(db, 41, 'xx'))?.about[0], english.about[0]);
   });
@@ -233,14 +214,14 @@ for (const [ed, native] of [['ml', 'MAL'], ['ta', 'TAM']] as const) {
 const typedPage = { id: 'abc1', title: 'Sunday', body: 'John 3:16', created: 1000, updated: 2000 };
 const handPage = { id: 'abc2', title: '', body: '', created: 1000, updated: 3000, ink: { paper: 'lined' as const, strokes: 1 } };
 const handInk = { strokes: [{ c: 2, w: 3, p: [10, 80, 40, 90] }] };
-const backupText = makeBackup([typedPage, handPage], (id) => (id === 'abc2' ? handInk : null), 'ml', new Date(0));
+const backupText = makeBackup([typedPage, handPage], (id) => (id === 'abc2' ? handInk : null), 'sw', new Date(0));
 test('a backup is read back, typed and handwritten pages with their strokes', () => {
   const b = readBackup(backupText);
   assert.deepEqual(b.pages, [typedPage, handPage]);
   assert.deepEqual(b.ink.get('abc2'), handInk);
 });
-test('a backup says which app made it, the four-language app too', () => {
-  assert.equal(readBackup(backupText).edition, 'ml');
+test('a backup says which app made it, a Bible app\'s too', () => {
+  assert.equal(readBackup(backupText).edition, 'sw');
   assert.equal(readBackup(makeBackup([typedPage], () => null, 'all', new Date(0))).edition, 'all');
   assert.equal(readBackup(JSON.stringify({ kind: 'riversresearch-notebook', edition: 'xx', pages: [] })).edition, null);
 });
@@ -320,7 +301,7 @@ fast('a long handwritten page read back', () => parseInk(JSON.stringify(encodeIn
     // The slow way took 3 to 50 ms on this machine; the limit leaves room for a busy one.
   }, 150);
 }
-fast('a long Malayalam search', () => new RegExp(malayalamPattern('ൻ്റ'.repeat(200))!.source).test('ന്റ'.repeat(5000)));
+fast('a long search highlight', () => matchRanges('ng’ombe '.repeat(5000), "ng'o"));
 
 if (failures.length) {
   console.log(`${failures.length} failed, ${passed} passed:\n  ${failures.join('\n  ')}`);
@@ -352,46 +333,12 @@ test('the invitation to write comes after a fortnight, waits after Not now, and 
 });
 
 
-test('Hindi search: anusvara finds chandrabindu, nukta and joiners are optional', () => {
-  const finds = (query: string, text: string) => new RegExp(hindiPattern(query)!.source).test(text);
-  assert.ok(finds('मुंह', 'उसके मुँह से'));
-  assert.ok(finds('पड', 'वह गिर पड़ा'));
-  assert.ok(finds('\u095c', 'वह गिर पड़ा'), 'a precomposed nukta letter');
-  assert.ok(finds('वेश्या', 'देश वेश्\u094d\u200dयागमन के कारण'.replace('\u094d\u094d', '\u094d')));
-  assert.ok(!finds('प्रेम', 'परमेश्वर'));
-  assert.equal(hindiPattern('love'), null);
-  assert.doesNotThrow(() => hindiPattern('प्रेम (.*+?[ ]'));
-  // The LIKE pattern lets every exact match through.
-  const p = hindiPattern('मुंह')!;
-  assert.equal(p.like, '%मु_ह%');
-});
-
-test('Hindi search: the dot before a stop finds the half nasal of its group, and back', () => {
-  const finds = (query: string, text: string) => new RegExp(hindiPattern(query)!.source).test(text);
-  assert.ok(finds('मंदिर', 'यहोवा के मन्दिर में'));
-  assert.ok(finds('परंतु', 'परन्तु उसने कहा'));
-  assert.ok(finds('संबंध', 'उनके सम्बन्ध में'));
-  assert.ok(finds('दंड', 'उसको दण्ड मिला'));
-  assert.ok(finds('मन्दिर', 'प्रभु के मंदिर में'));
-  // Only the nasal of the stop's group: न्ह and म्म are not written with the dot.
-  assert.ok(!finds('उंहें', 'उन्हें'));
-  assert.ok(!finds('मंबई', 'मन्बई'));
-  // The LIKE alternatives let every exact match through, and highlighting finds it.
-  const like = (pattern: string) => new RegExp('^' + pattern.replace(/\\(.)|([%_])|([^%_\\]+)/g, (_, esc, w, lit) => (esc ? esc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') : w === '%' ? '.*' : w === '_' ? '.' : lit.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))) + '$', 's');
-  for (const [q, text] of [['मंदिर', 'यहोवा के मन्दिर में'], ['आनंद', 'बड़ा आनन्द हुआ']]) {
-    const hp = hindiPattern(q)!;
-    assert.ok(like(hp.like).test(text), `LIKE ${hp.like}`);
-    assert.ok(hp.alternatives.some((a) => like(a).test(text)), `alternatives for ${q}`);
-    assert.deepEqual(matchRanges(text, q).length, 1, `highlight ${q}`);
-  }
-});
-
 test('word sheet grammar in plain words, in each interface language', () => {
   assert.equal(plainMorph('N-DSF', false, 'en'), 'noun, singular');
-  assert.equal(plainMorph('V-AAI-3P', false, 'ml'), 'ക്രിയ, ബഹുവചനം');
+  assert.equal(plainMorph('V-AAI-3P', false, 'sw'), 'kitenzi, wingi');
   assert.equal(plainMorph('HR/Ncfsa', true, 'en'), 'preposition + noun, singular');
-  assert.equal(plainMorph('HNpm', true, 'hi'), 'नाम');
-  assert.equal(plainMorph('PREP', false, 'ta'), 'முன்னிடைச்சொல்');
+  assert.equal(plainMorph('HNpm', true, 'sw'), 'jina');
+  assert.equal(plainMorph('PREP', false, 'sw'), 'kihusishi');
   assert.equal(plainMorph('', false, 'en'), '');
 });
 

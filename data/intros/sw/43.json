@@ -1,0 +1,74 @@
+{
+  "book": 43,
+  "name": "Yohana",
+  "facts": {
+    "author": "Mtume Yohana, mwana wa Zebedayo, yule mwanafunzi ambaye Yesu alimpenda (21:20-24). Kanisa la kwanza lilishikilia kwamba aliiandika katika uzee wake huko Efeso.",
+    "date": "Karibu mwaka 85–95 B.K.",
+    "audience": "Waumini na wanaoutafuta ukweli kila mahali, ili waamini kwamba Yesu ndiye Kristo, Mwana wa Mungu, na wapate uzima kwa jina lake"
+  },
+  "about": [
+    "Injili ya Yohana ni tofauti na zile tatu nyingine. Inaanza kabla ya uumbaji, kwa Neno aliyekuwa pamoja na Mungu, naye alikuwa Mungu, aliyefanyika mwanadamu akaishi kati yetu (1:1-14). Yohana anatuambia waziwazi kwa nini aliandika: ili wasomaji waamini kwamba Yesu ndiye Kristo, Mwana wa Mungu, na kwa kuamini wapate uzima (20:31).",
+    "Yohana anachagua ishara saba, kuanzia kugeuza maji kuwa divai huko Kana (2:11) hadi kumfufua Lazaro kutoka kwa wafu, na anaandika mazungumzo marefu ambamo Yesu anaeleza yeye ni nani. Yesu anasema kwamba yeye ndiye mkate wa uzima, nuru ya ulimwengu, mchungaji mwema, ufufuo na uzima, njia, kweli na uzima, na mzabibu wa kweli.",
+    "Karibu nusu ya kitabu inahusu siku za mwisho za Yesu. Katika chumba cha ghorofani anawaosha wanafunzi wake miguu, anaahidi Roho Mtakatifu na anawaombea wote watakaoamini. Kisha inafuata habari ya msalaba, kaburi tupu, Thomaso akimkiri Yesu kuwa Bwana na Mungu (20:28), na Petro akirejeshwa kando ya ziwa."
+  ],
+  "themes": [
+    {
+      "title": "Yesu ni Mungu aliyefanyika mwanadamu",
+      "text": "Neno wa milele, aliyeviumba vitu vyote, alifanyika mwili na akatuonyesha Baba."
+    },
+    {
+      "title": "Ishara zinazoongoza kwenye imani",
+      "text": "Miujiza ni ishara zinazoonyesha utukufu wa Yesu na kuwaita watu wamwamini."
+    },
+    {
+      "title": "Uzima wa milele",
+      "text": "Mungu alimtoa Mwanawe pekee ili kila anayemwamini asipotee bali awe na uzima wa milele (3:16)."
+    },
+    {
+      "title": "Nuru na giza",
+      "text": "Yesu ni nuru ya ulimwengu, na watu wanachagua ama kuja kwenye nuru ama kubaki gizani."
+    },
+    {
+      "title": "Upendo na Roho Mtakatifu",
+      "text": "Yesu anawaamuru wanafunzi wake wapendane, na anaahidi Msaidizi, Roho wa kweli."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:18",
+      "title": "Neno aliyefanyika mwili"
+    },
+    {
+      "from": "1:19",
+      "to": "4:54",
+      "title": "Ushuhuda wa Yohana na ishara za kwanza"
+    },
+    {
+      "from": "5:1",
+      "to": "12:50",
+      "title": "Ishara, mafundisho na kutoamini kunakoongezeka"
+    },
+    {
+      "from": "13:1",
+      "to": "17:26",
+      "title": "Katika chumba cha ghorofani: kuosha miguu, ahadi ya Roho, na maombi ya Yesu"
+    },
+    {
+      "from": "18:1",
+      "to": "19:42",
+      "title": "Kukamatwa, kushtakiwa na msalaba"
+    },
+    {
+      "from": "20:1",
+      "to": "21:25",
+      "title": "Bwana aliyefufuka anawatokea wanafunzi wake"
+    }
+  ],
+  "keyVerses": [
+    "1:14",
+    "3:16",
+    "11:25",
+    "20:31"
+  ]
+}

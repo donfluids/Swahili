@@ -1,0 +1,75 @@
+{
+  "book": 21,
+  "name": "Mhubiri",
+  "facts": {
+    "author": "Sulemani, anayejiita Mhubiri, mwana wa Daudi na mfalme huko Yerusalemu (1:1). Huu ndio mtazamo wa mapokeo ya Kiyahudi na ya Kikristo.",
+    "date": "Karibu mwaka 935 K.K., mwishoni mwa maisha ya Sulemani",
+    "audience": "Watu wa Mungu, na wote wanaotafuta maana ya maisha"
+  },
+  "about": [
+    "Katika kitabu hiki Mhubiri anayatazama maisha chini ya jua, yaani maisha yanavyoonekana kutoka katika ulimwengu huu peke yake. Anajaribu kila kitu: hekima na elimu, anasa na kicheko, kazi kubwa za ujenzi, bustani, mali na kazi ngumu (2:1-11). Anagundua kwamba yote ni ubatili, kama pumzi inayopita upesi, na kama kujaribu kuushika upepo.",
+    "Anaona kwamba wenye hekima na wapumbavu wote hufa, kwamba waovu mara nyingi hufanikiwa, na kwamba hakuna mtu anayeweza kuielewa kazi yote ya Mungu. Hata hivyo Mungu amefanya kila kitu kuwa kizuri kwa wakati wake (3:11). Kwa hiyo Mhubiri anatuambia tupokee chakula, kazi na familia kwa furaha kama zawadi kutoka mkononi mwa Mungu, tufanye kazi kwa nguvu zetu zote, na tumkumbuke Muumba wetu siku za ujana wetu (12:1).",
+    "Kitabu kinamalizika kwa hitimisho lake: mche Mungu na uzishike amri zake, kwa kuwa Mungu ataleta kila kazi hukumuni (12:13-14). Ni ndani ya Mungu tu ambapo maisha yanapata maana yake ya kweli."
+  ],
+  "themes": [
+    {
+      "title": "Maisha chini ya jua",
+      "text": "Bila Mungu, hata vitu bora vya ulimwengu huu haviwezi kutosheleza, navyo vinapita upesi."
+    },
+    {
+      "title": "Zawadi za Mungu za kufurahia",
+      "text": "Chakula, kazi, upendo na uhai wenyewe ni zawadi njema kutoka kwa Mungu, za kufurahiwa kwa shukrani (5:18-19)."
+    },
+    {
+      "title": "Kila jambo na wakati wake",
+      "text": "Mungu ameweka wakati kwa kila jambo chini ya mbingu, na anachokifanya kinadumu milele (3:14)."
+    },
+    {
+      "title": "Kumcha Mungu",
+      "text": "Jibu la busara kwa mafumbo ya maisha ni kumheshimu Mungu, kuzishika amri zake na kukumbuka kwamba atahukumu."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:11",
+      "title": "Yote ni ubatili: mzunguko usio na mwisho wa maisha"
+    },
+    {
+      "from": "1:12",
+      "to": "2:26",
+      "title": "Mhubiri anatafuta katika hekima, anasa na kazi"
+    },
+    {
+      "from": "3:1",
+      "to": "5:20",
+      "title": "Kila jambo na wakati wake; dhuluma, ibada na mali"
+    },
+    {
+      "from": "6:1",
+      "to": "8:17",
+      "title": "Ni nini kilicho chema kwa mwanadamu? Hekima kwa maisha yasiyo na uhakika"
+    },
+    {
+      "from": "9:1",
+      "to": "11:6",
+      "title": "Mwisho mmoja unawajia wote; ishi na ufanye kazi kwa hekima"
+    },
+    {
+      "from": "11:7",
+      "to": "12:8",
+      "title": "Furahia ujana wako na umkumbuke Muumba wako"
+    },
+    {
+      "from": "12:9",
+      "to": "12:14",
+      "title": "Hitimisho: mche Mungu na uzishike amri zake"
+    }
+  ],
+  "keyVerses": [
+    "3:1",
+    "3:11",
+    "12:1",
+    "12:13"
+  ]
+}

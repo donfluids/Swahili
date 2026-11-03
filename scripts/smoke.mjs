@@ -4,8 +4,7 @@
 // JavaScript error, and keeps a screenshot of each step to look over.
 //
 //   npm install --no-save react-dom@19.2.3 react-native-web@^0.21.2   (once; web only)
-//   node scripts/smoke.mjs                 all three apps
-//   node scripts/smoke.mjs ml en           some of them
+//   node scripts/smoke.mjs                 the Swahili app (sw)
 //
 // Screenshots go to smoke-out/<app>/<size>/ (ignored by git). What the browser cannot
 // show (the phone's photo picker, its voices, Android's back button) is in
@@ -18,17 +17,16 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'smoke-out');
-const editions = process.argv.slice(2).filter((a) => ['en', 'ml', 'ta', 'all'].includes(a));
-const EDITIONS = editions.length ? editions : ['en', 'ml', 'ta', 'all'];
+const EDITIONS = ['sw'];
 const SIZES = [
   ['phone', 412, 915, 2],
   ['small-phone', 360, 640, 2],
   ['phone-sideways', 915, 412, 2],
   ['tablet-sideways', 1366, 1024, 1],
 ];
-const LANGUAGE = { en: 'en', ml: 'ml', ta: 'ta', all: 'en' };
-const QUERY = { en: 'love', ml: 'സ്നേഹം', ta: 'அன்பு', all: 'love' };
-const PAGE = { en: 'Love – John 3:16', ml: 'സ്നേഹം – യോഹന്നാൻ 3:16', ta: 'அன்பு – யோவான் 3:16', all: 'Love – John 3:16' };
+const LANGUAGE = { sw: 'sw' };
+const QUERY = { sw: 'upendo' };
+const PAGE = { sw: 'Upendo – Yohana 3:16' };
 
 for (const pkg of ['react-dom', 'react-native-web']) {
   if (!existsSync(join(ROOT, 'node_modules', pkg))) {
@@ -40,8 +38,9 @@ const { chromium } = await import(join(ROOT, 'node_modules/playwright-core/index
 
 // The interface strings, read from src/i18n.ts, so the steps follow its wording.
 function strings(language) {
-  const src = readFileSync(join(ROOT, 'src/i18n.ts'), 'utf8');
-  const start = src.indexOf(`const ${language}`);
+  // English is in src/i18n.ts, Swahili in src/i18nSw.ts.
+  const src = readFileSync(join(ROOT, language === 'sw' ? 'src/i18nSw.ts' : 'src/i18n.ts'), 'utf8');
+  const start = src.indexOf(language === 'sw' ? 'export const sw' : `const ${language}`);
   const end = src.indexOf('\n};', start);
   const table = {};
   for (const m of src.slice(start, end).matchAll(/^ {2}(\w+): (['"])((?:\\.|(?!\2).)*)\2,$/gm)) table[m[1]] = m[3].replace(/\\(.)/g, '$1');
@@ -99,7 +98,8 @@ for (const edition of EDITIONS) {
   const server = await serve(dir);
   const url = `http://localhost:${server.address().port}/`;
   const t = strings(LANGUAGE[edition]);
-  const browser = await chromium.launch();
+  // A Chromium other than playwright-core's own (CHROMIUM_PATH) when that one is not installed.
+  const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
   for (const [size, width, height, scale] of SIZES) {
     const shots = join(OUT, edition, size);
     mkdirSync(shots, { recursive: true });
@@ -164,27 +164,25 @@ for (const edition of EDITIONS) {
       if (await tip.count()) await tip.first().click();
       await vis(page.getByRole('button', { name: t.verseActions.replace('{n}', '1') })).waitFor({ timeout: 8000 });
     });
-    if (edition === 'all') {
-      await step('bible-chooser', async (snap) => {
-        // The Bible pill opens the six Bibles; the Hindi opens on the same chapter (John 1).
-        await vis(page.getByRole('button', { name: new RegExp(`^${t.chooseBible}:`) })).click();
-        await wait(800);
-        await page.screenshot({ path: join(shots, `${String(n).padStart(2, '0')}-bible-list.png`) });
-        await vis(page.getByText(/^इंडियन रिवाइज्ड वर्जन/)).click();
-        await wait(2000);
-        // A footnote letter sits inside John 1:1's first words, so the pill tells which Bible is open.
-        await vis(page.getByRole('button', { name: new RegExp(`^${t.chooseBible}: इंडियन रिवाइज्ड वर्जन`) })).waitFor({ timeout: 8000 });
-        await shows('यही आदि में परमेश्वर के साथ था।');
-        await snap();
-        await vis(page.getByRole('button', { name: new RegExp(`^${t.chooseBible}:`) })).click();
-        await wait(800);
-        // The row's text: in the browser its name also carries the icon's glyph.
-        await vis(page.getByText('King James Version', { exact: true })).click();
-        await wait(2000);
-        // The KJV's words are links each, so its pill tells which Bible is open.
-        await vis(page.getByRole('button', { name: `${t.chooseBible}: King James Version` })).waitFor({ timeout: 8000 });
-      });
-    }
+    await step('bible-chooser', async (snap) => {
+      // The Bible pill opens the five Bibles; Neno 2015 opens on the same chapter (John 1),
+      // with its one-time note that its words are not linked; then back to the ULB.
+      await vis(page.getByRole('button', { name: new RegExp(`^${t.chooseBible}:`) })).click();
+      await wait(800);
+      await page.screenshot({ path: join(shots, `${String(n).padStart(2, '0')}-bible-list.png`) });
+      await vis(page.getByText('Neno: Bibilia Takatifu 2015', { exact: true })).click();
+      await wait(2000);
+      await vis(page.getByRole('button', { name: `${t.chooseBible}: Neno: Bibilia Takatifu 2015` })).waitFor({ timeout: 8000 });
+      await shows('Hapo mwanzo alikuwako Neno');
+      await snap();
+      const note = page.getByText(t.gotIt, { exact: true });
+      if (await note.count()) await note.first().click();
+      await vis(page.getByRole('button', { name: new RegExp(`^${t.chooseBible}:`) })).click();
+      await wait(800);
+      await vis(page.getByText('Biblia Takatifu (ULB)', { exact: true })).click();
+      await wait(2000);
+      await vis(page.getByRole('button', { name: `${t.chooseBible}: Biblia Takatifu (ULB)` })).waitFor({ timeout: 8000 });
+    });
     await step('passage-picker', async (snap) => {
       // The title opens the picker: Testament switch, book grid, then the chapters; Genesis 3 opens.
       await vis(page.getByRole('button', { name: new RegExp(t.choosePassage.replace('{title}', '.*')) })).click();
@@ -195,11 +193,11 @@ for (const edition of EDITIONS) {
       await wait(600);
       await shows(t.groupLaw);
       await snap();
-      await vis(page.getByRole('button', { name: /^Genesis$|^ഉല്പത്തി$|^ஆதியாகமம்$/ })).click();
+      await vis(page.getByRole('button', { name: /^Genesis$|^Mwanzo$/ })).click();
       await wait(800);
-      await vis(page.getByRole('button', { name: /^(Genesis|ഉല്പത്തി|ஆதியாகமம்) 3$/ })).click();
+      await vis(page.getByRole('button', { name: /^(Genesis|Mwanzo) 3$/ })).click();
       await wait(2000);
-      await vis(page.getByRole('button', { name: new RegExp(t.choosePassage.replace('{title}', '(Genesis|ഉല്പത്തി|ஆதியாகமம்) 3')) })).waitFor({ timeout: 8000 });
+      await vis(page.getByRole('button', { name: new RegExp(t.choosePassage.replace('{title}', '(Genesis|Mwanzo) 3')) })).waitFor({ timeout: 8000 });
       // Back to John 1 for the steps that follow.
       await vis(page.getByRole('button', { name: new RegExp(t.choosePassage.replace('{title}', '.*')) })).click();
       await wait(1000);
@@ -207,9 +205,9 @@ for (const edition of EDITIONS) {
       await wait(500);
       await vis(page.getByRole('radio', { name: t.newTestament })).click();
       await wait(500);
-      await vis(page.getByRole('button', { name: /^John$|^യോഹന്നാൻ$|^யோவான்$/ })).click();
+      await vis(page.getByRole('button', { name: /^John$|^Yohana$/ })).click();
       await wait(800);
-      await vis(page.getByRole('button', { name: /^(John|യോഹന്നാൻ|யோவான்) 1$/ })).click();
+      await vis(page.getByRole('button', { name: /^(John|Yohana) 1$/ })).click();
       await wait(2000);
     });
     await step('word', async (snap) => {
@@ -268,7 +266,7 @@ for (const edition of EDITIONS) {
       await vis(page.getByLabel(t.recent)).click();
       await wait(800);
       // The row's text (in the browser its name also carries the clock's glyph).
-      await vis(page.getByText(/^(Genesis|ഉല്പത്തി|ஆதியாகமம்) 3$/)).waitFor({ timeout: 8000 });
+      await vis(page.getByText(/^(Genesis|Mwanzo) 3$/)).waitFor({ timeout: 8000 });
       await snap();
       await closeSheet();
     });
@@ -328,17 +326,15 @@ for (const edition of EDITIONS) {
       await shows(t.theme);
       await shows(t.feedback);
       await snap();
-      if (edition === 'all') {
-        // The Hindi interface: Settings in Hindi, then back to English for the steps that follow.
-        const hi = strings('hi');
-        await vis(page.getByRole('radio', { name: 'हिन्दी' })).click();
-        await wait(1200);
-        await shows(hi.theme);
-        await page.screenshot({ path: join(shots, `${String(n).padStart(2, '0')}-settings-hindi.png`) });
-        await vis(page.getByRole('radio', { name: 'English' })).click();
-        await wait(1000);
-        await shows(t.theme);
-      }
+      // The English interface: Settings in English, then back to Swahili for the steps that follow.
+      const en = strings('en');
+      await vis(page.getByRole('radio', { name: 'English' })).click();
+      await wait(1200);
+      await shows(en.theme);
+      await page.screenshot({ path: join(shots, `${String(n).padStart(2, '0')}-settings-english.png`) });
+      await vis(page.getByRole('radio', { name: 'Kiswahili' })).click();
+      await wait(1000);
+      await shows(t.theme);
       await vis(page.getByLabel(t.back)).click();
       await wait(1200);
     });

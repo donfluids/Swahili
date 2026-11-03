@@ -1,0 +1,79 @@
+{
+  "book": 42,
+  "name": "Luka",
+  "facts": {
+    "author": "Luka, tabibu na mwenzi mwaminifu wa Paulo katika safari zake. Kanisa la kwanza lilishikilia kwamba yeye ndiye aliyeandika Injili hii pamoja na kitabu cha Matendo ya Mitume.",
+    "date": "Karibu mwaka 59–62 B.K.",
+    "audience": "Theofilo, mtu mwenye cheo kikubwa (1:3), na kupitia kwake wasomaji wa mataifa waliotaka habari iliyochunguzwa kwa makini na kupangwa vizuri"
+  },
+  "about": [
+    "Luka anatuambia mwanzoni kwamba alichunguza kila kitu kwa uangalifu na akaandika habari kwa mpangilio, ili Theofilo apate kuwa na hakika ya mambo aliyofundishwa (1:1-4). Injili yake ndiyo ndefu kuliko zote nne, nayo ni sehemu ya kwanza ya kazi yenye sehemu mbili inayoendelea katika Matendo ya Mitume.",
+    "Luka anatoa habari kamili zaidi ya kuzaliwa kwa Yohana Mbatizaji na kwa Yesu, pamoja na nyimbo za Mariamu, Zekaria na Simeoni, na habari ya wachungaji wanaosikia kwamba Mwokozi amezaliwa (2:11). Huko Nazareti Yesu anatangaza kwamba Roho wa Bwana amemtuma kuwahubiri maskini habari njema (4:18). Kuanzia 9:51 anauelekeza uso wake Yerusalemu, na njiani anasimulia mifano inayopatikana katika Luka peke yake, kama Msamaria mwema, tajiri mpumbavu, sarafu iliyopotea na mwana aliyepotea (sura ya 15).",
+    "Kitabu kinamalizika kwa msalaba, kaburi tupu, safari ya kwenda Emmau, na Yesu akichukuliwa juu mbinguni."
+  ],
+  "themes": [
+    {
+      "title": "Mwokozi kwa watu wote",
+      "text": "Yesu alikuja kutafuta na kuokoa kilichopotea (19:10), na habari njema ni kwa Wayahudi na kwa watu wa mataifa vilevile."
+    },
+    {
+      "title": "Rehema kwa waliotengwa",
+      "text": "Luka anaonyesha jinsi Yesu alivyowajali maskini, wagonjwa, wanawake, Wasamaria, watoza ushuru na wenye dhambi."
+    },
+    {
+      "title": "Roho Mtakatifu na maombi",
+      "text": "Roho anafanya kazi tangu kuzaliwa kwa Yesu na kuendelea, na mara nyingi Yesu anaonekana akiomba."
+    },
+    {
+      "title": "Furaha na sifa",
+      "text": "Kitabu kinaanza na kumalizika kwa sifa kwa Mungu, na mbinguni kuna furaha juu ya mwenye dhambi mmoja anayetubu."
+    },
+    {
+      "title": "Habari ya kweli na ya uangalifu",
+      "text": "Luka aliandika kutokana na wale waliokuwa mashahidi waliojionea wenyewe, ili wasomaji wajue ukweli kwa hakika."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:52",
+      "title": "Kuzaliwa kwa Yohana na kwa Yesu, na Yesu akiwa mtoto"
+    },
+    {
+      "from": "3:1",
+      "to": "4:13",
+      "title": "Yohana Mbatizaji; Yesu anabatizwa na kujaribiwa"
+    },
+    {
+      "from": "4:14",
+      "to": "9:50",
+      "title": "Yesu anahubiri na kuponya huko Galilaya"
+    },
+    {
+      "from": "9:51",
+      "to": "19:27",
+      "title": "Safari ya kwenda Yerusalemu: mifano na mafundisho"
+    },
+    {
+      "from": "19:28",
+      "to": "21:38",
+      "title": "Yesu anaingia Yerusalemu na kufundisha hekaluni"
+    },
+    {
+      "from": "22:1",
+      "to": "23:56",
+      "title": "Karamu ya Mwisho, kukamatwa, kushtakiwa na msalaba"
+    },
+    {
+      "from": "24:1",
+      "to": "24:53",
+      "title": "Bwana aliyefufuka anawatokea na kuchukuliwa juu mbinguni"
+    }
+  ],
+  "keyVerses": [
+    "2:11",
+    "4:18",
+    "19:10",
+    "24:46-47"
+  ]
+}

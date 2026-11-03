@@ -6,9 +6,8 @@ import { useSQLiteContext } from 'expo-sqlite';
 import { Header } from '../components/Header';
 import { Icon, IconButton } from '../components/Icon';
 import { SectionLabel } from '../components/SectionLabel';
-import { LANGUAGE_WORD, bibleName, renderingsLabel, shortName, useT } from '../i18n';
-import { isMultilingual, useEdition } from '../edition';
-import { scriptureFont } from '../fonts';
+import { bibleName, renderingsLabel, shortName, useT } from '../i18n';
+import { hasSeveralBibles, useEdition } from '../edition';
 import { VerseListItem } from '../components/VerseListItem';
 import { getVerses, searchLexicon, searchText } from '../queries';
 import { parseReference } from '../refs';
@@ -18,7 +17,7 @@ import { useTheme } from '../theme';
 import { newTestamentFirst, refInScope, scopeCounts } from '../searchScope';
 import type { Scope } from '../searchScope';
 import { shortBookName } from '../shortNames';
-import { translationInfo } from '../types';
+import { isEnglish } from '../types';
 import type { Book, LexiconHit, Ref, TranslationId, VerseRow, WordPick } from '../types';
 
 interface Props {
@@ -34,9 +33,7 @@ const PAGE = 100;
 
 // Shown under an empty search box: a reference, a word and a Strong's number.
 const ENGLISH_EXAMPLES = ['John 3:16', 'Psalm 23', 'love', 'G26'];
-const MALAYALAM_EXAMPLES = ['യോഹന്നാൻ 3:16', 'സങ്കീർത്തനം 23', 'സ്നേഹം', 'H430'];
-const TAMIL_EXAMPLES = ['யோவான் 3:16', 'சங்கீதம் 23', 'அன்பு', 'H430'];
-const HINDI_EXAMPLES = ['यूहन्ना 3:16', 'भजन संहिता 23', 'प्रेम', 'H430'];
+const SWAHILI_EXAMPLES = ['Yohana 3:16', 'Zaburi 23', 'upendo', 'H430'];
 
 export function SearchScreen({ books, onOpenRef, onWord, onBack }: Props) {
   const db = useSQLiteContext();
@@ -47,8 +44,8 @@ export function SearchScreen({ books, onOpenRef, onWord, onBack }: Props) {
   const t = useT();
   const { settings, update } = useSettings();
   const edition = useEdition();
-  // In the four-language app the Bible searched is chosen under the box; elsewhere it is the one being read.
-  const multilingual = isMultilingual(edition);
+  // With several Swahili Bibles the Bible searched is chosen under the box; at first it is the one being read.
+  const multilingual = hasSeveralBibles(edition);
   const [searchIn, setSearchIn] = useState<TranslationId>(settings.translation);
   const translation = multilingual ? searchIn : settings.translation;
   // Without the study tools there is no dictionary; with them, two entries and the rest behind More.
@@ -175,7 +172,7 @@ export function SearchScreen({ books, onOpenRef, onWord, onBack }: Props) {
         <View style={styles.examples}>
           <Text style={[styles.examplesLabel, { color: theme.muted }]}>{t('searchExamples')}</Text>
           <View style={styles.exampleRow}>
-            {(translation === 'MAL' ? MALAYALAM_EXAMPLES : translation === 'TAM' ? TAMIL_EXAMPLES : translation === 'HIN' ? HINDI_EXAMPLES : ENGLISH_EXAMPLES).map((example) => (
+            {(isEnglish(translation) ? ENGLISH_EXAMPLES : SWAHILI_EXAMPLES).map((example) => (
               <Pressable
                 key={example}
                 onPress={() => setQuery(example)}
@@ -304,11 +301,10 @@ export function SearchScreen({ books, onOpenRef, onWord, onBack }: Props) {
         ) : null}
       </View>
       {multilingual ? (
-        // All six at once, on two lines if need be: in a sideways scroll the last were missed.
+        // All five at once, on two lines if need be: in a sideways scroll the last were missed.
         <View accessibilityRole="radiogroup" style={[styles.biblesRow, styles.bibles, styles.biblesWrap, { paddingHorizontal: Math.max(14, (windowWidth - (MAX_CONTENT_WIDTH - 28)) / 2) }]}>
           {edition.translations.map((id) => {
             const active = id === translation;
-            const font = scriptureFont(translationInfo(id).script ?? null, false, true);
             return (
               <Pressable
                 key={id}
@@ -320,7 +316,7 @@ export function SearchScreen({ books, onOpenRef, onWord, onBack }: Props) {
                 android_ripple={{ color: theme.accentSoft }}
                 style={[styles.chip, { borderColor: active ? theme.accent : theme.border, backgroundColor: active ? theme.accentSoft : 'transparent' }]}
               >
-                <Text style={[styles.chipText, { color: active ? theme.accent : theme.text }, font ? { fontFamily: font, fontWeight: 'normal' } : null]}>{LANGUAGE_WORD[id] ?? id}</Text>
+                <Text style={[styles.chipText, { color: active ? theme.accent : theme.text }]}>{shortName(id)}</Text>
               </Pressable>
             );
           })}

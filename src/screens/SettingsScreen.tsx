@@ -8,7 +8,7 @@ import { AppSwitch } from '../components/AppSwitch';
 import { Header } from '../components/Header';
 import { Icon, IconButton } from '../components/Icon';
 import { SectionLabel } from '../components/SectionLabel';
-import { isMultilingual, nativeTranslation, useEdition } from '../edition';
+import { useEdition } from '../edition';
 import type { Language } from '../edition';
 import { bibleName, englishName, useT } from '../i18n';
 import { getMeta } from '../queries';
@@ -25,16 +25,17 @@ import type { SpokenLanguage } from '../speech';
 import { groupVoices } from '../voiceLabels';
 import type { VoiceOption } from '../voiceLabels';
 import { getVerses } from '../queries';
+import { isEnglish } from '../types';
 import type { TranslationId } from '../types';
 
 /** The languages read aloud in this edition, each with the Bible whose verse is the sample. */
-const SPOKEN: [SpokenLanguage, TranslationId][] = [['english', 'KJV'], ['malayalam', 'MAL'], ['tamil', 'TAM'], ['hindi', 'HIN']];
-const VOICE_NAME = { english: 'voiceEnglish', malayalam: 'voiceMalayalam', tamil: 'voiceTamil', hindi: 'voiceHindi' } as const;
+const SPOKEN: [SpokenLanguage, TranslationId][] = [['swahili', 'SWU'], ['english', 'KJV']];
+const VOICE_NAME = { english: 'voiceEnglish', swahili: 'voiceSwahili' } as const;
 // Psalm 23:1, the sample read in a voice.
 const SAMPLE_REF = { book: 19, chapter: 23, verse: 1 };
 
-/** Each interface language in its own script. */
-const LANGUAGE_NAMES: Record<Language, string> = { ml: 'മലയാളം', ta: 'தமிழ்', hi: 'हिन्दी', en: 'English' };
+/** Each interface language in its own name. */
+const LANGUAGE_NAMES: Record<Language, string> = { sw: 'Kiswahili', en: 'English' };
 
 interface Props {
   onBack: () => void;
@@ -182,17 +183,13 @@ export function SettingsScreen({ onBack, onOpenLicences, onOpenWhy, onOpenPrivac
             </View>
             <AppSwitch value={settings.keepAwake} onValueChange={(v) => update({ keepAwake: v })} />
           </View>
-          {nativeTranslation(EDITION) || isMultilingual(EDITION) ? (
-            <View style={[styles.row, divider]}>
-              <View style={{ flex: 1 }}>
-                <Text style={[styles.rowTitle, { color: theme.text }]}>{t('sideBySide')}</Text>
-                <Text style={[styles.rowSub, { color: theme.muted }]}>
-                  {isMultilingual(EDITION) ? t('sideBySideDetailAll') : t('sideBySideDetail', { native: nativeTranslation(EDITION) === 'TAM' ? 'Tamil' : 'Malayalam' })}
-                </Text>
-              </View>
-              <AppSwitch value={settings.sideBySide} onValueChange={(v) => update({ sideBySide: v })} />
+          <View style={[styles.row, divider]}>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.rowTitle, { color: theme.text }]}>{t('sideBySide')}</Text>
+              <Text style={[styles.rowSub, { color: theme.muted }]}>{t('sideBySideDetail')}</Text>
             </View>
-          ) : null}
+            <AppSwitch value={settings.sideBySide} onValueChange={(v) => update({ sideBySide: v })} />
+          </View>
         </View>
 
         <Label text={t('translation')} />
@@ -202,9 +199,9 @@ export function SettingsScreen({ onBack, onOpenLicences, onOpenWhy, onOpenPrivac
             return (
               <Pressable key={id} onPress={() => update({ translation: id })} android_ripple={{ color: theme.accentSoft }} accessibilityRole="radio" accessibilityState={{ checked: active }} style={[styles.row, i > 0 && divider]}>
                 <View style={{ flex: 1 }}>
-                  <Text style={[styles.rowTitle, { color: theme.text }, scriptureFont(translationInfo(id).script ?? null, false) ? { fontFamily: scriptureFont(translationInfo(id).script ?? null, false) } : null]}>{bibleName(settings.language, id)}</Text>
-                  {/* The English name of an Indian Bible; else the short label the reader's chip shows, and the version's code. */}
-                  <Text style={[styles.rowSub, { color: theme.muted }]}>{translationInfo(id).script ? `${englishName(id)} · ${id}` : nativeTranslation(EDITION) && id !== nativeTranslation(EDITION) ? `ENG · ${id}` : id}</Text>
+                  <Text style={[styles.rowTitle, { color: theme.text }]}>{bibleName(settings.language, id)}</Text>
+                  {/* A Swahili Bible's English name; an English Bible's code. */}
+                  <Text style={[styles.rowSub, { color: theme.muted }]}>{isEnglish(id) ? `${t('bibleEnglish')} · ${id}` : englishName(id)}</Text>
                 </View>
                 <View style={styles.check}>{active ? <Icon name="check" color={theme.accent} /> : null}</View>
               </Pressable>
@@ -284,7 +281,7 @@ export function SettingsScreen({ onBack, onOpenLicences, onOpenWhy, onOpenPrivac
 
         <Label text={t('aboutTexts')} />
         <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border, padding: 14 }]}>
-          <Text style={[styles.about, { color: theme.text }]}>{t(EDITION.id === 'ml' ? 'aboutMalayalam' : EDITION.id === 'ta' ? 'aboutTamil' : EDITION.id === 'all' ? 'aboutAll' : 'aboutEnglish')}</Text>
+          <Text style={[styles.about, { color: theme.text }]}>{t('aboutSwahili')}</Text>
           {/* The app's version and build number, for a report of a problem (docs/testing); a tap
               shows the database's build date too. Where the texts and data come from is on
               the Sources and licences page. */}

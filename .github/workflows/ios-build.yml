@@ -22,7 +22,7 @@ jobs:
       fail-fast: false
       matrix:
         # The four-language app (all) is left out: its database is built, not committed (README).
-        edition: [en, ml, ta]
+        edition: [sw]
     env:
       BIBLE_EDITION: ${{ matrix.edition }}
       CI: 1

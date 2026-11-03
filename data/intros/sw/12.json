@@ -1,0 +1,75 @@
+{
+  "book": 12,
+  "name": "2 Wafalme",
+  "facts": {
+    "author": "Mwandishi hajulikani. Mapokeo ya Kiyahudi yanasema kwamba nabii Yeremia aliandika 1 na 2 Wafalme, ambavyo hapo awali vilikuwa kitabu kimoja, akitumia kumbukumbu za kifalme; mistari ya mwisho, kuhusu Mfalme Yekonia kuachiliwa huko Babeli, iliongezwa baada yake.",
+    "date": "Karibu mwaka 590–560 K.K.; mistari ya mwisho baada ya mwaka 561 K.K.",
+    "audience": "Watu wa Israeli waliokuwa uhamishoni Babeli, ili kuwaonyesha kwa nini ufalme ulianguka na kuwaita warudi kwa Mungu"
+  },
+  "about": [
+    "2 Wafalme kinaendeleza habari za falme mbili. Eliya anachukuliwa juu mbinguni katika kisulisuli (2:11), na Elisha anaendeleza kazi yake. Elisha anafanya miujiza mingi: anamfufua mwana wa yule mwanamke Mshunami, na Mungu anamponya Naamani Mshami ukoma wake anapojiosha katika Yordani.",
+    "Wafalme wengi wa Israeli wanatenda maovu, na Mungu anawatuma nabii baada ya nabii kuwaonya (17:13). Mwishowe Waashuru wanaiteka Samaria na kuyapeleka makabila ya kaskazini uhamishoni (17:6). Yuda inadumu kwa muda mrefu zaidi. Wafalme wema kama Hezekia, anayemtumaini Yahwe Ashuru inaposhambulia (18:5), na Yosia, anayekiona kitabu cha sheria na kumgeukia Yahwe kwa moyo wake wote (23:25), wanaleta nyakati za matengenezo. Lakini wafalme waovu kama Manase wanawapeleka watu mbali na Mungu.",
+    "Mwishowe Nebukadreza mfalme wa Babeli anauharibu Yerusalemu na kulichoma hekalu, na watu wanachukuliwa mateka. Hata hivyo kitabu kinamalizika na dalili ndogo ya tumaini: Mfalme Yekonia anaachiliwa kutoka gerezani huko Babeli (25:27)."
+  ],
+  "themes": [
+    {
+      "title": "Hukumu kwa ajili ya dhambi",
+      "text": "Falme zote mbili zinapelekwa uhamishoni kwa sababu zilimwacha Yahwe na hazikukubali kuwasikiliza manabii wake."
+    },
+    {
+      "title": "Nguvu ya neno la Mungu",
+      "text": "Kupitia Eliya na Elisha Mungu anaonyesha kwamba yeye ni Mungu aliye hai, na kila neno la manabii wake linatimia."
+    },
+    {
+      "title": "Tumaini na matengenezo",
+      "text": "Wafalme wanaomtumaini Yahwe na kuishika sheria yake, kama Hezekia na Yosia, wanaona msaada wa Mungu."
+    },
+    {
+      "title": "Tumaini kwa ukoo wa Daudi",
+      "text": "Hata uhamishoni, Mungu anaihifadhi familia ya Daudi, kama alivyoahidi."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:25",
+      "title": "Eliya anachukuliwa mbinguni; Elisha anashika nafasi yake"
+    },
+    {
+      "from": "3:1",
+      "to": "8:15",
+      "title": "Miujiza na huduma ya Elisha"
+    },
+    {
+      "from": "8:16",
+      "to": "10:36",
+      "title": "Yehu anaiangamiza nyumba ya Ahabu"
+    },
+    {
+      "from": "11:1",
+      "to": "17:41",
+      "title": "Wafalme wa Yuda na Israeli; kuanguka kwa Samaria"
+    },
+    {
+      "from": "18:1",
+      "to": "21:26",
+      "title": "Hezekia, Manase na Amoni"
+    },
+    {
+      "from": "22:1",
+      "to": "23:30",
+      "title": "Yosia anakiona kitabu cha sheria"
+    },
+    {
+      "from": "23:31",
+      "to": "25:30",
+      "title": "Wafalme wa mwisho wa Yuda na kuanguka kwa Yerusalemu"
+    }
+  ],
+  "keyVerses": [
+    "2:11",
+    "17:13",
+    "18:5",
+    "23:25"
+  ]
+}

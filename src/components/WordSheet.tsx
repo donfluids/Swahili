@@ -3,7 +3,7 @@ import { ActivityIndicator, Alert, Animated, BackHandler, Modal, PanResponder, S
 import { Pressable } from './Pressable';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSQLiteContext } from 'expo-sqlite';
-import { bibleOfLanguage, isMultilingual, pairedBible, useEdition } from '../edition';
+import { nativeTranslation, useEdition } from '../edition';
 import { HEBREW_FONT, languageScript, scriptOf, scriptureFont } from '../fonts';
 import { renderingsLabel, translationName, useT } from '../i18n';
 import type { StringKey } from '../i18n';
@@ -54,11 +54,11 @@ interface Loaded {
   parts: { id: string; lemma: string | null; gloss: string | null }[];
   /** For a tapped translation word, the Hebrew or Greek words of its verse with this number. */
   inVerse: OriginalWord[];
-  /** Verses the KJV and the Malayalam or Tamil tag with it, for hiding their chips when few are. */
+  /** Verses the KJV and the ULB tag with it, for hiding their chips when few are. */
   kjvCount: number;
   nativeCount: number;
   renderings: Rendering[];
-  /** Malayalam or Tamil renderings for the headline in that interface, else empty. */
+  /** The ULB's renderings for the headline in the Swahili interface, else empty. */
   nativeWords: Rendering[];
   /** The KJV's renderings, beside another translation's. */
   kjv: Rendering[];
@@ -120,13 +120,10 @@ export function WordSheet({ pick, rootPick, translation, books, onClose, onBack,
   // Occurrence counts come from a tagged translation; an untagged one uses the KJV.
   const tagged = taggedTranslation(translation);
   const withKjv = tagged !== 'KJV' && edition.translations.includes('KJV');
-  // In the Malayalam or Tamil interface the headline is the rendering in that language's
-  // Bible, whichever translation is open, and the English meaning goes under it. A Bible
-  // whose words are not linked yet has no renderings to show.
-  // In the four-language app that is the interface language's Bible, not the Indian Bible
-  // read last.
-  const native = isMultilingual(edition) ? bibleOfLanguage(edition, settings.language) : pairedBible(edition, translation, settings.lastIndian, settings.language);
-  const nativeFirst = !!native && languageScript(settings.language) === translationInfo(native).script && translationInfo(native).tagged ? native : null;
+  // In the Swahili interface the headline is the word the ULB uses (the one Swahili Bible
+  // whose words are linked), whichever Bible is open, and the English meaning goes under it.
+  const native = nativeTranslation(edition);
+  const nativeFirst = settings.language === 'sw' && translationInfo(native).tagged ? native : null;
   const [data, setData] = useState<Loaded | null>(null);
   // The word being said aloud; a new word, or closing the sheet, stops it.
   const [speaking, setSpeaking] = useState(false);
@@ -470,7 +467,7 @@ export function WordSheet({ pick, rootPick, translation, books, onClose, onBack,
                   </Section>
                 ) : null}
 
-                {/* In the Malayalam or Tamil interface the KJV chips wait in the full view. */}
+                {/* In the Swahili interface the KJV chips wait in the full view. */}
                 {nativeFirst ? kjvChips : null}
 
                 {data.related.length > 0 ? (

@@ -1,0 +1,68 @@
+{
+  "book": 22,
+  "name": "Wimbo wa Sulemani",
+  "facts": {
+    "author": "Sulemani, mwana wa Daudi na mfalme wa Israeli (1:1).",
+    "date": "Karibu mwaka 965 K.K., mwanzoni mwa utawala wa Sulemani",
+    "audience": "Watu wa Mungu, Israeli, ili kuiheshimu zawadi ya upendo katika ndoa"
+  },
+  "about": [
+    "Wimbo wa Sulemani, unaoitwa pia Wimbo Ulio Bora, ni shairi la mapenzi. Bibi arusi, anayeitwa Mshulami, na mpendwa wake, Mfalme Sulemani, wanazungumza wao kwa wao kwa furaha na shauku. Maneno yao yamejaa picha za bustani, mashamba ya mizabibu, maua, manukato na milima ya Israeli, na binti za Yerusalemu wanaitikia kama kwaya.",
+    "Wapenzi hao wanatamaniana na kukutana; kuna harusi ya kifalme; wanatengana kwa muda kisha wanapatana tena. Mara tatu bibi arusi anaonya kwamba mapenzi yasiamshwe kabla ya wakati wake (2:7). Mwishoni anatangaza kwamba upendo una nguvu kama mauti, na kwamba maji mengi hayawezi kuuzima (8:6-7).",
+    "Wimbo huu unasherehekea upendo kati ya mume na mke kama zawadi njema ya Mungu Muumbaji. Walimu wa Kiyahudi waliona ndani yake picha ya upendo wa Yahwe kwa Israeli, na tangu zamani Wakristo wameusoma kama picha ya upendo kati ya Kristo na kanisa lake."
+  ],
+  "themes": [
+    {
+      "title": "Upendo kama zawadi ya Mungu",
+      "text": "Upendo katika ndoa, pamoja na furaha yake na uaminifu wake, ni mwema na safi machoni pa Mungu aliyetuumba."
+    },
+    {
+      "title": "Upendo wa uaminifu",
+      "text": "Bibi arusi na mpendwa wake ni mali ya kila mmoja peke yake (2:16), na upendo wa kweli hauwezi kununuliwa (8:7)."
+    },
+    {
+      "title": "Kusubiri wakati unaofaa",
+      "text": "Mapenzi hayapaswi kuamshwa kabla ya wakati wake unaofaa."
+    },
+    {
+      "title": "Picha ya upendo wa Mungu",
+      "text": "Upendo wa kina katika Wimbo huu unaelekeza zaidi ya wenyewe, kwenye upendo wa Yahwe kwa watu wake."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:7",
+      "title": "Bibi arusi na mpendwa wake wanatamaniana"
+    },
+    {
+      "from": "2:8",
+      "to": "3:5",
+      "title": "Mpendwa anakuja wakati wa majira ya kuchipua; bibi arusi anamtafuta"
+    },
+    {
+      "from": "3:6",
+      "to": "5:1",
+      "title": "Msafara wa kifalme na harusi"
+    },
+    {
+      "from": "5:2",
+      "to": "6:13",
+      "title": "Bibi arusi anampoteza mpendwa wake na kumpata tena"
+    },
+    {
+      "from": "7:1",
+      "to": "8:4",
+      "title": "Wapenzi wanafurahiana"
+    },
+    {
+      "from": "8:5",
+      "to": "8:14",
+      "title": "Upendo wenye nguvu kama mauti"
+    }
+  ],
+  "keyVerses": [
+    "2:16",
+    "8:6-7"
+  ]
+}

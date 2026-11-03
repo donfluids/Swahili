@@ -1,42 +1,37 @@
-export type TranslationId = 'KJV' | 'WEB' | 'BSB' | 'MAL' | 'TAM' | 'HIN';
+export type TranslationId = 'SWU' | 'SWN' | 'SWM' | 'KJV' | 'BSB';
 
 export interface Translation {
   id: TranslationId;
   name: string;
   /** Has Strong's tags, so words can be tapped and the concordance built. */
   tagged: boolean;
-  /** Line height multiplier; scripts with stacked marks need more room. */
+  /** Line height multiplier. */
   lineHeight: number;
-  /** The Indian script the text is in, which has a typeface of its own (src/fonts.ts). */
-  script?: 'ml' | 'ta' | 'hi';
 }
 
 export const TRANSLATIONS: Translation[] = [
+  // Tagged by scripts/align.mjs (machine alignment, confident links only).
+  { id: 'SWU', name: 'Biblia Takatifu, Unlocked Literal Bible', tagged: true, lineHeight: 1.55 },
+  // The Neno texts are not linked to the Hebrew and Greek; the word sheet and the
+  // concordance use the KJV while one is read.
+  { id: 'SWN', name: 'Neno: Bibilia Takatifu 2015', tagged: false, lineHeight: 1.55 },
+  { id: 'SWM', name: 'Neno: Maandiko Matakatifu 2024', tagged: false, lineHeight: 1.55 },
   { id: 'KJV', name: 'King James Version', tagged: true, lineHeight: 1.55 },
-  // The WEB source's Strong's tags are unreliable, so they are not built (scripts/build-db.mjs).
-  { id: 'WEB', name: 'World English Bible', tagged: false, lineHeight: 1.55 },
   // Tagged by its publishers (Berean word tables), via CrossWire's module.
   { id: 'BSB', name: 'Berean Standard Bible', tagged: true, lineHeight: 1.55 },
-  // Tagged by scripts/align.mjs (machine alignment, confident links only).
-  { id: 'MAL', name: 'സത്യവേദപുസ്തകം 1910 (Malayalam)', tagged: true, lineHeight: 1.75, script: 'ml' },
-  // Tagged by scripts/align.mjs --lang ta, like the Malayalam.
-  { id: 'TAM', name: 'இண்டியன் ரிவைஸ்டு வெர்ஸன் (Tamil IRV)', tagged: true, lineHeight: 1.75, script: 'ta' },
-  // In the four-language app. Its words are not linked to the Hebrew and Greek yet; the
-  // word sheet and the concordance use the KJV meanwhile, as for the WEB.
-  { id: 'HIN', name: 'इंडियन रिवाइज्ड वर्जन (Hindi IRV)', tagged: false, lineHeight: 1.7, script: 'hi' },
 ];
 
 export function translationInfo(id: TranslationId): Translation {
   return TRANSLATIONS.find((t) => t.id === id) ?? TRANSLATIONS[0];
 }
 
-/** The translation whose Strong's tags back the concordance: itself if tagged, else the KJV. */
 /** The English Bibles, whose book names are the English ones of the books table. */
-export const isEnglish = (id: TranslationId) => id === 'KJV' || id === 'WEB' || id === 'BSB';
+export const isEnglish = (id: TranslationId) => id === 'KJV' || id === 'BSB';
 
-/** The Indian Bibles (Malayalam, Tamil, Hindi): those with a script of their own. */
-export const isIndian = (id: TranslationId) => !!translationInfo(id).script;
+/** The Swahili Bibles. */
+export const isSwahili = (id: TranslationId) => !isEnglish(id);
 
+/** The translation whose Strong's tags back the concordance: itself if tagged, else the KJV. */
 export function taggedTranslation(id: TranslationId): TranslationId {
   return translationInfo(id).tagged ? id : 'KJV';
 }
@@ -150,7 +145,7 @@ export interface RelatedWord {
 export interface Segment {
   text: string;
   strongs?: string;
-  /** Every number a Malayalam compound links to, the chief first (നിത്യജീവൻ: life, eternal). */
+  /** Every number a compound word links to, the chief first. */
   choices?: string[];
 }
 

@@ -2,40 +2,18 @@ import type { Book, Ref, TranslationId } from './types';
 
 /**
  * Short book names for the reader's top bar, used when the full name and the chapter
- * number do not fit beside the buttons ("2. തിമൊഥെയൊസ്" becomes "2 തിമൊ"). Indexed by
- * book id - 1. The Malayalam follow the 1910 spellings of the names; the English are the
- * usual abbreviations.
+ * number do not fit beside the buttons ("2 Wathesalonike" becomes "2 The"). Indexed by
+ * book id - 1. The Swahili are the Neno Bibles' own abbreviations (\toc3), with a space
+ * after the number; the English are the usual abbreviations.
  */
-export const MALAYALAM_SHORT_NAMES = [
-  'ഉല്പ', 'പുറ', 'ലേവ്യ', 'സംഖ്യ', 'ആവ', 'യോശു', 'ന്യായ', 'രൂത്ത്', '1 ശമൂ', '2 ശമൂ',
-  '1 രാജ', '2 രാജ', '1 ദിന', '2 ദിന', 'എസ്രാ', 'നെഹെ', 'എസ്ഥേ', 'ഇയ്യോ', 'സങ്കീ', 'സദൃ',
-  'സഭാ', 'ഉത്ത', 'യെശ', 'യിരെ', 'വിലാ', 'യെഹെ', 'ദാനീ', 'ഹോശേ', 'യോവേ', 'ആമോ',
-  'ഓബ', 'യോനാ', 'മീഖാ', 'നഹൂം', 'ഹബ', 'സെഫ', 'ഹഗ്ഗാ', 'സെഖ', 'മലാ', 'മത്താ',
-  'മർക്കൊ', 'ലൂക്കൊ', 'യോഹ', 'പ്രവൃ', 'റോമ', '1 കൊരി', '2 കൊരി', 'ഗലാ', 'എഫെ', 'ഫിലി',
-  'കൊലൊ', '1 തെസ്സ', '2 തെസ്സ', '1 തിമൊ', '2 തിമൊ', 'തീത്തൊ', 'ഫിലേ', 'എബ്രാ', 'യാക്കോ', '1 പത്രൊ',
-  '2 പത്രൊ', '1 യോഹ', '2 യോഹ', '3 യോഹ', 'യൂദാ', 'വെളി',
-];
-
-/** The Tamil, from the IRV's own abbreviations (\toc3), with a space after the number. */
-export const TAMIL_SHORT_NAMES = [
-  'ஆதி', 'யாத்', 'லேவி', 'எண்', 'உபா', 'யோசு', 'நியா', 'ரூத்', '1 சாமு', '2 சாமு',
-  '1 இரா', '2 இரா', '1 நாளா', '2 நாளா', 'எஸ்றா', 'நெகே', 'எஸ்தர்', 'யோபு', 'சங்', 'நீதி',
-  'பிரச', 'உன்', 'ஏசா', 'எரே', 'புலம்', 'எசேக்', 'தானி', 'ஓசியா', 'யோவே', 'ஆமோ',
-  'ஒபதி', 'யோனா', 'மீகா', 'நாகூ', 'ஆப', 'செப்ப', 'ஆகாய்', 'சகரி', 'மல்கி', 'மத்',
-  'மாற்கு', 'லூக்', 'யோவா', 'அப்', 'ரோமர்', '1 கொரி', '2 கொரி', 'கலா', 'எபே', 'பிலி',
-  'கொலோ', '1 தெச', '2 தெச', '1 தீமோ', '2 தீமோ', 'தீத்', 'பிலே', 'எபி', 'யாக்', '1 பேது',
-  '2 பேது', '1 யோவா', '2 யோவா', '3 யோவா', 'யூதா', 'வெளி',
-];
-
-/** The Hindi, from the IRV's own abbreviations (\toc3) without their dots, with a space after the number. */
-export const HINDI_SHORT_NAMES = [
-  'उत्प', 'निर्ग', 'लैव्य', 'गिन', 'व्यव', 'यहो', 'न्याय', 'रूत', '1 शमू', '2 शमू',
-  '1 राजा', '2 राजा', '1 इति', '2 इति', 'एज्रा', 'नहे', 'एस्ते', 'अय्यू', 'भज', 'नीति',
-  'सभो', 'श्रेष्ठ', 'यशा', 'यिर्म', 'विला', 'यहे', 'दानि', 'होशे', 'योए', 'आमो',
-  'ओब', 'योना', 'मीका', 'नहू', 'हब', 'सप', 'हाग्गै', 'जक', 'मला', 'मत्ती',
-  'मर', 'लूका', 'यूह', 'प्रेरि', 'रोम', '1 कुरि', '2 कुरि', 'गला', 'इफि', 'फिलि',
-  'कुलु', '1 थिस्स', '2 थिस्स', '1 तीमु', '2 तीमु', 'तीतु', 'फिले', 'इब्रा', 'याकू', '1 पत',
-  '2 पत', '1 यूह', '2 यूह', '3 यूह', 'यहू', 'प्रका',
+export const SWAHILI_SHORT_NAMES = [
+  'Mwa', 'Kut', 'Law', 'Hes', 'Kum', 'Yos', 'Amu', 'Rut', '1 Sam', '2 Sam',
+  '1 Fal', '2 Fal', '1 Nya', '2 Nya', 'Ezr', 'Neh', 'Es', 'Ay', 'Zab', 'Mit',
+  'Mhu', 'Wim', 'Isa', 'Yer', 'Mao', 'Eze', 'Dan', 'Hos', 'Yoe', 'Amo',
+  'Oba', 'Yon', 'Mik', 'Nah', 'Hab', 'Sef', 'Hag', 'Zek', 'Mal', 'Mt',
+  'Mk', 'Lk', 'Yn', 'Mdo', 'Rum', '1 Kor', '2 Kor', 'Gal', 'Efe', 'Flp',
+  'Kol', '1 The', '2 The', '1 Tim', '2 Tim', 'Tit', 'Flm', 'Ebr', 'Yak', '1 Pet',
+  '2 Pet', '1 Yn', '2 Yn', '3 Yn', 'Yud', 'Ufu',
 ];
 
 export const ENGLISH_SHORT_NAMES = [
@@ -78,150 +56,70 @@ const ABBREVIATIONS: Record<string, number> = {
 };
 
 /**
- * Other Malayalam names for books, beside the names in the Malayalam text: modern
- * spellings and the names used in the Catholic (POC) Bible. A number in front of a name
- * (1 ശമൂവേൽ) comes from the book, so names here have none.
+ * Swahili abbreviations people write, beside the short names above (which are accepted
+ * too): the Union Version's and common church usage. Keys are lower case without spaces.
  */
-const MALAYALAM_NAMES: Record<number, string[]> = {
-  3: ['ലേവ്യർ'], 5: ['നിയമാവർത്തനം', 'ആവർത്തനം'], 6: ['ജോഷ്വ'], 8: ['റൂത്ത്'],
-  9: ['സാമുവൽ', 'സാമുവേൽ'], 10: ['സാമുവൽ', 'സാമുവേൽ'], 16: ['നെഹെമിയാ'], 17: ['എസ്തേർ'], 18: ['ജോബ്'],
-  19: ['സങ്കീർത്തനം'], 20: ['സുഭാഷിതങ്ങൾ'], 21: ['സഭാപ്രസംഗകൻ'], 23: ['ഏശയ്യാ'], 24: ['ജറെമിയാ'],
-  26: ['എസെക്കിയേൽ'], 27: ['ദാനിയേൽ'], 28: ['ഹോസിയാ'], 29: ['ജോയേൽ'], 31: ['ഒബാദിയാ'], 33: ['മിക്കാ'],
-  34: ['നാഹും'], 35: ['ഹബക്കുക്ക്'], 36: ['സെഫാനിയാ'], 38: ['സഖറിയാ'], 39: ['മലാക്കി'], 42: ['ലൂക്കാ'],
-  44: ['അപ്പൊസ്തലപ്രവൃത്തികൾ', 'പ്രവൃത്തികൾ', 'അപ്പസ്തോലന്മാരുടെ നടപടികൾ', 'നടപടികൾ'], 45: ['റോമാ'],
-  46: ['കോറിന്തോസ്'], 47: ['കോറിന്തോസ്'], 48: ['ഗലാത്തിയാ'], 49: ['എഫേസോസ്'], 50: ['ഫിലിപ്പി'],
-  51: ['കൊളോസോസ്', 'കൊളോസ്യർ'], 52: ['തെസലോനിക്കാ'], 53: ['തെസലോനിക്കാ'], 54: ['തിമോത്തേയോസ്', 'തിമോത്തിയോസ്'],
-  55: ['തിമോത്തേയോസ്', 'തിമോത്തിയോസ്'], 58: ['ഹെബ്രായർ'], 65: ['യൂദാസ്'], 66: ['വെളിപാട്'],
-};
-
-/** Spellings people often write that the reduction below does not already meet. */
-const MALAYALAM_VARIANTS: Record<number, string[]> = {
-  3: ['ലേവ്യാ'], 20: ['സദൃശ്യവാക്യങ്ങൾ'], 24: ['യിരമ്യാവ്'], 26: ['യെഹസ്കേൽ'], 41: ['മാർക്കോസ്'], 50: ['ഫിലിപ്പ്യർ'],
+const SWAHILI_ABBREVIATIONS: Record<string, number> = {
+  mwa: 1, kut: 2, law: 3, wal: 3, hes: 4, kum: 5, yos: 6, amu: 7, waa: 7, rut: 8, ruth: 8,
+  '1sam': 9, '2sam': 10, '1fal': 11, '2fal': 12, '1waf': 11, '2waf': 12, '1nya': 13, '2nya': 14,
+  ezr: 15, neh: 16, es: 17, est: 17, ay: 18, ayu: 18, zab: 19, zb: 19, mit: 20, mith: 20, mhu: 21, wim: 22,
+  isa: 23, yer: 24, mao: 25, omb: 25, eze: 26, ezek: 26, dan: 27, hos: 28, yoe: 29, amo: 30, oba: 31, yon: 32,
+  mik: 33, nah: 34, hab: 35, sef: 36, hag: 37, zek: 38, zak: 38, mal: 39,
+  mt: 40, mat: 40, mk: 41, lk: 42, luk: 42, yn: 43, yoh: 43, mdo: 44, rum: 45, war: 45,
+  '1kor': 46, '2kor': 47, gal: 48, wag: 48, efe: 49, waef: 49, flp: 50, waf: 50, kol: 51,
+  '1the': 52, '2the': 53, '1thes': 52, '2thes': 53, '1tim': 54, '2tim': 55, tit: 56, flm: 57,
+  ebr: 58, wae: 58, waeb: 58, yak: 59, '1pet': 60, '2pet': 61, '1pe': 60, '2pe': 61,
+  '1yn': 62, '2yn': 63, '3yn': 64, '1yoh': 62, '2yoh': 63, '3yoh': 64, yud: 65, ufu: 66, uf: 66,
 };
 
 /**
- * A Malayalam book name reduced so that spellings people type meet the 1910 ones:
- * no spaces, dots or joiners; chillus as consonant + ്; long and short vowels alike
- * (മർക്കോസ്, മർക്കൊസ്); a doubled consonant as one (വെളിപാട്, വെളിപ്പാടു); and no
- * final ്, ു or ം (പുറപ്പാട്, പുറപ്പാടു; സങ്കീർത്തനം).
+ * Other Swahili names for books, beside the names the three Swahili Bibles print: the
+ * longer names of the Union Version (Kumbukumbu la Torati, Matendo ya Mitume, Wimbo Ulio
+ * Bora) and other spellings. A number in front of a name comes from the book, so names
+ * here have none.
  */
-const CHILLUS: Record<string, string> = { 'ൺ': 'ണ്', 'ൻ': 'ന്', 'ർ': 'ര്', 'ൽ': 'ല്', 'ൾ': 'ള്', 'ൿ': 'ക്' };
-const LONG_SHORT: Record<string, string> = { 'ീ': 'ി', 'ൂ': 'ു', 'േ': 'െ', 'ോ': 'ൊ', 'ഈ': 'ഇ', 'ഊ': 'ഉ', 'ഏ': 'എ', 'ഓ': 'ഒ' };
-function malayalamKey(name: string): string {
-  return name
-    .replace(/[\s.\u200c\u200d]/g, '')
-    .replace(/[ൺൻർൽൾൿ]/g, (c) => CHILLUS[c])
-    .replace(/[ീൂേോഈഊഏഓ]/g, (c) => LONG_SHORT[c])
-    .replace(/([\u0d15-\u0d39])\u0d4d\1/g, '$1')
-    .replace(/[\u0d4d\u0d41\u0d02]+$/, '');
-}
-
-/**
- * Other Tamil names for books, beside the names in the IRV: the singular and short forms
- * people write, and the names of the Catholic Bible (திருவிவிலியம்). To be checked by a
- * Tamil reader.
- */
-const TAMIL_NAMES: Record<number, string[]> = {
-  1: ['தொடக்கநூல்'], 2: ['விடுதலைப்பயணம்'], 3: ['லேவியர்'], 4: ['எண்ணிக்கை'], 5: ['இணைச்சட்டம்'],
-  7: ['நீதித்தலைவர்கள்', 'நியாயாதிபதி'], 8: ['ரூத்து'], 11: ['அரசர்கள்'], 12: ['அரசர்கள்'], 13: ['குறிப்பேடு'], 14: ['குறிப்பேடு'],
-  15: ['எஸ்ரா'], 19: ['சங்கீதம்', 'திருப்பாடல்கள்'], 21: ['சபைஉரையாளர்'], 22: ['இனிமைமிகுபாடல்', 'உன்னதப்பாட்டு'],
-  23: ['எசாயா'], 25: ['புலம்பல்'], 28: ['ஓசேயா'], 33: ['மீக்கா'], 35: ['அபக்கூக்கு', 'ஆபகூக்'], 38: ['செக்கரியா'], 39: ['மலாக்கி'],
-  43: ['யோ'], 44: ['அப்போஸ்தலர்', 'அப்போஸ்தலர்நடபடிகள்', 'நடபடிகள்', 'திருத்தூதர்பணிகள்'], 45: ['உரோமையர்'], 51: ['கொலோசையர்'],
-  52: ['தெசலோனிக்கர்'], 53: ['தெசலோனிக்கர்'], 54: ['திமொத்தேயு'], 55: ['திமொத்தேயு'], 57: ['பிலமோன்'], 58: ['எபிரேயர்'],
-  66: ['வெளிப்படுத்தல்', 'திருவெளிப்பாடு'],
+const SWAHILI_NAMES: Record<number, string[]> = {
+  3: ['Mambo ya Walawi', 'Walawi'], 5: ['Kumbukumbu la Torati', 'Kumbukumbu', 'Torati'], 8: ['Ruthu', 'Ruth'],
+  9: ['Samweli', 'Samueli'], 10: ['Samweli', 'Samueli'], 11: ['Wafalme'], 12: ['Wafalme'], 13: ['Nyakati'], 14: ['Nyakati'],
+  17: ['Esta', 'Esther'], 18: ['Ayubu'], 19: ['Zaburi'], 20: ['Mithali', 'Methali'], 21: ['Mhubiri'],
+  22: ['Wimbo Ulio Bora', 'Wimbo wa Sulemani', 'Wimbo'], 23: ['Isaya'], 24: ['Yeremia'], 25: ['Maombolezo'],
+  26: ['Ezekieli'], 27: ['Danieli'], 29: ['Yoeli', 'Joeli'], 30: ['Amosi', 'Amos'], 34: ['Nahumu'],
+  36: ['Sefania'], 38: ['Zekaria', 'Zakaria'], 44: ['Matendo ya Mitume', 'Matendo'], 46: ['Wakorintho'], 47: ['Wakorintho'],
+  52: ['Wathesalonike'], 53: ['Wathesalonike'], 54: ['Timotheo'], 55: ['Timotheo'], 57: ['Filemoni'],
+  58: ['Waebrania', 'Wahebrania'], 59: ['Yakobo', 'Waraka wa Yakobo'], 60: ['Petro'], 61: ['Petro'],
+  62: ['Yohana'], 63: ['Yohana'], 64: ['Yohana'], 66: ['Ufunuo', 'Ufunuo wa Yohana'],
 };
 
-/**
- * A Tamil book name reduced so that spellings people type meet the IRV's: no spaces, dots
- * or joiners; long and short vowels alike (யோவான், யொவான்); the Grantha letters as the
- * Tamil ones nearest them (இராஜா, இராசா); a doubled consonant as one; no இ before a
- * leading ர (ராஜாக்கள்); and no final ் or ு (ரூத், ரூத்து).
- */
-const TA_LONG_SHORT: Record<string, string> = { 'ீ': 'ி', 'ூ': 'ு', 'ே': 'ெ', 'ோ': 'ொ', 'ஈ': 'இ', 'ஊ': 'உ', 'ஏ': 'எ', 'ஓ': 'ஒ' };
-const GRANTHA: Record<string, string> = { 'ஜ': 'ச', 'ஸ': 'ச', 'ஷ': 'ச', 'ஹ': 'க' };
-function tamilKey(name: string): string {
-  return name
-    .replace(/[\s.\u200c\u200d]/g, '')
-    .replace(/[ீூேோஈஊஏஓ]/g, (c) => TA_LONG_SHORT[c])
-    .replace(/[ஜஸஷஹ]/g, (c) => GRANTHA[c])
-    .replace(/^இர/, 'ர')
-    .replace(/([\u0b95-\u0bb9])\u0bcd\1/g, '$1')
-    .replace(/[\u0bcd\u0bc1]+$/, '');
-}
+/** A name reduced for comparing: lower case, letters and digits only ("1 Wakorintho" → "1wakorintho"). */
+const nameKey = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-/**
- * Other Hindi names for books, beside the names in the IRV: short forms people write and
- * the names of the Catholic Hindi Bible. To be checked by a Hindi reader.
- */
-const HINDI_NAMES: Record<number, string[]> = {
-  3: ['लैव्यवस्था', 'लेवी'], 4: ['गणना'], 5: ['विधि-विवरण'], 6: ['योशुआ'], 7: ['न्यायकर्ता'], 19: ['भजन', 'स्तोत्र'],
-  20: ['सूक्ति'], 21: ['उपदेशक'], 22: ['गीतों का गीत', 'सर्वश्रेष्ठ गीत'], 23: ['इसायाह'], 24: ['यिरमियाह', 'यिर्मियाह'], 25: ['विलाप'],
-  26: ['एज़ेकिएल'], 27: ['दानिएल'], 28: ['होशेआ'], 33: ['मीकाह'], 37: ['हग्गय'], 41: ['मारकुस'], 42: ['लूकस'],
-  43: ['योहन'], 44: ['प्रेरितों', 'प्रेरित-चरित'], 46: ['कोरिन्थियों'], 47: ['कोरिन्थियों'], 49: ['एफ़ेसियों'],
-  51: ['कलोसियों'], 54: ['तिमथी'], 55: ['तिमथी'], 60: ['पेत्रुस'], 61: ['पेत्रुस'], 62: ['योहन'], 63: ['योहन'],
-  64: ['योहन'], 65: ['यूदस'], 66: ['प्रकाशना', 'प्रकाशन'],
-};
-
-/**
- * A Hindi book name reduced so that spellings people type meet the IRV's: no spaces,
- * dots, hyphens, joiners or nukta; the Catholic Bible's trailing ग्रन्थ (स्तोत्र ग्रन्थ)
- * dropped; chandrabindu as anusvara (मुँह, मुंह), and a half nasal before a letter of its
- * group as anusvara too (कुरिन्थियों, कुरिंथियों); long and short vowels alike (यूहन्ना,
- * युहन्ना); a doubled consonant as one; and no final virama.
- */
-const HI_LONG_SHORT: Record<string, string> = { 'ी': 'ि', 'ू': 'ु', 'ई': 'इ', 'ऊ': 'उ', 'ँ': 'ं' };
-const HI_NASAL_GROUP: [string, string][] = [['ङ', 'कखगघ'], ['ञ', 'चछजझ'], ['ण', 'टठडढ'], ['न', 'तथदध'], ['म', 'पफबभ']];
-function hindiKey(name: string): string {
-  return name
-    .replace(/\s*(ग्रन्थ|ग्रंथ)$/, '')
-    .replace(/[\s.\-\u200c\u200d\u093c]/g, '')
-    .replace(/([ङञणनम])\u094d([\u0915-\u0939])/g, (m, n: string, c: string) => (HI_NASAL_GROUP.some(([g, stops]) => g === n && stops.includes(c)) ? 'ं' + c : m))
-    .replace(/[ीूईऊँ]/g, (c) => HI_LONG_SHORT[c])
-    .replace(/([\u0915-\u0939])\u094d\1/g, '$1')
-    .replace(/\u094d+$/, '');
-}
-
-/** The scripts book names are typed in besides English, with how each is matched. */
-type NameScript = 'ml' | 'ta' | 'hi';
-const SCRIPTS: Record<NameScript, { letters: RegExp; key: (name: string) => string; other: (id: number) => string[] }> = {
-  ml: { letters: /[\u0d00-\u0d7f]/, key: malayalamKey, other: (id) => [...(MALAYALAM_NAMES[id] ?? []), ...(MALAYALAM_VARIANTS[id] ?? [])] },
-  ta: { letters: /[\u0b80-\u0bff]/, key: tamilKey, other: (id) => TAMIL_NAMES[id] ?? [] },
-  hi: { letters: /[\u0900-\u097f]/, key: hindiKey, other: (id) => HINDI_NAMES[id] ?? [] },
-};
-const nameScript = (text: string): NameScript | null =>
-  SCRIPTS.ml.letters.test(text) ? 'ml' : SCRIPTS.ta.letters.test(text) ? 'ta' : SCRIPTS.hi.letters.test(text) ? 'hi' : null;
-
-/** Each book's names in a script, reduced, with the number in front of the name (or 0). */
-const nameIndex: Partial<Record<NameScript, { books: Book[]; names: { id: number; number: number; key: string }[] }>> = {};
-function scriptNames(script: NameScript, books: Book[]) {
-  const cached = nameIndex[script];
-  if (cached?.books === books) return cached.names;
-  const { letters, key, other } = SCRIPTS[script];
-  const names: { id: number; number: number; key: string }[] = [];
+/** Each book's Swahili names, reduced, with the book's number (1-3) in front where it has one. */
+let swahiliIndex: { books: Book[]; names: { id: number; key: string }[] } | null = null;
+function swahiliNames(books: Book[]) {
+  if (swahiliIndex?.books === books) return swahiliIndex.names;
+  const names: { id: number; key: string }[] = [];
   for (const b of books) {
-    const number = Number(/^([1-3])/.exec(b.name)?.[1] ?? 0);
-    const all = [...Object.values(b.names), ...other(b.id)].filter((n) => letters.test(n));
-    for (const n of all) names.push({ id: b.id, number, key: key(n.replace(/^[1-3]\.?\s*/, '')) });
+    const number = /^([1-3])/.exec(b.name)?.[1] ?? '';
+    const printed = Object.entries(b.names).filter(([t]) => t !== 'KJV' && t !== 'BSB').map(([, n]) => n);
+    const other = (SWAHILI_NAMES[b.id] ?? []).map((n) => number + n);
+    for (const n of [...printed, ...other, SWAHILI_SHORT_NAMES[b.id - 1]]) names.push({ id: b.id, key: nameKey(n) });
   }
-  nameIndex[script] = { books, names };
+  swahiliIndex = { books, names };
   return names;
 }
 
-/** The book a name typed in Malayalam, Tamil or Hindi points to: the start of one book's name, or a whole one. */
-function scriptBook(script: NameScript, typed: string, books: Book[]): number | undefined {
-  const m = /^([1-3])?\.?\s*(.*)$/.exec(typed.trim());
-  const number = Number(m?.[1] ?? 0);
-  const key = SCRIPTS[script].key(m?.[2] ?? '');
+/** The book a Swahili name points to: a whole name, a usual abbreviation, or the start of one book's name. */
+function swahiliBook(typed: string, books: Book[]): number | undefined {
+  const key = nameKey(typed);
   if (!key) return undefined;
-  // The app's own short name for a book (அப், நீதி) is that book, even where it begins
-  // other books' names too (அபக்கூக்கு, நீதித்தலைவர்கள்).
-  const short = SHORT_NAMES[script].findIndex((s) => Number(/^([1-3])/.exec(s)?.[1] ?? 0) === number && SCRIPTS[script].key(s.replace(/^[1-3]\s*/, '')) === key);
-  if (short >= 0) return short + 1;
-  const found = scriptNames(script, books).filter((n) => n.number === number && n.key.startsWith(key));
-  const ids = new Set(found.map((n) => n.id));
-  if (ids.size === 1) return found[0].id;
-  const whole = new Set(found.filter((n) => n.key === key).map((n) => n.id));
-  return whole.size === 1 ? [...whole][0] : undefined;
+  if (SWAHILI_ABBREVIATIONS[key]) return SWAHILI_ABBREVIATIONS[key];
+  const names = swahiliNames(books);
+  const whole = new Set(names.filter((n) => n.key === key).map((n) => n.id));
+  if (whole.size === 1) return [...whole][0];
+  // A prefix needs three letters after any number ("Yoh", "1 Kor"), so "Yo" names nothing.
+  if (key.replace(/^[1-3]/, '').length < 3) return undefined;
+  const ids = new Set(names.filter((n) => n.key.startsWith(key)).map((n) => n.id));
+  return ids.size === 1 ? [...ids][0] : undefined;
 }
 
 export interface ParsedRef extends Ref {
@@ -235,30 +133,27 @@ export interface ParsedRef extends Ref {
  * Returns null when nothing matches or the chapter is out of range for the book.
  */
 export function parseReference(input: string, books: Book[], translation?: TranslationId): ParsedRef | null {
-  // முதலாம் கொரிந்தியர், 1-ஆம் யோவான், ഒന്നാം കൊരിന്ത്യർ: the number as a figure.
-  let typed = westernDigits(input).replace(/\s+/g, ' ').trim();
-  for (const [re, n] of ORDINALS) typed = typed.replace(re, n);
+  const typed = input.replace(/\s+/g, ' ').trim();
   const m = /^\s*([1-3]?\.?\s*[^\d:,]+?)\s*(\d{1,3})(?:\s*[:.,\s]\s*(\d{1,3}))?(?:\s*[-–]\s*\d{1,3}(?:\s*[:.]\s*\d{1,3})?)?\s*$/i.exec(typed);
   if (!m) return null;
   const id = bookFromName(m[1], books, translation);
   return id ? withChapter(books, id, Number(m[2]), m[3] ? Number(m[3]) : undefined) : null;
 }
 
-/** The book a typed name stands for: Malayalam, Tamil, Hindi or English, a full name, a usual abbreviation or a clear prefix. */
+/**
+ * The book a typed name stands for: Swahili or English, a full name, a usual abbreviation or
+ * a clear prefix. Swahili is tried first ("Mat" is Mathayo, "Mal" Malaki in both); a name
+ * that is no Swahili book's is tried as English ("John 3:16", "Gen 1").
+ */
 export function bookFromName(name: string, books: Book[], translation?: TranslationId): number | undefined {
+  void translation;
   const typed = name.trim();
-  // Malayalam or Tamil names, from any translation, e.g. "യോഹന്നാൻ", "1 ശമൂവേൽ", "யோவான்".
-  const script = nameScript(typed);
-  if (script) return scriptBook(script, typed, books);
+  const swahili = swahiliBook(typed, books);
+  if (swahili) return swahili;
   const rawName = typed.toLowerCase().replace(/[^a-z0-9]/g, '');
   if (!rawName) return undefined;
   const id = ABBREVIATIONS[rawName];
   if (id) return id;
-  if (translation) {
-    // Book names in the translation's own language.
-    const local = books.filter((b) => (b.names[translation] ?? '').replace(/\s+/g, '').startsWith(typed.replace(/\s+/g, '')));
-    if (local.length === 1) return local[0].id;
-  }
   const matches = books.filter((b) => b.name.toLowerCase().replace(/[^a-z0-9]/g, '').startsWith(rawName));
   if (matches.length === 1) return matches[0].id;
   // "Jo" could be Job, Joel, John, Jonah, Joshua: prefer the exact-ish Gospel of John.
@@ -267,7 +162,7 @@ export function bookFromName(name: string, books: Book[], translation?: Translat
 
 /**
  * A chapter and verse in a book, or null when the chapter is out of range. In a book of
- * one chapter a lone number is the verse ("Jude 3", "യൂദാ 24"), as people write them.
+ * one chapter a lone number is the verse ("Jude 3", "Yuda 24"), as people write them.
  */
 function withChapter(books: Book[], id: number, chapter: number, verse?: number): ParsedRef | null {
   const book = books.find((b) => b.id === id);
@@ -295,77 +190,37 @@ export interface TextPiece {
 /** The number of verses in a chapter of the Bible being read, when known. */
 export type VerseCount = (book: number, chapter: number) => number | undefined;
 
-// Ordinal book numbers written before a Malayalam or Tamil name: ഒന്നാം കൊരിന്ത്യർ, 1-ാം കൊരി, முதலாம் கொரிந்தியர்.
-const ORDINALS: [RegExp, string][] = [
-  [/^(ഒന്നാം|1-ാം|முதலாம்|1-ஆம்|पहला|पहली)\s*/, '1 '],
-  [/^(രണ്ടാം|2-ാം|இரண்டாம்|2-ஆம்|दूसरा|दूसरी)\s*/, '2 '],
-  [/^(മൂന്നാം|3-ാം|மூன்றாம்|3-ஆம்|तीसरा|तीसरी)\s*/, '3 '],
-];
+// Book abbreviations that are also English or Swahili words: written in lower case, they are
+// words ("is 5", "he 1:3"; Swahili "na" and, "la" of, "es", "ay").
+const EN_WORDS = new Set(['ay', 'mit', 'war', 'wag', 'waf', 'wal', 'waa', 'wae', 'yon', 'uf', 'is', 'he', 'am', 'so', 'ex', 'ac', 'co', 'la', 'ho', 'ne', 'mi', 'ru', 'de', 'ge', 'ob', 'jo', 'na', 're', 'ti', 'ep', 'es', 'le', 'nu', 'job', 'mark', 'acts']);
 
-// Words that are also a book's short name; a chapter alone after them is a number, not a
-// reference. Malayalam: സംഖ്യ (number). Tamil: எண் (number), ஆதி (beginning), நீதி
-// (justice), புலம் (field), வெளி (outside). Hindi: न्याय (justice), नीति (policy), रोम (Rome).
-// Tamil also: உன் (your). Hindi also: मर (die), गिन (count).
-const SHORT_WORDS = new Set(['സംഖ്യ', 'எண்', 'ஆதி', 'நீதி', 'புலம்', 'வெளி', 'உன்', 'न्याय', 'नीति', 'रोम', 'मर', 'गिन']);
-// Whole book names that are also common words: a chapter alone after them is a number.
-// Hindi गिनती (Numbers) is "counting".
-const NAME_WORDS = new Set(['गिनती']);
-const SHORT_NAMES: Record<NameScript, string[]> = { ml: MALAYALAM_SHORT_NAMES, ta: TAMIL_SHORT_NAMES, hi: HINDI_SHORT_NAMES };
-
-// Book abbreviations that are also English words: written in lower case, they are words ("is 5", "he 1:3").
-const EN_WORDS = new Set(['is', 'he', 'am', 'so', 'ex', 'ac', 'co', 'la', 'ho', 'ne', 'mi', 'ru', 'de', 'ge', 'ob', 'jo', 'na', 're', 'ti', 'ep', 'es', 'le', 'nu', 'job', 'mark', 'acts']);
-
-/** True when a name may stand before a chapter number alone, so "Romans 8" links but "യേശു 12" does not. */
+/** True when a name may stand before a chapter number alone, so "Warumi 8" links but "Yesu 12" does not. */
 function nameForChapter(name: string, id: number, books: Book[], translation?: TranslationId): boolean {
   const bare = name.replace(/^[1-3]\.?\s*/, '');
-  const script = nameScript(name);
-  if (script) {
-    if (/\.$/.test(name)) return true; // an abbreviation with its dot: സങ്കീ. 23, சங். 23
-    const plain = bare.replace(/[\s.]/g, '');
-    if (NAME_WORDS.has(plain)) return false;
-    if (SHORT_NAMES[script][id - 1]?.replace(/^[1-3]\s*/, '') === plain) return !SHORT_WORDS.has(plain);
-    const { key, other } = SCRIPTS[script];
-    const typed = key(bare);
-    const book = books.find((b) => b.id === id);
-    const names = [...Object.values(book?.names ?? {}), ...other(id)];
-    return names.some((n) => key(n.replace(/^[1-3]\.?\s*/, '')) === typed);
-  }
-  // English: a capital letter, and a whole name or a usual abbreviation (Ps, Gen, Rom).
+  // A capital letter, and a whole name or a usual abbreviation (Zab, Mwa, Ps, Gen, Rom).
   if (!/^[A-Z]/.test(bare)) return false;
-  const raw = name.toLowerCase().replace(/[^a-z0-9]/g, '');
-  if (ABBREVIATIONS[raw]) return true;
+  const raw = nameKey(name);
+  if (ABBREVIATIONS[raw] || SWAHILI_ABBREVIATIONS[raw]) return true;
+  if (swahiliNames(books).some((n) => n.id === id && n.key === raw)) return true;
   const book = books.find((b) => b.id === id);
   const whole = [book?.name, translation ? book?.names[translation] : undefined].filter((n): n is string => !!n);
-  return whole.some((n) => n.toLowerCase().replace(/[^a-z0-9]/g, '') === raw);
+  return whole.some((n) => nameKey(n) === raw);
 }
 
 /**
- * Splits written text into plain runs and references, for the notebook: "യോഹന്നാൻ 3:16",
- * "1 കൊരി 13:4-7", "Ps 23:1", "Romans 8", "Jude 3", "മത്താ. 5:1-7:29", and lists that
- * carry the book on ("റോമ. 8:28, 29", "യോഹ. 3:16; 4:24").
+ * Splits written text into plain runs and references, for the notebook: "Yohana 3:16",
+ * "1 Kor 13:4-7", "Ps 23:1", "Warumi 8", "Yuda 3", "Mt 5:1-7:29", and lists that
+ * carry the book on ("Rum 8:28, 29", "Yn 3:16; 4:24").
  * - The book name is the one to four words before the numbers, longest first, so
- *   "1. ദിനവൃത്താന്തം 7:14" and "Song of Songs 2:1" are whole. The first name that names
+ *   "Matendo ya Mitume 2:1" and "Song of Songs 2:1" are whole. The first name that names
  *   a book decides it: "3 John 4" is never read as John 4.
  * - A chapter without a verse needs a whole name or a usual abbreviation (see
- *   nameForChapter), so ordinary words with a number ("യേശു 12", "is 5") stay plain.
+ *   nameForChapter), so ordinary words with a number ("Yesu 12", "is 5") stay plain.
  * - With `verseCount`, a verse past the end of its chapter is not a reference, which keeps
  *   "is 7:30" and "Daniel 1260" plain.
  */
 export function findReferences(text: string, books: Book[], translation?: TranslationId, verseCount?: VerseCount): TextPiece[] {
-  // Devanagari digits (यूहन्ना ३:१६) are read as 0-9; the pieces keep the text as written.
-  const plain = westernDigits(text);
-  if (plain === text) return findIn(text, books, translation, verseCount);
-  let at = 0;
-  return findIn(plain, books, translation, verseCount).map((p) => {
-    const piece = { ...p, text: text.slice(at, at + p.text.length) };
-    at += p.text.length;
-    return piece;
-  });
-}
-
-/** Devanagari digits as 0-9, one character each, so offsets in the text stay the same. */
-function westernDigits(text: string): string {
-  return text.replace(/[०-९]/g, (d) => String(d.charCodeAt(0) - 0x966));
+  return findIn(text, books, translation, verseCount);
 }
 
 function findIn(text: string, books: Book[], translation?: TranslationId, verseCount?: VerseCount): TextPiece[] {
@@ -392,7 +247,7 @@ function findIn(text: string, books: Book[], translation?: TranslationId, verseC
     if (m.index > 0 && /\d/.test(text[m.index - 1])) continue;
     // The words before the numbers, back to a line break or a mark that cannot be in a name.
     const before = text.slice(done, m.index);
-    const cut = Math.max(before.lastIndexOf('\n'), ...[',', ';', '(', ')', '"', '“', '”', '‘', '’', '—', '–', '!', '?', '।'].map((c) => before.lastIndexOf(c)));
+    const cut = Math.max(before.lastIndexOf('\n'), ...[',', ';', '(', ')', '"', '“', '”', '‘', '’', '—', '–', '!', '?'].map((c) => before.lastIndexOf(c)));
     const words = before.slice(cut + 1).split(' ');
     if (words.length && words[words.length - 1] === '') words.pop();
     // The name must end right before the numbers, with at most one space.
@@ -400,9 +255,8 @@ function findIn(text: string, books: Book[], translation?: TranslationId, verseC
     let found: { ref: FoundRef; start: number } | null = null;
     for (let k = Math.min(4, words.length); k >= 1; k--) {
       const name = words.slice(words.length - k).join(' ');
-      if (name !== name.trimStart() || !/[A-Za-z\u0d00-\u0d7f\u0b80-\u0bff\u0900-\u097f]/.test(name)) continue;
-      let typed = name;
-      for (const [re, n] of ORDINALS) typed = typed.replace(re, n);
+      if (name !== name.trimStart() || !/[A-Za-z]/.test(name)) continue;
+      const typed = name;
       const raw = typed.replace(/^[1-3]\.?\s*/, '').toLowerCase().replace(/[^a-z]/g, '');
       if (EN_WORDS.has(raw) && /^[a-z]/.test(typed.replace(/^[1-3]\.?\s*/, ''))) continue;
       const id = bookFromName(typed, books, translation);
@@ -418,8 +272,8 @@ function findIn(text: string, books: Book[], translation?: TranslationId, verseC
     if (!found) continue;
     if (found.start > done) pieces.push({ text: text.slice(done, found.start) });
     let end = m.index + m[0].length;
-    // A psalm's title, as "Add to notebook" writes it: "സങ്കീർത്തനങ്ങൾ 3 (ശീർഷകം)".
-    const title = found.ref.chapterOnly ? /^\s*\((?:title|ശീർഷകം|தலைப்பு|शीर्षक)\)/.exec(text.slice(end)) : null;
+    // A psalm's title, as "Add to notebook" writes it: "Zaburi 3 (kichwa)".
+    const title = found.ref.chapterOnly ? /^\s*\((?:title|kichwa)\)/.exec(text.slice(end)) : null;
     if (title) {
       found.ref = { ...found.ref, verse: 0, toVerse: 0, chapterOnly: false };
       end += title[0].length;
@@ -431,7 +285,7 @@ function findIn(text: string, books: Book[], translation?: TranslationId, verseC
       const more = /^(\s*[,;]\s*)(\d{1,3})(?:\s*[:.]\s*(\d{1,3}))?(?:\s*[-–]\s*(\d{1,3}))?(?![\d:])/.exec(text.slice(end));
       if (!more) break;
       // "8:28, 1 Cor 2:9": a 1, 2 or 3 with a name after it numbers the next book.
-      if (!more[3] && !more[4] && /^[1-3]$/.test(more[2]) && /^\.?\s?[A-Za-z\u0900-\u097f\u0b80-\u0bff\u0d00-\u0d7f]/.test(text.slice(end + more[0].length))) break;
+      if (!more[3] && !more[4] && /^[1-3]$/.test(more[2]) && /^\.?\s?[A-Za-z]/.test(text.slice(end + more[0].length))) break;
       let ref: ParsedRef | null;
       if (more[3]) ref = withChapter(books, last.book, Number(more[2]), Number(more[3]));
       else if (more[1].includes(',') && !last.chapterOnly) ref = { book: last.book, chapter: last.toChapter, verse: Number(more[2]), chapterOnly: false };

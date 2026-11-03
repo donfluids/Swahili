@@ -1,0 +1,64 @@
+{
+  "book": 47,
+  "name": "2 Wakorintho",
+  "facts": {
+    "author": "Mtume Paulo, akiandika pamoja na Timotheo (1:1).",
+    "date": "Karibu mwaka 56 B.K.",
+    "audience": "Kanisa la Korintho na waumini wote wa Akaya (1:1)"
+  },
+  "about": [
+    "Paulo aliuandika waraka huu akiwa Makedonia, mwaka mmoja hivi baada ya 1 Wakorintho. Alikuwa amepitia taabu kubwa, na alikuwa amewaandikia Wakorintho kwa machozi mengi (2:4). Tito alipofika na kumweleza kwamba wengi wao walikuwa wamemrudia, Paulo alifarijika sana (7:6).",
+    "Huu ndio waraka wa Paulo unaogusa zaidi maisha yake binafsi. Anafunua moyo wake kuhusu mateso yake na kueleza kwa nini alibadilisha mipango yake ya safari. Anaeleza utukufu wa agano jipya, na kusema kwamba watumishi wa Mungu wanaibeba hazina hii katika vyombo dhaifu vya udongo, ili ionekane kwamba uweza ni wa Mungu (4:7). Mtu yeyote aliye ndani ya Kristo ni kiumbe kipya (5:17), na Mungu amewapa watumishi wake kazi ya kuwaita watu wapatanishwe naye.",
+    "Paulo pia analiomba kanisa litoe kwa ukarimu kwa ajili ya waumini maskini wa Yerusalemu. Katika sura za mwisho anawajibu mitume wa uongo waliokuwa wakiligeuza kanisa dhidi yake, na anaeleza jinsi Bwana alivyomwambia kwamba neema yake inamtosha, kwa maana uweza wake hukamilika katika udhaifu (12:9)."
+  ],
+  "themes": [
+    {
+      "title": "Faraja katika taabu",
+      "text": "Mungu huwafariji watu wake katika taabu zao zote ili nao waweze kuwafariji wengine."
+    },
+    {
+      "title": "Nguvu katika udhaifu",
+      "text": "Uweza wa Mungu huonekana wazi zaidi katika udhaifu wa mwanadamu, kwa hiyo waumini wanaweza kujivunia udhaifu wao."
+    },
+    {
+      "title": "Huduma ya upatanisho",
+      "text": "Kristo, ambaye hakujua dhambi, alifanywa kuwa dhambi kwa ajili yetu, ili sisi tufanywe wenye haki mbele za Mungu (5:21)."
+    },
+    {
+      "title": "Kutoa kwa moyo mkunjufu",
+      "text": "Waumini hutoa kwa hiari na kwa furaha, wakimfuata Kristo aliyekuwa maskini kwa ajili yetu."
+    },
+    {
+      "title": "Watumishi wa kweli na wa uongo",
+      "text": "Maisha ya unyoofu ya Paulo na mateso yake yanaonyesha kwamba yeye ni mtume wa kweli, si kama walimu wa uongo wenye kiburi."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:13",
+      "title": "Faraja katika mateso, na sababu Paulo alibadilisha mipango yake"
+    },
+    {
+      "from": "2:14",
+      "to": "7:16",
+      "title": "Utukufu wa agano jipya na kazi ya upatanisho"
+    },
+    {
+      "from": "8:1",
+      "to": "9:15",
+      "title": "Zawadi kwa ajili ya waumini wa Yerusalemu"
+    },
+    {
+      "from": "10:1",
+      "to": "13:14",
+      "title": "Paulo anaitetea huduma yake ya utume"
+    }
+  ],
+  "keyVerses": [
+    "4:7",
+    "5:17",
+    "5:21",
+    "12:9"
+  ]
+}

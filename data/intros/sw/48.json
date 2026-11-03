@@ -1,0 +1,64 @@
+{
+  "book": 48,
+  "name": "Wagalatia",
+  "facts": {
+    "author": "Mtume Paulo (1:1), aliyeandika sehemu ya mwisho ya waraka kwa mkono wake mwenyewe (6:11).",
+    "date": "Karibu mwaka 49–55 B.K.",
+    "audience": "Makanisa ya Galatia (1:2), katika jimbo la Kirumi lenye jina hilo huko Asia Ndogo, ambayo Paulo aliyaanzisha"
+  },
+  "about": [
+    "Wagalatia ni waraka mfupi na wa dharura. Muda mfupi baada ya Paulo kuhubiri Galatia, walifika walimu waliosema kwamba waumini wa Mataifa lazima watahiriwe na kuishika sheria ya Musa ndipo waokolewe kweli. Paulo alishangaa kwamba waumini walikuwa wakigeukia upesi namna hiyo injili nyingine, ambayo kwa kweli si injili hata kidogo.",
+    "Kwanza Paulo anaonyesha kwamba injili yake ilimjia kutoka kwa Yesu Kristo mwenyewe, si kutoka kwa wanadamu, na anaeleza jinsi hata alivyompinga Petro uso kwa uso huko Antiokia. Kisha anaeleza kwamba mtu huhesabiwa haki mbele za Mungu kwa imani katika Kristo, si kwa matendo ya sheria (2:16). Ibrahimu alihesabiwa haki kwa sababu alimwamini Mungu, na wote wanaoamini ni watoto wake. Sheria ilikuwa kama mlezi mpaka Kristo alipokuja.",
+    "Katika sehemu ya mwisho Paulo anawaita waumini wasimame imara katika uhuru ambao Kristo amewapa (5:1). Uhuru huo si kisingizio cha kutenda dhambi, bali ni nafasi ya kutumikiana kwa upendo, wakienenda kwa Roho, anayezaa tunda lake katika maisha yao (5:22-23)."
+  ],
+  "themes": [
+    {
+      "title": "Injili moja ya kweli",
+      "text": "Kuna injili moja tu, na hakuna mtu aliye na ruhusa ya kuiongezea kitu."
+    },
+    {
+      "title": "Imani, si sheria",
+      "text": "Hakuna mtu anayehesabiwa haki mbele za Mungu kwa kuishika sheria, bali kwa imani katika Kristo peke yake."
+    },
+    {
+      "title": "Kristo anaishi ndani yangu",
+      "text": "Mwamini amesulubiwa pamoja na Kristo, na sasa Kristo anaishi ndani yake (2:20)."
+    },
+    {
+      "title": "Uhuru katika Kristo",
+      "text": "Kristo amewaweka waumini huru mbali na mzigo wa sheria, nao hawapaswi kuurudia."
+    },
+    {
+      "title": "Tunda la Roho",
+      "text": "Wanaoenenda kwa Roho huonyesha upendo, furaha, amani na wema, si matendo ya mwili."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:10",
+      "title": "Salamu, na onyo dhidi ya injili nyingine"
+    },
+    {
+      "from": "1:11",
+      "to": "2:21",
+      "title": "Injili ya Paulo ilitoka kwa Kristo"
+    },
+    {
+      "from": "3:1",
+      "to": "4:31",
+      "title": "Kuhesabiwa haki kwa imani, si kwa sheria"
+    },
+    {
+      "from": "5:1",
+      "to": "6:18",
+      "title": "Kuishi katika uhuru kwa Roho"
+    }
+  ],
+  "keyVerses": [
+    "2:16",
+    "2:20",
+    "5:1",
+    "5:22-23"
+  ]
+}

@@ -55,7 +55,7 @@ function withAndroidRelease(config) {
   config = withGradleProperties(config, (c) => {
     // Record the edition in the generated project so the Gradle-driven bundling
     // picks the right database even when BIBLE_EDITION is not in its environment.
-    const edition = (config.extra && config.extra.edition) || 'en';
+    const edition = (config.extra && config.extra.edition) || 'sw';
     for (const [key, value] of Object.entries({ ...GRADLE_PROPERTIES, 'bible.edition': edition })) {
       const existing = c.modResults.find((item) => item.type === 'property' && item.key === key);
       if (existing) existing.value = value;

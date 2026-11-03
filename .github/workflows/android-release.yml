@@ -14,7 +14,7 @@ name: Android APK
 
 on:
   push:
-    branches: [ccr-39027e0d-8m0rpn, main]
+    branches: [main]
     tags: ['v*']
   workflow_dispatch:
 
@@ -32,9 +32,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # en = Bible (KJV, BSB, WEB); ml = വേദപുസ്തകം (Malayalam, KJV); ta = வேதாகமம் (Tamil, KJV). See src/edition.ts.
-        # The four-language app (all) is built locally: its database is built, not committed (README).
-        edition: [en, ml, ta]
+        # sw = Biblia (Swahili ULB, Neno 2015, Neno 2024, KJV, BSB). See src/edition.ts.
+        edition: [sw]
     env:
       BIBLE_EDITION: ${{ matrix.edition }}
       # A step's own env is not available to its `if`, so the secret's presence is
@@ -93,7 +92,7 @@ jobs:
           cd android
           ./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a --no-daemon
           VERSION=$(node -p "require('../app.json').expo.version")
-          NAME=$(case "$BIBLE_EDITION" in ml) echo Vedapusthakam ;; ta) echo Vedagamam ;; *) echo Bible ;; esac)
+          NAME=Biblia
           cp app/build/outputs/apk/release/app-release.apk "../$NAME-$VERSION-build${{ github.run_number }}.apk"
           echo "APK=$NAME-$VERSION-build${{ github.run_number }}.apk" >> "$GITHUB_ENV"
 

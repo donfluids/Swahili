@@ -1,0 +1,69 @@
+{
+  "book": 19,
+  "name": "Zaburi",
+  "facts": {
+    "author": "Waandishi wengi. Daudi aliandika karibu nusu ya zaburi, kama vichwa vyake vinavyoonyesha. Nyingine ni za Asafu, wana wa Kora, Sulemani, Hemani, Ethani na Musa, na baadhi hazimtaji mwandishi.",
+    "date": "Karibu mwaka 1440–450 K.K., nyingi zikiwa za wakati wa Daudi (karibu mwaka 1000 K.K.)",
+    "audience": "Watu wa Mungu, Israeli, kwa ajili ya ibada hekaluni na maombi ya binafsi, pamoja na waamini wa kila kizazi"
+  },
+  "about": [
+    "Zaburi ni nyimbo na maombi 150, kitabu cha nyimbo cha Israeli. Ziliimbwa hekaluni, na watu wa Mungu bado wanaziomba hadi leo. Nyingi ziliandikwa na Daudi, mchungaji aliyekuja kuwa mfalme, na zinatoka katika kila sehemu ya maisha yake: hatari kutoka kwa adui, dhambi na msamaha (51:10), na tumaini tulivu kwa Yahwe aliye mchungaji wake (23:1).",
+    "Zaburi zinazungumza na Mungu na pia kumhusu yeye. Kuna nyimbo za sifa na shukrani, vilio vya kuomba msaada wakati wa taabu, maombi ya toba, nyimbo kuhusu sheria ya Mungu na uumbaji wake, na zaburi kuhusu mfalme. Waandishi wanamimina hofu yao, huzuni yao na hata hasira yao kwa uwazi mbele za Mungu, na nyingi kati yake zinamalizika kwa tumaini na sifa.",
+    "Kitabu kimepangwa katika vitabu vitano, na kila kimoja kinamalizika kwa maneno ya kumsifu Yahwe (41:13), na kinafungwa kwa kuwaita wote wenye pumzi wamsifu (150:6). Baadhi ya zaburi zinamtazamia Masihi: Mwana wa Mungu na Mfalme (2:7), mateso yake (22:16-18) na ushindi wake (110:1)."
+  ],
+  "themes": [
+    {
+      "title": "Ibada na sifa",
+      "text": "Mungu anastahili kusifiwa kwa jinsi alivyo na kwa yote aliyoyatenda katika uumbaji na kwa ajili ya watu wake."
+    },
+    {
+      "title": "Maombi ya kweli",
+      "text": "Zaburi zinatufundisha kumletea Mungu kila hisia, katika taabu na katika furaha."
+    },
+    {
+      "title": "Neno la Mungu",
+      "text": "Mtu aliyebarikiwa hufurahia sheria ya Mungu (1:2), na zaburi iliyo ndefu kuliko zote inazungumza juu ya neno lake karibu katika kila mstari."
+    },
+    {
+      "title": "Mungu Mfalme na Mchungaji",
+      "text": "Yahwe anatawala juu ya dunia yote, lakini anamjali kila mmoja wa watu wake kama mchungaji anavyowajali kondoo wake."
+    },
+    {
+      "title": "Masihi ajaye",
+      "text": "Baadhi ya zaburi zinazungumza juu ya Mfalme kutoka katika familia ya Daudi, na Agano Jipya linaonyesha kwamba zimetimizwa katika Yesu Kristo."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "41:13",
+      "title": "Kitabu cha 1 (Zaburi 1–41): hasa zaburi za Daudi"
+    },
+    {
+      "from": "42:1",
+      "to": "72:20",
+      "title": "Kitabu cha 2 (Zaburi 42–72): zaburi za wana wa Kora, Daudi na wengine"
+    },
+    {
+      "from": "73:1",
+      "to": "89:52",
+      "title": "Kitabu cha 3 (Zaburi 73–89): hasa zaburi za Asafu na wana wa Kora"
+    },
+    {
+      "from": "90:1",
+      "to": "106:48",
+      "title": "Kitabu cha 4 (Zaburi 90–106): kutoka maombi ya Musa hadi nyimbo za Yahwe anayetawala"
+    },
+    {
+      "from": "107:1",
+      "to": "150:6",
+      "title": "Kitabu cha 5 (Zaburi 107–150): shukrani, nyimbo za kupanda na sifa kuu"
+    }
+  ],
+  "keyVerses": [
+    "1:1-2",
+    "23:1",
+    "119:105",
+    "150:6"
+  ]
+}

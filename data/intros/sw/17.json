@@ -1,0 +1,69 @@
+{
+  "book": 17,
+  "name": "Esta",
+  "facts": {
+    "author": "Hajulikani. Wengine wamependekeza Modekai, aliyeyaandika matukio haya (9:20); wengine wamependekeza Ezra au Nehemia.",
+    "date": "Karibu mwaka 470–450 K.K.",
+    "audience": "Wayahudi walioishi katika milki ya Uajemi, ili kuwaeleza chanzo cha Sikukuu ya Purimu"
+  },
+  "about": [
+    "Habari za Esta zinatokea Shushani, mji wa kifalme wa Uajemi, katika siku za Mfalme Ahusiero, aliyetawala majimbo 127 kutoka India hadi Ethiopia (1:1). Wayahudi wengi bado waliishi huko baada ya uhamisho. Malkia Vashiti anapokataa kuja kwa amri ya mfalme, msichana Myahudi yatima aitwaye Esta, aliyelelewa na binamu yake Modekai, anachaguliwa kuwa malkia. Anaficha habari za watu wake.",
+    "Hamani, waziri mkuu wa mfalme, anamchukia Modekai kwa sababu hakubali kumsujudia. Anapiga kura, iitwayo Puri, na kumshawishi mfalme aamuru kwamba kila Myahudi katika milki yote auawe siku moja (3:7-13). Modekai anamwambia Esta kwamba huenda amefika katika ufalme kwa ajili ya wakati kama huu (4:14). Esta anafunga, anahatarisha maisha yake kwa kwenda kwa mfalme bila kuitwa, na kuifichua njama ya Hamani katika karamu. Hamani anatundikwa kwenye mti aliouandaa kwa ajili ya Modekai, na Wayahudi wanaruhusiwa kujilinda.",
+    "Jina la Mungu halionekani katika kitabu hiki, lakini mkono wake uliofichika unaonekana kila mahali, kuanzia usiku ambao mfalme anakosa usingizi (6:1) hadi huzuni kugeuzwa kuwa furaha."
+  ],
+  "themes": [
+    {
+      "title": "Utunzaji wa Mungu uliofichika",
+      "text": "Ingawa Mungu hatajwi, matukio yanafanya kazi pamoja ili kuwaokoa watu wake. Yeye anatawala hata anapoonekana kunyamaza."
+    },
+    {
+      "title": "Ujasiri kwa wakati unaofaa",
+      "text": "Esta anahatarisha maisha yake kwa ajili ya watu wake, akiwa tayari kuangamia ikibidi (4:16)."
+    },
+    {
+      "title": "Kiburi kinashushwa",
+      "text": "Hamani anajitafutia heshima na kuwatakia wengine kifo, lakini anaanguka katika mtego wake mwenyewe, huku Modekai akiinuliwa."
+    },
+    {
+      "title": "Sikukuu ya Purimu",
+      "text": "Purimu inakumbuka jinsi huzuni ya Wayahudi ilivyogeuzwa kuwa furaha, na inaadhimishwa hadi leo (9:22)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:22",
+      "title": "Karamu ya mfalme; Malkia Vashiti anaondolewa"
+    },
+    {
+      "from": "2:1",
+      "to": "2:23",
+      "title": "Esta anakuwa malkia; Modekai anaokoa maisha ya mfalme"
+    },
+    {
+      "from": "3:1",
+      "to": "4:17",
+      "title": "Njama ya Hamani dhidi ya Wayahudi; uamuzi wa Esta"
+    },
+    {
+      "from": "5:1",
+      "to": "7:10",
+      "title": "Karamu za Esta; Modekai anaheshimiwa na Hamani anatundikwa"
+    },
+    {
+      "from": "8:1",
+      "to": "9:19",
+      "title": "Amri mpya; Wayahudi wanajilinda"
+    },
+    {
+      "from": "9:20",
+      "to": "10:3",
+      "title": "Sikukuu ya Purimu na ukuu wa Modekai"
+    }
+  ],
+  "keyVerses": [
+    "4:14",
+    "4:16",
+    "9:22"
+  ]
+}

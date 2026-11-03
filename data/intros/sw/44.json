@@ -1,0 +1,83 @@
+{
+  "book": 44,
+  "name": "Matendo ya Mitume",
+  "facts": {
+    "author": "Luka, tabibu na mwenzi wa Paulo, ambaye pia aliandika Injili ya Luka. Katika sehemu kadhaa anaandika \"sisi\", kwa sababu yeye mwenyewe alikuwepo (16:10).",
+    "date": "Karibu mwaka 62 B.K.",
+    "audience": "Theofilo (1:1), na kupitia kwake wote waliotaka kujua jinsi Injili ilivyoenea kutoka Yerusalemu hadi Rumi"
+  },
+  "about": [
+    "Matendo ya Mitume ni sehemu ya pili ya kazi ya Luka. Injili yake ilieleza yale ambayo Yesu alianza kufanya na kufundisha; Matendo yanaeleza yale aliyoendelea kufanya kupitia mitume wake kwa Roho Mtakatifu. Kabla hajachukuliwa juu mbinguni, Yesu anaahidi kwamba watapokea nguvu na kuwa mashahidi wake katika Yerusalemu, katika Uyahudi na Samaria, na hadi miisho ya dunia (1:8). Kitabu kinafuata mpango huo.",
+    "Siku ya Pentekoste Roho Mtakatifu anakuja na kanisa linazaliwa huko Yerusalemu. Petro na Yohana wanaponya na kuhubiri, na Stefano anakuwa mfiadini wa kwanza. Mateso yanawatawanya waumini, na Injili inafika Samaria. Sauli, aliyekuwa akiwasaka Wakristo, anakutana na Bwana aliyefufuka njiani kwenda Dameski, na Petro anaona kwamba Mungu anawakubali watu wa mataifa pia Kornelio anapoamini.",
+    "Kuanzia sura ya 13 habari inamfuata Paulo katika safari tatu za kueneza Injili, kisha kukamatwa kwake huko Yerusalemu na safari yake ya baharini kwenda Rumi. Kitabu kinamalizika Paulo akiwa Rumi, akiuhubiri ufalme wa Mungu waziwazi (28:31)."
+  ],
+  "themes": [
+    {
+      "title": "Roho Mtakatifu anafanya kazi",
+      "text": "Roho anawapa waumini nguvu, analiongoza kanisa na kufungua milango mipya kwa ajili ya Injili."
+    },
+    {
+      "title": "Mashahidi wa Bwana aliyefufuka",
+      "text": "Mitume wanahubiri kwamba Mungu alimfufua Yesu kutoka kwa wafu na kwamba hakuna wokovu katika jina lingine lolote (4:12)."
+    },
+    {
+      "title": "Injili kwa kila taifa",
+      "text": "Habari njema inatoka kwa Wayahudi hadi kwa Wasamaria na kwa watu wa mataifa, naye Mungu anawafanya kuwa watu mmoja."
+    },
+    {
+      "title": "Waaminifu katika mateso",
+      "text": "Waumini wanapigwa, wanatiwa gerezani na kuuawa, lakini neno la Mungu linaendelea kuenea."
+    },
+    {
+      "title": "Maisha ya kanisa",
+      "text": "Wakristo wa kwanza wanashirikiana mali zao, wanaomba, wanamega mkate pamoja na kujaliana."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:47",
+      "title": "Kupaa kwa Yesu na kuja kwa Roho Mtakatifu"
+    },
+    {
+      "from": "3:1",
+      "to": "8:3",
+      "title": "Kanisa huko Yerusalemu; Stefano anauawa"
+    },
+    {
+      "from": "8:4",
+      "to": "12:25",
+      "title": "Injili inaenea hadi Samaria na kwa watu wa mataifa; Sauli anaokoka"
+    },
+    {
+      "from": "13:1",
+      "to": "15:35",
+      "title": "Safari ya kwanza ya Paulo na baraza la Yerusalemu"
+    },
+    {
+      "from": "15:36",
+      "to": "18:22",
+      "title": "Safari ya pili ya Paulo: Filipi, Thesalonike, Athene na Korintho"
+    },
+    {
+      "from": "18:23",
+      "to": "21:16",
+      "title": "Safari ya tatu ya Paulo: Efeso na njia ya kurudi Yerusalemu"
+    },
+    {
+      "from": "21:17",
+      "to": "26:32",
+      "title": "Paulo anakamatwa na kusema mbele ya watawala na wafalme"
+    },
+    {
+      "from": "27:1",
+      "to": "28:31",
+      "title": "Safari ya baharini na kuvunjika kwa meli, na Paulo akihubiri huko Rumi"
+    }
+  ],
+  "keyVerses": [
+    "1:8",
+    "2:38",
+    "4:12"
+  ]
+}

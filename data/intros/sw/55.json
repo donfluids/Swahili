@@ -1,0 +1,70 @@
+{
+  "book": 55,
+  "name": "2 Timotheo",
+  "facts": {
+    "author": "Mtume Paulo, kama waraka wenyewe unavyosema (1:1), akiandika kutoka gerezani huko Rumi.",
+    "date": "Karibu mwaka 66–67 B.K.",
+    "audience": "Timotheo, mwana mpendwa wa Paulo katika imani, aliyekuwa akilihudumia kanisa, huenda huko Efeso"
+  },
+  "about": [
+    "Huu ndio waraka wa mwisho ambao Paulo aliandika. Yeye ni mfungwa tena huko Rumi, safari hii amefungwa minyororo, na anajua kwamba kifo chake kiko karibu (4:6). Wengi wamemwacha; ni Luka peke yake aliye pamoja naye (4:11). Anatamani kumwona Timotheo na anamwomba aje upesi, amletee joho lake, vitabu vyake na zile ngozi za kuandikia.",
+    "Paulo anaikumbuka imani ya kweli ya Timotheo, iliyokaa kwanza ndani ya bibi yake Loisi na mama yake Yunisi (1:5). Anamhimiza asiionee haya injili, aichochee karama ya Mungu, na awe hodari katika neema kama askari mwema wa Yesu Kristo. Nyakati ngumu zitakuja katika siku za mwisho, na wengi wataiacha kweli, kwa hiyo Timotheo anapaswa kuyashika Maandiko aliyoyajua tangu utotoni, ambayo yamevuviwa na Mungu (3:15-16), na kulihubiri neno wakati wote.",
+    "Paulo anamalizia kwa matumaini yenye utulivu. Amevipiga vita vile vizuri na ameilinda imani, na Bwana atampa taji ya haki."
+  ],
+  "themes": [
+    {
+      "title": "Waaminifu hadi mwisho",
+      "text": "Paulo amemaliza mbio zake, na anamwita Timotheo aishike imani na kuwakabidhi watu waaminifu watakaowafundisha wengine (2:2)."
+    },
+    {
+      "title": "Bila kuona haya",
+      "text": "Mungu ametupa roho ya nguvu, ya upendo na ya moyo wa kiasi, si roho ya woga, kwa hiyo waumini hawana sababu ya kumwonea haya Kristo wala watumishi wake wanaoteseka."
+    },
+    {
+      "title": "Maandiko",
+      "text": "Kila Andiko limetolewa na Mungu na linafaa kwa kufundisha na kuwalea watu, ili mtu wa Mungu awe tayari kwa kila kazi njema."
+    },
+    {
+      "title": "Kuteseka kwa ajili ya injili",
+      "text": "Wote wanaotaka kuishi maisha ya utauwa katika Kristo watateswa, lakini Bwana husimama pamoja na watumishi wake na atawafikisha salama katika ufalme wake wa mbinguni."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:5",
+      "title": "Salamu na shukrani kwa imani ya kweli ya Timotheo"
+    },
+    {
+      "from": "1:6",
+      "to": "1:18",
+      "title": "Ichochee karama ya Mungu; usiionee haya injili"
+    },
+    {
+      "from": "2:1",
+      "to": "2:26",
+      "title": "Uwe hodari katika neema: askari, mwanariadha, mkulima na mfanyakazi"
+    },
+    {
+      "from": "3:1",
+      "to": "3:17",
+      "title": "Nyakati ngumu katika siku za mwisho; Maandiko yaliyotolewa na Mungu"
+    },
+    {
+      "from": "4:1",
+      "to": "4:8",
+      "title": "Lihubiri neno; mbio za Paulo zimekwisha"
+    },
+    {
+      "from": "4:9",
+      "to": "4:22",
+      "title": "Maombi binafsi, habari na salamu"
+    }
+  ],
+  "keyVerses": [
+    "1:7",
+    "2:15",
+    "3:16-17",
+    "4:7"
+  ]
+}

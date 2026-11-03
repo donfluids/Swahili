@@ -1,0 +1,65 @@
+{
+  "book": 61,
+  "name": "2 Petro",
+  "facts": {
+    "author": "Mtume Simoni Petro, kama waraka wenyewe unavyosema (1:1). Anaandika kama mtu aliyeuona utukufu wa Yesu juu ya mlima mtakatifu (1:16-18).",
+    "date": "Karibu mwaka 65–68 B.K.",
+    "audience": "Waumini walewale ambao Petro alikuwa amewaandikia waraka wake wa kwanza (3:1), na wote wanaoshiriki imani ileile yenye thamani"
+  },
+  "about": [
+    "Petro aliuandika waraka huu wa pili karibu na mwisho wa maisha yake. Alijua kwamba hivi karibuni angeuweka kando mwili wake, kama Bwana Yesu alivyokuwa amemwonyesha (1:14), na alitaka kuwakumbusha waumini kweli ili waikumbuke baada ya yeye kuondoka.",
+    "Kwa uweza wake wa kiungu Mungu ametupa yote tunayohitaji kwa ajili ya uzima na kwa ajili ya maisha ya utauwa (1:3). Kwa hiyo waumini wanapaswa kuiongezea imani yao wema, maarifa, kiasi, saburi, utauwa, upendo wa kindugu na upendo. Injili si hadithi iliyotungwa kwa ujanja: Petro mwenyewe aliisikia sauti ya Baba ikimheshimu Mwana, na manabii walinena kutoka kwa Mungu walipoongozwa na Roho Mtakatifu (1:21).",
+    "Lakini walimu wa uongo wangekuja, wenye tamaa na kiburi, wakiwapotosha wengi. Mungu aliwahukumu malaika waliotenda dhambi, ulimwengu wa siku za Nuhu, na Sodoma na Gomora, naye anajua jinsi ya kuwaokoa wanaomcha. Wengine hudhihaki na kuuliza kwa nini Bwana hajaja bado. Petro anajibu kwamba Bwana ni mvumilivu, hataki mtu yeyote apotee (3:9). Siku ya Bwana itakuja kama mwizi, na watu wa Mungu wanatazamia mbingu mpya na nchi mpya."
+  ],
+  "themes": [
+    {
+      "title": "Kukua katika neema",
+      "text": "Imani inapaswa kukua na kuzaa matunda; waumini wanapaswa kukua katika neema na katika kumjua Bwana Yesu Kristo (3:18)."
+    },
+    {
+      "title": "Neno la kweli la Mungu",
+      "text": "Injili imesimama juu ya ushuhuda wa walioona kwa macho yao na juu ya Maandiko, yaliyotoka kwa Mungu na si kwa mapenzi ya mwanadamu."
+    },
+    {
+      "title": "Jihadharini na walimu wa uongo",
+      "text": "Wanaoipotosha kweli na kuishi kwa ajili ya anasa watakabiliwa na hukumu ya Mungu, kama ilivyokuwa siku za Nuhu na za Lutu."
+    },
+    {
+      "title": "Bwana atakuja",
+      "text": "Kuchelewa kwa kuja kwake ni uvumilivu wa Mungu, unaotoa nafasi ya kutubu, kwa hiyo waumini wanapaswa kuishi maisha matakatifu na ya amani wanapongoja."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:11",
+      "title": "Salamu; kukua katika imani na utauwa"
+    },
+    {
+      "from": "1:12",
+      "to": "1:21",
+      "title": "Petro anawakumbusha: mashahidi walioona kwa macho na neno la unabii lililo hakika"
+    },
+    {
+      "from": "2:1",
+      "to": "2:22",
+      "title": "Walimu wa uongo na hukumu yao"
+    },
+    {
+      "from": "3:1",
+      "to": "3:13",
+      "title": "Wenye dhihaka na siku ya Bwana inayokuja"
+    },
+    {
+      "from": "3:14",
+      "to": "3:18",
+      "title": "Jitahidini na mkue katika neema"
+    }
+  ],
+  "keyVerses": [
+    "1:3",
+    "1:21",
+    "3:9",
+    "3:18"
+  ]
+}

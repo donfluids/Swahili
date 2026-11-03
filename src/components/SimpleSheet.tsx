@@ -93,7 +93,7 @@ interface ActionProps {
   destructive?: boolean;
   /** Lines of the detail shown (three by default); 0 shows all of it, for a detail that must be read whole. */
   detailLines?: number;
-  /** A bundled typeface for the label, for a name in an Indian script. */
+  /** A typeface for the label, for a name in a script with a bundled face (none in this app). */
   labelFont?: string;
   /** The choice now in use, for a screen reader (the tick shows it on screen). */
   selected?: boolean;

@@ -1,0 +1,64 @@
+{
+  "book": 36,
+  "name": "Sefania",
+  "facts": {
+    "author": "Sefania mwana wa Kushi, kilembwe wa Hezekia, ambaye kwa uwezekano mkubwa ndiye mfalme Hezekia (1:1).",
+    "date": "Karibu mwaka 640–620 K.K.",
+    "audience": "Watu wa Yuda na Yerusalemu katika siku za mfalme Yosia"
+  },
+  "about": [
+    "Sefania alihubiri katika siku za mfalme Yosia (1:1), huenda kabla ya matengenezo makubwa ya ibada yaliyofanywa na mfalme huyo. Baada ya tawala ndefu na ovu za Manase na Amoni, Yuda ilikuwa imejaa sanamu. Watu walimwabudu Baali na nyota, waliapa kwa miungu ya uongo, na walidhani kwamba Yahwe hatatenda mema wala mabaya.",
+    "Somo kuu la Sefania ni siku ya Yahwe. Siku hiyo iko karibu, siku ya hasira, giza na taabu juu ya Yuda (1:14-18). Mataifa yanayowazunguka, Wafilisti, Wamoabu, Waamoni, Wakushi na Ashuru, nayo yatahukumiwa, na Ninawi utakuwa jangwa (2:13). Hata Yerusalemu wenyewe, pamoja na watawala wake waovu, makuhani na manabii, hautaokoka. Lakini wanyenyekevu wanaitwa kumtafuta Yahwe, na huenda wakafichwa siku hiyo (2:3).",
+    "Kitabu kinamalizika kwa furaha. Mungu atayatakasa mataifa ili yaliitie jina lake, naye ataokoa mabaki wanyenyekevu. Yahwe atakuwa katikati ya watu wake, naye atawafurahia kwa kuimba (3:17)."
+  ],
+  "themes": [
+    {
+      "title": "Siku ya Yahwe",
+      "text": "Siku ya hukumu inakuja juu ya Yuda na juu ya mataifa yote kwa sababu ya dhambi zao."
+    },
+    {
+      "title": "Mtafuteni Yahwe",
+      "text": "Wapole na wanyenyekevu wanaitwa kumtafuta Yahwe, kutafuta haki na unyenyekevu kabla muda haujapita."
+    },
+    {
+      "title": "Mabaki wanyenyekevu",
+      "text": "Mungu atabakiza watu maskini na wanyenyekevu wanaolitumainia jina lake na wasiotenda uovu."
+    },
+    {
+      "title": "Furaha ya Mungu juu ya watu wake",
+      "text": "Baada ya hukumu, Yahwe ataishi kati ya watu wake na kuwafurahia."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:18",
+      "title": "Siku ya Yahwe dhidi ya Yuda"
+    },
+    {
+      "from": "2:1",
+      "to": "2:3",
+      "title": "Wito wa kumtafuta Yahwe"
+    },
+    {
+      "from": "2:4",
+      "to": "2:15",
+      "title": "Hukumu juu ya mataifa yanayowazunguka"
+    },
+    {
+      "from": "3:1",
+      "to": "3:8",
+      "title": "Ole kwa Yerusalemu, mji muasi"
+    },
+    {
+      "from": "3:9",
+      "to": "3:20",
+      "title": "Mataifa yanatakaswa na Israeli inarejeshwa kwa furaha"
+    }
+  ],
+  "keyVerses": [
+    "1:14",
+    "2:3",
+    "3:17"
+  ]
+}

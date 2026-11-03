@@ -6,9 +6,9 @@ const config = getDefaultConfig(__dirname);
 // Ship the prebuilt SQLite database as an app asset.
 config.resolver.assetExts.push('db');
 
-// Two editions are built from this code (see src/edition.ts). Each bundles only its
-// own database: a require of assets/db/bible.db resolves to bible-<edition>.db.
-const edition = process.env.BIBLE_EDITION || editionFromGradleProperties() || 'en';
+// The edition (see src/edition.ts; here only "sw") bundles its own database: a require
+// of assets/db/bible.db resolves to bible-<edition>.db.
+const edition = process.env.BIBLE_EDITION || editionFromGradleProperties() || 'sw';
 
 // The generated Android project records its edition (plugins/withAndroidRelease.js).
 function editionFromGradleProperties() {

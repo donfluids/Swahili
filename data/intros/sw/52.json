@@ -1,0 +1,73 @@
+{
+  "book": 52,
+  "name": "1 Wathesalonike",
+  "facts": {
+    "author": "Mtume Paulo, akiandika pamoja na Silwano na Timotheo (1:1).",
+    "date": "Karibu mwaka 51 B.K.",
+    "audience": "Kanisa changa la Thesalonike, mji wa Makedonia, ambalo washiriki wake wengi walikuwa watu wa Mataifa walioziacha sanamu na kumgeukia Mungu (1:9)"
+  },
+  "about": [
+    "Huu ni miongoni mwa nyaraka za kwanza ambazo Paulo aliandika. Alikuwa amehubiri Thesalonike baada ya kutendewa vibaya huko Filipi (2:2), lakini ilimbidi kuondoka mjini baada ya muda mfupi tu kwa sababu ya upinzani. Akiwa na wasiwasi juu ya waumini hao wapya, alimtuma Timotheo kutoka Athene arudi kuwaimarisha. Timotheo aliporudi na habari njema za imani yao na upendo wao (3:6), Paulo aliandika waraka huu, huenda akiwa Korintho.",
+    "Paulo anamshukuru Mungu kwamba Wathesalonike walikuwa wameziacha sanamu ili kumtumikia Mungu aliye hai na kumngoja Mwana wake kutoka mbinguni (1:9-10). Anawakumbusha jinsi alivyoishi kati yao na jinsi alivyotamani kuwaona tena. Anawaita waishi maisha matakatifu na ya utulivu.",
+    "Baadhi ya waumini walikuwa wamekufa, na kanisa lilikuwa na wasiwasi juu yao. Paulo anawafariji: Bwana atakaposhuka kutoka mbinguni, waliokufa katika Kristo watafufuka kwanza, na wale walio hai bado watanyakuliwa pamoja nao, ili wawe pamoja na Bwana milele (4:16-17)."
+  ],
+  "themes": [
+    {
+      "title": "Imani, upendo na tumaini",
+      "text": "Kanisa linajulikana kwa kazi yake ya imani, juhudi yake ya upendo na tumaini lake la subira katika Bwana Yesu."
+    },
+    {
+      "title": "Kuja kwa Bwana",
+      "text": "Yesu atakuja tena, na kila sura ya waraka huu inaitazamia siku hiyo."
+    },
+    {
+      "title": "Faraja katika huzuni",
+      "text": "Waumini huhuzunika, lakini si kama watu wasio na tumaini, kwa maana waliokufa katika Kristo watafufuka."
+    },
+    {
+      "title": "Maisha matakatifu",
+      "text": "Mungu huwaita watu wake wawe safi, wapendane na kufanya kazi kwa utulivu."
+    },
+    {
+      "title": "Furaha, maombi na shukrani",
+      "text": "Waumini wanapaswa kufurahi siku zote, kuomba bila kukoma na kushukuru katika kila jambo (5:16-18)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:10",
+      "title": "Shukrani kwa ajili ya imani ya Wathesalonike"
+    },
+    {
+      "from": "2:1",
+      "to": "2:20",
+      "title": "Jinsi Paulo alivyoishi na kufanya kazi kati yao"
+    },
+    {
+      "from": "3:1",
+      "to": "3:13",
+      "title": "Ziara ya Timotheo na habari zake njema"
+    },
+    {
+      "from": "4:1",
+      "to": "4:12",
+      "title": "Maisha yanayompendeza Mungu"
+    },
+    {
+      "from": "4:13",
+      "to": "5:11",
+      "title": "Kuja kwa Bwana"
+    },
+    {
+      "from": "5:12",
+      "to": "5:28",
+      "title": "Maagizo ya mwisho na salamu"
+    }
+  ],
+  "keyVerses": [
+    "1:9-10",
+    "4:16-17",
+    "5:16-18"
+  ]
+}

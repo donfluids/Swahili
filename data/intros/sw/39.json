@@ -1,0 +1,70 @@
+{
+  "book": 39,
+  "name": "Malaki",
+  "facts": {
+    "author": "Malaki (1:1), ambaye jina lake linamaanisha \"mjumbe wangu\". Hakuna kingine kinachojulikana juu ya maisha yake.",
+    "date": "Karibu mwaka 430 K.K.",
+    "audience": "Wayahudi huko Yerusalemu na Yuda, karibu miaka mia moja baada ya kurudi kutoka uhamishoni"
+  },
+  "about": [
+    "Malaki ni kitabu cha mwisho cha Agano la Kale. Hekalu lilikuwa limejengwa upya miaka mingi iliyopita, lakini watu walikuwa wamepoa kiroho. Makuhani walitoa sadaka za wanyama vipofu na wagonjwa, wanaume waliwaacha wake wa ujana wao, na watu walizuia zaka zao. Wengi waliuliza kama kuna faida yoyote ya kumtumikia Mungu.",
+    "Kitabu kimeandikwa kwa mtindo wa mazungumzo. Mungu anatoa kauli, watu wanajibu kwa swali, kwa mfano wakiuliza amewapendaje (1:2), naye Mungu anawajibu. Kwa njia hii anawaonyesha dhambi yao na kuwaita wamrudie, akiahidi kwamba naye atawarudia (3:7).",
+    "Malaki pia anatazama mbele. Mungu atamtuma mjumbe wake kuandaa njia, na Bwana atakuja ghafla katika hekalu lake (3:1). Kwa wale wanaolicha jina lake, Jua la haki litachomoza likiwa na uponyaji (4:2). Kitabu kinamalizika kwa ahadi kwamba nabii Eliya atakuja kabla ya siku kuu ya Yahwe (4:5). Baada ya hapo zilifuata karibu miaka mia nne ya ukimya, hadi Yohana Mbatizaji alipokuja kuandaa njia ya Yahwe."
+  ],
+  "themes": [
+    {
+      "title": "Upendo wa Mungu usiobadilika",
+      "text": "Yahwe amewapenda watu wake, naye habadiliki (3:6), hata wanapomtilia shaka."
+    },
+    {
+      "title": "Kumheshimu Mungu kwa kilicho bora",
+      "text": "Mungu anastahili sadaka safi, makuhani waaminifu na zaka kamili, si kile kinachobaki."
+    },
+    {
+      "title": "Uaminifu katika ndoa",
+      "text": "Mungu anachukia talaka na hila dhidi ya mke wa ujana wa mtu (2:14-16)."
+    },
+    {
+      "title": "Kuja kwa Yahwe",
+      "text": "Mjumbe ataandaa njia, na Bwana atakuja kuhukumu na kuponya."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:5",
+      "title": "Upendo wa Yahwe kwa Israeli"
+    },
+    {
+      "from": "1:6",
+      "to": "2:9",
+      "title": "Makuhani wanamvunjia Mungu heshima"
+    },
+    {
+      "from": "2:10",
+      "to": "2:16",
+      "title": "Kukosa uaminifu kwa Mungu na katika ndoa"
+    },
+    {
+      "from": "2:17",
+      "to": "3:6",
+      "title": "Mjumbe na kuja kwa Yahwe"
+    },
+    {
+      "from": "3:7",
+      "to": "3:12",
+      "title": "Mrudieni Mungu: leteni zaka"
+    },
+    {
+      "from": "3:13",
+      "to": "4:6",
+      "title": "Wale wanaomcha Yahwe; siku kuu na Eliya"
+    }
+  ],
+  "keyVerses": [
+    "3:1",
+    "3:10",
+    "4:2",
+    "4:5-6"
+  ]
+}

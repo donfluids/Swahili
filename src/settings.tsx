@@ -7,7 +7,7 @@ import type { SpokenLanguage } from './speech';
 import { loadEntry, useAutosave } from './persist';
 import type { Loaded } from './persist';
 import type { Edition, Language } from './edition';
-import { isIndian } from './types';
+import { isSwahili } from './types';
 import type { Bookmark, HighlightColor, TextMark, TranslationId } from './types';
 
 export type ThemeChoice = 'system' | 'light' | 'sepia' | 'dark';
@@ -53,14 +53,14 @@ export interface Settings {
   tipSeen: boolean;
   /** When the reader is next invited to write to us (src/feedback.ts): 0 not yet set, -1 never. */
   feedbackDue: number;
-  /** The Indian Bible read last (four-language app): beside the English, and the switch's other side. */
-  lastIndian: string;
-  /** The Bible read before the one open: the swap button's other side (four-language app). */
+  /** The Swahili Bible read last: beside the English, and the switch's other side. */
+  lastSwahili: string;
+  /** The Bible read before the one open: the swap button's other side. */
   previousTranslation: string;
-  /** The four-language app has asked the reader's language once, on first opening. */
+  /** Kept from the Bible apps, whose four-language app asked the language once; unused here. */
   languageChosen: boolean;
-  /** The note that Hindi words are not linked yet has been dismissed. */
-  hindiNoteSeen: boolean;
+  /** The note that the Neno Bibles' words are not linked has been dismissed. */
+  nenoNoteSeen: boolean;
   // The reading place (position, recent and last chapters) is kept in src/place.ts.
 }
 
@@ -86,10 +86,10 @@ const BASE_DEFAULTS: Omit<Settings, 'translation' | 'language'> = {
   notes: {},
   tipSeen: false,
   feedbackDue: 0,
-  lastIndian: '',
+  lastSwahili: '',
   previousTranslation: '',
   languageChosen: false,
-  hindiNoteSeen: false,
+  nenoNoteSeen: false,
 };
 
 // The Aa buttons in Settings and pinching the reader step through these.
@@ -100,8 +100,8 @@ function defaultsFor(edition: Edition): Settings {
   // a size once chosen is kept, so this only sets where a new install begins.
   const { width, height } = Dimensions.get('window');
   const fontSize = Math.min(width, height) >= 600 ? 21 : BASE_DEFAULTS.fontSize;
-  // The English app reads in a serif, like a printed Bible; the Indian-language faces stay sans.
-  return { ...BASE_DEFAULTS, fontSize, serif: edition.id === 'en', translation: edition.defaultTranslation, language: edition.languages[0] };
+  // The text reads in a serif, like a printed Bible.
+  return { ...BASE_DEFAULTS, fontSize, serif: true, translation: edition.defaultTranslation, language: edition.languages[0] };
 }
 
 function load(edition: Edition): Loaded<Settings> {
@@ -150,11 +150,11 @@ export function tellLoadProblem(language: Language, source: Loaded<unknown>['sou
 export function SettingsProvider({ edition, children }: { edition: Edition; children: React.ReactNode }) {
   const [loaded] = useState(() => load(edition));
   const [settings, setSettings] = useState<Settings>(() => ({ ...loaded.value, feedbackDue: feedbackDueFrom(loaded.value.feedbackDue, Date.now()) }));
-  // Opening another Bible remembers the one left, and an Indian one as the last Indian
-  // Bible, for the four-language app's swap and pairing (src/edition.ts).
+  // Opening another Bible remembers the one left, and a Swahili one as the last Swahili
+  // Bible, for the swap and the pairing beside the KJV (src/edition.ts).
   const remember = (prev: Settings, patch: Partial<Settings>): Partial<Settings> => {
     if (!patch.translation || patch.translation === prev.translation) return patch;
-    return { ...patch, previousTranslation: prev.translation, ...(isIndian(patch.translation) ? { lastIndian: patch.translation } : {}) };
+    return { ...patch, previousTranslation: prev.translation, ...(isSwahili(patch.translation) ? { lastSwahili: patch.translation } : {}) };
   };
   const update = useCallback((patch: Partial<Settings>) => setSettings((prev) => ({ ...prev, ...remember(prev, patch) })), []);
   useEffect(() => tellLoadProblem(loaded.value.language, loaded.source), [loaded]);

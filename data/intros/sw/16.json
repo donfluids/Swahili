@@ -1,0 +1,73 @@
+{
+  "book": 16,
+  "name": "Nehemia",
+  "facts": {
+    "author": "Nehemia, mnyweshaji wa Artashasta mfalme wa Uajemi na baadaye mtawala wa Yuda, anayesimulia sehemu kubwa ya habari kwa maneno yake mwenyewe (1:1). Ezra na Nehemia mwanzoni vilihesabiwa kuwa kitabu kimoja, na mapokeo ya Kiyahudi pia yanamhusisha Ezra na kitabu hiki.",
+    "date": "Karibu mwaka 430–420 K.K.",
+    "audience": "Wayahudi wa Yerusalemu na Yuda baada ya kurudi kutoka uhamishoni"
+  },
+  "about": [
+    "Nehemia anahudumu kama mnyweshaji wa Mfalme Artashasta katika jumba la kifalme huko Shushani. Anaposikia kwamba ukuta wa Yerusalemu umebomolewa na malango yake yamechomwa moto, analia, anafunga na kuomba (1:4). Mfalme anampa ruhusa na barua ili aende kuujenga upya mji.",
+    "Huko Yerusalemu Nehemia anawatia watu moyo, na kila familia inatengeneza sehemu ya ukuta. Sanbalati, Tobia na Geshemu wanadhihaki, wanatisha na kufanya njama, na baadhi ya Wayahudi wanawadhulumu ndugu zao maskini, lakini Nehemia anaomba, anaweka walinzi na kulishughulikia kila tatizo. Ukuta unakamilika kwa siku hamsini na mbili tu (6:15).",
+    "Kisha Ezra anawasomea watu wote sheria ya Mungu, na Walawi wanaeleza maana yake (8:8). Watu wanalia, kisha wanafurahi na kuiadhimisha Sikukuu ya Vibanda. Wanaungama dhambi zao na kufanya agano la kumtii Mungu. Baadaye Nehemia anarudi kutoka katika baraza la mfalme na kuwarekebisha wale waliokuwa wameivunja ahadi hiyo (13:6-7)."
+  ],
+  "themes": [
+    {
+      "title": "Maombi na kazi pamoja",
+      "text": "Nehemia anaomba mara kwa mara, hata kwa muda mfupi mbele ya mfalme (2:4), na pia anapanga, anajenga na kukesha akilinda."
+    },
+    {
+      "title": "Ujasiri mbele ya upinzani",
+      "text": "Dhihaka, vitisho na uongo havizuii kazi, kwa sababu watu wanaamini kwamba Mungu atawapigania (4:20)."
+    },
+    {
+      "title": "Furaha ya Yahwe",
+      "text": "Sheria inaposomwa, watu wanaambiwa wasiomboleze, kwa kuwa furaha ya Yahwe ndiyo nguvu yao (8:10)."
+    },
+    {
+      "title": "Kiongozi mwaminifu",
+      "text": "Nehemia anakataa posho ya chakula ya mtawala, anawajali maskini na kufanya kazi pamoja na watu (5:14-18)."
+    },
+    {
+      "title": "Kulishika agano",
+      "text": "Watu wa Mungu wanapaswa kuishika Sabato yake, kuitegemeza nyumba yake na kubaki waaminifu kwake peke yake."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:20",
+      "title": "Maombi ya Nehemia na safari yake kwenda Yerusalemu"
+    },
+    {
+      "from": "3:1",
+      "to": "6:19",
+      "title": "Ukuta unajengwa upya licha ya adui"
+    },
+    {
+      "from": "7:1",
+      "to": "7:73",
+      "title": "Mji unalindwa; orodha ya wale waliorudi"
+    },
+    {
+      "from": "8:1",
+      "to": "10:39",
+      "title": "Sheria inasomwa, dhambi zinaungamwa na agano linafanywa"
+    },
+    {
+      "from": "11:1",
+      "to": "12:47",
+      "title": "Wakazi wapya wa Yerusalemu; ukuta unawekwa wakfu"
+    },
+    {
+      "from": "13:1",
+      "to": "13:31",
+      "title": "Ziara ya pili ya Nehemia na matengenezo yake"
+    }
+  ],
+  "keyVerses": [
+    "2:20",
+    "4:14",
+    "8:10"
+  ]
+}

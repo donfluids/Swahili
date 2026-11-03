@@ -1,0 +1,80 @@
+{
+  "book": 62,
+  "name": "1 Yohana",
+  "facts": {
+    "author": "Mtume Yohana, mwana wa Zebedayo. Waraka hautaji jina lake, lakini kanisa la kwanza liliamini kwa uthabiti kwamba Yohana ndiye aliyeuandika, naye anasema kama mtu aliyemsikia, kumwona na kumgusa Bwana (1:1).",
+    "date": "Karibu mwaka 85–95 B.K.",
+    "audience": "Makanisa ambayo Yohana aliyahudumia, huenda katika Efeso na maeneo yanayoizunguka, ambao anawaita kwa upendo watoto wake wadogo"
+  },
+  "about": [
+    "Yohana aliuandika waraka huu katika uzee wake kwa waumini aliowapenda kama baba. Baadhi ya walimu wa uongo walikuwa wameliacha kanisa na walikuwa wakikana kwamba Yesu ndiye Kristo (2:19-22) na kwamba alikuja katika mwili (4:2-3). Mafundisho yao yaliwasumbua waumini na kuwafanya wawe na mashaka juu ya wokovu wao.",
+    "Yohana anawajibu kwa kurudi mwanzoni: yeye na mitume wengine walimsikia, walimwona na walimgusa Neno wa uzima, Yesu Kristo, ili nasi tushiriki ushirika wao pamoja na Baba na Mwana (1:1-3). Anatoa vipimo vilivyo wazi vya imani ya kweli: wanaomjua Mungu huenenda katika nuru, huzishika amri zake, huwapenda ndugu zao na huamini kwamba Yesu ni Mwana wa Mungu. Tunapotenda dhambi, tunaweza kuiungama, naye Mungu atatusamehe (1:9), kwa maana Yesu Kristo mwenye haki ndiye mtetezi wetu mbele za Baba (2:1).",
+    "Zaidi ya yote Yohana anazungumza juu ya upendo. Mungu ni upendo (4:8), naye aliuonyesha kwa kumtuma Mwana wake afe kwa ajili ya dhambi zetu. Yohana anasema kwamba aliandika ili wale wanaomwamini Mwana wajue kwamba wana uzima wa milele (5:13)."
+  ],
+  "themes": [
+    {
+      "title": "Mungu ni nuru",
+      "text": "Wale walio na ushirika na Mungu huenenda katika nuru, wakiziungama dhambi zao kwa unyoofu na kutakaswa kwa damu ya Yesu."
+    },
+    {
+      "title": "Mungu ni upendo",
+      "text": "Mungu alitupenda kwanza na akamtuma Mwana wake; wale waliozaliwa na Mungu hupendana, si kwa maneno tu bali kwa matendo."
+    },
+    {
+      "title": "Yesu alikuja katika mwili",
+      "text": "Yesu ndiye Kristo, Mwana wa Mungu, aliyekuwa mwanadamu kweli; yeyote anayelikana jambo hili hana Baba."
+    },
+    {
+      "title": "Uhakika",
+      "text": "Waumini wanaweza kujua kwamba wao ni mali ya Mungu na wana uzima wa milele, kwa maana aliye na Mwana anao uzima (5:12)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:4",
+      "title": "Neno wa uzima ambaye mitume walimwona na kumgusa"
+    },
+    {
+      "from": "1:5",
+      "to": "2:2",
+      "title": "Kuenenda katika nuru na kuungama dhambi"
+    },
+    {
+      "from": "2:3",
+      "to": "2:17",
+      "title": "Kuzishika amri zake; msiupende ulimwengu"
+    },
+    {
+      "from": "2:18",
+      "to": "2:29",
+      "title": "Wapinga Kristo, na kudumu katika kweli"
+    },
+    {
+      "from": "3:1",
+      "to": "3:24",
+      "title": "Watoto wa Mungu wanaotenda haki na kupendana"
+    },
+    {
+      "from": "4:1",
+      "to": "4:21",
+      "title": "Kuzijaribu roho; Mungu ni upendo"
+    },
+    {
+      "from": "5:1",
+      "to": "5:12",
+      "title": "Imani inayoushinda ulimwengu; ushuhuda wa Mungu kuhusu Mwana wake"
+    },
+    {
+      "from": "5:13",
+      "to": "5:21",
+      "title": "Kujua kwamba tuna uzima wa milele; ujasiri katika maombi"
+    }
+  ],
+  "keyVerses": [
+    "1:9",
+    "3:1",
+    "4:10",
+    "5:13"
+  ]
+}

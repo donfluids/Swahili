@@ -24,7 +24,7 @@ interface Props {
 const ROW_H = 50;
 /** A row of the two-column list: a name on two lines if need be. */
 const PAIR_ROW_H = 56;
-/** The two-column names' size; Malayalam, Tamil and Hindi lines get more height for their vowel signs. */
+/** The two-column names' size. */
 const CELL_SIZE = 15;
 /** Recently read chapters in the clock's sheet (the reader keeps eight, the open one among them). */
 const MAX_RECENT = 7;
@@ -62,7 +62,7 @@ export function BooksScreen({ books, current, onPick, onOpenRecent }: Props) {
   // Rows have a fixed height (the list jumps to the open book), so they grow with the
   // phone's text size: a name of two lines must fit at Large text too.
   const scale = Math.max(1, PixelRatio.getFontScale());
-  const cellLine = Math.round(CELL_SIZE * (translationInfo(settings.translation).script ? 1.5 : 1.27));
+  const cellLine = Math.round(CELL_SIZE * 1.27);
   const pairRowH = Math.max(PAIR_ROW_H, Math.ceil(2 * cellLine * scale + 12));
   const singleRowH = Math.max(ROW_H, Math.ceil(17 * 1.5 * scale + 20));
   const rowHeight = view === 'ALL' ? pairRowH : singleRowH;

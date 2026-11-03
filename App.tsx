@@ -15,8 +15,7 @@ import { setSelection } from './src/selection';
 import type { RootStackParamList } from './src/navigation';
 import { translate, useT } from './src/i18n';
 import type { StringKey } from './src/i18n';
-import { CONFIGURED_EDITION, EDITIONS, EditionContext, isEditionId, isMultilingual, useEdition } from './src/edition';
-import { LanguageScreen, phoneLanguage } from './src/screens/LanguageScreen';
+import { CONFIGURED_EDITION, EDITIONS, EditionContext, isEditionId, useEdition } from './src/edition';
 import type { Edition, Language } from './src/edition';
 import { getBooks, getMeta } from './src/queries';
 import { SettingsProvider, useSettings } from './src/settings';
@@ -53,10 +52,8 @@ export default function App() {
   );
 }
 
-// The four-language app speaks the phone's language before the reader has chosen one.
-const STARTUP_LANGUAGE: Language = isMultilingual(CONFIGURED_EDITION)
-  ? (CONFIGURED_EDITION.languages.find((l) => l === phoneLanguage()) ?? CONFIGURED_EDITION.languages[0])
-  : CONFIGURED_EDITION.languages[0];
+// The loading and error screens before the settings are read speak the app's first language.
+const STARTUP_LANGUAGE: Language = CONFIGURED_EDITION.languages[0];
 /** The free space to ask for, in MB, rounded up to tens. */
 const SPACE_MB = Math.ceil(firstCopySpace() / (1024 * 1024) / 10) * 10;
 
@@ -304,16 +301,6 @@ function Shell({ initialBooks }: { initialBooks: Book[] | null }) {
 
   if (booksFailed) return <Failure language={settings.language} title="loadFailed" onRetry={() => setBooksAttempt((n) => n + 1)} />;
   if (!appValue) return <Loading message={translate(settings.language, 'loading')} />;
-  // The four-language app asks once which language to read in (src/screens/LanguageScreen.tsx).
-  if (isMultilingual(edition) && !settings.languageChosen) {
-    return (
-      <>
-        <StatusBar style={theme.dark ? 'light' : 'dark'} />
-        <LanguageScreen onChoose={(choice) => commit({ ...choice, languageChosen: true })} />
-      </>
-    );
-  }
-
   return (
     <AppContext.Provider value={appValue}>
       <StatusBar style={theme.dark ? 'light' : 'dark'} />

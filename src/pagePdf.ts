@@ -12,7 +12,7 @@ const escape = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;
 function documentHtml(title: string, body: string): string {
   return `<!doctype html><html><head><meta charset="utf-8"><title>${escape(title)}</title><style>
 @page { size: A4; margin: 18mm 16mm; }
-body { font-family: 'Noto Serif', 'Noto Serif Malayalam', 'Noto Serif Tamil', serif; color: #1E1B16; font-size: 12pt; line-height: 1.55; }
+body { font-family: 'Noto Serif', serif; color: #1E1B16; font-size: 12pt; line-height: 1.55; }
 h1 { font-size: 18pt; margin: 0 0 10pt; }
 p { margin: 0 0 6pt; white-space: pre-wrap; }
 .ref { color: #6B4420; font-weight: 600; }

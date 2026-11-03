@@ -1,0 +1,65 @@
+{
+  "book": 53,
+  "name": "2 Wathesalonike",
+  "facts": {
+    "author": "Mtume Paulo, akiandika pamoja na Silwano (Sila) na Timotheo. Alitia sahihi waraka huu kwa mkono wake mwenyewe (3:17).",
+    "date": "Karibu mwaka 51–52 B.K.",
+    "audience": "Kanisa changa la Thesalonike huko Makedonia, ambalo Paulo alikuwa amelianzisha muda mfupi kabla"
+  },
+  "about": [
+    "Paulo aliuandika waraka huu wa pili kwa Wathesalonike akiwa Korintho, miezi michache tu baada ya ule wa kwanza. Kanisa lilikuwa bado likiteswa kwa sababu ya imani yake, na Paulo anamshukuru Mungu kwamba imani yao na upendo wao vinaendelea kukua. Anawafariji: Bwana Yesu atakapokuja kutoka mbinguni, Mungu atawapa raha watu wake wanaotaabika na kuwahukumu wale wanaowatesa (1:7).",
+    "Baadhi ya watu kanisani walikuwa wameambiwa kwamba siku ya Bwana ilikuwa imekwisha kufika, nao walitikisika na kuogopa. Paulo anaeleza kwamba kwanza lazima anguko litokee, watu waiache imani, na mtu wa uasi afunuliwe, lakini Bwana Yesu atamwangamiza wakati wa kuja kwake (2:3-8). Kwa sasa wanapaswa kusimama imara na kuyashika mafundisho waliyofundishwa.",
+    "Baadhi ya waumini walikuwa wameacha kufanya kazi na waliishi kwa kuwategemea wengine walipokuwa wakingoja. Paulo anawakumbusha jinsi alivyofanya kazi kwa mikono yake mwenyewe alipokuwa kati yao, na anawaambia wafanye kazi kwa utulivu na kula chakula chao wenyewe."
+  ],
+  "themes": [
+    {
+      "title": "Haki ya Mungu na faraja yake",
+      "text": "Wanaoteseka kwa ajili ya Kristo hawajasahauliwa; Mungu atawalipa wale wanaowatesa na kuwapa watu wake raha."
+    },
+    {
+      "title": "Siku ya Bwana",
+      "text": "Kuja kwa Kristo ni hakika, lakini hakutatokea kabla mtu wa uasi hajafunuliwa, kwa hiyo waumini wasidanganywe wala wasitishike."
+    },
+    {
+      "title": "Kusimama imara",
+      "text": "Mungu aliwachagua na kuwaita kwenye wokovu, kwa hiyo wanapaswa kuyashika kwa uthabiti mafundisho waliyopokea."
+    },
+    {
+      "title": "Kazi ya kila siku kwa uaminifu",
+      "text": "Kumngoja Bwana si kisingizio cha uvivu; waumini wanapaswa kufanya kazi, kujipatia riziki yao wenyewe na kutochoka kutenda mema."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:12",
+      "title": "Salamu, shukrani kwa imani yao, na hukumu ya haki ya Mungu"
+    },
+    {
+      "from": "2:1",
+      "to": "2:12",
+      "title": "Siku ya Bwana na mtu wa uasi"
+    },
+    {
+      "from": "2:13",
+      "to": "3:5",
+      "title": "Wateule wa Mungu: simameni imara, na mtuombee"
+    },
+    {
+      "from": "3:6",
+      "to": "3:15",
+      "title": "Onyo dhidi ya uvivu: fanyeni kazi kwa utulivu"
+    },
+    {
+      "from": "3:16",
+      "to": "3:18",
+      "title": "Amani na salamu kwa mkono wa Paulo mwenyewe"
+    }
+  ],
+  "keyVerses": [
+    "1:7",
+    "2:15",
+    "3:3",
+    "3:13"
+  ]
+}

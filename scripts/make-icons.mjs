@@ -1,6 +1,6 @@
 // Draws the app icon, Android adaptive icon layers, splash images, favicon and the 512 × 512
-// Play icon from the art in icon-art.mjs. All three editions share it.
-//   node scripts/make-icons.mjs        writes assets/icons/{en,ml,ta}/ and docs/play/graphics/*-icon-512.png
+// Play icon from the art in icon-art.mjs, the Bible apps' icon.
+//   node scripts/make-icons.mjs        writes assets/icons/sw/ and docs/play/graphics/biblia-icon-512.png
 import fs from 'node:fs';
 import path from 'node:path';
 import { MIDDLE, ROOT, art, background, launch, monochrome } from './icon-art.mjs';
@@ -33,13 +33,13 @@ const shoot = async (body, file, size = 1024) => {
   await page.setContent(`<!doctype html><style>html, body { margin: 0; background: transparent; }</style>${body}`);
   await page.locator('svg').first().screenshot({ path: file, omitBackground: true });
 };
-for (const edition of ['en', 'ml', 'ta']) {
+for (const edition of ['sw']) {
   const out = path.join(ROOT, 'assets', 'icons', edition);
   fs.mkdirSync(out, { recursive: true });
   for (const [name, body] of Object.entries(files)) await shoot(body, path.join(out, name));
   await shoot(svg(art(), 1, true, 48), path.join(out, 'favicon.png'), 48);
 }
 const graphics = path.join(ROOT, 'docs', 'play', 'graphics');
-for (const name of ['bible', 'vedapusthakam', 'vedagamam']) await shoot(svg(art(), 1, true, 512), path.join(graphics, `${name}-icon-512.png`), 512);
+for (const name of ['biblia']) await shoot(svg(art(), 1, true, 512), path.join(graphics, `${name}-icon-512.png`), 512);
 await browser.close();
-console.log('icons written to assets/icons/{en,ml,ta} and docs/play/graphics');
+console.log('icons written to assets/icons/sw and docs/play/graphics');

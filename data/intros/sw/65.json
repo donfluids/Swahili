@@ -1,0 +1,64 @@
+{
+  "book": 65,
+  "name": "Yuda",
+  "facts": {
+    "author": "Yuda, mtumwa wa Yesu Kristo na ndugu yake Yakobo (1:1). Kanisa la kwanza liliamini kwamba alikuwa mmoja wa ndugu wa Bwana Yesu.",
+    "date": "Karibu mwaka 65–80 B.K.",
+    "audience": "Waumini walioitwa, wanaopendwa na Mungu na kulindwa na Yesu Kristo, huenda Wakristo Wayahudi"
+  },
+  "about": [
+    "Yuda alikusudia kuandika barua ya furaha kuhusu wokovu ambao waumini wote wanashiriki. Badala yake ilimbidi kuandika akiwahimiza waishindanie kwa bidii imani ambayo Mungu aliwapa watu wake mara moja tu kwa wakati wote (1:3). Watu wasiomcha Mungu walikuwa wamejiingiza kanisani bila kutambuliwa. Waliigeuza neema ya Mungu kuwa kisingizio cha uasherati, na walimkana Bwana Yesu Kristo (1:4).",
+    "Yuda anawakumbusha wasomaji wake kwamba Mungu huwahukumu watu kama hao. Aliwaangamiza Waisraeli ambao hawakuamini baada ya kutoka Misri, anawaweka katika minyororo malaika walioiacha nafasi yao, na aliiadhibu Sodoma na Gomora. Walimu wa uongo ni kama Kaini, Balaamu na Kora; ni mawingu yasiyo na maji na nyota zinazotangatanga. Zamani Henoko, wa saba kutoka kwa Adamu, alitabiri kwamba Bwana angekuja na maelfu kwa maelfu ya watakatifu wake ili kuwahukumu wasiomcha Mungu (1:14-15).",
+    "Lakini waumini wanapaswa kujijenga katika imani yao iliyo takatifu sana, kuomba katika Roho Mtakatifu, kujilinda katika upendo wa Mungu, na kuwahurumia walio na shaka. Barua inamalizika kwa mojawapo ya sifa nzuri kuliko zote katika Biblia, kwa Mungu anayeweza kuwalinda watu wake wasijikwae (1:24-25)."
+  ],
+  "themes": [
+    {
+      "title": "Kuishindania imani",
+      "text": "Imani ilitolewa mara moja tu kwa wakati wote, na waumini lazima waitetee dhidi ya wale wanaotaka kuibadilisha."
+    },
+    {
+      "title": "Hukumu ya hakika ya Mungu",
+      "text": "Historia inaonyesha kwamba Mungu huuhukumu uovu wa wasiomcha, naye atafanya hivyo tena Bwana atakapokuja."
+    },
+    {
+      "title": "Kulindwa na Mungu",
+      "text": "Waumini wanalindwa na Yesu Kristo, na Mungu anaweza kuwalinda wasijikwae na kuwasimamisha mbele zake bila hatia."
+    },
+    {
+      "title": "Rehema kwa wengine",
+      "text": "Huku wakisimama imara, waumini wanapaswa kuwahurumia wanaoyumbayumba na kujitahidi kuwaokoa walio hatarini."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:2",
+      "title": "Salamu"
+    },
+    {
+      "from": "1:3",
+      "to": "1:4",
+      "title": "Kwa nini Yuda aliandika: ishindanieni imani"
+    },
+    {
+      "from": "1:5",
+      "to": "1:16",
+      "title": "Walimu wa uongo na hukumu ya Mungu juu ya wasiomcha"
+    },
+    {
+      "from": "1:17",
+      "to": "1:23",
+      "title": "Jinsi waumini wanavyopaswa kusimama imara na kuwasaidia wengine"
+    },
+    {
+      "from": "1:24",
+      "to": "1:25",
+      "title": "Sifa kwa Mungu anayewalinda watu wake wasijikwae"
+    }
+  ],
+  "keyVerses": [
+    "1:3",
+    "1:20-21",
+    "1:24-25"
+  ]
+}

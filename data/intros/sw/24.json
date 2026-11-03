@@ -1,0 +1,83 @@
+{
+  "book": 24,
+  "name": "Yeremia",
+  "facts": {
+    "author": "Yeremia mwana wa Hilkia, mmoja wa makuhani wa Anathothi (1:1). Msaidizi wake Baruku aliandika maneno yake mengi kama Yeremia alivyoyasema (36:4). Sura ya mwisho, inayokifunga kitabu kwa anguko la Yerusalemu na kuachiliwa kwa mfalme Yehoyakini huko Babeli, iliongezwa baada ya maneno yake kumalizika (51:64).",
+    "date": "Karibu mwaka 627–580 K.K.; sura ya mwisho karibu mwaka 560 K.K.",
+    "audience": "Watu wa Yuda na Yerusalemu katika miaka yao ya mwisho kabla ya uhamisho, na wale waliochukuliwa mateka hadi Babeli"
+  },
+  "about": [
+    "Mungu alimwita Yeremia akiwa bado kijana, katika mwaka wa kumi na tatu wa mfalme Yosia, akamwambia kwamba alimjua na kumtenga kabla hajazaliwa (1:5). Kwa karibu miaka arobaini, wakati wa utawala wa wafalme wa mwisho wa Yuda, Yeremia aliwaonya watu waache sanamu zao na waache kulitumainia hekalu kwa tumaini la uongo, la sivyo Babeli ingeuangamiza Yerusalemu.",
+    "Ujumbe wake ulimletea maadui wengi. Alidhihakiwa, akapigwa, akafungwa kwenye mkatale, na akashushwa ndani ya kisima chenye matope (38:6), naye mfalme Yehoyakimu akakikata na kukichoma moto kitabu cha maneno yake (36:23). Mara nyingi Yeremia aliwalilia watu wake, ndiyo maana anaitwa nabii aliyelia. Lakini pia aliahidi kwamba baada ya miaka sabini Mungu angewarudisha nyumbani (29:10), na kwamba Mungu angefanya agano jipya, akiiandika sheria yake mioyoni mwao (31:31-33).",
+    "Yerusalemu ulianguka mikononi mwa Nebukadreza kama vile Yeremia alivyosema (39:1-2). Kinyume na onyo lake, watu waliobaki walikimbilia Misri, wakamchukua pamoja nao. Kitabu kinamalizika kwa jumbe dhidi ya mataifa na simulizi la pili la anguko la mji."
+  ],
+  "themes": [
+    {
+      "title": "Mrudieni Yahwe",
+      "text": "Tena na tena Mungu anawaita watu wake wasio waaminifu wamrudie, naye anaahidi rehema wakifanya hivyo."
+    },
+    {
+      "title": "Hukumu juu ya dhambi",
+      "text": "Kwa kuwa Yuda walikataa kusikiliza, Mungu aliitumia Babeli kuliadhibu taifa, kama alivyokuwa ameonya."
+    },
+    {
+      "title": "Mungu ni Mfinyanzi",
+      "text": "Kama mfinyanzi anavyoufinyanga udongo, ndivyo Mungu alivyo na haki ya kuyafinyanga mataifa apendavyo (18:6)."
+    },
+    {
+      "title": "Agano jipya",
+      "text": "Mungu anaahidi agano jipya ambamo atasamehe dhambi na kuiandika sheria yake mioyoni mwa watu wake."
+    },
+    {
+      "title": "Mtumishi mwaminifu",
+      "text": "Yeremia anaendelea kusema neno la Mungu ingawa linamgharimu sana, naye Mungu anatimiza ahadi yake ya kuwa pamoja naye (1:19)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:19",
+      "title": "Wito wa Yeremia"
+    },
+    {
+      "from": "2:1",
+      "to": "25:38",
+      "title": "Maonyo kwa Yuda na Yerusalemu"
+    },
+    {
+      "from": "26:1",
+      "to": "29:32",
+      "title": "Yeremia dhidi ya manabii wa uongo; barua yake kwa waliohamishwa"
+    },
+    {
+      "from": "30:1",
+      "to": "33:26",
+      "title": "Kitabu cha faraja: kurudi nyumbani na agano jipya"
+    },
+    {
+      "from": "34:1",
+      "to": "39:18",
+      "title": "Siku za mwisho za Yerusalemu na anguko lake"
+    },
+    {
+      "from": "40:1",
+      "to": "45:5",
+      "title": "Baada ya anguko: watu wanakimbilia Misri"
+    },
+    {
+      "from": "46:1",
+      "to": "51:64",
+      "title": "Jumbe dhidi ya mataifa"
+    },
+    {
+      "from": "52:1",
+      "to": "52:34",
+      "title": "Anguko la Yerusalemu lasimuliwa tena"
+    }
+  ],
+  "keyVerses": [
+    "1:5",
+    "29:11",
+    "31:33"
+  ]
+}

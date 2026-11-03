@@ -1,0 +1,43 @@
+{
+  "book": 13,
+  "name": "1 Nyakati",
+  "facts": {
+    "author": "Mwandishi hatajwi. Mapokeo ya Kiyahudi yanasema kwamba Ezra, kuhani na mwandishi, aliandika 1 na 2 Nyakati, ambavyo hapo awali vilikuwa kitabu kimoja.",
+    "date": "Karibu mwaka 450–430 K.K.",
+    "audience": "Wayahudi waliorudi kutoka uhamishoni Babeli, ili kuwakumbusha asili yao na ahadi za Mungu kwa Daudi"
+  },
+  "about": [
+    "1 Nyakati kinasimulia tena historia ya Israeli kwa ajili ya watu waliorudi kutoka uhamishoni. Kinaanza na sura tisa za orodha za koo, kutoka kwa Adamu, kupitia makabila ya Israeli, hadi wale waliorudi Yerusalemu. Katikati ya orodha hizi kuna maombi mafupi ya Yabesi, ambaye Mungu alimbariki (4:10).",
+    "Baada ya habari fupi ya kifo cha Sauli (10:13-14), kitabu kinamgeukia Daudi. Kinaeleza habari za mashujaa wake, jinsi alivyolileta sanduku la Mungu Yerusalemu kwa muziki na sifa, na ahadi ya Mungu kwamba mwana wa Daudi atamjengea nyumba na kwamba kiti chake cha enzi kitadumu milele (17:11-14). Kinasema machache kuhusu dhambi za Daudi na mengi kuhusu kujali kwake ibada.",
+    "Daudi haruhusiwi kujenga hekalu mwenyewe, lakini ananunua uwanja wa kupuria wa Orinani kwa ajili yake, anakusanya vifaa, anawapanga makuhani, Walawi na waimbaji, na kumpa Sulemani ramani. Kitabu kinamalizika na watu wakitoa kwa furaha, maombi makuu ya Daudi ya kumsifu Mungu (29:10-13), na Sulemani akiwa mfalme."
+  ],
+  "themes": [
+    {
+      "title": "Watu wa Mungu wana historia",
+      "text": "Orodha za koo zinawaonyesha wale waliorudi kutoka uhamishoni kwamba bado ni sehemu ya watu wa Mungu na makusudi yake."
+    },
+    {
+      "title": "Agano na Daudi",
+      "text": "Ahadi ya Mungu ya kiti cha enzi cha milele kwa mwana wa Daudi inaleta tumaini la Mfalme ajaye."
+    },
+    {
+      "title": "Ibada ya kweli",
+      "text": "Sanduku, hekalu, makuhani na waimbaji vinaonyesha kwamba ibada ya Yahwe iko katikati ya maisha ya taifa."
+    },
+    {
+      "title": "Kumshukuru Mungu",
+      "text": "Daudi anawaongoza watu kumshukuru Yahwe, kwa kuwa yeye ni mwema na rehema zake zinadumu milele (16:34)."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "9:44", "title": "Orodha za koo kutoka kwa Adamu hadi kurudi kutoka uhamishoni" },
+    { "from": "10:1", "to": "12:40", "title": "Kifo cha Sauli; Daudi anafanywa mfalme" },
+    { "from": "13:1", "to": "16:43", "title": "Sanduku linaletwa Yerusalemu" },
+    { "from": "17:1", "to": "17:27", "title": "Agano la Mungu na Daudi" },
+    { "from": "18:1", "to": "20:8", "title": "Ushindi wa Daudi" },
+    { "from": "21:1", "to": "22:1", "title": "Kuhesabiwa kwa watu na mahali pa hekalu" },
+    { "from": "22:2", "to": "27:34", "title": "Maandalizi ya hekalu: makuhani, Walawi, waimbaji na maafisa" },
+    { "from": "28:1", "to": "29:30", "title": "Agizo la Daudi kwa Sulemani, maombi yake na kifo chake" }
+  ],
+  "keyVerses": ["4:10", "16:34", "17:11-12", "29:11"]
+}

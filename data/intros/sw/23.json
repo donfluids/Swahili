@@ -1,0 +1,84 @@
+{
+  "book": 23,
+  "name": "Isaya",
+  "facts": {
+    "author": "Isaya mwana wa Amozi, aliyetabiri huko Yerusalemu (1:1). Yeye ndiye aliyeandika kitabu chote.",
+    "date": "Karibu mwaka 740–680 K.K.",
+    "audience": "Watu wa Yuda na Yerusalemu, na kupitia kwao watu wa Mungu waliokuwa uhamishoni na wa kila kizazi kilichofuata"
+  },
+  "about": [
+    "Isaya alitabiri huko Yerusalemu katika siku za Uzia, Yothamu, Ahazi na Hezekia, wafalme wa Yuda. Katika mwaka ambao mfalme Uzia alikufa, alimwona Bwana ameketi juu ya kiti chake cha enzi, juu sana na ameinuliwa, akawasikia maserafi wakiita kwamba yeye ni mtakatifu (6:1-3). Katika kitabu chote Isaya anamwita Mungu Mtakatifu wa Israeli.",
+    "Sehemu ya kwanza ya kitabu inawaonya Yuda na mataifa juu ya hukumu ya Mungu kwa sababu ya kiburi chao, sanamu zao na udhalimu wao. Lakini pia inaahidi mtoto atakayezaliwa, Mungu mwenye nguvu na Mfalme wa amani, atakayetawala katika kiti cha enzi cha Daudi milele (9:6-7). Katikati ya kitabu kuna habari ya mfalme Hezekia, wakati malaika wa Yahwe alipowaua Waashuru 185,000 na Yerusalemu ukaokolewa (37:36).",
+    "Sehemu ya mwisho inaanza kwa faraja (40:1). Akitazama mbele hadi uhamisho wa Babeli, Isaya anaonyesha nguvu za Mungu juu ya sanamu, na hata anamtaja kwa jina Koreshi, atakayewarudisha watu nyumbani (44:28). Anamweleza Mtumishi wa Yahwe, aliyejeruhiwa kwa ajili ya dhambi zetu na kupelekwa kama mwanakondoo machinjoni (53:5-7), na anamalizia kwa ahadi ya mbingu mpya na nchi mpya (65:17)."
+  ],
+  "themes": [
+    {
+      "title": "Mtakatifu wa Israeli",
+      "text": "Mungu ni mtakatifu na mkuu, juu sana kuliko sanamu ambazo watu hutengeneza kwa mikono yao wenyewe."
+    },
+    {
+      "title": "Hukumu na rehema",
+      "text": "Mungu huiadhibu dhambi, lakini anawaita watu wake wamrudie na anaahidi kuwasamehe."
+    },
+    {
+      "title": "Masihi anayekuja",
+      "text": "Isaya anatabiri mwana wa bikira, Emanueli (7:14), Mfalme wa ukoo wa Daudi na Mtumishi atakayeteseka; yote haya yalitimia katika Yesu Kristo."
+    },
+    {
+      "title": "Faraja na nguvu",
+      "text": "Wale wanaomngoja Yahwe watapata nguvu mpya (40:31), na Mungu ataokoa mabaki ya watu wake."
+    },
+    {
+      "title": "Nuru kwa mataifa",
+      "text": "Mtumishi atakuwa nuru kwa watu wa mataifa, ili wokovu wa Mungu ufike hata miisho ya dunia (49:6)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "6:13",
+      "title": "Dhambi ya Yuda na wito wa Isaya"
+    },
+    {
+      "from": "7:1",
+      "to": "12:6",
+      "title": "Ishara ya Emanueli na Mfalme aliyeahidiwa"
+    },
+    {
+      "from": "13:1",
+      "to": "27:13",
+      "title": "Hukumu juu ya mataifa na juu ya dunia yote"
+    },
+    {
+      "from": "28:1",
+      "to": "35:10",
+      "title": "Ole kwa wasio waaminifu; waliokombolewa wanarudi Sayuni"
+    },
+    {
+      "from": "36:1",
+      "to": "39:8",
+      "title": "Mfalme Hezekia: Ashuru inashindwa, ugonjwa wake na kupona kwake"
+    },
+    {
+      "from": "40:1",
+      "to": "48:22",
+      "title": "Faraja kwa watu wa Mungu: Yahwe yu juu ya sanamu zote"
+    },
+    {
+      "from": "49:1",
+      "to": "57:21",
+      "title": "Mtumishi wa Yahwe na mateso yake"
+    },
+    {
+      "from": "58:1",
+      "to": "66:24",
+      "title": "Ibada ya kweli na utukufu ujao"
+    }
+  ],
+  "keyVerses": [
+    "6:8",
+    "9:6",
+    "40:31",
+    "53:5"
+  ]
+}

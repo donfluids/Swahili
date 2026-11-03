@@ -1,20 +1,18 @@
 // Checks how typed references are read, against the real book lists and verse counts.
 // Run: node --experimental-strip-types scripts/test-refs.mts
-// Cases come from the reviewers' reports: references people write in sermon notes, and
-// ordinary words and numbers that must stay plain text.
-import { existsSync } from 'node:fs';
+// Cases: references people write in sermon notes, in Swahili and English, and ordinary
+// words and numbers that must stay plain text.
 import { DatabaseSync } from 'node:sqlite';
 import { findReferences, parseReference } from '../src/refs.ts';
 import { formatRef } from '../src/text.ts';
 
 type Expect = [string, string];
 
-function load(edition: 'ml' | 'ta' | 'en' | 'all') {
-  const db = new DatabaseSync(new URL(`../assets/db/bible-${edition}.db`, import.meta.url).pathname, { readOnly: true });
+function load(translation: 'SWU' | 'SWN' | 'SWM' | 'KJV') {
+  const db = new DatabaseSync(new URL('../assets/db/bible-sw.db', import.meta.url).pathname, { readOnly: true });
   const rows = db.prepare('SELECT id, osis, name, testament, chapters FROM books ORDER BY id').all() as any[];
   const names = db.prepare('SELECT translation, book, name FROM book_names').all() as any[];
   const books = rows.map((b) => ({ ...b, names: Object.fromEntries(names.filter((n) => n.book === b.id).map((n) => [n.translation, n.name])) }));
-  const translation = edition === 'ml' ? 'MAL' : edition === 'ta' ? 'TAM' : edition === 'all' ? 'HIN' : 'KJV';
   const counts = new Map<string, number>();
   for (const r of db.prepare('SELECT book, chapter, MAX(verse) AS n FROM verses WHERE translation = ? GROUP BY book, chapter').all(translation) as any[]) counts.set(`${r.book}:${r.chapter}`, r.n);
   return { db, books, translation, count: (b: number, c: number) => counts.get(`${b}:${c}`) };
@@ -32,71 +30,46 @@ function links(text: string, ctx: ReturnType<typeof load>): string {
     .join(' ');
 }
 
-const ML: Expect[] = [
-  ['ദൈവം ലോകത്തെ സ്നേഹിച്ച വിധം: യോഹന്നാൻ 3:16', '43:3:16'],
-  ['സ്നേഹം – 1 കൊരി 13:4-7', '46:13:4-7'],
-  ['യോഹ. 3:16; 4:24', '43:3:16 43:4:24'],
-  ['റോമ. 8:28, 29', '45:8:28 45:8:29'],
-  ['എഫെ. 2:8, 9', '49:2:8 49:2:9'],
-  ['മത്താ. 5:1-7:29', '40:5:1-7:29'],
-  ['സങ്കീർത്തനം 23', '19:23'],
-  ['സങ്കീ. 23', '19:23'],
-  ['യൂദാ 24', '65:1:24'],
-  ['ഫിലേമോൻ 6', '57:1:6'],
-  ['ഓബദ്യാവ് 15', '31:1:15'],
-  ['3 യോഹ. 2', '64:1:2'],
-  ['ഒന്നാം കൊരിന്ത്യർ 13', '46:13'],
-  ['1-ാം കൊരി. 13:4', '46:13:4'],
-  ['സദൃശ്യവാക്യങ്ങൾ 3:5', '20:3:5'],
-  ['ഫിലിപ്പ്യർ 4:13', '50:4:13'],
-  ['മാർക്കോസ് 16:15', '41:16:15'],
-  ['യോഹന്നാൻ 3:16-ൽ', '43:3:16'],
-  ['അപ്പൊ. പ്രവൃത്തികൾ 2:1-4 (പെന്തെക്കൊസ്ത്)', '44:2:1-4'],
-  ['1. ദിനവൃത്താന്തം 7:14', '13:7:14'],
-  ['സങ്കീർത്തനങ്ങൾ 3 (ശീർഷകം)', '19:3:0'],
+const SW: Expect[] = [
+  ['Jinsi Mungu alivyoupenda ulimwengu: Yohana 3:16', '43:3:16'],
+  ['Upendo – 1 Kor 13:4-7', '46:13:4-7'],
+  ['1 Wakorintho 13:4-7', '46:13:4-7'],
+  ['Yn 3:16; 4:24', '43:3:16 43:4:24'],
+  ['Rum 8:28, 29', '45:8:28 45:8:29'],
+  ['Warumi 8', '45:8'],
+  ['Efe 2:8, 9', '49:2:8 49:2:9'],
+  ['Mt 5:1-7:29', '40:5:1-7:29'],
+  ['Mathayo 5:3', '40:5:3'],
+  ['Zaburi 23', '19:23'],
+  ['Zab 23', '19:23'],
+  ['Yuda 24', '65:1:24'],
+  ['Filemoni 6', '57:1:6'],
+  ['Obadia 15', '31:1:15'],
+  ['3 Yohana 2', '64:1:2'],
+  ['1 Yohana 4:8', '62:4:8'],
+  ['Mithali 3:5', '20:3:5'],
+  ['Methali 3:5', '20:3:5'],
+  ['Wafilipi 4:13', '50:4:13'],
+  ['Marko 16:15', '41:16:15'],
+  ['Matendo ya Mitume 2:1-4 (Pentekoste)', '44:2:1-4'],
+  ['Mdo 2:38', '44:2:38'],
+  ['Kumbukumbu la Torati 6:4', '5:6:4'],
+  ['Mambo ya Walawi 19:18', '3:19:18'],
+  ['Walawi 19:18', '3:19:18'],
+  ['Wimbo Ulio Bora 2:1', '22:2:1'],
+  ['Waebrania 11:1', '58:11:1'],
+  ['Wahebrania 11:1', '58:11:1'],
+  ['2 Nyakati 7:14', '14:7:14'],
+  ['Ufunuo 22:21', '66:22:21'],
+  ['Mwa 1:1', '1:1:1'],
+  ['Zaburi 3 (kichwa)', '19:3:0'],
   // Ordinary words and numbers: no link.
-  ['യേശു 12 ശിഷ്യന്മാരെ തിരഞ്ഞെടുത്തു', ''],
-  ['യേശു 40 ദിവസം ഉപവസിച്ചു', ''],
-  ['യേശു 5000 പേരെ പോഷിപ്പിച്ചു', ''],
-  ['വെള്ളം 6 കൽഭരണികളിൽ', ''],
-  ['സംഖ്യ 7 പൂർണ്ണതയുടെ അടയാളം', ''],
-  ['എബ്രായ 3 വാക്ക്', ''],
-  ['ന്യായം 3', ''],
-  ['ദാനീയേൽ 1260 ദിവസം', ''],
-  ['യോഹന്നാൻ 2024-ൽ', ''],
-  ['ഞാൻ 12 പേരെ കണ്ടു, 2024-ൽ', ''],
-];
-
-// Tamil: the IRV's names and abbreviations, other spellings, and words that stay plain.
-const TA: Expect[] = [
-  ['உன் 2:1', '22:2:1'],
-  ['உன் 5 பிள்ளைகள்', ''],
-  ['1 இரா 3:9', '11:3:9'],
-  ['தேவன் உலகத்தில் அன்புகூர்ந்தார்: யோவான் 3:16', '43:3:16'],
-  ['1 கொரி 13:4-7', '46:13:4-7'],
-  ['யோவா. 3:16; 4:24', '43:3:16 43:4:24'],
-  ['ரோமர் 8:28, 29', '45:8:28 45:8:29'],
-  ['சங்கீதம் 23', '19:23'],
-  ['சங். 23', '19:23'],
-  ['சங்கீதங்கள் 3 (தலைப்பு)', '19:3:0'],
-  ['யூதா 24', '65:1:24'],
-  ['3 யோவான் 2', '64:1:2'],
-  ['முதலாம் கொரிந்தியர் 13', '46:13'],
-  ['2 ராஜாக்கள் 5:14', '12:5:14'],
-  ['அப்போஸ்தலர் 2:1-4', '44:2:1-4'],
-  ['வெளிப்படுத்தின விசேஷம் 22:21', '66:22:21'],
-  ['ரூத்து 1:16', '8:1:16'],
-  // The app's own short names, also where they begin other books' names.
-  ['அப் 2:38', '44:2:38'],
-  ['அப். 2:38', '44:2:38'],
-  ['நீதி 3:5', '20:3:5'],
-  ['நீதி. 3:5', '20:3:5'],
-  ['யோ 3:16', '43:3:16'],
-  // Ordinary words and numbers: no link.
-  ['இயேசு 12 சீஷரைத் தெரிந்துகொண்டார்', ''],
-  ['எண் 7 பூரணத்தின் அடையாளம்', ''],
-  ['ஆதி 3 நாட்கள்', ''],
-  ['தானியேல் 1260 நாட்கள்', ''],
+  ['Yesu aliwachagua wanafunzi 12', ''],
+  ['Yesu alifunga siku 40', ''],
+  ['watu 5000 walilishwa', ''],
+  ['Mkutano ni saa 7:30 jioni', ''],
+  ['mkate na samaki 2', ''],
+  ['na 5 zaidi', ''],
 ];
 
 const EN: Expect[] = [
@@ -123,79 +96,35 @@ const EN: Expect[] = [
   ['Romans 8 is long; is 5 people; I am 3 years old.', '45:8'],
 ];
 
-// Hindi, read in the four-language app (its database is built, not kept in git): names as
-// the IRV writes them and as its editors cite the Old Testament, "(1 यूह. 4:9)".
-const HI: Expect[] = [
-  ['यूहन्ना 3:16', '43:3:16'],
-  ['युहन्ना 3:16', '43:3:16'],
-  ['1 यूह. 4:9', '62:4:9'],
-  ['1 पत. 1:19, यशा. 53:7', '60:1:19 23:53:7'],
-  ['1कुरि. 13:4-7', '46:13:4-7'],
-  ['भजन संहिता 23', '19:23'],
-  ['भज. 2:7; 110:1', '19:2:7 19:110:1'],
-  ['भजन 23:1', '19:23:1'],
-  ['प्रेरितों के काम 2:38', '44:2:38'],
-  ['रोमियों 8:28, 29।', '45:8:28 45:8:29'],
-  ['मत्ती 5:1-7:29', '40:5:1-7:29'],
-  ['यहूदा 3', '65:1:3'],
-  ['पहला कुरिन्थियों 13', '46:13'],
-  ['भजन संहिता 3 (शीर्षक)', '19:3:0'],
-  ['उसने न्याय 5 बार किया', ''],
-  ['रोम 12 लोग', ''],
-  // Devanagari digits, the dot for a half nasal, other common and Catholic names.
-  ['यूहन्ना ३:१६', '43:3:16'],
-  ['रोमियों 8:28, 1 कुरि. 2:9', '45:8:28 46:2:9'],
-  ['भजन १२१', '19:121'],
-  ['1 कुरिंथियों 13:4', '46:13:4'],
-  ['यिर्मियाह 29:11', '24:29:11'],
-  ['योहन 3:16', '43:3:16'],
-  ['1 योहन 4:8', '62:4:8'],
-  ['मारकुस 1:1', '41:1:1'],
-  ['स्तोत्र ग्रन्थ 23:1', '19:23:1'],
-  ['गिनती 6:24', '4:6:24'],
-  ['गिनती 7 पूर्णता की संख्या है', ''],
-  ['वह मर 5 दिन में गया', ''],
-];
-
-// What the search box opens. Malayalam and Tamil names exist only in their own edition.
-const SEARCH: [string, string, 'ml' | 'ta' | 'both'][] = [
-  ['சங். 23:1-6', '19:23:1', 'ta'],
-  ['1 கொரி 13:4-7', '46:13:4', 'ta'],
-  ['யோவான் 3:16', '43:3:16', 'ta'],
-  ['அப் 2:38', '44:2:38', 'ta'],
-  ['நீதி 3:5', '20:3:5', 'ta'],
-  ['யோ 3:16', '43:3:16', 'ta'],
-  ['முதலாம் கொரிந்தியர் 13:4', '46:13:4', 'ta'],
-  ['1-ஆம் யோவான் 4:8', '62:4:8', 'ta'],
-  ['സങ്കീ. 23:1-6', '19:23:1', 'ml'],
-  ['1 കൊരി. 13:4-7', '46:13:4', 'ml'],
-  ['യൂദാ 24', '65:1:24', 'ml'],
-  ['Jude 24', '65:1:24', 'both'],
-  ['John 3:16', '43:3:16', 'both'],
-  ['Ps 23:1-6', '19:23:1', 'both'],
+const SEARCH: Expect[] = [
+  ['Yohana 3:16', '43:3:16'],
+  ['yohana 3 16', '43:3:16'],
+  ['Zab 23', '19:23:1'],
+  ['1 kor 13', '46:13:1'],
+  ['ufunuo 21:4', '66:21:4'],
+  ['John 3:16', '43:3:16'],
+  ['Gen 1', '1:1:1'],
+  ['Ps 23:1-6', '19:23:1'],
+  ['Mat 5', '40:5:1'],
+  ['Yoh 1:1', '43:1:1'],
 ];
 
 let failed = 0;
-const hindi = existsSync(new URL('../assets/db/bible-all.db', import.meta.url).pathname);
-// REQUIRE_ALL_DB=1 (set where the four-language database is built) makes its absence a failure.
-if (!hindi && process.env.REQUIRE_ALL_DB) throw new Error('assets/db/bible-all.db is missing (node scripts/build-db.mjs all)');
-if (!hindi) console.log('hi: skipped, assets/db/bible-all.db not built (node scripts/build-db.mjs all)');
-for (const [edition, cases] of [['ml', ML], ['ta', TA], ['en', EN], ...(hindi ? [['all', HI]] : [])] as const) {
-  const ctx = load(edition);
+for (const [translation, cases] of [['SWU', SW], ['SWN', SW], ['SWM', SW], ['KJV', EN]] as const) {
+  const ctx = load(translation);
   for (const [text, want] of cases) {
     const got = links(text, ctx);
     if (got !== want) {
       failed++;
-      console.log(`FAIL ${edition} ${JSON.stringify(text)}: got "${got}", want "${want}"`);
+      console.log(`FAIL ${translation} ${JSON.stringify(text)}: got "${got}", want "${want}"`);
     }
   }
-  for (const [text, want, where] of SEARCH) {
-    if (where !== 'both' && where !== edition) continue;
+  for (const [text, want] of SEARCH) {
     const r = parseReference(text, ctx.books as any, ctx.translation as any);
     const got = r ? `${r.book}:${r.chapter}:${r.verse}` : '';
     if (got !== want) {
       failed++;
-      console.log(`FAIL search ${edition} ${JSON.stringify(text)}: got "${got}", want "${want}"`);
+      console.log(`FAIL search ${translation} ${JSON.stringify(text)}: got "${got}", want "${want}"`);
     }
   }
   // Every verse, written the way "Add to notebook" writes it, reads back as itself.
@@ -204,11 +133,11 @@ for (const [edition, cases] of [['ml', ML], ['ta', TA], ['en', EN], ...(hindi ? 
     const label = formatRef(ctx.books as any, v, ctx.translation as any);
     const got = links(label, ctx);
     if (got !== `${v.book}:${v.chapter}:${v.verse}`) {
-      if (bad++ < 5) console.log(`FAIL round trip ${edition} ${label}: got "${got}"`);
+      if (bad++ < 5) console.log(`FAIL round trip ${translation} ${label}: got "${got}"`);
     }
   }
   failed += bad;
-  console.log(`${edition}: ${cases.length} cases, round trip ${bad ? `${bad} failures` : 'clean'}`);
+  console.log(`${translation}: ${cases.length} cases, round trip ${bad ? `${bad} failures` : 'clean'}`);
 }
 console.log(failed ? `${failed} FAILED` : 'all passed');
 process.exit(failed ? 1 : 0);

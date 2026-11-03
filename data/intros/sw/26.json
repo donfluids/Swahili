@@ -1,0 +1,78 @@
+{
+  "book": 26,
+  "name": "Ezekieli",
+  "facts": {
+    "author": "Ezekieli kuhani, mwana wa Buzi, aliyechukuliwa mateka hadi Babeli pamoja na mfalme Yehoyakini, naye aliandika yale ambayo Mungu alimwonyesha (1:1-3).",
+    "date": "Karibu mwaka 593–570 K.K.",
+    "audience": "Wayahudi waliokuwa uhamishoni huko Babeli"
+  },
+  "about": [
+    "Ezekieli alikuwa kuhani aliyeishi miongoni mwa Wayahudi waliohamishwa, kando ya mto Kebari huko Babeli. Katika mwaka wa tano wa kufungwa kwa mfalme Yehoyakini aliona maono makuu ya utukufu wa Mungu, pamoja na viumbe hai, magurudumu yaliyojaa macho na kiti cha enzi kama yakuti samawi (1:26-28). Mungu alimtuma kwa watu waasi na akamfanya mlinzi wa Israeli (3:17).",
+    "Kabla Yerusalemu haujaanguka, Ezekieli alionya kwamba mji ungeangamizwa, na mara nyingi aliuonyesha ujumbe wake kwa ishara za matendo. Katika maono aliona sanamu zikiabudiwa ndani ya hekalu na utukufu wa Yahwe ukiondoka humo (10:18). Mke wake alipofariki, aliambiwa asiomboleze, iwe ishara kwa watu (24:15-18). Kisha habari zikaja kwamba mji umeanguka (33:21).",
+    "Baada ya hapo ujumbe wake uligeuka kuwa wa tumaini. Mungu mwenyewe angewachunga watu wake, angewapa moyo mpya na roho mpya (36:26), na kuwafufua kama ile mifupa mikavu iliyosimama ikawa jeshi kubwa (37:10). Kitabu kinamalizika kwa maono ya hekalu jipya, utukufu wa Yahwe ukirudi ndani yake (43:4), na mji unaoitwa Yahwe yupo hapo (48:35)."
+  ],
+  "themes": [
+    {
+      "title": "Utukufu wa Mungu",
+      "text": "Utukufu wa Mungu unaondoka katika hekalu lililojaa dhambi na baadaye unarudi, kwa maana uwepo wake ndio zawadi kuu kwa watu wake."
+    },
+    {
+      "title": "Kila mtu atajibu mbele za Mungu",
+      "text": "Kila nafsi ni mali ya Mungu, na kila mmoja anawajibika kwa dhambi yake mwenyewe; Mungu hafurahii kifo cha mwovu (18:32)."
+    },
+    {
+      "title": "Kumjua Yahwe",
+      "text": "Tena na tena Mungu anasema kwamba kwa hukumu zake na kwa matendo yake ya wokovu watu watajua kwamba yeye ndiye Yahwe."
+    },
+    {
+      "title": "Moyo mpya na uzima mpya",
+      "text": "Mungu anaahidi kuwatakasa watu wake, kutia Roho wake ndani yao na kuwafufua kwa uzima mpya (37:14)."
+    },
+    {
+      "title": "Mchungaji mwema",
+      "text": "Mungu atawatafuta kondoo wake waliopotea na kuweka juu yao mchungaji mmoja, mtumishi wake Daudi (34:23)."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "3:27",
+      "title": "Maono ya Ezekieli ya utukufu wa Mungu na wito wake"
+    },
+    {
+      "from": "4:1",
+      "to": "11:25",
+      "title": "Ishara za kuzingirwa kwa mji; utukufu unaondoka hekaluni"
+    },
+    {
+      "from": "12:1",
+      "to": "24:27",
+      "title": "Maonyo zaidi hadi kuzingirwa kwa Yerusalemu kunapoanza"
+    },
+    {
+      "from": "25:1",
+      "to": "32:32",
+      "title": "Jumbe dhidi ya mataifa"
+    },
+    {
+      "from": "33:1",
+      "to": "33:33",
+      "title": "Mlinzi na habari za kuanguka kwa Yerusalemu"
+    },
+    {
+      "from": "34:1",
+      "to": "39:29",
+      "title": "Mchungaji, moyo mpya, mifupa mikavu na kushindwa kwa Gogu"
+    },
+    {
+      "from": "40:1",
+      "to": "48:35",
+      "title": "Hekalu jipya, mto unaotoka hekaluni na nchi"
+    }
+  ],
+  "keyVerses": [
+    "33:11",
+    "36:26-27",
+    "37:5"
+  ]
+}

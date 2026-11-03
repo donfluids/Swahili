@@ -1,0 +1,75 @@
+{
+  "book": 11,
+  "name": "1 Wafalme",
+  "facts": {
+    "author": "Mwandishi hajulikani. Mapokeo ya Kiyahudi yanasema kwamba nabii Yeremia aliandika 1 na 2 Wafalme, ambavyo hapo awali vilikuwa kitabu kimoja, akitumia kumbukumbu za kifalme; mistari ya mwisho, kuhusu Mfalme Yekonia kuachiliwa huko Babeli, iliongezwa baada yake.",
+    "date": "Karibu mwaka 590–560 K.K.; mistari ya mwisho baada ya mwaka 561 K.K.",
+    "audience": "Watu wa Israeli waliokuwa uhamishoni Babeli, ili kuwaonyesha kwa nini ufalme ulianguka na kuwaita warudi kwa Mungu"
+  },
+  "about": [
+    "1 Wafalme kinaanza na uzee wa Daudi na kutawazwa kwa mwanawe Sulemani. Mungu anapomwambia Sulemani aombe chochote, anaomba moyo wa ufahamu ili awaamue watu wa Mungu vizuri (3:9), na Mungu anamfanya kuwa na hekima kuliko mfalme mwingine yeyote. Sulemani anajenga hekalu huko Yerusalemu, na wakati wa kuliweka wakfu anaomba kwamba Mungu awasikie watu wake kutoka mbinguni, ingawa mbingu haziwezi kumtosha (8:27).",
+    "Lakini Sulemani anaoa wanawake wengi wa kigeni, na katika uzee wake wanaugeuza moyo wake kuifuata miungu mingine. Baada ya kifo chake ufalme unagawanyika sehemu mbili: makabila kumi ya kaskazini yanamfuata Yeroboamu, anayesimamisha ndama wa dhahabu, na Yuda inabaki na Rehoboamu, mwana wa Sulemani. Kisha kitabu kinawafuata wafalme wa falme zote mbili, kikimpima kila mmoja kwa kuangalia kama alitenda yaliyo mema machoni pa Yahwe.",
+    "Sehemu ya mwisho inamhusu nabii Eliya, anayesimama dhidi ya Mfalme Ahabu na Malkia Yezebeli na ibada yao ya Baali. Kwenye Mlima Karmeli Mungu anamjibu Eliya kwa moto, na watu wanapaza sauti kwamba Yahwe ndiye Mungu (18:39)."
+  ],
+  "themes": [
+    {
+      "title": "Uaminifu unaleta baraka",
+      "text": "Wafalme wanapomfuata Yahwe taifa linabarikiwa; wanapogeukia sanamu, taabu na mgawanyiko vinafuata."
+    },
+    {
+      "title": "Hekalu na uwepo wa Mungu",
+      "text": "Hekalu ni mahali ambapo Mungu analiweka jina lake, na ambapo watu wake wanaomba wakielekea kwake."
+    },
+    {
+      "title": "Yahwe peke yake ndiye Mungu",
+      "text": "Eliya anawaita watu waache kusitasita kati ya mawazo mawili na wamfuate Yahwe, si Baali (18:21)."
+    },
+    {
+      "title": "Mungu anasema kupitia manabii wake",
+      "text": "Mungu anawatuma manabii kuwaonya wafalme, na neno lake linatimia kila mara."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:46",
+      "title": "Sulemani anakuwa mfalme baada ya Daudi"
+    },
+    {
+      "from": "3:1",
+      "to": "4:34",
+      "title": "Hekima ya Sulemani"
+    },
+    {
+      "from": "5:1",
+      "to": "8:66",
+      "title": "Hekalu linajengwa na kuwekwa wakfu"
+    },
+    {
+      "from": "9:1",
+      "to": "11:43",
+      "title": "Utukufu wa Sulemani na kugeuka kwake"
+    },
+    {
+      "from": "12:1",
+      "to": "16:34",
+      "title": "Ufalme unagawanyika; wafalme wa Israeli na Yuda"
+    },
+    {
+      "from": "17:1",
+      "to": "19:21",
+      "title": "Eliya: ukame, Mlima Karmeli na Horebu"
+    },
+    {
+      "from": "20:1",
+      "to": "22:53",
+      "title": "Vita vya Ahabu, shamba la mizabibu la Nabothi na kifo cha Ahabu"
+    }
+  ],
+  "keyVerses": [
+    "3:9",
+    "8:27",
+    "18:21",
+    "18:39"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "book": 32,
+  "name": "Yona",
+  "facts": {
+    "author": "Yona mwana wa Amitai, nabii wa Israeli (1:1). Kitabu kinasimulia habari yake, na mapokeo yanashikilia kwamba kinatoka kwa Yona mwenyewe.",
+    "date": "Karibu mwaka 785–760 K.K.",
+    "audience": "Watu wa Israeli, ili kuwaonyesha rehema ya Mungu kwa mataifa mengine"
+  },
+  "about": [
+    "Yona aliishi katika siku za mfalme Yeroboamu mwana wa Yoashi. Mungu alimwambia aende Ninawi, ule mji mkubwa wa Ashuru, adui mkatili wa Israeli, akapaze sauti dhidi ya uovu wake (1:2). Badala yake Yona alikimbia upande mwingine, akapanda meli kwenda Tarshishi (1:3). Yahwe aliituma dhoruba kubwa, mabaharia wakamtupa Yona baharini, na samaki mkubwa ambaye Mungu alikuwa amemwandaa akammeza (1:17).",
+    "Akiwa ndani ya tumbo la samaki Yona aliomba na kushukuru, akikiri kwamba wokovu ni wa Yahwe (2:9). Samaki alimtapika nchi kavu, na mara hii Yona alitii. Aliuonya Ninawi kwamba baada ya siku arobaini mji ungeangamizwa, na mji wote, kuanzia mfalme hadi watu wa chini kabisa, ukatubu. Mungu aliona hivyo, wala hakuwaangamiza (3:10).",
+    "Yona alikasirika, kwa sababu alijua tangu mwanzo kwamba Mungu ni mwenye neema na mwenye huruma (4:2). Kitabu kinamalizika kwa swali la Mungu kwake: je, asingeuhurumia mji wenye watu wengi namna hiyo? Baadaye Yesu alizitaja siku tatu za Yona ndani ya samaki kuwa ishara ya kifo chake mwenyewe na ufufuo wake."
+  ],
+  "themes": [
+    {
+      "title": "Rehema ya Mungu kwa mataifa yote",
+      "text": "Mungu anawajali watu wa Ninawi, hata watoto wao na wanyama wao (4:11)."
+    },
+    {
+      "title": "Hakuna kumkimbia Mungu",
+      "text": "Yona hawezi kukimbia kutoka mbele za Yahwe, anayetawala bahari, upepo na samaki."
+    },
+    {
+      "title": "Toba",
+      "text": "Ninawi inapoziacha njia zake mbaya, Mungu anaiacha hukumu aliyokuwa ameitangaza."
+    },
+    {
+      "title": "Moyo finyu",
+      "text": "Yona anaifurahia rehema ya Mungu kwa ajili yake mwenyewe, lakini anakasirika inapoonyeshwa kwa adui zake."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:17",
+      "title": "Yona anamkimbia Mungu na kumezwa na samaki mkubwa"
+    },
+    {
+      "from": "2:1",
+      "to": "2:10",
+      "title": "Maombi ya Yona kutoka ndani ya samaki"
+    },
+    {
+      "from": "3:1",
+      "to": "3:10",
+      "title": "Yona anahubiri na Ninawi inatubu"
+    },
+    {
+      "from": "4:1",
+      "to": "4:11",
+      "title": "Hasira ya Yona na rehema ya Mungu"
+    }
+  ],
+  "keyVerses": [
+    "2:9",
+    "3:10",
+    "4:2",
+    "4:11"
+  ]
+}

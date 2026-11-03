@@ -92,9 +92,8 @@ export const VerseText = memo(function VerseText({
   const script = scriptOf(verse.text);
   const font = scriptureFont(script, serif) ?? theme.font;
   const bold = script ? { fontFamily: scriptureFont(script, serif, true) } : { fontWeight: '700' as const };
-  // Devanagari reads smaller than Latin at the same size: Hindi gets half a step more.
-  const size = script === 'hi' ? fontSize + 1 : fontSize;
-  const lineHeight = Math.round(size * translationInfo(script === 'ta' ? 'TAM' : script === 'ml' ? 'MAL' : script === 'hi' ? 'HIN' : 'KJV').lineHeight);
+  const size = fontSize;
+  const lineHeight = Math.round(size * translationInfo('KJV').lineHeight);
   const small = Math.max(11, fontSize - 6);
   // On a highlight colour the text, number and note letters take the colours made for it.
   // A flash covers the highlight colour, so the text keeps the page's colours under it.

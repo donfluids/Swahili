@@ -1,0 +1,65 @@
+{
+  "book": 30,
+  "name": "Amosi",
+  "facts": {
+    "author": "Amosi, mchungaji wa mifugo kutoka Tekoa katika Yuda na mchumaji wa matunda ya mikuyu (1:1), ambaye Mungu alimtuma kutabiri kwa Israeli (7:14-15).",
+    "date": "Karibu mwaka 760–750 K.K.",
+    "audience": "Ufalme wa kaskazini wa Israeli katika siku za mfalme Yeroboamu mwana wa Yoashi"
+  },
+  "about": [
+    "Amosi hakuwa nabii kwa kazi yake. Alikuwa mkulima kutoka milima ya Yuda, lakini Mungu alimwita aende kaskazini kuhubiri kwa Israeli, miaka miwili kabla ya tetemeko kubwa la ardhi (1:1). Israeli ilikuwa tajiri na yenye amani. Matajiri waliishi katika nyumba nzuri na kufanya sikukuu za kidini, lakini waliwadanganya maskini, walipokea rushwa na kuwakandamiza wahitaji.",
+    "Amosi anaanza kwa kutangaza hukumu ya Mungu juu ya mataifa yanayoizunguka Israeli kwa sababu ya ukatili wao, kisha anaigeukia Yuda na hatimaye Israeli yenyewe (2:6). Kwa kuwa Mungu aliichagua Israeli, atawadai hesabu (3:2). Ibada yao haina maana yoyote kwake bila haki na uadilifu (5:24).",
+    "Amosi anaona maono matano ya hukumu, na Amazia kuhani wa Betheli anapomwambia arudi kwao, yeye anasimama imara (7:10-17). Lakini kitabu kinamalizika kwa tumaini: Mungu ataiinua tena nyumba ya Daudi iliyoanguka na kuwarudisha watu wake katika nchi yenye wingi wa mazao (9:11-15)."
+  ],
+  "themes": [
+    {
+      "title": "Haki kwa maskini",
+      "text": "Mungu anaona jinsi matajiri wanavyowatendea maskini, naye atawahukumu wale wanaowaonea."
+    },
+    {
+      "title": "Ibada inayompendeza Mungu",
+      "text": "Sikukuu na sadaka ni chukizo kwa Mungu wakati waabuduo wanaishi maisha ya udhalimu."
+    },
+    {
+      "title": "Upendeleo huleta wajibu",
+      "text": "Israeli ilikuwa imechaguliwa kwa namna ya pekee, kwa hiyo dhambi yake ilikuwa nzito zaidi."
+    },
+    {
+      "title": "Yahwe wa mataifa yote",
+      "text": "Mungu analihukumu kila taifa kwa uovu wake, na mwishowe ataurejesha ufalme wa Daudi."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:16",
+      "title": "Hukumu juu ya mataifa, juu ya Yuda na juu ya Israeli"
+    },
+    {
+      "from": "3:1",
+      "to": "4:13",
+      "title": "Israeli inadaiwa hesabu: jiandae kukutana na Mungu wako"
+    },
+    {
+      "from": "5:1",
+      "to": "6:14",
+      "title": "Maombolezo kwa ajili ya Israeli; mtafuteni Yahwe mkaishi"
+    },
+    {
+      "from": "7:1",
+      "to": "9:10",
+      "title": "Maono matano ya hukumu; Amosi na Amazia"
+    },
+    {
+      "from": "9:11",
+      "to": "9:15",
+      "title": "Nyumba ya Daudi inarejeshwa"
+    }
+  ],
+  "keyVerses": [
+    "3:2",
+    "4:12",
+    "5:24",
+    "9:11"
+  ]
+}

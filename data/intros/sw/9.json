@@ -1,0 +1,42 @@
+{
+  "book": 9,
+  "name": "1 Samweli",
+  "facts": {
+    "author": "Mwandishi hatajwi. Mapokeo ya Kiyahudi yanasema kwamba Samweli aliandika sehemu ya kwanza, na kwamba manabii Nathani na Gadi walikamilisha 1 na 2 Samweli, ambavyo hapo awali vilikuwa kitabu kimoja.",
+    "date": "Karibu mwaka 970–930 K.K.",
+    "audience": "Watu wa Israeli, ili kuwaonyesha jinsi Mungu alivyowapa mfalme na kuichagua familia ya Daudi kutawala"
+  },
+  "about": [
+    "1 Samweli kinaeleza jinsi Israeli walivyobadilika kutoka kuongozwa na waamuzi hadi kutawaliwa na wafalme. Kinaanza na Hana, anayeomba apate mwana na kisha kumtoa kwa Yahwe. Mtoto Samweli anakua akimtumikia kuhani Eli huko Shilo, na Mungu anazungumza naye (3:10). Israeli wanapolipeleka sanduku la agano vitani pamoja na wana waovu wa Eli, Wafilisti wanaliteka, lakini Mungu analirudisha, na Samweli anawaongoza Israeli akiwa nabii na mwamuzi.",
+    "Samweli anapozeeka, watu wanaomba mfalme kama mataifa mengine. Mungu anawapa Sauli, mrefu na wa kuvutia, lakini Sauli hamtii Mungu, na Samweli anamwambia kwamba kutii ni bora kuliko dhabihu (15:22). Kisha Mungu anamtuma Samweli kumtia mafuta kijana mchungaji Daudi, kwa kuwa Yahwe hutazama moyo (16:7).",
+    "Daudi anamuua Goliathi, akiamini kwamba vita ni vya Yahwe (17:47). Sauli anaingiwa na wivu na kumwinda kwa miaka mingi, lakini mara mbili Daudi anakataa kumdhuru yule aliyetiwa mafuta na Yahwe. Kitabu kinamalizika na Sauli na wanawe wakifa vitani kwenye mlima Gilboa."
+  ],
+  "themes": [
+    {
+      "title": "Mungu ndiye Mfalme wa kweli",
+      "text": "Kwa kuomba mfalme, Israeli walimkataa Mungu kuwa Mfalme wao (8:7), lakini aliwapa mfalme na bado akaendelea kuwatawala."
+    },
+    {
+      "title": "Utii unaotoka moyoni",
+      "text": "Mungu anataka utii kuliko sadaka, naye anawachagua watu kwa mioyo yao, si kwa sura zao."
+    },
+    {
+      "title": "Mungu anawainua wanyenyekevu",
+      "text": "Mungu anamwinua Hana, mtoto Samweli na mchungaji Daudi, na kuwashusha wenye kiburi, kama Hana anavyoimba katika maombi yake."
+    },
+    {
+      "title": "Kusubiri wakati wa Mungu",
+      "text": "Daudi ametiwa mafuta kuwa mfalme, lakini anamsubiri Mungu ampe kiti cha enzi badala ya kukichukua kwa nguvu."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "3:21", "title": "Maombi ya Hana; kuzaliwa na kuitwa kwa Samweli" },
+    { "from": "4:1", "to": "7:17", "title": "Sanduku linatekwa na kurudishwa; Samweli anawaamua Israeli" },
+    { "from": "8:1", "to": "12:25", "title": "Israeli wanaomba mfalme; Sauli anafanywa mfalme" },
+    { "from": "13:1", "to": "15:35", "title": "Sauli anaasi na kukataliwa" },
+    { "from": "16:1", "to": "17:58", "title": "Daudi anatiwa mafuta; Daudi na Goliathi" },
+    { "from": "18:1", "to": "26:25", "title": "Sauli anamwinda Daudi; urafiki wa Daudi na Yonathani" },
+    { "from": "27:1", "to": "31:13", "title": "Daudi kati ya Wafilisti; kifo cha Sauli" }
+  ],
+  "keyVerses": ["12:24", "15:22", "16:7", "17:47"]
+}

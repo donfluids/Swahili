@@ -23,8 +23,9 @@ interface Props {
 }
 
 /** The notebook's pages, the most recently edited first. A new page is typed or handwritten. */
-// The apps' names on the phone (app.config.js); the four-language app's name is not final.
-const APP_NAMES: Record<string, string> = { en: 'Bible', ml: 'വേദപുസ്തകം', ta: 'வேதாகமம்', all: 'Bibles' };
+// The apps' names on the phone, for a backup made in another: this one (app.config.js) and
+// the Bible apps (donfluids/Bible), whose backups this app reads too.
+const APP_NAMES: Record<string, string> = { sw: 'Biblia', en: 'Bible', ml: 'വേദപുസ്തകം', ta: 'வேதாகமம்', all: 'Bibles' };
 
 export function NotebookScreen({ onOpenPage }: Props) {
   const theme = useTheme();
@@ -143,7 +144,7 @@ export function NotebookScreen({ onOpenPage }: Props) {
             // The first lines after the one used as the name; for a handwritten page, that it is one.
             const rest = item.title.trim() ? item.body : item.body.split('\n').slice(1).join('\n');
             const preview = item.ink ? (item.title.trim() ? t('handwritten') : '') : rest.replace(/\s+/g, ' ').trim();
-            const date = new Date(item.updated).toLocaleDateString(settings.language === 'ml' ? 'ml-IN' : settings.language === 'ta' ? 'ta-IN' : settings.language === 'hi' ? 'hi-IN' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+            const date = new Date(item.updated).toLocaleDateString(settings.language === 'sw' ? 'sw-KE' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
             return (
               <Pressable
                 onPress={() => onOpenPage(item.id)}

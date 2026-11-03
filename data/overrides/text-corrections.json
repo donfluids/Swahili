@@ -1,6 +1,46 @@
 {
- "description": "Corrections to the Swahili source texts, kept here so a rebuild applies them again. <TRANSLATION>.<book>.<chapter> replaces a whole chapter; strip.<TRANSLATION>[\"book:chapter:verse\"] removes stray text; replace.<TRANSLATION>[\"book:chapter:verse\"] is a list of [as printed, corrected]; bookNames.<TRANSLATION>[book] is the name shown in place of the source's running head. None are needed yet.",
+ "description": "Corrections to the Swahili source texts, kept here so a rebuild applies them again. <TRANSLATION>.<book>.<chapter> replaces a whole chapter; strip.<TRANSLATION>[\"book:chapter:verse\"] removes stray text; replace.<TRANSLATION>[\"book:chapter:verse\"] is a list of [as printed, corrected]; bookNames.<TRANSLATION>[book] is the name shown in place of the source's running head.",
  "strip": {},
- "replace": {},
- "bookNames": {}
+ "replace": {
+  "description": "The ULB marks three asides with braces, which elsewhere are markup; they are written as round brackets, and the stray space inside the closing one taken out.",
+  "SWU": {
+   "15:2:61": [
+    [
+     "{",
+     "("
+    ],
+    [
+     "}",
+     ")"
+    ]
+   ],
+   "43:5:3": [
+    [
+     "{",
+     "("
+    ]
+   ],
+   "47:11:23": [
+    [
+     "{",
+     "("
+    ],
+    [
+     " }",
+     ")"
+    ]
+   ]
+  }
+ },
+ "bookNames": {
+  "description": "ULB (SWU) running heads written without the space after the number (1Samweli, 1Wafalme, 1Timotheo), one with a stray chapter number (1Yohana 1), and two shortened where the other books are short: Torati as Kumbukumbu la Torati (the usual name), Waraka wa Yakobo as Yakobo, like the other letters.",
+  "SWU": {
+   "5": "Kumbukumbu la Torati",
+   "9": "1 Samweli",
+   "11": "1 Wafalme",
+   "54": "1 Timotheo",
+   "59": "Yakobo",
+   "62": "1 Yohana"
+  }
+ }
 }

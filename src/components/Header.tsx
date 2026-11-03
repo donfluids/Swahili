@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   barShort: { minHeight: 52 },
   center: { flex: 1, justifyContent: 'center', minHeight: 48 },
   centerAfterBack: { marginLeft: 4 },
-  // Room above and below for Malayalam's stacked letters (ഞായറാഴ്ച), which a tight line clips.
+  // Room above and below the title, so a tight line clips no accent or descender.
   title: { fontSize: 22, lineHeight: 30, paddingVertical: 2, fontWeight: '500' },
   titleCentred: { textAlign: 'center', fontWeight: '600' },
   right: { flexDirection: 'row', alignItems: 'center' },

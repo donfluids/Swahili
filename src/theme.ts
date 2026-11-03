@@ -98,44 +98,9 @@ const dark: Palette = {
   highlight: '#3A3220',
 };
 
-/** The Tamil app is deep blue; its pairs are checked for 4.5:1 or better too. */
-const blueLight: Palette = {
-  ...light,
-  bg: '#F4F7FB',
-  text: '#151B26',
-  muted: '#566173',
-  border: '#D6DEEA',
-  accent: '#1F4E8C',
-  accentSoft: '#DDE7F4',
-  linked: '#B3C4DB',
-};
-
-const blueSepia: Palette = {
-  ...sepia,
-  accent: '#2E4C78',
-  accentSoft: '#DCD8C5',
-};
-
-const blueDark: Palette = {
-  ...dark,
-  bg: '#0F1319',
-  card: '#171D26',
-  text: '#E2E8F1',
-  muted: '#97A3B5',
-  border: '#2A3341',
-  accent: '#8DB4E8',
-  onAccent: '#0F1319',
-  accentSoft: '#1C2736',
-  linked: '#1A212B',
-};
-
+// The Swahili app has the Bible apps' paper and brown.
 const PALETTES: Record<EditionId, Record<ThemeName, Palette>> = {
-  en: { light, sepia, dark },
-  // The Malayalam app has the English app's paper and brown.
-  ml: { light, sepia, dark },
-  ta: { light: blueLight, sepia: blueSepia, dark: blueDark },
-  // The four-language app has the English app's paper and brown too.
-  all: { light, sepia, dark },
+  sw: { light, sepia, dark },
 };
 
 /** A serif face available on every phone without bundling a font file. */

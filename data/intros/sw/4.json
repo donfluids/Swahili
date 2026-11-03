@@ -1,0 +1,42 @@
+{
+  "book": 4,
+  "name": "Hesabu",
+  "facts": {
+    "author": "Musa. Kitabu kinasema kwamba Musa aliandika vituo vya safari ya Israeli (33:2), na Wayahudi na kanisa la kwanza waliamini kwamba aliandika kitabu chote.",
+    "date": "Karibu mwaka 1445–1406 K.K.",
+    "audience": "Watu wa Israeli, hasa kizazi kipya kilichokuwa karibu kuingia katika nchi ya ahadi"
+  },
+  "about": [
+    "Hesabu kimepewa jina lake kutokana na mara mbili ambazo watu walihesabiwa, mwanzoni mwa kitabu na karibu na mwisho wake. Kinahusu karibu miaka arobaini kati ya Mlima Sinai na nyanda za Moabu, kando ya mto Yordani.",
+    "Kitabu kinaanza na Israeli wakiwa wamepangwa kambini kuzunguka hema la kukutania, tayari kwa safari. Lakini njiani watu wananung'unika, na wanapofika mpakani mwa Kanaani wanaiamini habari mbaya ya wapelelezi kumi kati ya wale kumi na wawili, na wanakataa kuingia. Ni Yoshua na Kalebu tu wanaomtumaini Mungu (14:6-9). Kwa hiyo Mungu anasema kwamba kizazi kile chote kitatangatanga jangwani kwa miaka arobaini mpaka wote wafe. Hata Musa na Haruni wanashindwa kumheshimu Mungu kwenye maji ya Meriba, na hawaruhusiwi kuingia katika nchi.",
+    "Hata hivyo Mungu anabaki mwaminifu. Anawapa maji na chakula, anawaponya wale wanaomtazama nyoka wa shaba (21:8-9), na anazigeuza laana za Balaamu kuwa baraka. Mwishoni kizazi kipya kinahesabiwa na kuandaliwa kuimiliki nchi."
+  ],
+  "themes": [
+    {
+      "title": "Kutoamini na gharama yake",
+      "text": "Kwa sababu watu hawakukubali kumtumaini Mungu, kizazi kizima kilikosa nchi aliyokuwa amewaahidi."
+    },
+    {
+      "title": "Uaminifu wa Mungu",
+      "text": "Mungu si kama mwanadamu anayesema uongo au kubadili nia yake; alichoahidi atakifanya (23:19)."
+    },
+    {
+      "title": "Mungu anawaongoza watu wake",
+      "text": "Wingu juu ya hema la kukutania linawaonyesha Israeli wakati wa kusafiri na wakati wa kukaa, na Mungu anaenda pamoja nao njia yote."
+    },
+    {
+      "title": "Baraka kutoka kwa Mungu",
+      "text": "Mungu anawapa makuhani maneno ya kuwabariki watu, wakimwomba Yahwe awalinde na kuwapa amani (6:24-26)."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "10:10", "title": "Huko Sinai: kuhesabiwa kwa kwanza na mpangilio wa kambi" },
+    { "from": "10:11", "to": "12:16", "title": "Kutoka Sinai hadi Parani: watu wananung'unika" },
+    { "from": "13:1", "to": "14:45", "title": "Wapelelezi kumi na wawili, na Israeli wanakataa kuingia Kanaani" },
+    { "from": "15:1", "to": "19:22", "title": "Sheria; uasi wa Kora na fimbo ya Haruni iliyochipuka" },
+    { "from": "20:1", "to": "25:18", "title": "Safari ya kwenda Moabu: maji kutoka mwambani, nyoka wa shaba, Balaamu" },
+    { "from": "26:1", "to": "30:16", "title": "Kuhesabiwa kwa pili; Yoshua anachaguliwa kumfuata Musa" },
+    { "from": "31:1", "to": "36:13", "title": "Kujiandaa kuingia katika nchi: ushindi, makabila mashariki ya Yordani, mipaka" }
+  ],
+  "keyVerses": ["6:24-26", "14:24", "21:8", "23:19"]
+}

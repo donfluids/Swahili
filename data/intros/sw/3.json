@@ -1,0 +1,43 @@
+{
+  "book": 3,
+  "name": "Mambo ya Walawi",
+  "facts": {
+    "author": "Musa. Mara kwa mara kitabu kinasema kwamba Yahwe alimwambia Musa maneno haya kwenye Mlima Sinai (27:34), na Wayahudi na kanisa la kwanza waliamini kwamba Musa ndiye aliyekiandika.",
+    "date": "Karibu mwaka 1445–1406 K.K.",
+    "audience": "Watu wa Israeli na makuhani wao, familia ya Haruni kutoka kabila la Lawi"
+  },
+  "about": [
+    "Mambo ya Walawi kimepewa jina lake kutokana na kabila la Lawi, ambalo makuhani walitoka humo. Kitabu cha Kutoka kilimalizika na Mungu akija kukaa katika hema la kukutania; Mambo ya Walawi kinaeleza jinsi watu wenye dhambi wanavyoweza kumkaribia Mungu mtakatifu na kuishi naye katikati yao. Karibu kitabu chote ni maneno ya Mungu kwa Musa wakati Israeli walipokuwa wamepiga kambi kwenye Mlima Sinai.",
+    "Kitabu kinaeleza sadaka mbalimbali: sadaka ya kuteketezwa, sadaka ya unga, sadaka ya amani, sadaka ya dhambi na sadaka ya hatia. Kinaeleza jinsi Haruni na wanawe walivyowekwa wakfu kuwa makuhani, na jinsi wanawe wawili walivyokufa kwa kutoa moto usiokubalika. Kinatoa sheria kuhusu vyakula safi na najisi na kuhusu magonjwa, na kinaeleza ile Siku kubwa ya Upatanisho, ambapo kuhani mkuu alifanya upatanisho kwa ajili ya dhambi zote za watu (16:30).",
+    "Nusu ya pili inawaita Israeli kuwa watakatifu kwa sababu Mungu ni mtakatifu (19:2), katika ibada, katika maisha ya familia na katika kumpenda jirani (19:18). Dhabihu hizo zinaelekeza mbele kwenye dhabihu moja kamilifu ya Kristo."
+  ],
+  "themes": [
+    {
+      "title": "Utakatifu wa Mungu",
+      "text": "Mungu ni mtakatifu, naye anawaita watu wake kuwa watakatifu katika kila sehemu ya maisha yao."
+    },
+    {
+      "title": "Upatanisho kwa njia ya dhabihu",
+      "text": "Dhambi inaleta kifo, lakini Mungu anatoa damu ya dhabihu juu ya madhabahu ili kufanya upatanisho kwa ajili ya uhai wa mwenye dhambi (17:11)."
+    },
+    {
+      "title": "Makuhani wanaosimama katikati",
+      "text": "Makuhani wanatoa dhabihu na kuwaombea watu, wakionyesha kwamba anahitajika mtu wa kuwaleta wenye dhambi karibu na Mungu."
+    },
+    {
+      "title": "Maisha ya ibada",
+      "text": "Sabato, sikukuu za kila mwaka na mwaka wa Yubile zinawafundisha Israeli kukumbuka wema wa Mungu na kumtumaini."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "7:38", "title": "Sheria kuhusu sadaka" },
+    { "from": "8:1", "to": "10:20", "title": "Haruni na wanawe wanawekwa kuwa makuhani; Nadabu na Abihu" },
+    { "from": "11:1", "to": "15:33", "title": "Safi na najisi: chakula, kuzaa, magonjwa ya ngozi" },
+    { "from": "16:1", "to": "16:34", "title": "Siku ya Upatanisho" },
+    { "from": "17:1", "to": "22:33", "title": "Watu watakatifu na makuhani watakatifu" },
+    { "from": "23:1", "to": "25:55", "title": "Sabato, sikukuu na mwaka wa Yubile" },
+    { "from": "26:1", "to": "26:46", "title": "Baraka kwa utii, maonyo kwa uasi" },
+    { "from": "27:1", "to": "27:34", "title": "Nadhiri na matoleo kwa Yahwe" }
+  ],
+  "keyVerses": ["16:30", "17:11", "19:2", "19:18"]
+}

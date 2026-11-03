@@ -185,20 +185,11 @@ const PLAIN_WORDS: Record<string, Record<Plain | PlainNumber, string>> = {
     pronoun: 'pronoun', article: 'article (“the”)', particle: 'particle', interjection: 'interjection', numeral: 'number',
     singular: 'singular', plural: 'plural', dual: 'dual (two)',
   },
-  ml: {
-    noun: 'നാമം', name: 'പേര്', verb: 'ക്രിയ', adjective: 'വിശേഷണം', adverb: 'ക്രിയാവിശേഷണം', preposition: 'ഗതി', conjunction: 'സംയോജകം',
-    pronoun: 'സർവ്വനാമം', article: 'ഉപപദം (“the”)', particle: 'നിപാതം', interjection: 'വ്യാക്ഷേപകം', numeral: 'സംഖ്യ',
-    singular: 'ഏകവചനം', plural: 'ബഹുവചനം', dual: 'ദ്വിവചനം',
-  },
-  ta: {
-    noun: 'பெயர்ச்சொல்', name: 'பெயர்', verb: 'வினைச்சொல்', adjective: 'பெயரடை', adverb: 'வினையடை', preposition: 'முன்னிடைச்சொல்', conjunction: 'இணைப்புச்சொல்',
-    pronoun: 'பிரதிப்பெயர்', article: 'சுட்டு (“the”)', particle: 'இடைச்சொல்', interjection: 'வியப்பிடைச்சொல்', numeral: 'எண்',
-    singular: 'ஒருமை', plural: 'பன்மை', dual: 'இருமை',
-  },
-  hi: {
-    noun: 'संज्ञा', name: 'नाम', verb: 'क्रिया', adjective: 'विशेषण', adverb: 'क्रियाविशेषण', preposition: 'संबंधसूचक', conjunction: 'समुच्चयबोधक',
-    pronoun: 'सर्वनाम', article: 'उपपद (“the”)', particle: 'निपात', interjection: 'विस्मयादिबोधक', numeral: 'संख्या',
-    singular: 'एकवचन', plural: 'बहुवचन', dual: 'द्विवचन',
+  // Swahili school grammar terms; to be checked by a Swahili reader (docs/swahili-review.md).
+  sw: {
+    noun: 'nomino', name: 'jina', verb: 'kitenzi', adjective: 'kivumishi', adverb: 'kielezi', preposition: 'kihusishi', conjunction: 'kiunganishi',
+    pronoun: 'kiwakilishi', article: 'kibainishi (“the”)', particle: 'chembe', interjection: 'kihisishi', numeral: 'namba',
+    singular: 'umoja', plural: 'wingi', dual: 'uwili (wawili)',
   },
 };
 const HEB_PLAIN: Record<string, Plain> = { N: 'noun', V: 'verb', A: 'adjective', R: 'preposition', C: 'conjunction', c: 'conjunction', D: 'adverb', T: 'particle', P: 'pronoun' };
@@ -211,7 +202,7 @@ const NUMBER_LETTER: Record<string, PlainNumber> = { s: 'singular', p: 'plural',
 
 /**
  * A word's grammar in plain words, in the interface language: its part of speech and
- * number ("noun, singular", "നാമം, ഏകവചനം"); a word with a prefix gives both parts
+ * number ("noun, singular", "nomino, umoja"); a word with a prefix gives both parts
  * ("preposition + noun, singular"). The full description (describeMorph) is for those who
  * ask for it. Returns '' when the code says nothing plain.
  */

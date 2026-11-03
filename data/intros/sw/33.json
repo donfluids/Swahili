@@ -1,0 +1,65 @@
+{
+  "book": 33,
+  "name": "Mika",
+  "facts": {
+    "author": "Mika Mmorashti, kutoka mji mdogo wa Moreshethi katika nchi tambarare ya Yuda (1:1). Aliishi wakati mmoja na Isaya.",
+    "date": "Karibu mwaka 735–700 K.K.",
+    "audience": "Watu wa Yuda na wa Israeli, na hasa watawala wao, makuhani na manabii huko Yerusalemu na Samaria"
+  },
+  "about": [
+    "Mika alihubiri katika siku za Yothamu, Ahazi na Hezekia, wafalme wa Yuda (1:1). Alisema dhidi ya miji mikuu yote miwili, Samaria upande wa kaskazini na Yerusalemu upande wa kusini. Viongozi wao waliwapokonya maskini mashamba na nyumba, waamuzi walipokea rushwa, na manabii walihubiri kwa ajili ya fedha. Mika alionya kwamba Samaria ingekuwa rundo la magofu na kwamba hata Sayuni ungelimwa kama shamba (1:6; 3:12).",
+    "Lakini ujumbe wa Mika unakwenda na kurudi kati ya hukumu na tumaini. Katika siku za mwisho mlima wa nyumba ya Yahwe utainuliwa, mataifa yatakuja kujifunza njia zake, nao watazifua panga zao ziwe majembe (4:1-3). Kutoka Bethlehemu, mji mdogo, atatoka mtawala ambaye asili yake ni tangu milele (5:2), yaani Masihi aliyeahidiwa.",
+    "Mwishowe Mika anafupisha kile Mungu anachotaka kwa watu wake: kutenda haki, kupenda rehema na kutembea kwa unyenyekevu pamoja naye (6:8). Kitabu kinafungwa kwa sifa kwa Mungu anayefurahia rehema na kuzitupa dhambi za watu wake katika vilindi vya bahari (7:18-19)."
+  ],
+  "themes": [
+    {
+      "title": "Haki na rehema",
+      "text": "Mungu anachukia maskini wanapoonewa, naye anawataka watu wake waishi kwa haki na wema."
+    },
+    {
+      "title": "Hukumu juu ya viongozi wa uongo",
+      "text": "Watawala, makuhani na manabii wanaotumia nafasi zao kwa faida yao wenyewe wataliletea taifa maangamizi."
+    },
+    {
+      "title": "Mtawala kutoka Bethlehemu",
+      "text": "Mungu anaahidi Mfalme kutoka mji wa Daudi atakayewachunga watu wake kwa nguvu za Yahwe."
+    },
+    {
+      "title": "Mungu anayesamehe",
+      "text": "Hakuna aliye kama Yahwe, anayesamehe dhambi na kutimiza ahadi zake kwa Ibrahimu na Yakobo."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "2:13",
+      "title": "Hukumu juu ya Samaria na Yuda; mabaki wanakusanywa"
+    },
+    {
+      "from": "3:1",
+      "to": "3:12",
+      "title": "Dhidi ya watawala, manabii na makuhani"
+    },
+    {
+      "from": "4:1",
+      "to": "5:15",
+      "title": "Ufalme unaokuja na mtawala kutoka Bethlehemu"
+    },
+    {
+      "from": "6:1",
+      "to": "7:7",
+      "title": "Mashtaka ya Yahwe dhidi ya watu wake"
+    },
+    {
+      "from": "7:8",
+      "to": "7:20",
+      "title": "Tumaini katika Mungu anayesamehe"
+    }
+  ],
+  "keyVerses": [
+    "4:3",
+    "5:2",
+    "6:8",
+    "7:18"
+  ]
+}

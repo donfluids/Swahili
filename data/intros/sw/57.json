@@ -1,0 +1,59 @@
+{
+  "book": 57,
+  "name": "Filemoni",
+  "facts": {
+    "author": "Mtume Paulo, akiandika akiwa mfungwa, pamoja na Timotheo (1:1). Aliandika angalau sehemu yake kwa mkono wake mwenyewe (1:19).",
+    "date": "Karibu mwaka 60–62 B.K.",
+    "audience": "Filemoni, Mkristo wa Kolosai, pamoja na Afia, Arkipo na kanisa lililokutana nyumbani kwake"
+  },
+  "about": [
+    "Filemoni ndio waraka mfupi kuliko nyaraka zote za Paulo, barua ya binafsi aliyoiandika akiwa gerezani, huenda huko Rumi. Filemoni alikuwa mwamini ambaye nyumba yake ilikuwa mahali pa kukutania kanisa. Mtumwa wake Onesimo alikuwa amekimbia, na huenda pia alikuwa amemwibia. Huko mjini Onesimo alikutana na Paulo, akaisikia injili, akawa Mkristo (1:10).",
+    "Sasa Paulo anamrudisha Onesimo kwa bwana wake pamoja na barua hii. Hamwamuru Filemoni, ingawa angeweza kufanya hivyo, bali anamsihi kwa upendo. Anamwomba ampokee Onesimo si tena kama mtumwa tu, bali kama ndugu mpendwa, na amkaribishe kama ambavyo angemkaribisha Paulo mwenyewe (1:16-17). Paulo hata anaahidi kulipa chochote ambacho Onesimo anadaiwa.",
+    "Jina Onesimo lina maana ya \"mwenye manufaa\", na Paulo kwa upole anatumia maana hiyo: zamani hakuwa na manufaa, lakini sasa ana manufaa kwao wote wawili (1:11). Barua hii inaonyesha jinsi injili inavyowabadilisha watu na mahusiano yao, ikiwafanya bwana na mtumwa kuwa ndugu katika Kristo."
+  ],
+  "themes": [
+    {
+      "title": "Msamaha",
+      "text": "Paulo anamwomba Filemoni amsamehe na kumpokea yule aliyemkosea, kama Kristo alivyotupokea sisi."
+    },
+    {
+      "title": "Ndugu katika Kristo",
+      "text": "Katika Kristo mtumwa aliyekimbia na bwana wake wanakuwa ndugu, walio sawa katika familia ya Mungu."
+    },
+    {
+      "title": "Upendo unaosihi",
+      "text": "Paulo anachagua kuomba kwa upendo badala ya kutoa amri, akimwachia Filemoni uhuru wa kufanya lililo sawa."
+    },
+    {
+      "title": "Kusimama mahali pa mwingine",
+      "text": "Paulo anajitolea kulipa deni la Onesimo, picha ya jinsi Kristo alivyolibeba deni letu juu yake mwenyewe."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:3",
+      "title": "Salamu kwa Filemoni na kwa kanisa lililo nyumbani kwake"
+    },
+    {
+      "from": "1:4",
+      "to": "1:7",
+      "title": "Shukrani kwa upendo na imani ya Filemoni"
+    },
+    {
+      "from": "1:8",
+      "to": "1:21",
+      "title": "Ombi la Paulo kwa ajili ya Onesimo: mpokee kama ndugu"
+    },
+    {
+      "from": "1:22",
+      "to": "1:25",
+      "title": "Ombi la mahali pa kukaa, na salamu"
+    }
+  ],
+  "keyVerses": [
+    "1:6",
+    "1:16",
+    "1:17-18"
+  ]
+}

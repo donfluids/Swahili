@@ -1,0 +1,59 @@
+{
+  "book": 34,
+  "name": "Nahumu",
+  "facts": {
+    "author": "Nahumu Mwelkoshi (1:1), kutoka mji uitwao Elkoshi. Hakuna kingine kinachojulikana juu yake.",
+    "date": "Karibu mwaka 660–630 K.K.",
+    "audience": "Watu wa Yuda, waliokuwa wameteseka chini ya Ashuru, kama ujumbe kuhusu Ninawi"
+  },
+  "about": [
+    "Karibu miaka mia moja baada ya Yona, Ninawi ulikuwa umerudia njia zake mbaya. Ashuru ilikuwa imeuangamiza ufalme wa kaskazini wa Israeli na kuisumbua Yuda kwa miaka mingi. Majeshi yake yalijulikana sana kwa ukatili. Kitabu chote cha Nahumu ni mzigo, yaani ujumbe mzito, dhidi ya Ninawi (1:1).",
+    "Nahumu anaanza kwa kueleza tabia ya Mungu. Yahwe si mwepesi wa hasira lakini ni mkuu kwa nguvu, naye hatamwacha mwenye hatia bila adhabu (1:3). Yeye ni mwema, ngome siku ya taabu kwa wale wanaomtumaini (1:7). Kwa Yuda, mwisho wa Ninawi ni habari njema ya amani (1:15).",
+    "Sura ya 2 na ya 3 zinaeleza anguko la mji kwa picha zilizo hai: magari ya vita yakikimbia barabarani, malango yakifunguliwa, hazina ikichukuliwa. Ninawi hauna nguvu kuliko mji wa Misri wa Noamoni, ambao ulikuwa umekwisha kuanguka (3:8). Unabii huu ulitimia mwaka 612 K.K., Wababeli na Wamedi walipouangamiza Ninawi."
+  ],
+  "themes": [
+    {
+      "title": "Haki ya Mungu",
+      "text": "Mungu ni mvumilivu, lakini mwishowe atawahukumu wale wanaotenda maovu na kukataa kugeuka."
+    },
+    {
+      "title": "Kimbilio kwa watu wake",
+      "text": "Mungu yule yule anayeuhukumu Ninawi ni mahali salama kwa wote wanaomtumaini."
+    },
+    {
+      "title": "Mwisho wa wenye kiburi",
+      "text": "Hakuna milki yenye nguvu kiasi kwamba Mungu hawezi kuiangusha."
+    },
+    {
+      "title": "Habari njema ya amani",
+      "text": "Kuanguka kwa mdhalimu kunamaanisha uhuru na pumziko kwa watu wa Mungu."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:8",
+      "title": "Yahwe si mwepesi wa hasira, naye ni mkuu kwa nguvu"
+    },
+    {
+      "from": "1:9",
+      "to": "1:15",
+      "title": "Ninawi utakatiliwa mbali; habari njema kwa Yuda"
+    },
+    {
+      "from": "2:1",
+      "to": "2:13",
+      "title": "Anguko la Ninawi laelezwa"
+    },
+    {
+      "from": "3:1",
+      "to": "3:19",
+      "title": "Ole kwa mji wa damu"
+    }
+  ],
+  "keyVerses": [
+    "1:3",
+    "1:7",
+    "1:15"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "book": 5,
+  "name": "Torati",
+  "facts": {
+    "author": "Musa. Kitabu kinasema kwamba Musa aliiandika sheria hii na kuwapa makuhani (31:9). Habari za kifo chake katika sura ya mwisho ziliongezwa baada yake, kwa mujibu wa mapokeo na Yoshua.",
+    "date": "Karibu mwaka 1406 K.K.",
+    "audience": "Kizazi kipya cha Israeli kwenye nyanda za Moabu, kilichokuwa karibu kuingia katika nchi ya ahadi"
+  },
+  "about": [
+    "Jina la kitabu hiki kwa Kigiriki, Deuteronomio, maana yake ni \"sheria ya pili\". Si sheria mpya, bali ni sheria ile ile ikitolewa tena na Musa kwa watoto wa wale waliotoka Misri. Katika mwaka wa arobaini, Israeli wakisubiri kwenye nyanda za Moabu ili kuvuka Yordani, Musa anazungumza na watu kwa mara ya mwisho (1:3).",
+    "Katika hotuba zake Musa anawakumbusha yote ambayo Mungu aliwatendea jangwani. Anarudia Amri Kumi na kuwaita wampende Yahwe Mungu wao kwa moyo wao wote, kwa roho yao yote na kwa nguvu zao zote (6:4-5). Anaeleza sheria za Mungu kuhusu ibada, haki na maisha ya kila siku katika nchi, na anaweka mbele yao baraka wakitii na laana wakigeuka. Anawasihi wachague uzima (30:19).",
+    "Kisha Musa anamkabidhi Yoshua uongozi, anaimba wimbo na kuyabariki makabila. Kitabu kinamalizika na Musa akiitazama nchi kutoka Mlima Nebo na kufa huko akiwa na umri wa miaka mia moja na ishirini."
+  ],
+  "themes": [
+    {
+      "title": "Mpende Yahwe",
+      "text": "Kiini cha sheria ni kumpenda Mungu mmoja wa kweli kwa nafsi yote na kutembea katika njia zake (10:12)."
+    },
+    {
+      "title": "Kumbuka",
+      "text": "Israeli hawapaswi kusahau jinsi Mungu alivyowatoa Misri na kuwatunza jangwani."
+    },
+    {
+      "title": "Agano na uchaguzi",
+      "text": "Utii unaleta baraka na uasi unaleta hukumu, kwa hiyo watu wanapaswa kuchagua ni nani watakayemtumikia."
+    },
+    {
+      "title": "Nabii kama Musa",
+      "text": "Mungu anaahidi kumwinua Nabii kama Musa ambaye watu wanapaswa kumsikiliza (18:15)."
+    }
+  ],
+  "outline": [
+    { "from": "1:1", "to": "4:43", "title": "Hotuba ya kwanza ya Musa: kutazama nyuma safari yote" },
+    { "from": "4:44", "to": "11:32", "title": "Amri Kumi na wito wa kumpenda Mungu" },
+    { "from": "12:1", "to": "26:19", "title": "Sheria za maisha katika nchi ya ahadi" },
+    { "from": "27:1", "to": "28:68", "title": "Baraka na laana" },
+    { "from": "29:1", "to": "30:20", "title": "Agano linafanywa upya huko Moabu: chagueni uzima" },
+    { "from": "31:1", "to": "33:29", "title": "Yoshua anawekwa; wimbo na baraka ya Musa" },
+    { "from": "34:1", "to": "34:12", "title": "Kifo cha Musa" }
+  ],
+  "keyVerses": ["6:4-5", "10:12", "18:15", "30:19"]
+}

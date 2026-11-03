@@ -1,0 +1,79 @@
+{
+  "book": 27,
+  "name": "Danieli",
+  "facts": {
+    "author": "Danieli, kijana wa Yuda aliyechukuliwa hadi Babeli, aliyehudumu katika jumba la mfalme kwa karibu miaka sabini. Kitabu kinamtaja kwa jina, na katika sura za mwisho anasimulia maono yake kwa maneno yake mwenyewe (9:2).",
+    "date": "Karibu mwaka 536–530 K.K.",
+    "audience": "Wayahudi waliokuwa uhamishoni huko Babeli, na watu wa Mungu wa kila kizazi wanaoishi chini ya watawala wageni wenye nguvu"
+  },
+  "about": [
+    "Danieli alichukuliwa kutoka Yerusalemu hadi Babeli akiwa kijana, wakati mfalme Nebukadreza alipoushambulia mji kwa mara ya kwanza (1:1). Huko yeye na rafiki zake watatu, Hanania, Mishaeli na Azaria, walibaki waaminifu kwa Mungu katika nchi ya kigeni. Sura sita za kwanza zinasimulia habari zao: ndoto ya mfalme juu ya sanamu kubwa, tanuru la moto uwakao, wazimu wa Nebukadreza, maandishi ukutani katika karamu ya Belshaza, na Danieli katika tundu la simba.",
+    "Sura sita za mwisho zinaeleza maono ambayo Mungu alimpa Danieli. Milki kubwa zinainuka na kuanguka kama wanyama wakali, lakini mmoja aliye kama mwana wa mtu anapokea ufalme usio na mwisho (7:13-14). Danieli anawaombea watu wake wakati miaka sabini ya uhamisho inakaribia kwisha, naye anaelezwa juu ya kuja kwa Masihi (9:25). Kitabu kinafungwa kwa ahadi kwamba wafu watafufuka (12:2). Ujumbe wake ni rahisi: Mungu anatawala juu ya wafalme wa dunia, na ufalme wake utadumu milele."
+  ],
+  "themes": [
+    {
+      "title": "Mungu anatawala falme zote",
+      "text": "Hata wafalme wenye nguvu kama Nebukadreza wanajifunza kwamba Aliye Juu Sana ndiye anayetawala, naye humpa mamlaka yeyote amtakaye."
+    },
+    {
+      "title": "Waaminifu katika nchi ya kigeni",
+      "text": "Danieli na rafiki zake wanakataa kujitia unajisi au kuabudu sanamu, hata kama ingewagharimu maisha yao (3:17-18)."
+    },
+    {
+      "title": "Maombi",
+      "text": "Danieli anaomba mara tatu kwa siku, hata pale inapokatazwa, naye anaungama dhambi za watu wake mbele za Mungu."
+    },
+    {
+      "title": "Ufalme wa milele",
+      "text": "Mungu wa mbinguni atasimamisha ufalme usioweza kuangamizwa kamwe (2:44), utakaopewa yule aliye kama mwana wa mtu na watakatifu wake."
+    }
+  ],
+  "outline": [
+    {
+      "from": "1:1",
+      "to": "1:21",
+      "title": "Danieli na rafiki zake katika jumba la mfalme wa Babeli"
+    },
+    {
+      "from": "2:1",
+      "to": "2:49",
+      "title": "Ndoto ya Nebukadreza juu ya sanamu kubwa"
+    },
+    {
+      "from": "3:1",
+      "to": "3:30",
+      "title": "Sanamu ya dhahabu na tanuru la moto uwakao"
+    },
+    {
+      "from": "4:1",
+      "to": "4:37",
+      "title": "Nebukadreza anashushwa na kumsifu Mungu"
+    },
+    {
+      "from": "5:1",
+      "to": "6:28",
+      "title": "Maandishi ukutani; Danieli katika tundu la simba"
+    },
+    {
+      "from": "7:1",
+      "to": "8:27",
+      "title": "Maono ya wanyama wanne, na ya kondoo dume na beberu"
+    },
+    {
+      "from": "9:1",
+      "to": "9:27",
+      "title": "Maombi ya Danieli na majuma sabini"
+    },
+    {
+      "from": "10:1",
+      "to": "12:13",
+      "title": "Maono ya mwisho: wafalme watakaokuja, na mwisho wa siku"
+    }
+  ],
+  "keyVerses": [
+    "2:44",
+    "3:17-18",
+    "7:13-14",
+    "12:2-3"
+  ]
+}
