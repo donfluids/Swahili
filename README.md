@@ -84,7 +84,7 @@ What is particular to this app:
 4. Scan the QR code with the phone's camera (iPhone) or Expo Go (Android), with phone and
    computer on the same Wi-Fi.
 
-The first launch copies the database (about 64 MB) onto the phone.
+The first launch copies the database (about 69 MB) onto the phone.
 
 ## Building
 
@@ -156,8 +156,8 @@ it gets wrong (`scripts/build-db.mjs`):
 
 The Malayalam app's neighbour fix compares words by their first letters. Swahili
 inflects at the front (*alisema*, *wakasema*), so that fix is off, and each Swahili form
-is its own rendering rather than grouped under a stem. The full run of 2,128 chunks costs
-about $120 of CLI usage.
+is its own rendering rather than grouped under a stem. The full run is 2,128 chunks, at
+about $0.06 of CLI usage each. It links 31,201 of the ULB's 31,210 verses.
 
 ## Checks
 
