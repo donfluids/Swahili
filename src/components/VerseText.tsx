@@ -1,0 +1,265 @@
+import React, { memo, useMemo } from 'react';
+import { StyleSheet, Text } from 'react-native';
+import { scriptOf, scriptureFont } from '../fonts';
+import { useT } from '../i18n';
+import { useSelectedStart } from '../selection';
+import { ICON_FONT_FAMILY, iconChar } from './Icon';
+import { useDisplaySettings } from '../settings';
+import { PILCROW, parseSegments } from '../text';
+import { matchRanges } from '../searchMatch';
+import { useTheme } from '../theme';
+import { translationInfo } from '../types';
+import type { HighlightColor, Note, Segment, TranslationId, VerseRow, WordPick } from '../types';
+
+interface Props {
+  verse: VerseRow;
+  fontSize: number;
+  onWord?: (pick: WordPick) => void;
+  /** Long press anywhere on the verse, for the actions sheet. */
+  onLongPress?: () => void;
+  /** Tap on the verse number. */
+  onNumberPress?: () => void;
+  /** What tapping the number does, for screen readers. */
+  numberLabel?: string;
+  /** Footnotes and cross references of this verse, shown as lettered markers. */
+  notes?: Note[];
+  onNote?: (note: Note) => void;
+  /** Draw a faint underline under every word that links to Greek or Hebrew. */
+  underline?: boolean;
+  /** Emphasise words tagged with this Strong's number. */
+  emphasize?: string;
+  /** Emphasise every occurrence of this text, as typed in the search box. */
+  highlightText?: string;
+  showNumber?: boolean;
+  /** Keep the text to a few lines, for result lists. */
+  numberOfLines?: number;
+  /** Briefly tinted after a jump to this verse. */
+  flash?: boolean;
+  /** Show a small mark before the number (paragraph layout, where there is no margin bar). */
+  bookmarked?: boolean;
+  /** Background colour of a highlighted verse. */
+  highlightColor?: string;
+  /** The verse stands on a highlight colour drawn behind it (the reader's verse rows). */
+  onHighlight?: boolean;
+  /** Marked parts of the verse, as [start, end, colour] by character offset. */
+  marks?: [number, number, HighlightColor][];
+  /** The verse has a personal note; tapping the pencil opens it. */
+  hasNote?: boolean;
+  onNotePress?: () => void;
+  /** Mark the word whose sheet is open when it is in this verse (the reader's translation). */
+  selectionTranslation?: TranslationId;
+  /** Number the verse with its chapter (7:25), for a verse beside another chapter's. */
+  withChapter?: boolean;
+}
+
+export function noteLetter(n: number): string {
+  return String.fromCharCode(97 + (n % 26));
+}
+
+/** One verse's text. Memoised: a list redraws only the verses whose props changed. */
+export const VerseText = memo(function VerseText({
+  verse,
+  fontSize,
+  onWord,
+  onLongPress,
+  onNumberPress,
+  numberLabel,
+  notes,
+  onNote,
+  underline = true,
+  emphasize,
+  highlightText,
+  showNumber = true,
+  numberOfLines,
+  flash,
+  bookmarked,
+  highlightColor,
+  onHighlight,
+  marks,
+  hasNote,
+  onNotePress,
+  selectionTranslation,
+  withChapter = false,
+}: Props) {
+  const theme = useTheme();
+  const t = useT();
+  const serif = useDisplaySettings()?.serif ?? false;
+  const segments = useMemo(() => parseSegments(verse), [verse]);
+  const selectedStart = useSelectedStart(selectionTranslation, verse.book, verse.chapter, verse.verse);
+  const ranges = useMemo(() => (highlightText ? matchRanges(verse.text, highlightText) : []), [verse.text, highlightText]);
+  const isTitle = verse.verse === 0;
+  // The verse's own script decides its face and spacing (Compare shows two at once).
+  const script = scriptOf(verse.text);
+  const font = scriptureFont(script, serif) ?? theme.font;
+  const bold = script ? { fontFamily: scriptureFont(script, serif, true) } : { fontWeight: '700' as const };
+  // Devanagari reads smaller than Latin at the same size: Hindi gets half a step more.
+  const size = script === 'hi' ? fontSize + 1 : fontSize;
+  const lineHeight = Math.round(size * translationInfo(script === 'ta' ? 'TAM' : script === 'ml' ? 'MAL' : script === 'hi' ? 'HIN' : 'KJV').lineHeight);
+  const small = Math.max(11, fontSize - 6);
+  // On a highlight colour the text, number and note letters take the colours made for it.
+  // A flash covers the highlight colour, so the text keeps the page's colours under it.
+  const onMark = (onHighlight || !!highlightColor) && !flash;
+  const textColor = onMark ? theme.markText : theme.text;
+  const accent = onMark ? theme.markAccent : theme.accent;
+
+  if (verse.omitted) {
+    return (
+      <Text
+        style={[styles.text, styles.omitted, { fontSize: fontSize - 2, lineHeight, color: theme.muted, fontFamily: font }]}
+        numberOfLines={numberOfLines}
+        onLongPress={onLongPress}
+      >
+        {showNumber ? <Text style={[styles.number, { fontSize: small }]}>{verse.verse} </Text> : null}
+        {t('omitted')} {verse.text}
+      </Text>
+    );
+  }
+
+  // Split a run of text into pieces by the search matches (bold on the highlight colour)
+  // and the marked parts (their colour; a later mark shows over an earlier one).
+  const highlighted = (text: string, start: number): React.ReactNode => {
+    const marked = marks ?? [];
+    // The ¶ is dropped only from what is drawn, so marks and matches keep their offsets.
+    if (ranges.length === 0 && marked.length === 0) return text.replace(PILCROW, '');
+    const end = start + text.length;
+    const cuts = new Set([start, end]);
+    for (const [a, b] of [...ranges, ...marked]) {
+      if (a > start && a < end) cuts.add(a);
+      if (b > start && b < end) cuts.add(b);
+    }
+    const points = [...cuts].sort((a, b) => a - b);
+    const out: React.ReactNode[] = [];
+    for (let i = 0; i + 1 < points.length; i++) {
+      const [from, to] = [points[i], points[i + 1]];
+      const piece = text.slice(from - start, to - start).replace(PILCROW, '');
+      const match = ranges.some(([a, b]) => a <= from && b >= to);
+      const mark = [...marked].reverse().find(([a, b]) => a <= from && b >= to);
+      if (!match && !mark) {
+        out.push(piece);
+        continue;
+      }
+      out.push(
+        <Text key={from} style={[match && bold, mark ? { backgroundColor: theme.marks[mark[2]], color: theme.markText } : { backgroundColor: theme.highlight }]}>
+          {piece}
+        </Text>,
+      );
+    }
+    return out;
+  };
+
+  const marker = (note: Note) => (
+    <Text
+      key={`n${note.n}`}
+      onPress={onNote ? () => onNote(note) : undefined}
+      style={{ fontSize: Math.max(10, small - 3), color: accent, fontWeight: '700' }}
+      accessibilityRole="button"
+      accessibilityLabel={`${note.kind === 'x' ? t('crossReference') : t('footnote')} ${noteLetter(note.n)}`}
+    >
+      {' '}
+      {noteLetter(note.n)}
+      {'\u202F'}
+    </Text>
+  );
+
+  // A run of text with note markers inserted at their positions, then highlighted.
+  const pieces = (text: string, start: number, first: boolean): React.ReactNode => {
+    const end = start + text.length;
+    const here = (notes ?? []).filter((n) => (n.pos > start && n.pos <= end) || (first && n.pos === 0));
+    if (here.length === 0) return highlighted(text, start);
+    const out: React.ReactNode[] = [];
+    let pos = start;
+    for (const note of here) {
+      const cut = Math.max(pos, Math.min(note.pos, end));
+      if (cut > pos) out.push(<Text key={`t${pos}`}>{highlighted(text.slice(pos - start, cut - start), pos)}</Text>);
+      out.push(marker(note));
+      pos = cut;
+    }
+    if (pos < end) out.push(<Text key={`t${pos}`}>{highlighted(text.slice(pos - start), pos)}</Text>);
+    return out;
+  };
+
+  let offset = 0;
+  return (
+    <Text
+      style={[
+        styles.text,
+        { fontSize: size, lineHeight, color: textColor, fontFamily: font },
+        isTitle && styles.title,
+        highlightColor ? { backgroundColor: highlightColor } : null,
+        flash && { backgroundColor: theme.highlight },
+      ]}
+      numberOfLines={numberOfLines}
+      selectable={false}
+      onLongPress={onLongPress}
+      accessibilityHint={onLongPress ? t('verseHint') : undefined}
+    >
+      {bookmarked ? <Text style={{ color: accent }}>▎</Text> : null}
+      {hasNote ? (
+        <Text onPress={onNotePress} style={{ color: accent, fontSize: small + 2 }} accessibilityRole="button" accessibilityLabel={t('editNote')}>
+          <Text style={{ fontFamily: ICON_FONT_FAMILY }}>{iconChar('edit_note')}</Text>{' '}
+        </Text>
+      ) : null}
+      {showNumber && !isTitle ? (
+        <Text
+          onPress={onNumberPress}
+          onLongPress={onLongPress}
+          accessibilityRole={onNumberPress ? 'button' : undefined}
+          accessibilityLabel={onNumberPress ? numberLabel : undefined}
+          style={[styles.number, { color: onMark ? accent : theme.muted, fontSize: small }]}
+        >
+          {withChapter ? `${verse.chapter}:${verse.verse}` : verse.verse}{' '}
+        </Text>
+      ) : null}
+      {segments.map((seg, i) => {
+        const start = offset;
+        offset += seg.text.length;
+        // Plain text needs no element of its own; it takes the verse's style as before.
+        if (!seg.strongs) return <React.Fragment key={i}>{pieces(seg.text, start, i === 0)}</React.Fragment>;
+        const strong = !!emphasize && (emphasize === seg.strongs || !!seg.choices?.includes(emphasize));
+        return (
+          <Text
+            key={i}
+            onPress={
+              onWord
+                ? () => onWord({ strongs: seg.strongs!, word: seg.text, choices: seg.choices, at: { book: verse.book, chapter: verse.chapter, verse: verse.verse, start }, nth: nthOf(segments, i) })
+                : undefined
+            }
+            onLongPress={onLongPress}
+            // Android exposes a tappable span inside text to TalkBack and keyboards only as a link.
+            accessibilityRole={onWord ? 'link' : undefined}
+            suppressHighlighting={false}
+            style={[
+              underline && { textDecorationLine: 'underline', textDecorationColor: theme.linked },
+              strong && [bold, { color: theme.accent, backgroundColor: theme.highlight }],
+              selectedStart === start && [bold, { color: theme.accent, backgroundColor: theme.accentSoft }],
+            ]}
+          >
+            {pieces(seg.text, start, i === 0)}
+          </Text>
+        );
+      })}
+    </Text>
+  );
+});
+
+const styles = StyleSheet.create({
+  text: { fontFamily: undefined },
+  title: { fontStyle: 'italic' },
+  omitted: { fontStyle: 'italic' },
+  number: { fontWeight: '600' },
+});
+
+/** Which of the verse's words with each of this segment's numbers it is, and how many there are. */
+function nthOf(segments: Segment[], index: number): Record<string, [number, number]> {
+  const out: Record<string, [number, number]> = {};
+  for (const id of segments[index].choices ?? [segments[index].strongs!]) {
+    let n = 0, total = 0;
+    segments.forEach((seg, i) => {
+      if (seg.strongs !== id && !seg.choices?.includes(id)) return;
+      total++;
+      if (i < index) n++;
+    });
+    out[id] = [n, total];
+  }
+  return out;
+}

@@ -1,0 +1,37 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "ios-en": {
+      "env": { "BIBLE_EDITION": "en" },
+      "distribution": "store",
+      "autoIncrement": true,
+      "ios": { "image": "latest" }
+    },
+    "ios-ml": {
+      "env": { "BIBLE_EDITION": "ml" },
+      "distribution": "store",
+      "autoIncrement": true,
+      "ios": { "image": "latest" }
+    },
+    "ios-ta": {
+      "env": { "BIBLE_EDITION": "ta" },
+      "distribution": "store",
+      "autoIncrement": true,
+      "ios": { "image": "latest" }
+    }
+  },
+  "submit": {
+    "ios-en": {
+      "ios": { "ascAppId": "" }
+    },
+    "ios-ml": {
+      "ios": { "ascAppId": "" }
+    },
+    "ios-ta": {
+      "ios": { "ascAppId": "" }
+    }
+  }
+}

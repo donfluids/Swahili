@@ -1,0 +1,111 @@
+import { Platform } from 'react-native';
+import { defaultDatabaseDirectory } from 'expo-sqlite';
+import { Directory, File, Paths } from 'expo-file-system';
+import DATABASE_HASHES from './dbHashes.json';
+import DATABASE_SIZES from './dbSizes.json';
+import { CONFIGURED_EDITION_ID } from './edition';
+
+/**
+ * Name of the on-device copy of the bundled database. The bundled file is copied on
+ * first launch and kept. The name carries the database's hash (recorded by
+ * scripts/build-db.mjs), so a phone with a copy of an earlier build makes a new one.
+ */
+const hash = CONFIGURED_EDITION_ID ? (DATABASE_HASHES as Record<string, string>)[CONFIGURED_EDITION_ID] : undefined;
+export const DATABASE_NAME = hash ? `bible-v14-${hash}.db` : 'bible-v14.db';
+
+export const DATABASE_ASSET = require('../assets/db/bible.db');
+
+/**
+ * The copy lives in a folder of its own, files/SQLite/bible, which Android leaves out of
+ * its backup (plugins/withBackupRules.js): at about 47 MB it would push the app over the
+ * 25 MB backup limit, and then settings, bookmarks and notes would not be backed up
+ * either. On iOS everything under Documents goes into iCloud backup, and Apple asks that
+ * data an app can make again live in Library/Caches instead, so the copy goes there; if
+ * iOS clears it to free space, the next launch copies it again. The reader's own data
+ * (expo-sqlite/kv-store, in Documents) is still backed up on both.
+ * expo-sqlite takes the folder as a plain path; the file API wants a file:// URI.
+ */
+const cachePath = () => decodeURI(Paths.cache.uri.replace(/^file:\/\//, '')).replace(/\/$/, '');
+export const DATABASE_DIRECTORY = Platform.OS === 'ios' ? `${cachePath()}/bible` : `${defaultDatabaseDirectory}/bible`;
+const toUri = (path: string) => (path.startsWith('file:') ? path : `file://${path}`);
+const BASE_DIR = toUri(defaultDatabaseDirectory);
+const DATABASE_DIR = toUri(DATABASE_DIRECTORY);
+
+function copyFile(): File {
+  return new File(DATABASE_DIR, DATABASE_NAME);
+}
+
+/**
+ * Whether the copy on the phone is complete: exactly the size of a bundled database
+ * (scripts/build-db.mjs records the sizes in src/dbSizes.json). When it is, the database
+ * is opened without the bundled asset, which otherwise makes expo-asset hash the whole
+ * 40 MB file on every launch and keep a second copy of it in the cache.
+ */
+export function databaseCopyComplete(): boolean {
+  try {
+    const file = copyFile();
+    // This edition's size only: a copy cut short at exactly the other edition's size
+    // must not pass. A build that does not name its edition accepts either.
+    const sizes = DATABASE_SIZES as Record<string, number>;
+    const expected = CONFIGURED_EDITION_ID ? [sizes[CONFIGURED_EDITION_ID]] : Object.values(sizes);
+    return file.exists && expected.includes(file.size ?? -1);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Free space the first copy needs: the database twice (the bundled file is first unpacked
+ * to the cache, then copied into place) and a margin. About 130 MB for a one-language app,
+ * 230 MB for the four-language one.
+ */
+export function firstCopySpace(): number {
+  const sizes = DATABASE_SIZES as Record<string, number>;
+  const size = (CONFIGURED_EDITION_ID && sizes[CONFIGURED_EDITION_ID]) || Math.max(...Object.values(sizes));
+  return 2 * size + 20 * 1024 * 1024;
+}
+
+/**
+ * Remove a copy that was cut short (the app closed during the first launch, or the phone
+ * ran out of space), with its journal files, so it is copied again in full.
+ */
+export function removeIncompleteCopy(): void {
+  for (const suffix of ['', '-journal', '-wal', '-shm']) {
+    try {
+      const f = new File(DATABASE_DIR, DATABASE_NAME + suffix);
+      if (f.exists) f.delete();
+    } catch {
+      // Nothing to remove, or it is not accessible; the import overwrites it anyway.
+    }
+  }
+}
+
+/**
+ * Delete copies left behind by earlier database versions (bible-v1.db, bible-v14-<hash>.db, with
+ * any journal files, in the old folder or this one). Each one is about 40 MB. With
+ * `assetCache`, also the cache copy of the bundled asset that the first import leaves;
+ * that is skipped in the launch that made the copy, in case it has to be made again.
+ */
+export function removeStaleDatabases(assetCache: boolean): void {
+  try {
+    for (const dir of [new Directory(BASE_DIR), new Directory(DATABASE_DIR)]) {
+      if (!dir.exists) continue;
+      for (const entry of dir.list()) {
+        const name = entry.name;
+        if (!/^bible-v\d+(-[0-9a-f]+)?\.db/.test(name) || (dir.uri.replace(/\/$/, '') === DATABASE_DIR.replace(/\/$/, '') && name.startsWith(DATABASE_NAME))) continue;
+        try {
+          entry.delete();
+        } catch {
+          // Best effort; a locked file is retried on the next launch.
+        }
+      }
+    }
+    if (assetCache) {
+      for (const entry of Paths.cache.list()) {
+        if (/^ExponentAsset-.*\.db$/.test(entry.name)) entry.delete();
+      }
+    }
+  } catch {
+    // Storage access can fail in previews; the app works without the cleanup.
+  }
+}

@@ -1,0 +1,394 @@
+import React, { useEffect, useMemo, useState } from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable } from '../components/Pressable';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Constants from 'expo-constants';
+import { useSQLiteContext } from 'expo-sqlite';
+import { AppSwitch } from '../components/AppSwitch';
+import { Header } from '../components/Header';
+import { Icon, IconButton } from '../components/Icon';
+import { SectionLabel } from '../components/SectionLabel';
+import { isMultilingual, nativeTranslation, useEdition } from '../edition';
+import type { Language } from '../edition';
+import { bibleName, englishName, useT } from '../i18n';
+import { getMeta } from '../queries';
+import { FONT_SIZES, useSettings } from '../settings';
+import type { HighlightStyle, Layout, ThemeChoice } from '../settings';
+import { scriptureFont } from '../fonts';
+import { translationInfo } from '../types';
+import { useTheme } from '../theme';
+import { useWriteToUs } from '../writeToUs';
+import { Segmented } from '../components/Segmented';
+import { SimpleSheet } from '../components/SimpleSheet';
+import { listVoices, saySample, stopSaying } from '../speech';
+import type { SpokenLanguage } from '../speech';
+import { groupVoices } from '../voiceLabels';
+import type { VoiceOption } from '../voiceLabels';
+import { getVerses } from '../queries';
+import type { TranslationId } from '../types';
+
+/** The languages read aloud in this edition, each with the Bible whose verse is the sample. */
+const SPOKEN: [SpokenLanguage, TranslationId][] = [['english', 'KJV'], ['malayalam', 'MAL'], ['tamil', 'TAM'], ['hindi', 'HIN']];
+const VOICE_NAME = { english: 'voiceEnglish', malayalam: 'voiceMalayalam', tamil: 'voiceTamil', hindi: 'voiceHindi' } as const;
+// Psalm 23:1, the sample read in a voice.
+const SAMPLE_REF = { book: 19, chapter: 23, verse: 1 };
+
+/** Each interface language in its own script. */
+const LANGUAGE_NAMES: Record<Language, string> = { ml: 'മലയാളം', ta: 'தமிழ்', hi: 'हिन्दी', en: 'English' };
+
+interface Props {
+  onBack: () => void;
+  onOpenLicences: () => void;
+  onOpenWhy: () => void;
+  onOpenPrivacy: () => void;
+  onOpenHowTo: () => void;
+}
+
+export function SettingsScreen({ onBack, onOpenLicences, onOpenWhy, onOpenPrivacy, onOpenHowTo }: Props) {
+  const db = useSQLiteContext();
+  const theme = useTheme();
+  // Lists run under the system navigation bar; the last row must clear it.
+  const insets = useSafeAreaInsets();
+  const t = useT();
+  const EDITION = useEdition();
+  const { settings, update } = useSettings();
+  const [meta, setMeta] = useState<Record<string, string>>({});
+  const [showBuilt, setShowBuilt] = useState(false);
+  const writeToUs = useWriteToUs();
+
+  useEffect(() => {
+    getMeta(db)
+      .then(setMeta)
+      .catch(() => undefined); // only the build date is lost
+  }, [db]);
+
+  const sizeIndex = FONT_SIZES.indexOf(settings.fontSize);
+  const setSize = (delta: number) => {
+    const i = Math.min(FONT_SIZES.length - 1, Math.max(0, (sizeIndex < 0 ? 2 : sizeIndex) + delta));
+    update({ fontSize: FONT_SIZES[i] });
+  };
+  const divider = { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: theme.border };
+
+  // The voice for each language read aloud: the phone's own list, with a sample of each.
+  const spoken = SPOKEN.filter(([, id]) => EDITION.translations.includes(id));
+  const [choosingVoice, setChoosingVoice] = useState<SpokenLanguage | null>(null);
+  const [voiceList, setVoiceList] = useState<VoiceOption[] | null>(null);
+  const [sampling, setSampling] = useState<string | null>(null);
+  useEffect(() => {
+    if (!choosingVoice) return;
+    let gone = false;
+    setVoiceList(null);
+    listVoices(choosingVoice).then((list) => !gone && setVoiceList(list));
+    return () => {
+      gone = true;
+      stopSaying();
+      setSampling(null);
+    };
+  }, [choosingVoice]);
+  const playSample = async (language: SpokenLanguage, voice: string | undefined) => {
+    const key = voice ?? 'default';
+    if (sampling === key) {
+      stopSaying();
+      setSampling(null);
+      return;
+    }
+    const translation = spoken.find(([l]) => l === language)?.[1] ?? 'KJV';
+    const [row] = await getVerses(db, translation, [SAMPLE_REF]).catch(() => []);
+    const text = row ? row.text.replace(/<[^>]+>/g, '') : t('previewText');
+    setSampling(key);
+    saySample(text, language, voice, settings.readSpeed, () => setSampling((s) => (s === key ? null : s)));
+  };
+  const voiceGroups = useMemo(() => (voiceList ? groupVoices(voiceList) : []), [voiceList]);
+  // A region's name in the interface language; an unlisted one by its code.
+  const regionName = (region: string | null) =>
+    region === 'IN' ? t('voiceRegionIN') : region === 'US' ? t('voiceRegionUS') : region === 'GB' ? t('voiceRegionGB') : region === 'AU' ? t('voiceRegionAU') : region ?? '';
+  // "Voice 2" within its accent, or the phone's own name for the voice where it has one.
+  const voiceTitle = (v: VoiceOption | null, n: number) => (v ? v.friendly ?? t('voiceNumber', { n: String(n) }) : t('voiceDefault'));
+
+  return (
+    <View style={[styles.screen, { backgroundColor: theme.bg }]}>
+      <Header title={t('settings')} onBack={onBack} backLabel={t('back')} />
+      <ScrollView contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + 24 }]}>
+        <Label text={t('studyTools')} />
+        <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border }]}>
+          <View style={styles.row}>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.rowTitle, { color: theme.text }]}>{t('studyTools')}</Text>
+              <Text style={[styles.rowSub, { color: theme.muted }]}>{t('studyToolsDetail')}</Text>
+            </View>
+            <AppSwitch value={settings.study} onValueChange={(v) => update({ study: v })} />
+          </View>
+        </View>
+
+        <Label text={t('appearance')} />
+        <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border }]}>
+          {EDITION.languages.length > 1 ? (
+            <View style={styles.block}>
+              <Text style={[styles.rowTitle, { color: theme.text }]}>{t('language')}</Text>
+              <Segmented
+                options={EDITION.languages.map((id) => [id, LANGUAGE_NAMES[id]]) as [Language, string][]}
+                value={settings.language}
+                onChange={(language) => update({ language })}
+              />
+            </View>
+          ) : null}
+          <View style={[styles.block, EDITION.languages.length > 1 && divider]}>
+            <Text style={[styles.rowTitle, { color: theme.text }]}>{t('theme')}</Text>
+            <Segmented
+              options={[
+                ['system', t('themeAuto')],
+                ['light', t('themeLight')],
+                ['sepia', t('themeSepia')],
+                ['dark', t('themeDark')],
+              ] as [ThemeChoice, string][]}
+              value={settings.theme}
+              onChange={(value) => update({ theme: value })}
+            />
+          </View>
+          <View style={[styles.block, divider]}>
+            <Text style={[styles.rowTitle, { color: theme.text }]}>{t('highlightStyle')}</Text>
+            <Text style={[styles.rowSub, { color: theme.muted }]}>{t('highlightStyleDetail')}</Text>
+            <Segmented
+              options={[
+                ['soft', t('highlightSoft')],
+                ['fluorescent', t('highlightFluorescent')],
+              ] as [HighlightStyle, string][]}
+              value={settings.highlightStyle}
+              onChange={(highlightStyle) => update({ highlightStyle })}
+            />
+          </View>
+          <View style={[styles.block, divider]}>
+            <Text style={[styles.rowTitle, { color: theme.text }]}>{t('layout')}</Text>
+            <Segmented
+              options={[
+                ['verses', t('layoutVerses')],
+                ['paragraphs', t('layoutParagraphs')],
+              ] as [Layout, string][]}
+              value={settings.layout}
+              onChange={(layout) => update({ layout })}
+            />
+          </View>
+          <View style={[styles.row, divider]}>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.rowTitle, { color: theme.text }]}>{t('serif')}</Text>
+              <Text style={[styles.rowSub, { color: theme.muted }]}>{t('serifDetail')}</Text>
+            </View>
+            <AppSwitch value={settings.serif} onValueChange={(v) => update({ serif: v })} />
+          </View>
+          <View style={[styles.row, divider]}>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.rowTitle, { color: theme.text }]}>{t('keepAwake')}</Text>
+              <Text style={[styles.rowSub, { color: theme.muted }]}>{t('keepAwakeDetail')}</Text>
+            </View>
+            <AppSwitch value={settings.keepAwake} onValueChange={(v) => update({ keepAwake: v })} />
+          </View>
+          {nativeTranslation(EDITION) || isMultilingual(EDITION) ? (
+            <View style={[styles.row, divider]}>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.rowTitle, { color: theme.text }]}>{t('sideBySide')}</Text>
+                <Text style={[styles.rowSub, { color: theme.muted }]}>
+                  {isMultilingual(EDITION) ? t('sideBySideDetailAll') : t('sideBySideDetail', { native: nativeTranslation(EDITION) === 'TAM' ? 'Tamil' : 'Malayalam' })}
+                </Text>
+              </View>
+              <AppSwitch value={settings.sideBySide} onValueChange={(v) => update({ sideBySide: v })} />
+            </View>
+          ) : null}
+        </View>
+
+        <Label text={t('translation')} />
+        <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border }]}>
+          {EDITION.translations.map((id, i) => {
+            const active = settings.translation === id;
+            return (
+              <Pressable key={id} onPress={() => update({ translation: id })} android_ripple={{ color: theme.accentSoft }} accessibilityRole="radio" accessibilityState={{ checked: active }} style={[styles.row, i > 0 && divider]}>
+                <View style={{ flex: 1 }}>
+                  <Text style={[styles.rowTitle, { color: theme.text }, scriptureFont(translationInfo(id).script ?? null, false) ? { fontFamily: scriptureFont(translationInfo(id).script ?? null, false) } : null]}>{bibleName(settings.language, id)}</Text>
+                  {/* The English name of an Indian Bible; else the short label the reader's chip shows, and the version's code. */}
+                  <Text style={[styles.rowSub, { color: theme.muted }]}>{translationInfo(id).script ? `${englishName(id)} · ${id}` : nativeTranslation(EDITION) && id !== nativeTranslation(EDITION) ? `ENG · ${id}` : id}</Text>
+                </View>
+                <View style={styles.check}>{active ? <Icon name="check" color={theme.accent} /> : null}</View>
+              </Pressable>
+            );
+          })}
+        </View>
+
+        <Label text={t('textSize')} />
+        <View style={[styles.card, styles.row, { backgroundColor: theme.card, borderColor: theme.border }]}>
+          <IconButton name="text_decrease" onPress={() => setSize(-1)} disabled={sizeIndex <= 0} accessibilityLabel={t('smallerText')} color={theme.accent} />
+          <Text style={[styles.preview, { color: theme.text, fontSize: settings.fontSize, fontFamily: theme.font }]}>{t('previewText')}</Text>
+          <IconButton name="text_increase" onPress={() => setSize(1)} disabled={sizeIndex >= FONT_SIZES.length - 1} accessibilityLabel={t('largerText')} color={theme.accent} />
+        </View>
+        <Text style={[styles.rowSub, styles.hint, { color: theme.muted }]}>{t('textSizeHint')}</Text>
+
+        <Label text={t('interlinear')} />
+        <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border }]}>
+          <View style={styles.row}>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.rowTitle, { color: theme.text }]}>{t('showInterlinear')}</Text>
+              <Text style={[styles.rowSub, { color: theme.muted }]}>{t('showInterlinearDetail')}</Text>
+            </View>
+            <AppSwitch value={settings.interlinear} onValueChange={(v) => update({ interlinear: v })} />
+          </View>
+          {(
+            [
+              ['all', t('everyVerse'), t('everyVerseDetail')],
+              ['tap', t('tappedVerses'), t('tappedVersesDetail')],
+            ] as const
+          ).map(([mode, title, sub]) => (
+            <Pressable key={mode} onPress={() => update({ interlinearMode: mode })} android_ripple={{ color: theme.accentSoft }} accessibilityRole="radio" accessibilityState={{ checked: settings.interlinearMode === mode }} style={[styles.row, divider]}>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.rowTitle, { color: theme.text }]}>{title}</Text>
+                <Text style={[styles.rowSub, { color: theme.muted }]}>{sub}</Text>
+              </View>
+              <View style={styles.check}>{settings.interlinearMode === mode ? <Icon name="check" color={theme.accent} /> : null}</View>
+            </Pressable>
+          ))}
+          <View style={[styles.row, divider]}>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.rowTitle, { color: theme.text }]}>{t('transliteration')}</Text>
+              <Text style={[styles.rowSub, { color: theme.muted }]}>{t('transliterationDetail')}</Text>
+            </View>
+            <AppSwitch value={settings.showTranslit} onValueChange={(v) => update({ showTranslit: v })} />
+          </View>
+          <View style={[styles.row, divider]}>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.rowTitle, { color: theme.text }]}>{t('hideCantillation')}</Text>
+              <Text style={[styles.rowSub, { color: theme.muted }]}>{t('hideCantillationDetail')}</Text>
+            </View>
+            <AppSwitch value={settings.hideCantillation} onValueChange={(v) => update({ hideCantillation: v })} />
+          </View>
+        </View>
+
+        <Label text={t('reading')} />
+        <View style={[styles.card, styles.row, { backgroundColor: theme.card, borderColor: theme.border }]}>
+          <View style={{ flex: 1 }}>
+            <Text style={[styles.rowTitle, { color: theme.text }]}>{t('underline')}</Text>
+            <Text style={[styles.rowSub, { color: theme.muted }]}>{t('underlineDetail')}</Text>
+          </View>
+          <AppSwitch value={settings.underlineWords} onValueChange={(v) => update({ underlineWords: v })} />
+        </View>
+
+        <Label text={t('readAloudSection')} />
+        <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border }]}>
+          {spoken.map(([language], i) => (
+            <Pressable key={language} onPress={() => setChoosingVoice(language)} accessibilityRole="button" android_ripple={{ color: theme.accentSoft }} style={[styles.row, i > 0 && divider]}>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.rowTitle, { color: theme.text }]}>{t(VOICE_NAME[language])}</Text>
+                <Text style={[styles.rowSub, { color: theme.muted }]}>{settings.voices[language] ? t('voiceChosen') : t('voiceDefault')}</Text>
+              </View>
+              <Icon name="chevron_right" color={theme.muted} />
+            </Pressable>
+          ))}
+        </View>
+        <Text style={[styles.rowSub, styles.hint, { color: theme.muted }]}>{t('voiceMore')}</Text>
+
+        <Label text={t('aboutTexts')} />
+        <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border, padding: 14 }]}>
+          <Text style={[styles.about, { color: theme.text }]}>{t(EDITION.id === 'ml' ? 'aboutMalayalam' : EDITION.id === 'ta' ? 'aboutTamil' : EDITION.id === 'all' ? 'aboutAll' : 'aboutEnglish')}</Text>
+          {/* The app's version and build number, for a report of a problem (docs/testing); a tap
+              shows the database's build date too. Where the texts and data come from is on
+              the Sources and licences page. */}
+          <Text style={[styles.rowSub, { color: theme.muted, marginTop: 10 }]} selectable onPress={() => setShowBuilt((v) => !v)}>
+            {t('appVersion', { version: `${Constants.expoConfig?.version ?? '?'} (${Constants.expoConfig?.android?.versionCode ?? Constants.expoConfig?.ios?.buildNumber ?? '?'})` })}
+          </Text>
+          {showBuilt && meta.built ? <Text style={[styles.rowSub, { color: theme.muted, marginTop: 4 }]}>{t('databaseBuilt', { date: meta.built })}</Text> : null}
+          <Pressable onPress={onOpenHowTo} accessibilityRole="button" android_ripple={{ color: theme.accentSoft }} style={styles.licencesRow}>
+            <Text style={[styles.rowTitle, { color: theme.accent, flex: 1 }]}>{t('howTo')}</Text>
+            <Icon name="chevron_right" color={theme.accent} />
+          </Pressable>
+          <Pressable onPress={writeToUs} accessibilityRole="button" accessibilityHint={t('feedbackDetail')} android_ripple={{ color: theme.accentSoft }} style={styles.licencesRow}>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.rowTitle, { color: theme.accent }]}>{t('feedback')}</Text>
+              <Text style={[styles.rowSub, { color: theme.muted }]}>{t('feedbackDetail')}</Text>
+            </View>
+            <Icon name="chevron_right" color={theme.accent} />
+          </Pressable>
+          <Pressable onPress={onOpenWhy} accessibilityRole="button" android_ripple={{ color: theme.accentSoft }} style={styles.licencesRow}>
+            <Text style={[styles.rowTitle, { color: theme.accent, flex: 1 }]}>{t('whyThisBible')}</Text>
+            <Icon name="chevron_right" color={theme.accent} />
+          </Pressable>
+          <Pressable onPress={onOpenPrivacy} accessibilityRole="button" android_ripple={{ color: theme.accentSoft }} style={styles.licencesRow}>
+            <Text style={[styles.rowTitle, { color: theme.accent, flex: 1 }]}>{t('privacy')}</Text>
+            <Icon name="chevron_right" color={theme.accent} />
+          </Pressable>
+          <Pressable onPress={onOpenLicences} accessibilityRole="button" android_ripple={{ color: theme.accentSoft }} style={styles.licencesRow}>
+            <Text style={[styles.rowTitle, { color: theme.accent, flex: 1 }]}>{t('sourcesLicences')}</Text>
+            <Icon name="chevron_right" color={theme.accent} />
+          </Pressable>
+        </View>
+      </ScrollView>
+
+      <SimpleSheet visible={!!choosingVoice} title={t('voiceChoose')} onClose={() => setChoosingVoice(null)}>
+        {choosingVoice ? (
+          <>
+            {[{ region: null, voices: [null] }, ...voiceGroups].map((group, gi) => (
+              <View key={gi === 0 ? 'default' : group.region ?? 'other'}>
+                {gi > 0 && voiceGroups.length > 1 && group.region ? (
+                  <Text style={[styles.voiceGroup, { color: theme.accent }]} accessibilityRole="header">
+                    {regionName(group.region)}
+                  </Text>
+                ) : null}
+                {group.voices.map((v, i) => {
+                  const id = v?.identifier;
+                  const chosen = (settings.voices[choosingVoice] ?? undefined) === id;
+                  const detail = v ? [v.enhanced ? t('voiceEnhanced') : t('voiceStandard'), v.online ? t('voiceOnline') : t('voiceOffline')].join(' · ') : null;
+                  return (
+                    <View key={id ?? 'default'} style={[styles.row, (gi > 0 || i > 0) && divider]}>
+                      <Pressable
+                        onPress={() => {
+                          const voices = { ...settings.voices };
+                          if (id) voices[choosingVoice] = id;
+                          else delete voices[choosingVoice];
+                          update({ voices });
+                        }}
+                        accessibilityRole="radio"
+                        accessibilityState={{ checked: chosen }}
+                        accessibilityLabel={v ? `${regionName(v.region)} ${voiceTitle(v, i + 1)}` : t('voiceDefault')}
+                        style={styles.voiceChoice}
+                      >
+                        <View style={styles.check}>{chosen ? <Icon name="check" color={theme.accent} /> : null}</View>
+                        <View style={{ flex: 1 }}>
+                          <Text style={[styles.rowTitle, { color: theme.text }]}>{voiceTitle(v, i + 1)}</Text>
+                          {detail ? <Text style={[styles.rowSub, { color: theme.muted }]}>{detail}</Text> : null}
+                        </View>
+                      </Pressable>
+                      <IconButton
+                        name={sampling === (id ?? 'default') ? 'pause' : 'play_arrow'}
+                        onPress={() => playSample(choosingVoice, id)}
+                        accessibilityLabel={t('voiceSample')}
+                        color={theme.accent}
+                      />
+                    </View>
+                  );
+                })}
+              </View>
+            ))}
+            {voiceList && voiceList.length === 0 ? <Text style={[styles.rowSub, styles.hint, { color: theme.muted }]}>{t('voiceNone')}</Text> : null}
+          </>
+        ) : null}
+      </SimpleSheet>
+    </View>
+  );
+}
+
+function Label({ text }: { text: string }) {
+  return <SectionLabel text={text} style={styles.label} />;
+}
+
+const styles = StyleSheet.create({
+  hint: { marginTop: 6, marginHorizontal: 4 },
+  licencesRow: { marginTop: 12, minHeight: 48, flexDirection: 'row', alignItems: 'center' },
+  screen: { flex: 1 },
+  content: { padding: 16, paddingBottom: 48, alignSelf: 'center', width: '100%', maxWidth: 720 },
+  label: { marginTop: 22, marginBottom: 8, marginHorizontal: 4 },
+  block: { paddingHorizontal: 14, paddingVertical: 12 },
+  card: { borderRadius: 16, borderWidth: StyleSheet.hairlineWidth, overflow: 'hidden' },
+  row: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, paddingVertical: 12 },
+  rowTitle: { fontSize: 16, lineHeight: 24 },
+  rowSub: { fontSize: 13, lineHeight: 19, marginTop: 2 },
+  check: { width: 24, alignItems: 'flex-end' },
+  voiceChoice: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10, minHeight: 44 },
+  voiceGroup: { fontSize: 13, fontWeight: '600', paddingHorizontal: 20, paddingTop: 14, paddingBottom: 2 },
+  preview: { flex: 1, textAlign: 'center' },
+  about: { fontSize: 14, lineHeight: 21 },
+});

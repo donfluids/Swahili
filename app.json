@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "Bible",
+    "slug": "bible",
+    "version": "0.4.28",
+    "orientation": "default",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": [
+      "assets/db/*"
+    ],
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#F4EFE4",
+          "dark": {
+            "image": "./assets/splash-icon-dark.png",
+            "backgroundColor": "#15130F"
+          }
+        }
+      ],
+      "./plugins/withAndroidRelease",
+      "./plugins/withBackupRules",
+      "./plugins/withKeyboardKeys",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Choose a photo to put behind a verse on a card. The app uses only the photo you pick.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "predictiveBackGestureEnabled": true,
+      "blockedPermissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {}
+  }
+}

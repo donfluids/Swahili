@@ -1,0 +1,6 @@
+{
+ "description": "Corrections to the Swahili source texts, kept here so a rebuild applies them again. <TRANSLATION>.<book>.<chapter> replaces a whole chapter; strip.<TRANSLATION>[\"book:chapter:verse\"] removes stray text; replace.<TRANSLATION>[\"book:chapter:verse\"] is a list of [as printed, corrected]; bookNames.<TRANSLATION>[book] is the name shown in place of the source's running head. None are needed yet.",
+ "strip": {},
+ "replace": {},
+ "bookNames": {}
+}

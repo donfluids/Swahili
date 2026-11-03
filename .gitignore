@@ -1,0 +1,59 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# generated native folders
+/ios
+/android
+
+# Bible source texts (fetched by scripts/fetch-data.sh)
+data/raw
+
+# Local APK builds
+*.apk
+
+# Release signing key and passwords, never committed
+credentials/
+
+# Edition databases are bible-en.db, bible-ml.db and bible-ta.db; bible.db is only a name Metro redirects
+assets/db/bible.db
+# The four-language database is over GitHub's 100 MB limit; it is built, not kept:
+#   npm run fetch-data && node scripts/build-db.mjs all
+assets/db/bible-all.db
+
+# Screen check output (scripts/smoke.mjs)
+smoke-out/

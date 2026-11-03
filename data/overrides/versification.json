@@ -1,0 +1,21 @@
+{
+ "description": "Swahili verses numbered differently from the KJV numbering that the Hebrew and Greek (STEPBible) data follow. Each key is a translation's book:chapter:verse under its translation id; the value is the KJV verse it corresponds to, or a list when one verse holds two KJV verses. Verses not listed have the same number in both. Used by scripts/align.mjs to pair each verse with its original words, and written into the database (table verse_map) so the app shows the right Hebrew or Greek under each verse. SWU: the ULB joins 1 Chronicles 6:78-79 and 8:17-18 into one verse each, splits 3 John 14 in two as the Neno texts do, and has the first words of the KJV's Revelation 13:1 as 12:18. SWN, SWM: 3 John 14 is their 14 and 15.",
+ "SWU": {
+  "13:6:78": [
+   "13:6:78",
+   "13:6:79"
+  ],
+  "13:8:17": [
+   "13:8:17",
+   "13:8:18"
+  ],
+  "64:1:15": "64:1:14",
+  "66:12:18": "66:13:1"
+ },
+ "SWN": {
+  "64:1:15": "64:1:14"
+ },
+ "SWM": {
+  "64:1:15": "64:1:14"
+ }
+}

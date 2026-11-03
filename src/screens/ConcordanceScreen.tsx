@@ -1,0 +1,226 @@
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
+import { Pressable } from '../components/Pressable';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useSQLiteContext } from 'expo-sqlite';
+import { Header } from '../components/Header';
+import { bibleName, renderingsLabel, useT } from '../i18n';
+import { VerseListItem } from '../components/VerseListItem';
+import { getConcordance, getOriginalRefs, getRenderingRefs, getRenderings, getStrongs, getVerses, inTranslation } from '../queries';
+import { useSettings } from '../settings';
+import { MAX_CONTENT_WIDTH, formatCount, isHebrew } from '../text';
+import { useTheme } from '../theme';
+import { taggedTranslation } from '../types';
+import type { Book, Ref, Rendering, StrongsEntry, VerseRow, WordPick } from '../types';
+
+interface Props {
+  strongs: string;
+  /** Start filtered to verses that render the word this way. */
+  rendering?: string;
+  books: Book[];
+  onOpenRef: (ref: Ref) => void;
+  onWord: (pick: WordPick) => void;
+  onBack: () => void;
+}
+
+const PAGE = 40;
+
+/**
+ * Every verse a Hebrew or Greek word is in, from the original text, shown in the current
+ * translation; the chips narrow it to the verses where the translation renders the word
+ * one way.
+ */
+export function ConcordanceScreen({ strongs, rendering, books, onOpenRef, onWord, onBack }: Props) {
+  const db = useSQLiteContext();
+  const theme = useTheme();
+  // Lists run under the system navigation bar; the last row must clear it.
+  const insets = useSafeAreaInsets();
+  const t = useT();
+  const { settings } = useSettings();
+  // The list is built from Strong's tags, so an untagged translation shows the KJV.
+  const translation = taggedTranslation(settings.translation);
+  const [entry, setEntry] = useState<StrongsEntry | null>(null);
+  const [renderings, setRenderings] = useState<Rendering[]>([]);
+  // The chip row: All, then each rendering.
+  const chips = useMemo<ChipItem[]>(() => [{ word: null, count: 0 }, ...renderings], [renderings]);
+  const [total, setTotal] = useState(0);
+  /** Whether the full list comes from the Hebrew or Greek text (else from the tags). */
+  const [fromOriginal, setFromOriginal] = useState(false);
+  /** The English rendering the list is filtered to, or null for all verses. */
+  const [filter, setFilter] = useState<string | null>(rendering ?? null);
+  const [refs, setRefs] = useState<Ref[] | null>(null);
+  const [verses, setVerses] = useState<VerseRow[]>([]);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    setFilter(rendering ?? null);
+    Promise.all([getStrongs(db, strongs), getRenderings(db, strongs, translation)])
+      .then(([e, r]) => {
+        if (cancelled) return;
+        setEntry(e);
+        setRenderings(r);
+      })
+      .catch(() => {
+        if (!cancelled) setFailed(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [db, strongs, translation]);
+
+  useEffect(() => {
+    let cancelled = false;
+    setRefs(null);
+    setVerses([]);
+    setFailed(false);
+    const load = async (): Promise<Ref[]> => {
+      if (filter !== null) return getRenderingRefs(db, strongs, translation, filter);
+      const original = await getOriginalRefs(db, strongs);
+      if (cancelled) return [];
+      setFromOriginal(original.length > 0);
+      if (original.length === 0) {
+        const tagged = await getConcordance(db, strongs, translation);
+        setTotal(tagged.length);
+        return tagged;
+      }
+      setTotal(original.length);
+      return inTranslation(db, translation, original);
+    };
+    load()
+      .then(async (r) => {
+        if (cancelled) return;
+        setRefs(r);
+        const first = await getVerses(db, translation, r.slice(0, PAGE));
+        if (!cancelled) setVerses(first);
+      })
+      .catch(() => {
+        if (!cancelled) setFailed(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [db, strongs, translation, filter]);
+
+  const loadMore = useCallback(async () => {
+    if (!refs || loadingMore || verses.length >= refs.length) return;
+    setLoadingMore(true);
+    try {
+      const next = await getVerses(db, translation, refs.slice(verses.length, verses.length + PAGE));
+      setVerses((prev) => [...prev, ...next]);
+    } catch {
+      setFailed(true);
+    } finally {
+      setLoadingMore(false);
+    }
+  }, [db, translation, refs, verses.length, loadingMore]);
+
+  const listFont = Math.min(settings.fontSize, 18);
+
+  return (
+    <View style={[styles.screen, { backgroundColor: theme.bg }]}>
+      <Header title={strongs} onBack={onBack} backLabel={t('back')} />
+      <View style={[styles.summary, { borderBottomColor: theme.border }]}>
+        <Text style={[styles.lemma, { color: theme.text }]}>
+          {entry?.lemma ?? ''}
+          {entry?.translit ? <Text style={[styles.translit, { color: theme.muted }]}>  {entry.translit}</Text> : null}
+        </Text>
+        <Text style={[styles.count, { color: theme.muted }]}>
+          {failed
+            ? t('loadFailed')
+            : refs && filter === null && fromOriginal
+            ? t(
+                total === 1 ? (isHebrew(strongs) ? 'originalVerseHebrew' : 'originalVerseGreek') : isHebrew(strongs) ? 'originalVersesHebrew' : 'originalVersesGreek',
+                { n: formatCount(total), translation: bibleName(settings.language, translation), in: renderingsLabel(settings.language, translation) },
+              )
+            : refs
+            ? t(refs.length === 1 ? (filter ? 'oneVerseInAs' : 'oneVerseIn') : filter ? 'versesInAs' : 'versesIn', {
+                n: formatCount(refs.length),
+                word: filter ?? '',
+                translation: bibleName(settings.language, translation),
+                in: renderingsLabel(settings.language, translation),
+              })
+            : t('loading')}
+        </Text>
+      </View>
+      {renderings.length > 0 ? (
+        // A list rather than a plain row: a common word has up to 271 renderings, and only
+        // the chips in view need building.
+        <FlatList
+          horizontal
+          data={chips}
+          keyExtractor={chipKey}
+          extraData={filter}
+          initialNumToRender={12}
+          showsHorizontalScrollIndicator={false}
+          style={[styles.chips, { borderBottomColor: theme.border }]}
+          contentContainerStyle={styles.chipsContent}
+          renderItem={({ item }) =>
+            item.word === null ? (
+              <Chip label={t('all')} count={total} active={filter === null} onPress={() => setFilter(null)} />
+            ) : (
+              <Chip label={item.word} count={item.count} active={filter === item.word} onPress={() => setFilter(filter === item.word ? null : item.word)} />
+            )
+          }
+        />
+      ) : null}
+      {!refs ? (
+        <ActivityIndicator style={styles.loading} color={theme.accent} />
+      ) : (
+        <FlatList
+          data={verses}
+          keyExtractor={(v) => `${v.book}:${v.chapter}:${v.verse}`}
+          renderItem={({ item }) => (
+            <VerseListItem verse={item} books={books} fontSize={listFont} onOpen={onOpenRef} onWord={onWord} emphasize={strongs} />
+          )}
+          contentContainerStyle={[styles.list, { paddingBottom: insets.bottom + 24 }]}
+          onEndReached={loadMore}
+          onEndReachedThreshold={0.6}
+          ListFooterComponent={
+            verses.length < refs.length ? <ActivityIndicator style={styles.more} color={theme.accent} /> : <View style={{ height: 40 }} />
+          }
+        />
+      )}
+    </View>
+  );
+}
+
+type ChipItem = { word: string | null; count: number };
+const chipKey = (c: ChipItem) => c.word ?? '\u0000all';
+
+function Chip({ label, count, active, onPress }: { label: string; count: number; active: boolean; onPress: () => void }) {
+  const theme = useTheme();
+  return (
+    <Pressable
+      android_ripple={{ color: theme.accentSoft }}
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityState={{ selected: active }}
+      style={({ pressed }) => [
+        styles.chip,
+        { borderColor: active ? theme.accent : theme.border, backgroundColor: active ? theme.accent : pressed ? theme.accentSoft : theme.card },
+      ]}
+    >
+      <Text style={[styles.chipText, { color: active ? theme.onAccent : theme.text }]}>
+        {label} <Text style={{ color: active ? theme.onAccent : theme.muted, fontWeight: '400' }}>{formatCount(count)}</Text>
+      </Text>
+    </Pressable>
+  );
+}
+
+const styles = StyleSheet.create({
+  screen: { flex: 1 },
+  list: { alignSelf: 'center', width: '100%', maxWidth: MAX_CONTENT_WIDTH },
+  summary: { paddingHorizontal: 16, paddingVertical: 12, borderBottomWidth: StyleSheet.hairlineWidth },
+  lemma: { fontSize: 26, lineHeight: 34 },
+  translit: { fontSize: 17 },
+  count: { fontSize: 13, marginTop: 2 },
+  // A ScrollView may shrink by default; the verse list below would squeeze the chips.
+  chips: { flexGrow: 0, flexShrink: 0, borderBottomWidth: StyleSheet.hairlineWidth },
+  chipsContent: { paddingHorizontal: 12, paddingVertical: 10, gap: 8 },
+  chip: { paddingHorizontal: 12, paddingVertical: 6, borderRadius: 999, borderWidth: 1 },
+  chipText: { fontSize: 14, fontWeight: '600' },
+  loading: { marginTop: 40 },
+  more: { marginVertical: 20 },
+});

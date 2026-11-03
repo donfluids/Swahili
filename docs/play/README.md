@@ -1,0 +1,140 @@
+# Releasing on Google Play
+
+Everything needed to put the apps on Google Play from an organisation developer
+account, the Malayalam app first. The English and Tamil apps follow the same steps with
+their own listings.
+
+| File | What it is |
+| --- | --- |
+| `listing-vedapusthakam.md` | Name and descriptions for വേദപുസ്തകം, in Malayalam (default) and English |
+| `listing-bible.md` | Name and descriptions for Bible, in English |
+| `listing-vedagamam.md` | Name and descriptions for வேதாகமம், in Tamil (default) and English |
+| `privacy-policy.html` | Privacy policy page for all three apps, to upload to riversresearch.org |
+| `graphics/*-icon-512.png` | The 512 × 512 icons Play asks for |
+| `graphics/vedapusthakam-feature-*.png` | Feature graphics for the Malayalam app, Malayalam and English |
+| `screenshots/ml/*.png` | Eight framed phone screenshots for the Malayalam listing |
+| `screenshots/en/*.png` | The same eight with the interface in English and English captions, for the English translation |
+| `screenshots/tablet7-*/`, `screenshots/tablet10-*/` | Four tablet screenshots each (7-inch and 10-inch), Malayalam and English |
+| `website-privacy-page.md` | Brief for the riversresearch.org website project: where to publish the privacy policy and its exact text |
+
+The Malayalam wording in the listing and in the app's interface still needs a
+Malayalam speaker to read it.
+
+The Tamil app (`org.riversresearch.bible.tamil`, `BIBLE_EDITION=ta`) is not ready for Play
+yet: its word links are still being made, and everything in `docs/tamil-review.md` needs a
+Tamil speaker first. Its icon, feature graphics and screenshots come after that.
+
+## 1. Before the first upload
+
+- [ ] Upload `privacy-policy.html` (Rivers Research LLC, dond@riversresearch.org) to
+      riversresearch.org, for example `https://riversresearch.org/bible/privacy`.
+      Play needs the address to be public and stable.
+- [ ] Install the 0.4.3 APK from the `apk-builds` branch and use it for a while. Builds
+      from 0.3.9 on have no internet, storage or overlay permissions.
+- [ ] Keep `credentials/bible-release.jks` and `credentials/signing.env` safe and backed
+      up outside this machine. They are not in the repo. With Play App Signing this key
+      becomes the **upload key**: losing it is recoverable (Play support can register
+      a new one), but it is still slow.
+
+## 2. Create the app in Play Console
+
+- [ ] Create app: app name `വേദപുസ്തകം – മലയാളം ഇംഗ്ലീഷ്`, package name
+      `org.riversresearch.bible.malayalam` (permanent; the English app is
+      `org.riversresearch.bible`), default language
+      Malayalam (ml-IN), type App, **Free** (a free app cannot later become paid).
+- [ ] Accept the declarations (Developer Program Policies, US export laws).
+
+## 3. App signing and the first build
+
+- [ ] Testing → Internal testing → Create new release.
+- [ ] When asked about app signing, choose **Use Google-generated key**. The bundle
+      you upload is signed with your current release key, which Play records as the
+      upload key.
+- [ ] Upload `Vedapusthakam-0.4.3-b30.aab` from the `apk-builds` branch.
+- [ ] Add yourself (and anyone helping) as internal testers, install from the test
+      link, and check the app installed from Play works.
+
+Phones that have the sideloaded APK must uninstall it before installing from Play:
+Play's copy is signed with Google's key, so Android treats it as a different signer.
+Uninstalling removes the bookmarks and notes on that phone.
+
+## 4. App content (Policy → App content)
+
+- [ ] **Privacy policy**: the riversresearch.org address.
+- [ ] **App access**: all functionality is available without special access.
+- [ ] **Ads**: No, the app does not contain ads.
+- [ ] **Content rating**: fill in the questionnaire (category for reference or
+      educational apps); the app has no violence, user-generated content shared
+      with others, purchases or location.
+- [ ] **Target audience and content**: tick every age group (all ages, children
+      included). That puts the app under Play's
+      [Families policy](https://support.google.com/googleplay/android-developer/answer/9893335);
+      it complies: no ads, no data collected from anyone, no third-party SDKs, content
+      suitable for children, and a privacy policy that covers children. With no ads, no
+      neutral age screen is needed. The Share button hands a verse to the app the user
+      picks in Android's share menu; Play defines a social feature as one that lets users
+      "share freeform content or communicate with large groups of people", which this is
+      not. If a reviewer reads it otherwise, the fix is a one-line safe-online reminder
+      before sharing. Review of an app for children can take longer than usual.
+- [ ] **Data safety**: the app collects and shares no data: no network access, no
+      accounts, no analytics. Bookmarks and notes can reach the user's Google account
+      only through Android's own system backup, which the user controls. Declaring
+      "no data collected" is the usual reading for that case; check Play's Data safety
+      help if you want to be sure.
+      The notebook backup file, page PDFs and the file picker do not change this: in
+      Play's words, "'Collect' means transmitting data from your app off a user's
+      device", and a user who sends their own file to their own drive or chat is not
+      collection; user-initiated sharing is exempt from "sharing". Do not tick "Files
+      and docs". (Data safety help: support.google.com/googleplay/android-developer/answer/10787469)
+      Write to us does not change it either: the app only opens a note in the user's own
+      mail app (a mailto link, with the app's version and the phone's system version and
+      model on the last line, which the user can delete); the app transmits nothing, and
+      the user sends the mail. So no "Personal info: email address" and no "Device or
+      other IDs". The privacy policy describes the note under "Writing to us".
+- [ ] **Government apps**: No. **Financial features**: None. **Health**: None.
+      **News app**: No.
+
+## 5. Store listing (Grow → Store presence → Main store listing)
+
+- [ ] App name, short and full description from `listing-vedapusthakam.md` (Malayalam).
+- [ ] Add a translation: English (en-US), from the English section of the same file.
+- [ ] App icon: `graphics/vedapusthakam-icon-512.png`.
+- [ ] Feature graphic: `graphics/vedapusthakam-feature-ml.png` for the Malayalam listing and
+      `graphics/vedapusthakam-feature-en.png` for its English translation (1024 × 500, redrawn
+      by `node scripts/make-feature-graphic.mjs`, on the sunrise of `scripts/sunrise.svg` that
+      is also behind the store screenshots).
+- [ ] Phone screenshots: the eight in `screenshots/ml/` (1080 × 1920, Malayalam captions),
+      in this order: reader with highlights, word sheet, Hebrew/Greek words, handwritten
+      notes, a verse card on a photo, search, dark theme, notebook (retaken for 0.4.18; the
+      handwriting is drawn into the app's own page, and the card's photo is a drawn sunrise). They are the app's own screens rendered in Chromium from
+      a web build at phone size (no Android emulator was available), so the system status
+      bar is missing; the captions need a Malayalam speaker's read.
+- [ ] English translation of the listing: the eight in `screenshots/en/` (interface set to
+      English, English captions, same order).
+- [ ] Tablet screenshots (retaken for 0.4.18): six each for 7-inch (`screenshots/tablet7-ml/`,
+      1920 × 1080) and 10-inch (`screenshots/tablet10-ml/`, 2560 × 1440): side by side, Greek
+      words under both texts, a word's panel, dark theme, handwritten notes, a verse card on
+      a photo. The English translation uses `tablet7-en/` and `tablet10-en/`.
+      Rendered the same way as the phone ones; the Malayalam captions need a speaker's read.
+- [ ] Category: Books & Reference. Contact email; website optional.
+
+## 6. Countries and release
+
+- [ ] Countries / regions. The King James Version is in the public domain outside the
+      United Kingdom; in the UK the Crown's rights in it are administered by Cambridge
+      University Press. Whether to include the UK is your call.
+- [ ] Production → Create release → reuse the bundle from internal testing → roll out.
+      Review of a new app usually takes a few days.
+
+## 7. Later updates
+
+Each upload needs a higher version code. Build with `BIBLE_VERSION_CODE` raised and
+`version` in `app.json` bumped, then:
+
+```bash
+BIBLE_EDITION=ml npx expo prebuild --platform android --no-install --clean
+cd android && ./gradlew bundleRelease   # android/app/build/outputs/bundle/release/app-release.aab
+```
+
+The release key variables in the main README must be set, or the bundle is signed
+with the debug key, which Play rejects.
