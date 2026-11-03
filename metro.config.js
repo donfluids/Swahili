@@ -4,7 +4,7 @@ const { getDefaultConfig } = require('expo/metro-config');
 const config = getDefaultConfig(__dirname);
 
 // Ship the prebuilt SQLite database as an app asset.
-config.resolver.assetExts.push('db', 'wasm');
+config.resolver.assetExts.push('db');
 
 // The edition (see src/edition.ts; here only "sw") bundles its own database: a require
 // of assets/db/bible.db resolves to bible-<edition>.db.
